@@ -1,0 +1,47 @@
+List of commands
+
+0	Does nothing
+1-51	Print message 0-50. Adds a space.
+52	?Get item <arg>. Checks if you can carry it first
+53	*Drops item <arg>
+54	*Moves to room <arg>
+55	*Verb and noun are changed to <arg1>, <arg2> ?
+56	*The darkness flag is set
+57	*The darkness flag is cleared
+58	*Bitflag <arg> is set
+59	*Item <arg> is removed from the game (put in room 0)
+60	*BitFlag <arg> is cleared
+61	*Death. Dark flag cleared, player moved to death room, the one with the highest index
+62	*Item <arg> is put in room <arg>
+63	?Game over
+64	?Describe room
+65	?Score
+66	*Inventory
+67	?BitFlag 0 is set
+68	*BitFlag 0 is cleared
+69	?
+70	?Screen is cleared
+71	*Saves the game. Choices of filename etc depend on the driver alone.
+72	*Swap item <arg1> and item <arg2> locations
+73	*Continue with next line (the next line starts verb 0 noun 0)
+74	*Take item <arg> - no check is done too see if it can be carried.
+75	?Put item <arg1> with item <arg2>
+76	*Look: print room description
+77	*Decrement current counter. Will not go below 0
+78	*Print current counter value.
+79	*Set current counter value
+80	?Swap location with current location-swap flag
+81	*Select a counter. Current counter is swapped with backup counter
+	<arg>
+82	*Add <arg> to current counter
+83	*Subtract <arg> from current counter
+84	*Echo noun player typed
+85	*Print the name of object <arg>. Do values above 128 have special meaning?
+86	?CR
+87	?Swap current location value with backup location-swap value <arg>
+88	?Wait 2 seconds
+89  *Redraw image?
+128 *Print message <arg - 76>
+
+? = Can't find in Questprobe 2 Saga Plus version actions
+* = Reasonably clear examples found

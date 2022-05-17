@@ -1,0 +1,25 @@
+ScottFree Conditions
+
+This is just for reference. If any of these values are used in Saga Plus, I haven't been
+able to work out how they are encoded.
+
+0	Parameter
+1	Item <arg> carried
+2	Item <arg> in room with player
+3	Item <arg> carried or in room with player
+4	In room <arg>
+5	Item <arg> not in room with player
+6	Item <arg> not carried
+7	Not in room <arg>
+8	BitFlag <arg> is set.
+9	BitFlag <arg> is cleared
+10	Something carried	(arg unused)
+11	Nothing carried		(arg unused)
+12	Item <arg> not carried nor in room with player
+13	Item <arg> is in game		[not in room 0]
+14	Item <arg> is not in game	[in room 0]
+15	CurrentCounter <= <arg>
+16	CurrentCounter >= <arg>
+17	Object still in initial room
+18	Object not in initial room
+19	CurrentCounter = <arg>

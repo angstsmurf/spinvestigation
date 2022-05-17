@@ -1,0 +1,75 @@
+Description, starting location, noun, flag (1 means takeable, 5 means treasure)
+
+0. " I'm on the ceiling",0,0,0
+1. " I'm on a wall",0,0,0
+2. "*Gem",0,59,5
+3. "*Gem",0,59,5
+4. "*Gem",0,59,5
+5. "*Gem",0,59,5
+6. "*Gem",0,59,5
+7. "*Gem",0,59,5
+8. "*Gem",21,59,5
+9. ".",0,0,0
+10. "*Gem",23,59,5
+11. "*Gem",7,59,5
+12. "*Gem",8,59,5
+13. "*Gem",0,59,5
+14. "*Gem",0,59,5
+15. "*Bio Gem",36,59,5
+16. "natter energy egg",36,10,1
+17. "*Gem",0,59,5
+18. "*Gem",0,59,5
+19. "*Gem",0,59,5
+20. "large fan directly in my way",7,15,0
+21. "stopped fan in my way",0,15,0
+22. "closed elevator door",5,19,0
+23. "elevator shaft",0,19,0
+24. "sign",2,77,0
+25. "wall mirror",10,34,0
+26. "air intake mesh",24,56,0
+27. "open air duct",0,19,0
+28. "strange cloud",0,35,0
+29. "stopped fan",8,15,0
+30. " DOC's arm",0,36,0
+31. " DOCTOR OCTOPUS",34,36,0
+32. "sign",40,77,0
+33. " ELECTRO",34,33,1
+34. "stunned DOC OCK",0,36,1
+35. "stunned ELECTRO",0,33,1
+36. "strange mist below",24,35,0
+37. " MADAME WEB",37,37,0
+38. " LIZARD",1,81,0
+39. " hydrochloric acid",39,40,1
+40. " calcium carbonate",39,42,1
+41. " calcium chloride",0,42,1
+42. " exotic powders",39,43,1
+43. "torn piece of paper",0,82,1
+44. "crib",4,46,0
+45. "open shaft",12,19,0
+46. "open shaft",15,19,0
+47. "open shaft",10,19,0
+48. "formula",0,45,1
+49. " sand all over the floor",4,47,0
+50. " SANDMAN",0,47,0
+51. "sleeping Doc Conners",0,50,1
+52. " HYDRO-MAN",38,51,0
+53. "ice statue",0,48,1
+54. "thermostat",15,52,0
+55. "aquarium",38,53,1
+56. "ice block",0,53,1
+57. "*Gem",22,59,5
+58. "desk",15,57,1
+59. "couch",15,58,1
+60. "painting",15,60,1
+61. "torn painting",0,60,1
+62. " RINGMASTER",3,62,0
+63. "knob in the wall",3,63,0
+64. "mesh",0,56,1
+65. "printing press",34,66,0
+66. "roll of blank paper",22,44,0
+67. "dial",22,67,0
+68. " whole floor is a weight scale",22,68,0
+69. "newspaper",0,74,1
+70. "computer keyboard",0,41,0
+71. "clock",15,80,1
+72. "*Gem",0,59,5

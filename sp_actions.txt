@@ -1,0 +1,5513 @@
+I have tried breaking them up into separate actions with newlines and added index numbers
+(1., 2. etc) that correspond to actions in the old format (in file old_format_actions.txt.)
+Also added comments from comments.txt at the top of each action.
+
+1. 9		" INTRO "
+0
+100
+128 ISCLEAR 2
+73
+58 SET 2
+2
+73 CONTINUE
+89 DRAW 60
+60
+34
+99
+129
+244
+2
+
+2. 7
+0
+0
+128
+0
+21 "Welcome friends to QUESTPROBE(TM) No. 2: SPIDER-MAN by Scott Adams. Dedicated: John Mathias a TRUE BELIEVER!"
+109
+1
+99
+2
+3
+109
+4
+
+3. 3	 "INTRO "
+0
+0
+128
+0
+79	SETCURRENT 71
+71
+119
+24
+
+8	 "trademarks "
+0
+0
+128
+0
+24 "SPIDER-MAN"
+128
+226 "," 226 - 75 = 151
+35 "MYSTERIO"
+128
+226  "," 226 - 75 = 151
+38 "DOCTOR OCTOPUS"
+128
+226 "," 226 - 75 = 151
+
+10
+
+0 "TRADEMARKS "
+0
+128
+0
+42 "ELECTRO"
+128
+226 "," 226 - 75 = 151
+128
+146 "HYDRO-MAN" 146 - 76 = 70
+128
+226 ","
+128
+148 "SANDMAN"
+128
+226 ","
+
+11
+
+0 "TRADEMARKS "
+0
+128
+0
+128
+153 "LIZARD" 153 - 75 = 78
+128
+226 ","
+128
+158 "RINGMASTER" 158 - 75 = 83
+128
+226 ","
+128
+224 "CHIEF EXAMINER, MADAME WEB,"
+128
+225 "and their distinctive likenesses, are TMs of MARVEL COMICS GROUP and are used with permission."
+
+6	 "TM "
+0
+0
+128
+0
+128
+229 "Questprobe is a TM of Marvel Comics & Scott Adams, inc."
+128
+230 "Game design Copyright 1984 Scott Adams, inc. Text and art Copyright 1984 Marvel Comics."
+128
+231 "Now on with the game..."
+76 LOOK
+
+3	"END OF GAME "
+0
+100
+130 2 NOTSET  6
+200
+110
+1
+0
+73 CONTINUE
+
+0	"DIDN'T RESTORE A SAVED GAME "
+0
+0
+130
+200
+63
+
+5. 5	" HAVE ELECTRO "
+0
+100
+132 CARRIED
+33 	" ELECTRO",34,33,1
+58 SET 6
+6
+37	"My Spider Sense tingles "
+53	DROP
+33	" ELECTRO",34,33,1
+76	LOOK
+
+4	" SKY CIEL "
+0
+100
+2 PRESENT
+68
+128 0
+2
+59 DESTROY 0
+0 " I'm on the ceiling",0,0,0
+54 GOTO 24
+24	Room 24: "*I'm on an Office Ceiling"
+76 LOOK
+
+4	" SKY CIEL "
+0
+100
+2 PRESENT
+36
+128 0 ISSET 2
+2
+54	GOTO 24
+24	Room 24: "*I'm on an Office Ceiling"
+59	DESTROY 0
+0	" I'm on the ceiling",0,0,0
+76 LOOK
+
+12	"SET NEW EXIT TO SKYSCRAPER "
+0
+100
+0	ISCLEAR 1
+63
+3 3 PRESENT 4
+4
+130 2 NOTSET
+68	2
+99
+18
+19
+99
+3
+20
+99
+17
+21
+95
+21
+20
+19
+
+2	"ITEMS WILL FALL FROM ROOF ROOM "
+0
+100
+3
+4
+128
+0
+109
+30
+112
+
+9
+0
+0
+124
+194
+124
+222
+128
+32
+62
+131
+230
+18
+3
+85 PRINTNOUN
+131
+230
+128
+180 "fell!"
+
+3
+
+0
+0
+5 ABSENT 3
+114
+131 3
+192
+100
+1
+30
+113
+1
+
+7. 0	" RESET ELECTRO "
+100
+0 ISCLEAR 3
+127
+4 NOTAT
+34 Room 34: "dimly lit Basement"
+0 ISCLEAR 6
+200
+0 ISCLEAR  3
+127
+132
+68 CLEAR 0
+60	CLEAR 6
+6
+
+8, 9. 7		" DOC STUN "
+0	occur when carried arm (30) and flag 6
+100
+3 CARRIED (1)
+193	ARM	(30)
+128	ISSET
+200	6	200 / 32 = 6
+60 CLEAR 6
+6
+47	"Bolt hits doc's arm! "
+38	"DOCTOR OCTOPUS"
+46	"is stunned!"
+72 SWAP
+31	" DOCTOR OCTOPUS",34,36,0
+34	"stunned DOC OCK",0,36,1
+
+10. 4	" BOLT! DEAD! "
+0
+100
+0
+127
+3	NOTCARRIED
+193	ARM	193 - 30 = 163
+4	INROOM
+34	Room 34: "dimly lit Basement"
+128	ISSET
+200	200 / 32 = 6
+60 CLEAR 6
+6
+42	"ELECTRO"
+44	"throws electrical bolt at me!"
+61	DEATH
+
+11. 6	" ELECTRO BOLT "
+0
+20
+4	INROOM
+34	Room 34: "dimly lit Basement"
+128	ISSET
+201	6	201 / 32 = 6
+58 SET 6
+6
+37	"My Spider Sense tingles "
+43	"towards"
+42	"ELECTRO"
+128
+173 "."
+
+12. 2	" HYDRO "
+0
+100
+134	134 - 128 = 6 CARRIED
+129	129 - 52 = 77
+53 DROP
+52	" HYDRO-MAN",38,51,0
+76	Look
+
+13. 7	" HIT ELECTRO "
+0
+100
+0 ISSET
+136 136 / 32 = 4
+132 132 - 128 = 4 INROOM 34
+34	Room 34: "dimly lit Basement"
+17	"I hit"
+42	"ELECTRO"
+128
+173 "."
+72	SWAP
+33	" ELECTRO",34,33,1
+35	"stunned ELECTRO",0,33,1
+76	Look
+
+14. 1	" MISSED ELECTRO "
+0
+100
+128	ISSET
+136 136 / 32 = 4
+60 CLEAR 4
+4
+
+17. 5	 	"MYSTER****** "
+0
+20	20% chance
+129 129 - 128 = 1 INROOM?
+68 68 - 10 = 58 Room 10: "waiting room"
+3 "I see"
+35 "MYSTERIO"
+128
+128 "run by!"
+90
+11
+
+18. 2	" ON CIELING "
+0
+100
+0	ISSET 13
+13
+0	ISSET 3
+127
+128 ISSET
+2	2
+73	CONTINUE
+59 DESTROY 0
+0	" I'm on the ceiling"
+
+19, 20. 1	 "ON CIELING NOT ELEVATOR OR BLDG "
+0
+0
+0	ISSET 4
+159
+0	ISSET 6
+196
+1 NOTAT
+36
+1 NOTAT
+100
+1 NOTAT
+196
+2 NOTSET 3
+100
+5
+4
+3
+4
+130 2 NOTSET 1 (OR NOTPRESENT MIST?)
+36
+53 DROP 0
+0
+
+21. 3	" ON WALL "
+0
+100
+128 ISCLEAR 1
+45
+68 CLEAR 0
+73 CONTINUE
+59 DESTROY
+1	1. " I'm on a wall",0,0,0
+
+22, 32. 1	"SAME AS ON CIELING "
+0
+0
+0	ISCLEAR 4
+159
+0	ISCLEAR 6
+196
+1 INROOM
+36	Room 36: "small deserted Office"
+1	INROOM
+100
+1	INROOM
+196
+2	NOTSET
+100
+5
+4
+3
+4
+2
+36
+130
+68 CLEAR 0
+53 DROP
+1	1. " I'm on a wall",0,0,0
+
+26. 5	" DROP ARM "
+0
+100
+3 CARRIED
+193	30. " DOC's arm",0,36,0
+128 ISCLEAR 5
+168	168 / 32 = 5
+59 DESTROY
+30	" DOC's arm",0,36,0
+38	"DOCTOR OCTOPUS"
+39	"pulls away."
+60 CLEAR 5
+5
+
+27. 1	" DROP ARM NXT "
+0
+100
+3	CARRIED
+193	30. " DOC's arm",0,36,0
+128	ISCLEAR 5
+169 169 / 32 = 5
+58 SET 5
+5
+
+28. 8	" DROP ARM "
+0
+100
+3	CARRIED
+193	30. " DOC's arm",0,36,0
+0	ISSET 3
+127 (127 / 32 = 3)
+131 (131 - 128 = 3) CARRIED ???
+226 ???
+59 DESTROY
+30 " DOC's arm",0,36,0
+38 "DOCTOR OCTOPUS"
+128
+193 '
+40 "arm "
+39 "pulls away."
+60 CLEAR 5
+5
+
+29. 1	" DR OCK GET PRESS *** "
+0
+100
+8	INROOM
+34 Room 34: "dimly lit Basement"
+131	(131 - 128 = 3) CARRIED
+193	30. " DOC's arm",0,36,0
+38	"DOCTOR OCTOPUS"
+41	"other arms cling to presses!"
+
+30. 6	" RING GO! "
+0
+100
+7	INROOM? PRESENT?
+194	in Room 3: "Computer Lab" ? Present 62 " RINGMASTER",3,62,0?
+130 (130 - 128 = 2) ISSET?
+72	18?
+128
+158 "RINGMASTER"
+128
+159 "commands me to leave! I do."
+54	GOTO Room 16: "Hall with threadbare Carpeting on the floor"
+16
+76	LOOK
+
+31. 3	" RESET RINGMASTER "
+0
+100
+0 ISSET 18?
+127 18?
+135	 (135 - 128 = 7) PRESENT?
+194	62 " RINGMASTER",3,62,0?
+60	CLEAR 18
+18
+60	CLEAR 19
+19
+
+32. 1	" NEXT RING "
+0
+100
+7	PRESENT
+194	62 " RINGMASTER",3,62,0?
+2 NOTSET
+73
+129 (129 - 128 = 1) AT
+233
+58	SET 18
+18
+
+33. 5 	" MOVES "
+0
+100
+128	No conditions
+0
+81 SELECT 4
+4
+82	ADD 1
+1
+81 SELECT 4
+4
+
+34. 12	" SAND AWAKES "
+0
+100
+6 PRESENT
+34	49. " sand all over the floor",4,47,0
+128 ISSET 7
+232 (232 / 32 = 7)
+37 "My Spider Sense tingles "
+128
+173 "\."
+72	Swap item and item locations
+49	" sand all over the floor",4,47,0
+50	" SANDMAN",0,47,0
+128
+154 "Sand becomes"
+128
+148 "SANDMAN"
+128
+173 "\."
+
+73		"NO GRAPHICS "
+0
+0
+0
+132
+105
+116
+
+6		"LOAD ANIMATE PICTURES, IF NOT ALREADY LOADED "
+0
+0
+129
+41
+99
+20
+15
+110
+3
+0
+112
+
+2		"GET 1 PIC "
+0
+0
+129
+41
+110
+2
+15
+
+3		"NEXT "
+0
+0
+1
+41
+0
+127
+1
+244
+130
+192
+100
+1
+15
+113
+
+5			"LOAD B050 SANDMAN "
+0
+0
+129
+41
+99
+50
+15
+110
+10
+15
+
+5		"IF ON CIELING RESET "
+0
+0
+128
+13
+62
+0
+49
+59
+50
+89
+
+6		"START THE ANIMATION, AND SAY PICS ARE LOADED "
+0
+0
+128
+0
+58
+9
+60
+10
+109
+15
+112
+
+2		"ANIMATE "
+0
+0
+128
+0
+110
+4
+15
+
+3		"NEXT "
+0
+0
+0
+127
+1
+244
+128
+96
+100
+1
+15
+113
+
+1		"SAY NO REDRAW NEEDED "
+0
+0
+128
+0
+60
+34
+
+4		"IF WAS ON CIELING RESET "
+0
+0
+0 ISSET
+26
+134 (134 - 128 = 6) NOTCARRIED?
+32
+53 DROP
+0	" I'm on the ceiling",0,0,0
+53 DROP
+50	" SANDMAN",0,47,0
+89
+
+35. 8	" SAND NXT MOVE "
+0
+100
+6
+34
+0	ISSET 7
+233 (233 / 32 = 7)
+0	ISSET 3
+127	(127 / 32 = 3)
+0 	ISSET 2
+2
+0 	ISSET
+127	(127 / 32 = 3)
+128 ISSET 1
+34
+58	SET 7
+7
+37 "My Spider Sense tingles "
+128
+173 "\."
+128
+155 "Someone says"
+128
+156 "OUCH!"
+
+36. 1 	" NO SAND "
+0
+100
+0 ISCLEAR 3
+127
+134 ABSENT
+34	49 " sand all over the floor",4,47,0?
+60	CLEAR 7
+7
+
+37. 2	" RESET SAND "
+0
+100
+6 DESTROYED?
+46 49 " sand all over the floor",4,47,0?
+0	ISCLEAR 3
+127
+134 (134 - 128 = 6) ABSENT?
+66	50.	" SANDMAN",0,47,0
+72 SWAP
+49	" sand all over the floor",4,47,0
+50	" SANDMAN",0,47,0
+
+39, 40. 5	" FREEEZE HYDRO AND AQUARIUM TOO "
+0
+100
+3
+239	53. "ice statue",0,48,1
+135 (135 - 128 = 7) 7 LE
+14	31
+72 SWAP
+53	"ice statue",0,48,1
+52	" HYDRO-MAN",38,51,0
+72	SWAP
+56	"ice block",0,53,1
+55	"aquarium",38,53,1
+
+41, 42. 5	"THAW "
+0
+100
+4	GT
+16	32
+134	(134 - 128 = 6) 6 DESTROYED
+238	52. " HYDRO-MAN",38,51,0
+72	SWAP
+53	"ice statue",0,48,1
+52	" HYDRO-MAN",38,51,0
+72	SWAP
+56	"ice block",0,53,1
+55	"aquarium",38,53,1
+
+2	" EGG BLOWS "
+0
+100
+129	(129 - 128 = 1) ISSET 8
+8
+73 CONTINUE
+128
+177 "I sense a small explosion. "
+
+44. 4 	" DEAD "
+0
+0
+130 (130 - 128 = 2) AT Room 36: "small deserted Office" (or present egg?)
+3
+128
+143 "Egg explodes!"
+61	DEATH
+59	DESTROY
+15	"*Bio Gem",36,59,5
+
+45. 1	" REMOVE GEM "
+0
+0
+1	ISSET 7
+250
+132	(132 - 128 = 4) GT 128?
+128
+59	DESTROY
+15	"*Bio Gem",36,59,5
+
+46. 3
+0
+0
+128 ISCLEAR 0
+0
+59	DESTROY
+16	"natter energy egg",36,10,1
+60	CLEAR 8
+8
+
+47. 4	" EGG NEXT MOVE & TINGLE "
+0
+100
+130 (130 - 128 = 2) AT
+2 Room 36: "small deserted Office"
+58	SET 8
+8
+37 "My Spider Sense tingles "
+128
+173 "\."
+
+49. 3	" MYSTERIO CLOUD "
+0
+20
+2 AT
+68	Room 18: "*I'm floating in the Sky"
+131	(131 - 128 = 3) PRESENT?
+130	(130 / 4 = 28) 28	"strange cloud",0,35,0
+59	DESTROY
+28	"strange cloud",0,35,0
+76 LOOK
+89 Redraw picture?
+
+0	" MYSTERIO CLOUD "
+0
+20
+130	(130 - 128 = 2) AT
+68 (68 / 3 = 18)	Room 18: "*I'm floating in the Sky"
+73 CONTINUE
+
+0	"DRAW ROOM FIRST IF REQUESTED "
+0
+0
+132	(132 - 128 = 4) GT
+72 (72 / 5 = 14)
+89 Redraw picture?
+
+50. 8	" MYSTERIO CLOUD "
+0
+0
+128 ISCLEAR 0
+0
+53 DROP
+28	"strange cloud",0,35,0
+76 LOOK
+99 ??? Animation related?
+28
+15
+110
+7
+15
+
+51. 4	" SCALE "
+0
+100
+130 (130 - 128 = 2) AT
+196	Room 22: "paper room"
+81 SELECT 3
+3
+73 CONTINUE
+79 SETCUR 2
+2
+
+52. 2	" OCK "
+0
+0
+132  (132 - 128 = 4) HERE?
+66	34. "stunned DOC OCK",0,36,1
+82	ADD 250
+128
+250
+
+53. 2	" ELECTRO "
+0
+0
+132	 (132 - 128 = 4) HERE?
+98	35. "stunned ELECTRO",0,33,1
+82	ADD 185
+128
+185
+
+54. 2	" CONNERS "
+0
+0
+134	(134 - 128 = 6) PRESENT?
+98	51. "sleeping Doc Conners",0,50,1
+82	ADD 170
+128
+170
+
+55. 2	" HYDRO "
+0
+0
+134	(134 - 128 = 6) PRESENT?
+162 53. "ice statue",0,48,1
+82 ADD 200
+128
+200
+
+56. 2	" HYDRO "
+0
+0
+134	(134 - 128 = 6) PRESENT?
+130	52. " HYDRO-MAN",38,51,0
+82	ADD 200
+128
+200
+
+57. 1	" DESK "
+0
+0
+135 (135 - 128 = 7) HERE?
+66	58. "desk",15,57,1
+82	ADD 80
+80
+
+1	" COUCH "
+0
+0
+135	(135 - 128 = 7) HERE?
+98
+82	ADD 62
+62
+
+1	"CLOCK "
+0
+0
+136 (136 - 128 = 8) HERE?
+226
+82	ADD 2
+2
+
+59. 1
+0
+0
+128
+0
+81	SELECT 3
+3
+
+0		"MUST BE LAST COMMAND. REDRAWS PICTURE IF ROOM CHANGED "
+0
+100
+132 (132 - 128 = 4) GT?
+72
+89 DRAW
+3
+39
+17
+128
+0
+110
+1
+0
+76 LOOK
+
+2	"CLOSEUP "
+11 LOOK
+34 MIRROR
+131
+35
+90
+26
+116
+
+2	"CLOSEUP "
+11 LOOK
+33 ELECTRO
+132
+99
+90
+7
+116
+
+2	"CLOSEUP "
+11 LOOK
+36 DOC#2  when present OCTOPUS1 and !exists Gem15
+132
+67
+90
+8
+116
+
+2	"CLOSEUP "
+11 LOOK
+33 ELECTRO
+132
+35
+90
+12
+116
+
+2	"CLOSEUP "
+11 LOOK
+60 PAINTING
+135
+131
+90
+13
+116
+
+2	"CLOSEUP "
+11 LOOK
+9 BIOGEM
+129
+227
+90
+9
+116
+
+2	"CLOSEUP "
+11 LOOK
+59 GEM
+129
+227
+90
+9
+116
+
+2	"CLOSEUP "
+11 LOOK
+10 EGG
+130
+3
+90
+10
+116
+
+33	"LEAVE OR DROP ITEM? "
+29 LEAVE
+0
+128
+0
+128
+0
+73 CONTINUE
+120
+
+4	"LEAVE ELEVATOR=EXIT "
+0
+0
+6	DESTROYED
+52	" HYDRO-MAN",38,51,0
+130 2
+96
+99
+28
+48
+121
+69
+
+4
+0
+0
+6	DESTROYED
+53	"ice statue",0,48,1
+128 ISCLEAR 7
+224
+99
+5
+48
+121
+69
+
+3
+0
+0
+128
+0
+99
+28
+48
+121
+1
+28
+0
+128
+0
+73 CONTINUE
+120
+
+3
+0
+0
+6 DESTROYED
+53 	"ice statue",0,48,1
+0	ISCLEAR
+32
+0	ISCLEAR
+127
+6 DESTROYED
+53		"ice statue",0,48,1
+128	ISCLEAR 7
+224
+99
+1
+48
+
+121
+0
+0
+0
+128
+0
+116
+2
+16
+6
+131
+4
+55
+1	GO
+6	DOWN
+2
+16
+6
+128
+0
+
+55
+1	GO
+6	DOWN
+18
+1
+6
+193
+0
+63
+0
+2
+128
+34
+
+55
+3	GET
+6	DOWN
+38
+11
+0
+128
+0
+0
+63
+2
+72
+0
+232
+129
+8
+60
+18
+60
+7
+60
+8
+116
+19
+1
+6
+202
+0
+63
+0
+196
+1
+36
+1 GO
+68 SCALE
+1
+100
+1
+132
+1
+196
+1
+228
+130
+226
+1
+54 GOTO
+6	Room 6: "dimly lit Elevator Shaft"
+76	LOOK
+
+17
+1 GO
+5 UP
+202
+0
+63
+0
+196
+1
+36
+1
+68
+1
+100
+1
+132
+1
+196
+1
+228
+130
+226
+1
+73 CONTINUE
+
+4
+0
+0
+128 ISCLEAR 3
+105
+54 GOTO
+11	Room 11: "dimly lit Elevator Shaft"
+128
+184 "BUMP!"
+76	LOOK
+
+2
+0
+0
+128  ISCLEAR 3
+104
+54	GOTO
+14	Room 14: "dimly lit Elevator Shaft"
+76	LOOK
+20
+1
+5
+202
+0
+
+63
+1 	GO
+4	WEST
+3
+36
+3
+164
+4
+4
+4
+36
+132
+68
+1
+54
+7
+
+60
+6	OPEN
+19	SHAFT
+1
+6
+202
+0
+
+63
+1 GO
+4 WEST
+3
+36
+3
+164
+4
+4
+132
+36
+1
+54	GOTO
+34	Room 34: "dimly lit Basement"
+76 LOOK
+
+2
+1 GO
+1 NORTH
+130
+68
+128
+184 "BUMP!"
+27
+
+2
+1 GO
+2 SOUTH
+130
+68
+128
+184 "BUMP!"
+27
+
+2
+1 GO
+4 WEST
+130
+68
+128
+184 "BUMP!"
+27
+
+2
+1 GO
+5 UP
+1
+31
+1
+100
+0
+105
+0
+63
+130
+36
+128
+184 "BUMP!"
+27
+
+2
+1 GO
+6 DOWN
+130
+36
+128
+184 "BUMP!"
+27
+
+2
+28 EXIT
+0	ANY
+0
+127
+124
+220
+129
+192
+55
+5
+27
+3
+5
+27
+128
+0
+112
+109
+19
+68
+
+3
+0
+0
+128
+0
+94
+20
+32
+19
+
+8
+0
+0
+0
+127
+2
+148
+128
+0
+98
+20
+32
+58 SET 34
+34
+1	"OK"
+76 LOOK
+115
+67
+
+3
+0
+0
+0
+127
+2
+116
+128
+160 "enough for 1 newspaper."
+100
+1
+19
+113
+0
+0
+0
+128
+9
+16
+
+19
+1	GO
+53	AQUARIUM
+203
+134
+226
+6
+2
+128
+175 "I'm too big"
+
+5
+1	GO
+0
+128
+0
+0
+64
+131
+230
+5
+73 CONTINUE
+
+1
+0
+0
+1
+31
+0
+127
+0
+181
+0
+32
+0
+223
+0
+181
+0
+224
+0
+63
+128
+255
+116
+69
+
+6
+0
+0
+128
+0
+
+101
+1 GO
+5 UP
+94
+6
+32
+5
+6
+0
+0
+0
+212
+128
+0
+84 ECHO NOUN
+128
+174 "isn't a visible exit."
+116
+92
+117
+69
+
+10
+0
+0
+128
+0
+98
+6
+32
+58 SET 34
+34
+1
+128
+198 "I go "
+84	ECHO NOUN
+128
+173 "\."
+
+6
+1	GO
+58	COUCH
+135
+98
+1	"OK"
+98
+32
+12
+54	GOTO Room 19: "?"
+19
+76 LOOK
+
+70
+3	GET
+5	UP
+128
+58
+129
+0
+130
+100
+1
+98
+12
+32
+58 SET 34
+34
+76 LOOK
+
+6	"LEAVE COUCH "
+5	DROP
+58	COUCH
+130
+100
+1
+98
+12
+32
+58
+34
+
+76
+19 FEEL
+3	EAST
+27
+202
+128
+0
+120
+109
+49
+121
+19
+5
+7
+202
+128
+0
+120
+109
+49
+121
+
+119
+3 GET
+0	ANY
+202
+131
+0
+136
+0
+129
+0
+128
+0
+109
+30
+112
+68
+60
+19
+60
+20
+1
+0
+0
+0
+63
+124
+220
+0
+0
+1
+63
+124
+221
+252
+192
+58
+20
+1
+0
+0
+2
+136
+6
+130
+3
+212
+134
+224
+58
+19
+9
+0
+0
+2
+136
+2
+105
+124
+194
+124
+222
+128
+32
+52
+131
+230
+8
+122
+131
+230
+128
+173 "\."
+67
+7
+0
+0
+5
+114
+131
+192
+100
+1
+30
+60	CLEAR 19
+19
+60	CLEAR 20
+20
+113
+2
+0
+0
+128
+9
+6
+128
+232 "nothing's takeable!"
+23
+5	DROP
+0	ANY
+202
+128
+0
+109
+30
+112
+68
+60 CLEAR 20
+20
+60 CLEAR 21
+21
+1
+0
+0
+0
+63
+124
+220
+0
+0
+1
+63
+124
+221
+252
+192
+58	SET 20
+20
+9
+0
+0
+2
+136
+124
+193
+124
+222
+128
+32
+53
+131
+230
+128
+176 "I leave"
+122
+131
+230
+58
+21
+1
+0
+0
+2
+168
+0
+63
+0
+223
+0
+196
+1
+36
+1
+100
+1
+196
+0
+31
+128
+255
+128
+217 "\, I set it down so it won't fall"
+
+2
+0
+0
+130
+168
+128
+173 "\."
+67 SET bitflag 0
+7	"In 2 words: AT WHAT?"
+0
+0
+5
+114
+131
+192
+100
+1
+30
+60 CLEAR 20
+20
+60 CLEAR 21
+21
+113
+
+2
+0
+0
+128
+9
+6
+128
+187 "I don't have that."
+
+67
+5	DROP
+0	ANY
+131
+32
+131
+15
+130
+130
+109
+30	"I feel"
+112
+68 CLEAR flag 0
+4	"nothing special"
+0
+0
+124
+221
+124
+192
+0
+223
+0
+63
+3
+212
+6
+160
+3
+212
+6
+96
+3
+212
+6
+
+128
+0
+31	DEAD
+128
+255
+6 "Sorry,"
+24 "SPIDER-MAN"
+128
+219 "isn't a killer!"
+69
+
+13
+0
+0
+124
+221
+124
+192
+124
+195
+124
+222
+128
+32
+62
+131
+230
+49
+
+17
+19	FEEL
+3	EAST
+85
+131
+230
+128
+188
+115
+67
+5
+0
+0
+0
+8
+0
+223
+0
+63
+3
+212
+7	SCAN
+0	ANY
+3
+212
+7
+64
+3
+212
+6
+224
+3
+212
+7
+96
+3
+212
+8
+224
+0
+31
+128
+255
+109
+2
+72
+20
+21
+76
+3
+0
+0
+5
+114
+131
+192
+100
+1
+30
+113
+1
+0
+0
+128
+9
+128
+186	"I don't have that."
+41
+5
+30
+139
+53
+128
+0
+99
+3
+48
+99
+59
+49
+99
+8
+52
+121
+35
+14 COVER
+19 FLOOR
+128
+0
+128
+0
+6 "Sorry, "
+2 "I can't"
+128
+173 "\."
+
+39
+5	DROP
+53	BLOCK
+131
+0
+128
+0
+120
+99
+5
+48
+99
+39
+49
+121
+40
+5
+53
+131
+0
+128
+0
+0
+0
+0
+0
+120
+99
+39
+49
+121
+36
+5
+39
+131
+0
+128
+0
+120
+99
+5
+48
+121
+69
+5
+39
+131
+33
+134
+33
+6
+227
+132
+98
+62
+55
+49
+1
+128
+178
+3
+1
+24
+130
+68
+54
+17
+128
+176
+2
+1
+24
+130
+36
+128
+184
+27
+36
+30
+42
+128
+0
+128
+0
+120
+99
+5
+48
+121
+71
+5
+42
+134
+51
+131
+51
+5
+35
+134
+131
+1
+128
+196
+59
+52
+59
+41
+76
+72
+5
+42
+134
+81
+131
+81
+5
+35
+132
+195
+1
+128
+196
+72
+51
+38
+59
+41
+76
+4
+37
+37
+132
+162
+1
+30
+4
+128
+147
+32
+35 FLY
+0 ANY
+128
+0
+128
+4
+0
+2
+11
+5
+130
+36
+3
+128
+185 "clear blue sky!"
+
+33		"MAYBE I SHOULD SPEAK TO them? "
+22 SAY
+64 HELLO
+128
+0
+128
+0
+128
+194 "Maybe I should talk to that character?"
+
+36		"NO VANDAL "
+6 RIP (OPEN)
+13 CARPET
+128
+0
+128
+0
+6	"Sorry,"
+2	"I can't"
+24 "SPIDER-MAN"
+128
+142 "is no vandal!"
+
+111. 97
+21 HIT
+81 LIZARD
+130
+0
+129
+0
+139
+0
+132
+194
+23	"I exert my Spider strength!"
+73	Continue
+
+2		" MISS HIM "
+0
+50	50 % chance
+128
+0
+128
+178 "He dodged & I missed! Drat!"
+69
+
+2		" NO DAMAGE "
+0
+0
+128
+0
+17	"I hit"
+128
+136 "& I do no damage!"
+
+2		"PULL KNOB "
+6 OPEN
+63	KNOB
+135
+226
+1	"OK"
+4	"nothing special"
+10	"happens. "
+
+2
+31 BITE
+28 LIP
+128
+0
+6 "Sorry,"
+128
+223 "I'm no HULK!"
+
+2
+21 HIT
+7 ME
+128
+0
+6 "Sorry,"
+128
+223 "I'm no HULK!"
+
+32	"I CAN'T DO THAT YET. (WEARING A MASK!) "
+31 EMPTY
+0 ANY
+128
+0
+128
+4
+1 "OK"
+2 "I can't"
+6 "Sorry,"
+54
+128
+0	"WEBBED SHUT "
+6 "Sorry,"
+128
+222 "It's webbed together!"
+0
+25
+57
+135
+66
+1
+0
+25
+58
+135
+98
+1
+
+48
+1	GO
+14	WINDOW
+195
+203
+193
+128
+0
+73
+
+4
+0
+0
+130
+36
+1
+54 GOTO room 10
+10	Room 10: "waiting room"
+76 LOOK
+69
+
+4
+0
+0
+129
+68
+54
+17
+1
+76
+69
+6
+0
+0
+4
+5
+153
+0
+1
+128
+197 "I'm at the"
+84 "enough for 1 newspaper."
+128
+173 "\."
+69
+0
+0
+0
+128
+0
+116
+
+19	"ROOM BY WINDOW "
+1	GO
+14	WINDOW
+204
+4
+5
+153
+0
+6 "Sorry,"
+2 "I can't"
+128
+173 "\."
+
+3	"NOT A WINDOW HERE! "
+1 GO
+14 WINDOW
+128
+0
+6 "Sorry,"
+2 "I can't"
+128
+179 "do that here."
+
+19
+16 JUMP
+14 WINDOW
+204
+4
+5
+153
+0
+6 "Sorry,"
+2 "I can't"
+128
+173 "\."
+
+3
+6 OPEN
+14 WINDOW
+128
+0
+6 "Sorry,"
+2 "I can't"
+128
+173 "\."
+
+3	"BY ELEVATOR "
+1 GO
+32 BUTTON
+4
+5
+153
+96
+1
+128
+197 "I'm at the"
+84	Echo noun player typed without CR?
+
+3
+11 LOOK
+42 CHEM#2
+133	PRESENT 40
+35
+1 "OK"
+3 "I see"
+128
+216 "it's a drying agent!"
+
+66
+
+21 HIT
+37 WEB
+130	130 - 37 = 93 (Madame Web, object 37) 130 - 128 = 2
+0
+129	129 - 37 = 92
+0
+132	132 - 37 = 95
+162	162 - 37 = 125
+6 Sorry,
+128
+182 "she's my friend!"
+
+62. 40	" BABY FORMULA "
+13 MIX	 ; action MIX WEB when at Laboratory(13) and carried Formula (48) and !present paper (43)
+37 WEB
+128
+0
+1 AT
+164  164 - 151 = 13 Laboratory
+6 DESTROYED 1
+1 1. " I'm on a wall",0,0,0
+0	ISCLEAR 3
+127
+133 (133 - 128 = 5) CARRIED
+99	48. "formula",0,45,1
+6 "Sorry"
+8 "I've got"
+128
+151 "baby" 75 (151 - 76)
+128
+150 "formula" 74 (151 - 76)
+8
+128
+131
+
+63. 4		" TOO MANY INGREDIENTS "
+13 MIX
+0
+1 AT
+164  164 - 151 = 13 Laboratory?
+4
+227	227 - 42 = 185
+5
+3
+133 ABSENT
+67	67 - 42 = 25	42 " exotic powders"
+6 "Sorry"
+8 "I've got"
+128
+134 "too many ingredients."
+29	"Be more specific."
+
+64. 35		" TORN PAPER "
+11 LOOK
+82 PAPER#3
+195
+193	PRESENT (3)
+133
+99	43. "torn piece of paper",0,82,1
+1	"O.K."
+3	"I see"
+128 = print message
+130 "partial web formula, needs exotic powders!" 55
+
+65. 35		"NO FORMULA "
+13 MIX
+37 WEB
+128 ISCLEAR
+0
+1 AT
+164 164 - 151 = 13 Laboratory?
+0
+127
+133 ABSENT	(12)
+99 43 Torn paper	99 - 43 = 56
+6 "Sorry"
+8 "I've got"
+128
+131 "no useable formula!" 56 (131 - 75)
+
+66. 35		"NO CHEMICALS "
+13 MIX
+37 WEB
+128
+0
+1 AT
+164 164 - 151 = 13 Laboratory?
+0
+127
+133 ABSENT (12)
+67 42 " exotic powders"
+6 "Sorry"
+8 "I've got"
+128
+132 "no chems!" 57 (131 - 75)
+
+66	"SET TO MIX WEB "
+13 MIX
+37 WEB
+130
+43
+136
+43
+128
+0
+55
+13
+37
+
+67. 6	" MAKE WEB "
+13  == MIX
+37  == WEB  when at Laboratory and present paper and present chemicals
+1 AT
+164 Laboratory (13)
+5 PRESENT
+99 43 Paper
+133 PRESENT (133 - 128 = 5)
+67 42 chemicals
+128
+133 "Partial success only!"  58  (133 - 75)
+59 DESTROY
+42 chemicals
+99
+25
+1
+
+36		"MIX CALCIUM WITH ACID "
+13	MIX
+40	HYDROCHLORIC
+130
+42
+128
+0
+120
+97
+49
+53
+121
+
+7		"ADD WITH ACID "
+13	MIX
+42	CALCIUM
+128
+0
+120
+99
+2
+52
+99
+40
+53
+121
+
+69, 70. 39		"CALCIUM CHLORIDE "
+13	MIX
+42	CALCIUM
+130
+40
+1	AT
+164	Laboratory (13)
+4 PRESENT
+227	" hydrochloric acid",39,40,1
+133	PRESENT
+3	" calcium carbonate",39,42,1
+59 DESTROY
+39	" hydrochloric acid",39,40,1
+59 DESTROY
+40	" calcium carbonate",39,42,1
+53 DROP
+41 " calcium chloride",0,42,1
+1	"OK"
+76 Look
+
+35		"SORRY CAN'T "
+13 MIX
+0	ANY
+130
+0
+129	NOTAT
+164		Laboratory (13)
+6	"Sorry,"
+2	"I can't"
+128
+179	"do that here."
+2
+16
+6
+128
+0
+
+55		"SET VERB TO GET "
+3	GET
+6	DOWN
+2
+1 GO
+20 FLOOR
+128
+0
+
+55		" FROM WALL OR CIELING "
+3	GET
+6	DOWN
+18
+3
+8
+201
+128
+0
+
+55		"GET DOWN "
+3	GET
+6	DOWN
+18
+3
+11
+201
+128
+0
+
+55		"GET DOWN "
+3	GET
+6	DOWN
+
+71, 72. 104
+3	GET
+6	DOWN
+137
+8
+137
+11
+129
+0
+0
+63
+0
+2
+128
+34
+1
+59 DESTROY
+1	" I'm on a wall",0,0,0
+59 DESTROY
+0	" I'm on the ceiling",0,0,0
+60	CLEAR 6
+6
+76 LOOK
+89 REDRAW
+
+2
+3
+12
+128
+0
+55
+34
+12
+
+94. 3
+34 CHASE
+12 MYSTERIO
+129
+68
+6	"Sorry,"
+2	"I can't"
+128
+183 "he vanished to the west!"
+
+3				"SAME AS CHADE MSYTERIO "
+36	STOP
+12	MYSTERIO
+129
+68
+6	"Sorry,"
+2	"I can't"
+128
+183	"he vanished to the west!"
+
+65
+21 HIT
+12 MYSTERIO
+130
+0
+129
+0
+128
+0
+5	"HUH?"
+16	"How?"
+
+73. 1
+12 QUIT
+0	ANY
+128
+0
+58 SET 22
+22
+
+74. 67
+14 CLOSE
+61 EYES
+130 (130 - 128 == 2) AT?
+30
+129
+0
+128
+0
+1 "OK"
+56 SETDARK
+76 LOOK
+89 REDRAW
+
+75. 3
+6	OPEN
+61	EYES
+128
+0
+1	"OK"
+57 CLEARDARK
+76	LOOK
+89 REDRAW
+
+76. 4
+15 PUSH
+63	KNOB
+135	(135 - 128 = 7) HERE?
+226	"knob in the wall",3,63,0
+1	"OK"
+58 SET 19
+19
+128
+189 "I pushed the knob. "
+
+2	"TURNED IT "
+2 TURN
+63	KNOB
+0
+127
+135 ABSENT
+226	63. "knob in the wall",3,63,0
+6	"Sorry,"
+128
+192 "I don't see the knob here."
+
+77. 3
+2 TURN
+63 KNOB
+7
+194
+130
+104
+20  "Click!"
+72 SWAP
+62	" RINGMASTER",3,62,0
+17	 "*Gem",0,59,5
+
+78. 99
+21 HIT
+62 RINGMASTER
+139
+0
+130
+0
+129
+0
+7
+194
+129
+233
+6	"Sorry,"
+2	"I can't"
+128
+173 "\."
+
+67
+33 KNOCK
+62 RINGMASTER
+130
+0
+129
+0
+7
+194
+129
+233
+6 "Sorry,"
+2	"I can't"
+128
+173 "\."
+
+3	" GO NEXT! "
+3 GET
+62 RINGMASTER
+7
+194
+129
+233
+6 "Sorry,"
+2	"I can't"
+128
+173 "\."
+
+79. 4
+2 TURN
+63 KNOB
+135 HERE
+226	63. "knob in the wall",3,63,0
+1	 "OK"
+20	"Click!"
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+95. 2		" BIO GEM "
+3 GET
+9 BIOGEM
+129 PRESENT
+227	15. "*Bio Gem",36,59,5
+1 "OK"
+74 TAKE
+15 Bio Gem",36,59,5
+
+96. 2
+5 	DROP
+9	BIOGEM
+129	PRESENT
+227 	15. "*Bio Gem",36,59,5
+1	"OK"
+53 DROP
+15  Bio Gem",36,59,5
+
+97. 4
+1 GO
+11 WALL
+128
+0
+1	"OK"
+53 DROP
+1	" I'm on a wall",0,0,0
+59 DESTROY
+0	" I'm on the ceiling",0,0,0
+
+98. 35
+22	SAY
+37	WEB
+128
+0
+132
+162
+1	"OK"
+49	"`Ask me to scan! For example SCAN LIZARD`"
+128
+147 "- says MADAME WEB!"
+
+103. 0
+10	INVENTORY
+0
+129	!flag 15
+233
+66	INVENTORY
+
+104. 0
+3	TAKE
+16	INVENTORY
+129	!flag 15
+233
+66 INVENTORY
+
+83. 6
+23 SCORE
+0
+128
+0
+109
+30
+109
+13
+109
+12
+112
+2
+0
+0
+124
+215
+4
+64
+124
+222
+128
+128
+100
+1
+12
+2
+0
+0
+124
+222
+128
+128
+100
+1
+13
+3
+0
+0
+5
+114
+131
+192
+100
+1
+30
+113
+11
+0
+0
+128
+0
+128
+220
+102
+12
+128
+221
+99
+100
+14
+65
+14
+12
+5
+0
+0
+128
+0
+91
+13
+12
+14
+102
+12
+5
+0
+
+88. 0
+0
+0
+1
+148 COUNTER == 0?
+140
+128
+128
+181 "CHIEF EXAMINER appears & says: `Congratulations!` "
+128
+228 "& `Save this password: MICAH`."
+58	SET 22
+22
+
+105. 5
+17 SAVE
+17	GAME
+128
+0
+1 "OK"
+60 CLEAR 9
+9
+60 CLEAR 10
+10
+71 SAVE
+
+106. 1
+15 PUSH
+32 BUTTON
+0
+63
+0
+164
+1
+68
+1
+132
+129
+228 (228 - 128 = 100)
+1	"OK"
+20	"Click!"
+
+107. 11	" ELEVATOR "
+6 OPEN
+19	SHAFT
+130
+194
+1	"OK"
+23	"I exert my Spider strength!"
+72 SWAP
+23	"elevator shaft",0,19,0
+22	"closed elevator door",5,19,0
+112
+99
+1
+15
+110
+3
+0
+1
+0
+0
+132
+105
+76 LOOK
+69
+
+2	" DOOR "
+0
+0
+128
+0
+110
+2
+15
+3
+0
+0
+0
+127
+1
+244
+128
+160
+100
+1
+15
+113
+5
+0
+0
+128
+13
+62
+0
+49
+59
+23
+89
+7
+0
+0
+128
+0
+112
+109
+15
+60
+9
+110
+6
+0
+2
+0
+0
+128
+0
+110
+4
+15
+3
+0
+0
+0
+127
+1
+244
+128
+128
+100
+1
+15
+113
+10
+0
+0
+128
+0
+110
+6
+0
+99
+23
+15
+110
+7
+15
+60
+34
+4
+0
+0
+0
+26
+134
+32
+53
+0
+53
+23
+89
+0
+0
+0
+128
+0
+76 LOOK
+
+108. 52
+11 LOOK
+34 MIRROR
+203	203 - 128 = 75
+195
+193
+131
+34	25. "wall mirror",10,34,0
+1	"OK"
+3	"I see"
+24	"SPIDER-MAN"
+128
+173 "\."
+
+13
+1	GO
+19	SHAFT
+130
+226
+1
+99
+2
+19
+99
+6
+20
+95
+32
+19
+20
+54 GOTO
+6	Room 6: "dimly lit Elevator Shaft"
+76	LOOK
+
+110. 49
+11	LOOK
+19	SHAFT
+203
+195
+193
+130
+226
+3	"I see"
+25	"it's empty!"
+
+66
+16
+5
+134
+0
+129
+0
+128
+0
+
+55
+1	GO
+8	CEILING
+66
+16
+8
+134
+0
+129
+0
+128
+0
+
+55
+1	GO
+8	CEILING
+71
+1	GO
+8	CEILING
+134
+0
+129
+0
+0
+159
+0
+196
+1
+36
+1
+100
+1
+196
+2
+100
+133
+4
+1
+53
+0
+59
+1
+60
+6
+89
+
+34
+11 LOOK
+11 WALL
+195
+193	PRESENT (3)
+128
+0
+55	MEANS
+11	LOOK
+19	SHAFT
+
+115. 49		"IN ELEVTAOR. LOOK SHAFT "
+11 LOOK
+19 SHAFT
+203
+195	AT
+193
+0 Room 6: "dimly lit Elevator Shaft"
+196
+128 DESTROYED
+142	3. "*Gem",0,59,5
+3 "I see"
+26 "mostly empty tool niches."
+
+116. 49		"IN ELEVTAOR. LOOK SHAFT "
+11 LOOK
+19 SHAFT
+203
+195	AT
+193
+1	Room 9: "dimly lit Elevator Shaft"
+36
+128	DESTROYED
+174	4. "*Gem",0,59,5
+3 "I see"
+26 "mostly empty tool niches."
+
+117. 49	" ELEVATOR "
+11 LOOK
+19 SHAFT
+203
+195
+193	AT
+1	Room 11: "dimly lit Elevator Shaft"
+100
+128	DESTROYED
+206	5. "*Gem",0,59,5
+3 "I see"
+26 "mostly empty tool niches."
+
+35
+3 GET
+59 GEM
+136
+22
+128
+0
+55	MEANS
+11 LOOK
+22 NICHE
+116
+
+118. 54		"LOOK NICHE "
+11 LOOK
+22 NICHE
+203
+195
+193	AT
+0
+196
+128
+142
+12 "I found & got a"
+85 PRINTOBJ
+4	"*Gem",0,59,5
+74	TAKE
+4	"*Gem",0,59,5
+128
+173 "\."
+
+119. 54
+11 LOOK
+22 NICHE
+203
+195
+193	AT
+1
+36
+128
+174
+12 "I found & got a"
+85	PRINTOBJ
+5	"*Gem",0,59,5
+74	TAKE
+5	"*Gem",0,59,5
+128
+173 "\."
+
+120. 54
+11 LOOK
+22 NICHE
+203
+195 = present?
+193
+1
+100
+128
+206
+12 "I found & got a"
+85	PRINTOBJ
+6	"*Gem",0,59,5
+74	TAKE
+6	"*Gem",0,59,5
+128
+173 "\."
+
+121. 54
+11 LOOK
+22 NICHE
+203
+195
+193
+1
+196
+128
+238
+12	"I found & got a"
+85	PRINT NAME OF OBJECT 7 (*Gem)
+7
+74	GET OBJECT 7 (*Gem)
+7
+128
+173 "\."
+
+122. 49
+11 LOOK
+19 SHAFT
+203
+195 = present?
+193
+1
+196
+128
+238
+3	"I see"
+26	"mostly empty tool niches."
+
+18
+11	LOOK
+0	ANY
+198
+1
+100
+128
+105
+1  "OK"
+3 "I see"
+28 "the elevator bottom"
+
+123. 50
+11 LOOK
+5 UP
+193
+128
+0
+1
+100
+128
+105
+1	"OK"
+3 "I see"
+28 "the elevator bottom"
+
+3	" PUSH "
+26 RAISE
+19 SHAFT
+1
+100
+128
+105
+58	SET 3
+3
+1	"OK"
+23	"I exert my Spider strength!"
+
+3
+25	SET
+19	SHAFT
+1
+100
+128
+105
+58	SET 3
+3
+1	"OK"
+23	"I exert my Spider strength!"
+
+124. 99
+15 PUSH
+5	UP
+134
+19
+129
+0
+131
+19
+1
+100
+128
+105
+58	SET 3
+3
+1	"OK"
+23	"I exert my Spider strength!"
+
+125. 3
+15	PUSH
+19	SHAFT
+1
+100
+128
+105
+58	SET 3
+3
+1	"OK"
+23	"I exert my Spider strength!"
+
+128. 54
+11	LOOK
+25	SKY
+203
+195
+193
+2
+36
+131
+142
+3	"I see"
+34	"something!"
+85 PRINTOBJ
+28	"strange cloud",0,35,0
+53	DROP
+28	"strange cloud",0,35,0
+76	LOOK
+
+129. 51
+11	LOOK
+35	CLOUD
+203
+195
+193
+131
+130
+3	"I see"
+35	"MYSTERIO"
+128
+173 "\."
+
+130. 2
+1	GO
+35	CLOUD
+128
+0
+16	"How?"
+2	"I can't"
+36	"reach it."
+
+2
+6	OPEN
+15	FAN
+130
+130
+6	"Sorry,"
+2	"I can't"
+14	"blades would hurt!"
+
+2
+36	STOP
+15	FAN
+130
+130
+6	"Sorry,"
+2	"I can't"
+14 	"blades would hurt!"
+2
+
+131. 2
+1	GO
+15	FAN
+130
+130
+6	"Sorry,"
+2	"I can't"
+14	"blades would hurt!"
+
+132. 73
+11	LOOK
+15	FAN
+203
+195
+193
+199
+128
+228
+13
+81
+2
+78
+128
+173 "\."
+3
+15
+81
+2
+
+134. 54
+11	LOOK
+36	OCK
+203
+195
+193
+4
+67
+130
+110
+1
+74	GET OBJECT 19 (*Gem)
+19
+76
+12	"I found & got a"
+85	PRINT NAME OF OBJECT 19 (*Gem)
+19
+
+135. 33
+15 PUSH
+32 BUTTON
+128
+0
+128
+228
+76
+16
+36
+5
+37
+128
+0
+128
+0
+120
+99
+8
+48
+121
+42
+8
+0
+130
+37
+128
+0
+120
+99
+3
+52
+98
+49
+53
+99
+37
+49
+121
+
+35
+8	SHOOT
+37	WEB
+128
+0
+0
+53
+128
+32
+99
+14
+15
+73
+0
+0
+0
+132
+105
+116
+2
+0
+0
+128
+13
+62
+0
+49
+3
+0
+0
+129
+73
+110
+3
+0
+112
+2
+0
+0
+129
+73
+110
+2
+15
+3
+0
+0
+1
+73
+0
+127
+1
+244
+130
+64
+100
+1
+15
+113
+6
+0
+0
+128
+0
+109
+15
+58
+10
+60
+9
+112
+2
+0
+0
+128
+0
+110
+4
+15
+3
+0
+0
+0
+127
+1
+244
+128
+128
+
+100
+1	GO
+15	FAN
+113
+4
+0
+0
+128
+0
+109
+15
+110
+4
+15
+1
+0
+0
+0
+26
+134
+32
+53
+0
+4
+0
+0
+128
+0
+110
+6
+0
+89
+116
+
+90. 34
+8	SHOOT
+37	WEB
+131 WORD1
+15	FAN
+128
+228
+81
+1
+73 CONTINUE
+
+6
+0
+0
+128
+15
+6	"Sorry,"
+2	"I can't"
+8	"I've got"
+9	"no web fluid!"
+81 SELECT 1
+1
+69
+
+5
+0
+0
+128
+0
+77 DECR
+81 SELECT 1
+1
+81 SELECT 2
+2
+1
+
+91. 3
+0
+0
+134
+112
+83 SUB 50
+50
+17	"I hit"
+19 "fan! Spang!"
+
+92. 1
+0
+0
+134
+112
+83 SUB 50
+50
+
+1
+0
+0
+128
+0
+81 SWAP 2
+2
+
+34
+8	SHOOT
+37	WEB
+131	WORD1
+32	BUTTON
+128
+228
+81	SELECT COUNTER 1?
+1	"OK"
+73	CONTINUE
+
+6
+0
+0
+128
+15
+6	"Sorry"
+2	"I can't"
+8	"I've got"
+9	"no web fluid!"
+81	SWAP 1
+1
+69
+
+5
+0
+0
+128
+0
+1
+77	DECREMENT COUNTER
+81	SELECT COUNTER 1?
+1
+81	SELECT COUNTER 2?
+2
+
+137. 3
+0
+0
+134
+80
+17	"I hit"
+19	"fan! Spang!"
+83	SUBTRACT 25 FROM COUNTER
+25
+
+138. 6
+0
+0
+6
+79
+130
+130
+17	"I hit"
+18	"it"
+72	SWAP
+20	"large fan directly in my way",7,15,0
+21	"stopped fan in my way",0,15,0
+79	SET COUNTER TO 0
+0
+
+139. 1
+0
+0
+134
+79
+20	 "Click!"
+76	Look
+
+140. 1
+0
+0
+128
+0
+81	SELECT 2
+2
+
+141. 3
+16	JUMP
+0
+130
+36
+1	"OK"
+54 GOTO
+18	"*I'm floating in the Sky"
+76	LOOK
+
+142. 3
+1	GO
+25	SKY
+130
+36
+1	"OK"
+54	GOTO
+18	"*I'm floating in the Sky"
+76	LOOK
+
+143. 3
+1	GO
+26	FORWARD
+130
+36
+1	"OK"
+54	GOTO
+18	"*I'm floating in the Sky"
+76	LOOK
+
+144. 4
+19 FEEL
+1 NORTH
+130	130 - 128 = 2 AT
+68	60 - 50 = 18 ("*I'm floating in the Sky")
+30 "I feel"
+31 "a door. I enter."
+54	GOTO ROOM 21 ("small deserted Office")
+21
+76	LOOK
+
+145. 4
+19 FEEL
+2 SOUTH
+130	130 - 128 = 2 AT
+68	60 - 50 = 18 ("*I'm floating in the Sky")
+30 "I feel"
+31 "a door. I enter."
+54	GOTO ROOM 23 ("small deserted Office")
+23
+76	LOOK
+
+146. 3
+19 FEEL
+4 WEST
+128
+0
+30 "I feel"
+4 "nothing special"
+128
+173 "\."
+
+147. 3
+19 FEEL
+3  EAST
+128
+0
+30 "I feel"
+4 "nothing special"
+128
+173 "\."
+
+148. 3
+19 FEEL
+5 UP
+128
+0
+30 "I feel"
+4 "nothing special"
+128
+173 "\."
+
+149. 3
+19	FEEL
+6	DOWN
+128
+0
+30  "I feel"
+32 "the floor in that direction."
+128
+173 "\."
+
+150. 1
+19	FEEL
+0	ANY
+130
+68
+30 "I feel"
+32 "the floor in that direction."
+
+2
+6	OPEN
+19	DOOR
+128
+0
+
+151. 55
+6	OPEN
+56	MESH
+70
+6
+56
+137
+0
+129
+0
+131
+66	INVENTORY
+1	"OK"
+23	"I exert my Spider strength!"
+72	SWAP
+26	"air intake mesh",24,56,0
+27	"open air duct",0,19,0
+74	TAKE
+64	"mesh",0,56,1
+
+152. 3
+1	GO
+19	SHAFT
+131
+98
+1
+54	GOTO
+7
+76	LOOK
+
+153. 17
+11	LOOK
+6	DOWN
+193
+130
+36
+3	"I see"
+33	"I'm on the TOP floor!"
+
+154. 3
+1	GO
+15	FAN
+131
+162
+1 "OK"
+54 GOTO
+7
+76 LOOK
+
+155. 3
+1	GO
+15	FAN
+130
+162
+1	"OK"
+54	GOTO
+8
+76	LOOK
+
+156. 8
+3	GET
+36	OCK
+3
+226
+131
+206
+90
+6
+8	"I've got"
+38	"DOCTOR OCTOPUS"
+40	"arm "
+128
+173 "\."
+74	GET OBJECT 30 (" DOC's arm")
+30
+
+157. 4
+5	DROP
+36	OCK
+131
+193
+1 "OK"
+59 DESTROY
+30	" DOC's arm"
+60	CLEAR 5
+5
+
+158. 4
+16 JUMP
+0
+128
+200
+1	"O.K."
+42	"ELECTRO"
+45	"misses!"
+60	CLEAR 6
+6
+
+159. 0
+16	JUMP
+0
+128
+201
+5	"HUH?"
+
+162. 102
+21 HIT
+33	ELECTRO
+139
+0
+130
+0
+129
+0
+132
+34
+58
+6
+58
+4
+37	"My Spider Sense tingles "
+128
+173 "\."
+
+163. 39
+11	LOOK
+33	ELECTRO
+195
+193 PRESENT
+4
+99	33. " ELECTRO",34,33,1
+130
+78
+1
+74	GET OBJECT 18 (*Gem)
+18
+12	"I found & got a"
+85	PRINT NAME OF OBJECT 18 (*Gem)
+18
+128
+173 "\."
+
+164. 3
+7	SCAN
+81	LIZARD
+132
+162
+1
+50	"CaCO3+HCl->CaCl2+..."
+128
+147 "- says MADAME WEB!"
+
+165. 3
+7	SCAN
+12	MYSTERIO
+132
+162
+1
+51	"It maps odd!"
+128
+147	"- says MADAME WEB!"
+
+170. 21
+1	GO
+46	CRIB
+203
+133
+130
+6	"Sorry,"
+2	"I can't"
+128
+175	"I'm too big"
+128
+173 "\."
+
+171. 101
+21	HIT
+47	SANDMAN
+139
+0
+130
+0
+129
+0
+134
+66
+23	"I exert my Spider strength!"
+17	"I hit"
+128
+138	"& I do no damage!"
+128
+136
+
+172. 6
+7	SCAN
+47	SANDMAN
+132
+162
+1	O.K."
+128
+137	"You're above"
+128
+138	"him"
+128
+147	"- says M. WEB!"
+
+173. 37
+11 LOOK
+50	CONNERS
+195 = present?
+193
+6
+99
+128
+78
+1
+12	"I found & got a"
+85	PRINT NAME OF OBJECT 2 (*Gem)
+2
+74	GET OBJECT 2 (*Gem)
+2
+
+174. 101
+21	HIT
+51	HYDROMAN
+139
+0
+130
+0
+129
+0
+134
+130
+23	"I exert my Spider strength!"
+17	"I hit"
+128
+138	"him"
+128
+136	"& I do no damage!"
+
+175. 4
+7	SCAN
+51	HYDROMAN
+132
+162
+1	"OK"
+128
+139	"Solid!"
+128
+147	"- says MADAME WEB!"
+
+176. 35
+11	LOOK
+52	THERMOSTAT
+195 = present?
+193
+134
+194
+3	"I see"
+128
+140	"it's set at:"
+78	PRINTCOUNT
+
+177. 1
+25	SET
+52	THERMOSTAT
+134	PRESENT
+194	54 "thermostat",15,52,0
+128
+141	"Raise or lower?"
+
+178. 2
+26	RAISE
+0	ANY
+0
+127
+134	PRESENT
+194	54 "thermostat",15,52,0
+3	"I see"
+4	"nothing special"
+10	"happens. "
+
+2
+26 RAISE
+0	ANY
+0
+159
+124
+220
+0
+0
+124
+220
+134
+128
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+3
+26	RAISE
+0	ANY
+6
+194
+139
+80
+6	"Sorry,"
+2	"I can't"
+128
+173 "\."
+
+3
+27	LOWER
+0	ANY
+6
+194
+131
+239
+6	"Sorry,"
+2	"I can't"
+128
+173 "\."
+
+180. 5
+26	RAISE
+0	ANY
+134
+194
+1 "OK"
+82 ADD 20
+20
+128
+140	"it's set at:"
+78	Print current counter value
+
+181. 5
+27	LOWER
+0	ANY
+134
+194
+1	"OK"
+83 SUB 20
+20
+128
+140		"it's set at:"
+78	Print current counter value
+
+182. 34
+11	LOOK
+4	WEST
+195
+193
+4
+100
+1
+250
+132
+128
+3	"I see"
+128
+144	"Bio Gem!"
+
+66
+8	SHOOT
+37	WEB
+131
+59
+131
+9
+4
+100
+1
+250
+132
+128
+81
+1
+73
+6
+0
+0
+128
+15
+6
+2
+8
+9
+81
+1
+69
+7
+0
+0
+4
+100
+0
+63
+129
+226
+77
+81
+
+1
+1	GO
+8	CEILING
+18
+74
+15
+
+186. 50
+11	LOOK
+53	AQUARIUM
+203
+195
+193
+6
+227
+129
+206
+3 "I see"
+128
+145 "a gem in the water."
+
+69
+3	GET
+59	GEM
+136
+53
+136
+39
+6
+227
+134
+131
+6	"Sorry,"
+2	"I can't"
+128
+146 "HYDROMAN"
+128
+135 "won't let me"
+
+70
+3	GET
+59	GEM
+136
+53
+136
+39
+6
+227
+129
+206
+1	"OK"
+74 TAKE
+14	"*Gem",0,59,5
+8 "I've got"
+18 "it"
+128
+173 "\."
+
+98
+30	EMPTY
+39	WATER
+136
+0
+131
+0
+129
+0
+128
+0
+55 MEANS
+30 EMPTY
+53 AQUARIUM
+
+187. 37
+30	EMPTY
+53	AQUARIUM
+128
+0
+6
+227
+134
+130
+6	"Sorry,"
+2	"I can't"
+128
+146 "HYDROMAN"
+128
+135 "won't let me"
+
+188. 40
+30	EMPTY
+53	AQUARIUM
+128
+0
+6
+227
+129
+206
+1	"OK"
+53 DROP
+14	"*Gem",0,59,5
+12	"I found & got a"
+85	PRINTOBJ
+14	"*Gem",0,59,5
+128
+173 "\."
+76
+
+0
+3	GET
+53	AQUARIUM
+134
+226
+73
+5
+0
+0
+134
+130
+6
+128
+146 "HYDROMAN"
+128
+135 "won't let me"
+69
+7
+0
+0
+128
+0
+1
+74 TAKE
+55	HOLE
+8	"I've got"
+85	PRINTOBJ
+55	"aquarium",38,53,1
+128
+173 "\."
+
+192. 3
+1	GO
+19	SHAFT
+129
+68
+1	"OK"
+54 GOTO
+9	"dimly lit Elevator Shaft"
+76	LOOK
+
+193. 3
+1	GO
+19	SHAFT
+129
+132
+1	"OK"
+54	GOTO
+11 	"dimly lit Elevator Shaft"
+76	LOOK
+
+194. 3
+1	GO
+19	SHAFT
+129
+228
+1	"OK"
+54	GOTO
+14	"dimly lit Elevator Shaft"
+76 LOOK
+
+195. 195. 103
+21	HIT
+36	OCK
+139
+0
+130
+0
+129
+0
+131
+226
+24	"SPIDER-MAN"
+45	"misses!"
+38	"DOCTOR OCTOPUS"
+39	"pulls away."
+
+60
+5	DROP
+59	GEM
+30
+
+196. 5
+6 OPEN
+57	DESK
+7
+67
+128
+110
+1	"OK"
+12	"I found & got a"
+85	PRINTOBJ 3 (*Gem)
+3
+74	GET OBJECT 3 (*Gem)
+3
+
+197. 35
+11	LOOK
+60	PAINTING
+195 = present?
+193
+135
+131
+1	"OK"
+3	"I see"
+128
+149	"a framed portrait of J.J.Jameson."
+
+198. 74
+6	OPEN
+60	PAINTING
+136
+60
+129
+0
+135
+131
+23 "I exert my Spider strength!"
+12	"I found & got a"
+85	PRINTOBJ 43 ("torn piece of paper")
+43
+128
+173 "\."
+72 SWAP
+61	"torn painting",0,60,1
+60	"painting",15,60,1
+74	GET OBJECT 43 ("torn piece of paper")
+43
+
+51
+11 LOOK
+46	CRIB
+203
+195 = present?
+193
+5
+130
+134
+14
+1
+3
+128
+150
+
+51
+11 LOOK
+46 CRIB
+203
+195 = present?
+193
+5
+130
+129
+174
+1
+3
+128
+199
+
+50
+11	LOOK
+46	CRIB
+203
+195 = present?
+193
+133
+130
+
+55
+11	LOOK
+46	CRIB
+36
+3
+59
+128
+0
+1
+174
+6
+34
+0
+159
+0
+34
+128
+2
+6
+128
+148
+128
+135
+68
+3
+59
+136
+46
+129
+0
+1
+174
+5
+130
+134
+66
+6
+128
+148
+128
+135
+70
+3
+59
+136
+46
+129
+0
+5
+130
+1
+174
+6
+78
+0
+63
+0
+223
+0
+2
+0
+34
+0
+31
+128
+255
+8
+85
+13
+128
+173 "\."
+74
+13
+36
+3
+45
+128
+0
+6
+14
+6
+34
+0
+159
+0
+34
+128
+2
+6
+128
+148
+128
+135
+68
+3
+45
+136
+46
+129
+0
+6
+14
+5
+130
+134
+66
+6
+128
+148
+128
+135
+70
+3
+45
+136
+46
+129
+0
+5
+130
+6
+78
+6
+14
+0
+63
+0
+223
+0
+2
+0
+34
+0
+31
+128
+255
+8
+85
+48
+128
+173 "\."
+74	TAKE
+48	"formula",0,45,1
+
+201. 35
+22 TALK
+51 HYDROMAN
+128
+0
+134
+130
+128
+152 "`You'll never get MY gem!` says"
+128
+146 "HYDRO-MAN"
+
+202. 35
+22 TALK
+47 SANDMAN
+128
+0
+6
+66
+129
+174
+128
+152 "`You'll never get MY gem!` says"
+128
+148 "SANDMAN"
+
+203. 34
+22 TALK OCK
+36
+128
+0
+131
+226
+128
+152 "`You'll never get MY gem!` says"
+38 "DOCTOR OCTOPUS"
+
+204. 35
+22 TALK
+81 LIZARD
+128
+0
+132
+194
+128
+152 "`You'll never get MY gem!` says"
+128
+153 "LIZARD"
+
+205. 34
+22 TALK
+33 ELECTRO
+128
+0
+132
+34
+128
+152 "`You'll never get MY gem!` says"
+42 "ELECTRO"
+
+206. 6
+7 SCAN
+21 MAZE
+132
+162
+128
+141 "Raise or lower?"
+128
+137 "You're above"
+18 "it"
+128
+147 "- says MADAME WEB!"
+
+207. 37
+22	TALK
+62	RINGMASTER
+128
+0
+135
+194
+128
+157 "`To defeat me's easy! Push knob & turn it!` says"
+128
+158 "RINGMASTER"
+128
+173 "\."
+
+208. 1
+4	DIE
+0	ANY
+128
+0
+1	"OK"
+61	DEATH
+
+1
+5	DROP
+31	DEAD
+128
+0
+1 "OK"
+61 DEATH
+
+209. 35
+11	LOOK
+66	PRESS
+195 = present?
+193
+136
+34
+3	"I see"
+18	"it"
+128
+167 "is stopped."
+
+210. 38
+11 LOOK
+67 DIAL
+195 = present?
+193 - 127 = 66
+136
+98
+81	SWAP 3
+3
+78	PRINT CURRENT COUNTER
+128
+161 "pounds of paper"
+81	SWAP 3
+3
+
+213. 35
+8	SHOOT
+37	WEB
+128
+0
+0
+53
+128
+32
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+11	"Web quickly dissolves."
+
+35
+8	SHOOT
+37	WEB
+128
+0
+0
+127
+0
+53
+128
+32
+6	"Sorry,"
+2	"I can't"
+8	"I've got"
+9	"no web fluid!"
+
+214. 34
+32	LISTEN
+0	ANY
+128
+0
+128
+0
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+215. 32
+20	WAIT
+0	ANY
+128
+0
+128
+0
+1 "OK"
+
+217. 98
+21 HIT
+0	ANY
+139
+0
+130
+0
+129
+0
+128
+0
+24 "SPIDER-MAN"
+128
+142 "is no vandal!"
+3
+
+25	SET
+0 ANY
+128
+0
+6	"Sorry,"
+2	"I can't"
+128
+173 "\."
+
+222. 2
+18	HELP
+0 ANY
+128
+0
+6	"Sorry,"
+2	"I can't"
+22	"but you may order a HINT & SOLUTION Book! Phone (305)-862-6917 for ordering info."
+
+223. 2
+19	FEEL
+0	ANY
+128
+0
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+224. 33
+11 LOOK
+23	SOMETHING
+195 = present?
+193
+128
+0
+5	HUH?"
+29	"Be more specific."
+
+36
+13	MAKE
+55	HOLE
+128
+0
+128
+0
+6	"Sorry,"
+2 	"I can't"
+24 "SPIDER-MAN"
+128
+142 "is no vandal!"
+
+225. 3
+13 MIX
+0	ANY
+0
+127
+129
+164
+6	"Sorry,"
+8	"I've got"
+128
+129 "no facilities here."
+
+226. 1
+13	MIX
+0	ANY
+129
+164
+6	"Sorry,"
+29	"Be more specific."
+
+227. 3
+24	WAKE
+0	ANY
+128
+0
+6	"Sorry,"
+2	"I can't"
+128
+173 "\."
+
+3
+38 KILL
+0 ANY
+128
+0
+6 "Sorry,"
+24 "SPIDER-MAN"
+128
+219 "isn't a killer!"
+
+228. 69
+9	TYPE
+69	RUN
+134
+41
+129
+0
+0
+100
+8
+77
+136
+174
+81 SWAP 3
+3
+1	"OK"
+73	CONTINUE
+128
+162 "Computer types:"
+
+229. 5
+0
+0
+246
+207
+128
+164 "need 950"
+128
+161 "pounds of paper"
+128
+165 "to start presses!"
+
+230. 6
+0
+0
+246
+208
+128
+166 "printing complete!"
+59	DESTROY
+66	"roll of blank paper",22,44,0
+62	PUT
+69	"newspaper",0,74,1
+34	Room 34: "dimly lit Basement"
+
+231. 1
+0
+0
+128
+0
+81	SELECT 3
+3
+
+65
+9 TYPE
+73 NEW
+134
+41
+129
+0
+128
+100
+1	"OK"
+73	CONTINUE
+
+6
+0
+0
+136
+174
+1	"OK"
+6 "Sorry,"
+128
+190 "but that worked! THIS PROGRAM'S NOW ERASED FROM MEMORY!"
+58 SET 22
+22
+69
+
+7
+0
+0
+8
+173
+137
+14
+128
+181 "CHIEF EXAMINER appears & says: `Congratulations!` "
+12	"I found & got a"
+85	PROBJ
+5	"*Gem",0,59,5
+74	TAKE
+72	"*Gem",0,59,5
+
+69
+0
+0
+0
+128
+0
+116
+36
+1
+66
+195 = present?
+193
+136
+34
+27	"Something stops me!"
+6	"Sorry,"
+18	"it"
+128
+168 "is computer run!"
+
+233. 35
+1 GO
+41 COMPUTER
+195 = present?
+193
+128
+100
+1
+53 DROP
+70	"computer keyboard",0,41,0
+76	LOOK
+
+234. 68
+9	TYPE
+0	ANY
+134
+41
+129
+0
+128
+100
+1 "OK"
+128
+162 "Computer types:"
+128
+163 "SYNTAX ERROR."
+
+235. 34
+11	LOOK
+44	PAPER
+195 = present?
+193
+136
+66
+3 "I see"
+128
+160 "enough for 1 newspaper."
+
+236. 3
+7	SCAN
+59	GEM
+132
+163
+128
+170 "Gems here, then SCORE!"
+128
+147 "- says MADAME WEB!"
+
+237. 35
+11 LOOK
+77	SIGN
+195 = present?
+193
+132
+3
+1	"OK"
+3 "I see"
+128
+169 "`Be more careful!` signed CHIEF EXAMINER"
+
+35
+11	LOOK
+77	SIGN
+195
+193	PRESENT (3)
+131
+3
+1	"OK"
+3	"I see"
+128
+218 "`To prove yourself worthy of these powers you must show you can supply the brainpower! You must collect all the *Gems & store them properly away! Good Luck`-Chief Examiner."
+
+239. 37
+11 LOOK
+74	PAPER#2
+195
+193	PRESENT (3)
+136	69. "newspaper",0,74,1
+163 (94)
+1 "OK"
+3 "I see"
+128
+171 "Bugle Headlines:`QUESTPROBE fever sweeps nation!`"
+128
+227 "The puzzle on page 2 says: `A gem is in reverse new type!`"
+
+240. 40
+11 LOOK
+80 CLOCK
+195	PRESENT (3)
+193
+136	71. "clock",15,80,1
+227	(156)
+1	"OK"
+3	"I see"
+81 SWAP 4
+4
+78	PRINT COUNTER
+81	SWAP 4
+4
+128
+172 "moves used."
+
+32
+22	SAY
+0	ANY
+128
+0
+128
+0
+1 "OK"
+
+244. 2
+7	SCAN
+0	ANY
+132
+162
+48	"That future is hidden!"
+128
+147	"- says MADAME WEB!"
+
+34
+33	KNOCK
+0	ANY
+128
+0
+128
+0
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+2
+26 RAISE
+0	ANY
+128
+0
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+69
+3	GET
+0	ANY
+130
+7
+129
+0
+128
+0
+109
+30
+112
+68 CLEAR 0
+60	CLEAR 20
+20
+
+2
+0
+0
+124
+221
+124
+192
+124
+222
+128
+32
+58
+20
+67
+0
+0
+0
+0
+8
+0
+127
+252
+194
+68
+9
+0
+0
+128
+8
+52
+131
+230
+8
+122
+131
+230
+128
+173 "\."
+115
+3
+0
+0
+5
+114
+131
+192
+100
+1
+30
+113
+2
+0
+0
+2
+137
+128
+9
+128
+191 "It's beyond my power to do that!"
+69
+2
+0
+0
+128
+9
+6
+128
+186 "I don't see it here."
+
+37
+5	DROP
+0	ANY
+128
+0
+128
+0
+109
+30
+112
+68	CLEAR 0
+60 CLEAR 21
+21
+9
+0
+0
+124
+221
+124
+192
+124
+193
+124
+222
+128
+32
+53
+131
+230
+128
+176 I leave"
+122
+131
+230
+58
+21
+1
+0
+0
+2
+168
+0
+63
+0
+223
+0
+196
+1
+36
+1
+100
+1
+196
+0
+31
+128
+255
+128
+217 "\, I set it down so it won't fall"
+3
+0
+0
+130
+168
+128
+173 "\."
+115
+67
+3
+0
+0
+5
+114
+131
+192
+100
+1
+30
+113
+2
+0
+0
+128
+9
+6
+128
+187 "I don't have that."
+0
+14
+5
+128
+0
+1
+1
+1
+0
+124
+220
+128
+0
+5
+29
+0
+1
+26
+128
+0
+29	"Be more specific."
+
+34
+1	GO
+0	ANY
+195
+193
+128
+0
+109
+30
+112
+8
+0
+0
+124
+194
+124
+221
+252
+192
+1
+128
+197 "I'm at the"
+85	PRINTNOUN
+131
+230
+128
+173 "\."
+
+69
+3
+0
+0
+5
+114
+131
+192
+100
+1
+30
+113
+3
+0
+0
+128
+0
+6 "Sorry,"
+2 "I can't"
+128
+179 "do that here."
+
+32
+1	GO
+0
+128
+0
+128
+
+4
+0
+34	MIRROR
+15
+0
+128
+0
+128
+0
+6	"Sorry,"
+4	"nothing special"
+10	"happens. "
+
+51
+11 LOOK
+0	ANY
+203
+199
+197
+128
+0
+6 "Sorry,"
+2 "I can't"
+128
+195 "do that yet."
+
+33
+11 LOOK
+0	ANY
+128
+0
+128
+0
+120
+73 CONTINUE
+
+4
+0
+0
+0
+159
+6
+52
+128
+0
+1	"OK"
+3	"I see"
+4	"nothing special"
+128
+173 "\."
+
+0
+0
+0
+128
+0
+76 LOOK

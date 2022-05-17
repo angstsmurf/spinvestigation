@@ -1,0 +1,1132 @@
+ScottFree/TRS-80 version decompiled with ScottKit. I have added index numbers to those
+that have a direct counterpart in the Saga Plus actions.
+
+1. occur when !flag 2
+	set_flag 2
+	continue
+	set_counter 500
+	select_counter 2
+
+2. occur 0%
+	print "Questprobe 2: SPIDERMAN by Scott Adams. CBM64 version by Brian Howarth. Artwork by Teoman Irmak."
+	set_counter 0
+	select_counter 1
+	set_counter 2
+
+3. occur 0%
+	select_counter 3
+	set_counter 0
+	select_counter 4
+	set_counter 71
+
+occur 0%
+	goto Office
+	swap_room
+	goto floor
+	look2
+
+5. occur when carried ELECTRO
+	set_flag 6
+	print "My Spider Sense tingles"
+	drop ELECTRO
+	look2
+
+occur when at Shaft3 and !flag 3
+	goto Shaft2
+	look2
+	print "Something stops me!"
+
+7. occur when !here ELECTRO and flag 6 and !at room3 and !at Basement
+	clear_flag 6
+
+8. occur when carried arm and flag 6
+	clear_flag 6
+	clear_flag 5
+	print "Bolt hits doc's arm!"
+	continue
+
+9. occur 0%
+	swap OCTOPUS OCTOPUS1
+	destroy2 arm
+	print "DOCTOR OCTOPUS"
+	print "is stunned!"
+
+10. occur when !carried arm and here ELECTRO and flag 6
+	clear_flag 6
+	print ELECTRO
+	print "throws electrical bolt at me!"
+	die
+
+11. occur 20% when here ELECTRO and !flag 6
+	set_flag 6
+	print "My Spider Sense tingles"
+	print towards
+	print ELECTRO
+
+12. occur when carried HYDROMAN
+	drop HYDROMAN
+	look2
+
+13. occur when flag 4 and here ELECTRO
+	print "I hit"
+	print ELECTRO
+	swap ELECTRO ELECTRO1
+	look2
+
+14. occur when flag 4
+	clear_flag 4
+
+occur when at 1
+	goto Sky
+	look2
+	print "Something stops me!"
+
+occur when at ""
+	goto Skyscraper
+	look2
+	print "Something stops me!"
+
+17. occur 20% when at room1
+	print "I see"
+	print MYSTERIO
+	print "ran by!"
+
+18. occur when exists ceiling and !here ceiling
+	clear_flag0
+	continue
+	destroy2 ceiling
+
+19. occur 0% when !at Shaft and !at Shaft1 and !at Shaft2 and !at Shaft3 and !at Skyscraper
+	set_flag0
+
+20. occur 0% when flag 0 and !at Ceiling
+	drop ceiling
+
+21. occur when exists wall
+	clear_flag0
+	continue
+	destroy2 wall
+
+22. occur 0% when !at Shaft and !at Shaft1 and !at Shaft2 and !at Shaft3 and !at Skyscraper
+	set_flag0
+
+23. occur 0% when flag 0 and !at Ceiling and !at Sky
+	drop wall
+
+occur when at Sky and here ceiling
+	destroy2 ceiling
+	goto Ceiling
+	look2
+
+occur when at Skyscraper and here ceiling
+	goto Ceiling
+	destroy2 ceiling
+	look2
+
+26. occur when carried arm and flag 5
+	destroy2 arm
+	print "DOCTOR OCTOPUS"
+	print "pulls away."
+	clear_flag 5
+
+27. occur when carried arm and !flag 5
+	set_flag 5
+
+28. occur when carried arm and !here OCTOPUS
+	destroy2 arm
+	print "DOCTOR OCTOPUS"
+	print "pulls away."
+	clear_flag 5
+
+29. occur when here presses and carried arm
+	print "DOCTOR OCTOPUS" 38
+	print "other arms cling to presses!" 41
+
+30. occur when here RINGMASTER and flag 18
+	print RINGMASTER
+	print "commands me to leave! I do."
+	goto floor2
+	look2
+
+31. occur when !here RINGMASTER
+	clear_flag 18
+	clear_flag 19
+
+32. occur when here RINGMASTER and !flag 18 and !flag 15
+	set_flag 18
+
+33. occur
+	select_counter 4
+	add_to_counter 1
+	select_counter 4
+
+34. occur when here underfoot and flag 7
+	print "My Spider Sense tingles"
+	swap underfoot SANDMAN
+	print "Sand becomes"
+	print SANDMAN
+
+35. occur when here underfoot and !flag 7 and !here ceiling and !here wall
+	set_flag 7
+	print "My Spider Sense tingles"
+	print "Someone says"
+	print OUCH!
+
+36. occur when !here underfoot
+	clear_flag 7
+
+37. occur when !exists underfoot and !here SANDMAN
+	swap underfoot SANDMAN
+
+occur when here Chloride and here LIZARD
+	swap LIZARD Conners
+	destroy2 Chloride
+	print it
+	print "happens."
+
+39. occur when counter_le 31 and !exists statue
+	swap statue HYDROMAN
+	continue
+
+40. occur 0%
+	swap block Aquarium
+
+41. occur when counter_gt 32 and !exists HYDROMAN
+	swap statue HYDROMAN
+	continue
+
+42. occur 0%
+	swap block Aquarium
+
+43. occur when flag 8
+	continue
+
+44. occur 0% when here egg
+	print "Egg explodes!"
+	die
+	destroy2 Gem12
+
+45. occur 0% when !moved Gem12
+	destroy2 Gem12
+
+46. occur 0%
+	destroy2 egg
+	clear_flag 8
+
+47. occur when here egg
+	set_flag 8
+
+occur when carried Aquarium and here HYDROMAN
+	drop Aquarium
+	look2
+	print HYDROMAN
+	print "won't let me!"
+
+49. occur 20% when at Sky and here cloud
+	destroy2 cloud
+
+50. occur 20% when at Sky
+	drop cloud
+	look2
+
+51. occur when at room3
+	select_counter 3
+	continue
+	set_counter 2
+
+52. occur 0% when here OCTOPUS1
+	add_to_counter 250
+
+53. occur 0% when here ELECTRO1
+	add_to_counter 185
+
+54. occur 0% when here Conners
+	add_to_counter 170
+
+55. occur 0% when here statue
+	add_to_counter 200
+
+56. occur 0% when here HYDROMAN
+	add_to_counter 200
+
+57. occur 0% when here Desk
+	add_to_counter 80
+
+occur 0% when here Couch
+	add_to_counter 70
+
+59 occur 0%
+	select_counter 3
+
+occur when at Skyscraper
+	draw 1
+
+occur when at Sky
+	draw 2
+
+62. action MIX WEB when at Laboratory and carried Formula and !present paper
+	print "Sorry,"
+	print "I've got"
+	print baby
+	print formula!
+
+63. action MIX when at Laboratory and present Hydrochloric and present Carbonate and present chemicals
+	print "Sorry,"
+	print "I've got"
+	print "too many ingredients."
+
+64. action LOOK PAPE when present paper
+	print "O.K."
+	print "I see"
+	print "partial web formula, needs exotic chemicals!"
+
+65. action MIX WEB when at Laboratory and !present paper
+	print "Sorry,"
+	print "I've got"
+	print "no formula."
+
+66. action MIX WEB when at Laboratory and !present chemicals
+	print "Sorry,"
+	print "I've got"
+	print "no chems!"
+
+67. action MIX WEB when at Laboratory and present paper and present chemicals
+	print "Partial success only!"
+	destroy2 chemicals
+	continue
+
+occur 0%
+	select_counter 1
+	set_counter 25
+	select_counter 1
+
+69. action MIX when at Laboratory and present Hydrochloric and present Carbonate
+	destroy2 Hydrochloric
+	destroy2 Carbonate
+	continue
+
+70. occur 0%
+	drop Chloride
+	print "O.K."
+	look2
+
+71. action GET DOWN when here ceiling
+	print "O.K."
+	destroy2 ceiling
+
+72. action GET DOWN when here wall
+	print "O.K."
+	destroy2 wall
+
+73. action QUIT:
+	game_over
+
+74. action CLOS EYES
+	print "O.K."
+	set_dark
+	look2
+
+75. action OPEN EYES
+	print "O.K."
+	clear_dark
+	look2
+
+76. action PUSH KNOB when here Knob
+	print "O.K."
+	set_flag 19
+
+77. action TURN KNOB when here RINGMASTER and flag 19
+	print Click!
+	swap RINGMASTER Gem13
+
+78. action HIT RING when here RINGMASTER and !flag 15
+
+79. action TURN KNOB when here Knob
+	print "O.K."
+	print Click!
+	print "nothing special"
+	print "happens."
+
+action DRIN ACID when present Hydrochloric
+	print "O.K."
+	destroy2 Hydrochloric
+	die
+
+action DRIN EGG when present egg
+	print "O.K."
+
+action DRIN HYDR when present HYDROMAN
+	print HYDROMAN
+	print "won't let me!"
+
+83. action SCOR:
+	select_counter 5
+	set_counter 4
+	swap_room
+	continue
+
+occur 0% when here Gem and here Gem1 and here Gem2 and here Gem3 and here Gem4
+	dec_counter
+
+occur 0% when here Gem5 and here Gem6 and here Gem7 and here Gem8 and here Gem9
+	dec_counter
+
+occur 0% when here Gem10 and here Gem11 and here Gem12 and here Gem13 and here Gem14
+	dec_counter
+
+occur 0% when here Gem15 and here Gem16 and here Gem17
+	dec_counter
+
+88. occur 0% when counter_eq 0
+	print "Chief Examiner appears & says; `Save this password: MICAH`"
+	pause
+	pause
+
+occur 0%
+	select_counter 5
+	swap_room
+	look2
+	score
+
+90. action AT FAN when flag 1
+	select_counter 2
+	clear_flag 1
+	print "O.K."
+	continue
+
+91. occur 0% when counter_gt 51
+	subtract_from_counter 50
+	print "I hit"
+	print "fan! Spang!"
+
+92. occur 0% when counter_gt 51
+	subtract_from_counter 50
+
+occur 0%
+	select_counter 2
+
+94. action FOLL MYST when at room1
+	print "He went west!"
+
+95. action GET BIO when present Gem12
+	print "O.K."
+	superget Gem12
+
+96. action DROP BIO when present Gem12
+	print "O.K."
+	drop Gem12
+
+97. action GO WALL
+	print "O.K."
+	drop wall
+	destroy2 ceiling
+	look2
+
+98. action SAY WEB when here WEB
+	print "O.K."
+	print "`Ask me to scan! I.e. SCAN LIZARD`"
+	print "- says M. WEB!"
+
+action SHOO WEB
+	select_counter 1
+	continue
+
+occur 0% when counter_le 0
+	print "Sorry,"
+	print "I can't"
+	print "I've got"
+	print "no web fluid!"
+
+occur 0% when counter_gt 0
+	print "O.K."
+	set_flag 1
+	print "In 2 words: AT WHAT?"
+	dec_counter
+
+occur 0%
+	select_counter 1
+
+103. action INVE when !flag 15
+	inventory
+
+104. action GET INVE when !flag 15
+	inventory
+
+105. action SAVE GAME
+	print "O.K."
+	save_game
+
+106. action PUSH BUTT when here button
+ 	print "O.K."
+	print Click!
+
+107. action OPEN SHAF when here doors
+	print "O.K."
+	print "I exert my Spider strength!"
+	swap shaft doors
+	look2
+
+108. action LOOK MIRR when here mirror
+	print "O.K."
+	print "I see"
+	print SPIDERMAN
+
+109. action GO SHAF when here shaft
+	print "O.K."
+	goto Shaft
+	look2
+
+110. action LOOK SHAF when here shaft
+	print "I see"
+	print "its empty!"
+
+111. action HIT LIZA when here LIZARD
+	print LIZARD
+	print "won't let me!"
+
+112. action GO FLOO when here ceiling
+	print "O.K."
+	destroy2 ceiling
+	look2
+	clear_flag 6
+
+113. action GO CIEL when !at Shaft and !at Shaft1 and !at Shaft2 and !at Shaft3
+	continue
+	print "O.K."
+
+114. occur 0%
+	drop ceiling
+	destroy2 wall
+	look2
+	clear_flag 6
+
+115. action LOOK SHAF when at Shaft and !exists Gem2
+	print "I see"
+	print "mostly empty tool niches."
+
+116. action LOOK SHAF when at Shaft1 and !exists Gem3
+	print "I see"
+	print "mostly empty tool niches."
+
+117. action LOOK SHAF when at Shaft2 and !exists Gem4
+	print "I see"
+	print "mostly empty tool niches."
+
+118. action LOOK NICH when at Shaft and !exists Gem2
+	print "Found something!"
+	drop Gem2
+	look2
+
+119. action LOOK NICH when at Shaft1 and !exists Gem3
+	print "Found something!"
+	drop Gem3
+	look2
+
+120. action LOOK NICH when at Shaft2 and !exists Gem4
+	print "Found something!"
+	drop Gem4
+	look2
+
+121. action LOOK NICH when at Shaft3 and !exists Gem5
+	print "Found something!"
+	drop Gem5
+	look2
+
+122. action LOOK SHAF when at Shaft3 and !exists Gem5
+	print "I see"
+	print "mostly empty tool niches."
+
+123. action LOOK UP when at Shaft2 and !flag 3
+	print "O.K."
+	print "I see"
+	print "elevator bottom."
+
+124. action PUSH UP when at Shaft2 and !flag 3
+	set_flag 3
+	print "O.K."
+	print "I exert my Spider strength!"
+
+125. action PUSH SHAF when at Shaft2 and !flag 3
+	set_flag 3
+	print "O.K."
+	print "I exert my Spider strength!"
+
+action JUMP UP when !at Shaft and !at Shaft1 and !at Shaft2 and !at Shaft3
+	continue
+	print "O.K."
+
+occur 0%
+	drop ceiling
+	destroy2 wall
+	look2
+	clear_flag 6
+
+128. action LOOK SKY when at Skyscraper and !exists cloud
+	print "I see"
+	print something!
+	drop cloud
+	look2
+
+129. action LOOK CLOU when here cloud
+	print "I see"
+	print MYSTERIO
+
+130. action GO CLOU
+	print "How?"
+	print "I can't"
+	print "reach it."
+
+131. action GO FAN when here way
+	print "Sorry,"
+	print "I can't"
+	print "blades would hurt!"
+
+132. action LOOK FAN when at Duct and here way
+	print "RPMS fan rotates:"
+	select_counter 2
+	print_counter
+	continue
+
+occur 0%
+	print "I see"
+	print "a button beyond the fan."
+	select_counter 2
+
+134. action LOOK DOCT when present OCTOPUS1 and !exists Gem15
+	print "O.K."
+	drop Gem15
+	look2
+	print "Found something!"
+
+action PUSH BUTT when at Duct
+	look2
+	print "How?"
+
+action AT BUTT when flag 1 and at Duct
+	print "O.K."
+	select_counter 2
+	clear_flag 1
+	continue
+
+137. occur 0% when counter_gt 50
+	print "I hit"
+	print "fan! Spang!"
+	subtract_from_counter 25
+
+138. occur 0% when counter_le 50 and here way
+	print "I hit"
+	print it
+	swap way way1
+	set_counter 0
+
+139. occur 0% when counter_le 50
+	print Click!
+	look2
+
+140. occur 0%
+	select_counter 2
+
+141. action JUMP when at Skyscraper
+	print "O.K."
+	goto Sky
+
+142. action GO SKY when at Skyscraper
+	print "O.K."
+	goto Sky
+
+143. action GO FORE when at Skyscraper
+	print "O.K."
+	goto Sky
+
+144. action FEEL NORT when at Sky
+	print "I feel"
+	print "a door. I enter."
+	goto Office4
+	look2
+
+145. action FEEL SOUT when at Sky
+	print "I feel"
+	print "a door. I enter."
+	goto Office5
+	look2
+
+146. action FEEL WEST when at Sky
+	print "I feel"
+	print "nothing special"
+
+147. action FEEL EAST when at Sky
+	print "I feel"
+	print "nothing special"
+
+148. action FEEL UP when at Sky
+	print "I feel"
+	print "nothing special"
+
+149. action FEEL DOWN when at Sky
+	print "I feel"
+	print "the floor in that direction."
+
+150. action FEEL AROU when at Sky
+	print "I feel"
+	print "the floor in that direction."
+
+151. action OPEN MESH when here mesh
+	print "O.K."
+	print "I exert my Spider strength!"
+	swap mesh duct
+	superget Mesh
+
+152. action GO SHAF when here duct
+	print "O.K."
+	goto Duct
+	look2
+
+153. action LOOK DOWN when at Skyscraper
+	print "I see"
+	print "I'm on the TOP floor!"
+
+154. action GO FAN when here fan
+	print "O.K."
+	goto Duct
+	look2
+
+155. action GO FAN when here way1
+	print "O.K."
+	goto confused
+	look2
+
+156. action GET DOCT when here OCTOPUS and !exists arm
+	print "I've got"
+	print "DOCTOR OCTOPUS"
+	print arm
+	get arm
+
+157. action DROP DOCT when carried arm
+	print "O.K."
+	destroy2 arm
+	clear_flag 5
+
+158. action JUMP when flag 6
+	print "O.K."
+	print ELECTRO
+	print misses!
+	clear_flag 6
+
+159. action JUMP when !flag 6
+	print "HUH?"
+
+action GO FLOO when here wall and !at Shaft and !at Shaft1 and !at Shaft2 and !at Shaft3
+	continue
+
+occur 0%
+	destroy2 wall
+	print "O.K."
+	clear_flag 6
+
+162. action HIT ELEC when here ELECTRO
+	set_flag 6
+	set_flag 4
+	print "My Spider Sense tingles"
+
+163. action LOOK ELEC when present ELECTRO1 and !exists Gem14
+	print "O.K."
+	drop Gem14
+	look2
+	print "Found something!"
+
+164. action SCAN LIZA when here WEB
+	print "O.K."
+	print "CaCO3+HCl=CaCL2"
+	print "- says M. WEB!"
+
+165. action SCAN MYST when here WEB
+	print "O.K."
+	print "It maps odd!"
+	print "- says M. WEB!"
+
+action LOOK CRIB when !here wall and !here ceiling and !exists Formula
+	print "O.K."
+	print "I see"
+	print formula!
+
+action LOOK CRIB when !here wall and !here ceiling
+	print "Sorry,"
+	print "I can't"
+	print SANDMAN
+	print "won't let me!"
+
+action LOOK CRIB when here Crib and !exists Formula
+	print "O.K."
+	print "Found something!"
+	drop Formula
+	look2
+
+action LOOK CRIB when here Crib and exists Formula and !exists Gem10
+	print "O.K."
+	print "Found something!"
+	drop Gem10
+	look2
+
+170. action GO CRIB when here Crib
+	print "Sorry,"
+	print "I can't"
+
+171. action HIT SAND when here SANDMAN
+	print "I exert my Spider strength!"
+	print "I hit"
+	print him
+	print "& I do no damage!"
+
+172. action SCAN SAND when here WEB
+	print "O.K."
+	print "You're above"
+	print him
+	print "- says M. WEB!"
+
+173. action LOOK CONN when present Conners and !exists Gem
+	print "O.K."
+	print "Found something!"
+	drop Gem
+	look2
+
+174. action HIT HYDR when here HYDROMAN
+	print "I exert my Spider strength!"
+	print "I hit"
+	print him
+	print "& I do no damage!"
+
+175. action SCAN HYDR when here WEB
+	print "O.K."
+	print Solid!
+	print "- says M. WEB!"
+
+176. action LOOK THER when here Thermostat
+	print "I see"
+	print "its set at:"
+	print_counter
+
+177. action SET THER when here Thermostat
+	print "Raise or Lower?"
+
+178. action UP when counter_gt 90
+	print "Sorry,"
+	print "I can't"
+
+action DOWN when counter_le 31
+	print "Sorry,"
+	print "I can't"
+
+180. action UP when here Thermostat
+	print "O.K."
+	add_to_counter 20
+
+181. action DOWN when here Thermostat
+	print "O.K."
+	subtract_from_counter 20
+
+182. action LOOK WEST when at floor1 and !moved Gem12
+	print "I see"
+	print "Bio Gem!"
+
+183. action AT GEM when flag 1 and at floor1 and !moved Gem12
+	print "O.K."
+	print "I've got"
+	print it
+	continue
+
+occur 0%
+	clear_flag 1
+	drop Gem12
+
+185. action AT GEM when flag 1 and here Gem12
+	print "I've got"
+	print it
+	drop Gem12
+	clear_flag 1
+
+186. action LOOK AQUA when present Aquarium and !exists Gem11
+	print "I see"
+	print "a gem in the water."
+
+187. action EMPT AQUA when present Aquarium and here HYDROMAN
+	print "Sorry,"
+	print "I can't"
+	print HYDROMAN
+	print "won't let me!"
+
+188. action EMPT AQUA when present Aquarium and !exists Gem11
+	print "O.K."
+	drop Gem11
+	print "Found something!"
+	look2
+
+action AT BIO when flag 1 and at floor1 and !moved Gem12
+	print "O.K."
+	print "I've got"
+	print it
+	continue
+
+occur 0%
+	clear_flag 1
+	drop Gem12
+
+191. action GET FORM when !exists Formula and here underfoot and !here wall and !here ceiling
+	print "Sorry,"
+	print SANDMAN
+	print "won't let me!"
+
+192. action GO SHAF when at room1
+	print "O.K."
+	goto Shaft1
+	look2
+
+193. action GO SHAF when at room2
+	print "O.K."
+	goto Shaft2
+	look2
+
+194. action GO SHAF when at Penthouse
+	print "O.K."
+	goto Shaft3
+	look2
+
+195. action HIT DOCT when here OCTOPUS
+	print SPIDERMAN
+	print misses!
+	print "DOCTOR OCTOPUS"
+	print "pulls away."
+
+196. action OPEN DESK when present Desk and !exists Gem1
+	print "O.K."
+	print "Found something!"
+	drop Gem1
+	look2
+
+197. action LOOK PAIN when present Painting
+	print "O.K."
+	print "I see"
+	print "framed portrait J.J.Jameson."
+
+198. action OPEN PAIN when present Painting
+	print "I exert my Spider strength!"
+	print "Found something!"
+	swap painting Painting
+	drop paper
+
+action GET FORM when present Formula
+	print "O.K."
+	superget Formula
+
+action GET FORM when !exists Formula and here Crib and here SANDMAN
+	print "Sorry,"
+	print SANDMAN
+	print "won't let me!"
+
+201. action SAY HYDR when here HYDROMAN
+	print "`You'll never get MY gem!` says"
+	print HYDROMAN
+
+202. action SAY SAND when here SANDMAN
+	print "`You'll never get MY gem!` says"
+	print SANDMAN
+
+203. action SAY DOCT when here OCTOPUS
+	print "`You'll never get MY gem!` says"
+	print "DOCTOR OCTOPUS"
+
+204. action SAY LIZA when here LIZARD
+	print "`You'll never get MY gem!` says"
+	print LIZARD
+
+205. action SAY ELEC when here ELECTRO
+	print "`You'll never get MY gem!` says"
+	print ELECTRO
+
+206. action SCAN MAZE when here WEB
+	print "Raise or Lower?"
+	print "You're above"
+	print it
+	print "- says M. WEB!"
+
+207. action SAY RING when here RINGMASTER
+	print "`To defeat me is easy! Push the knob & turn it!` says"
+	print RINGMASTER
+
+208. action DIE:
+	print "O.K."
+	die
+
+209. action LOOK PRES when here presses
+	print "I see"
+	print it
+	print "is stopped."
+
+210. action LOOK DIAL when here Dial
+	select_counter 3
+	print_counter
+	print "pounds of paper"
+	select_counter 3
+
+211. action GET DOCT when present OCTOPUS1
+	print "O.K."
+	superget OCTOPUS1
+
+212. action DROP DOCT when present OCTOPUS1
+	print "O.K."
+	drop OCTOPUS1
+
+213. action AT when flag 1
+	print "nothing special"
+	print "happens."
+	print "Web quickly dissolves."
+	clear_flag 1
+
+214. action LIST:
+	print "nothing special"
+	print "happens."
+
+215. action WAIT:
+	print "O.K."
+
+action OPEN WIND
+	print "Sorry,"
+	print "I can't"
+	print "Something stops me!"
+
+217. action BREA:
+	print SPIDERMAN
+	print "is no vandal!"
+
+action SET:
+	print "Sorry,"
+	print "I can't"
+
+action GO WIND
+	print "Sorry,"
+	print "I can't"
+	print "Something stops me!"
+
+action STOP:
+	print "How?"
+
+action AT:
+	print "HUH?"
+
+222. action HELP:
+	print "Sorry,"
+	print "I can't"
+	print "but you can order a hint Book!"
+
+223. action FEEL:
+	print "Sorry,"
+	print "nothing special"
+	print "happens."
+
+224. action LOOK SOME
+	print "HUH?"
+	print "Be more specific."
+
+225. action MIX when !at Laboratory
+	print "Sorry,"
+	print "I've got"
+	print "no facilities here."
+
+226. action MIX when at Laboratory
+	print "Sorry,"
+	print "Be more specific."
+
+227. action WAKE:
+	print "Sorry,"
+	print "I can't"
+
+228. action TYPE RUN when at Lab and exists paper1
+	select_counter 3
+	print "O.K."
+	continue
+	print "Computer types:"
+
+229. occur 0% when counter_le 950
+	print "need 950"
+	print "pounds of paper"
+	print "to start presses!"
+
+230. occur 0% when counter_gt 950
+	print "printing complete!"
+	destroy2 paper1
+	put newspaper Basement
+
+231. occur 0%
+	select_counter 3
+
+action GO PRES when here presses
+	print "Something stops me!"
+	print "Sorry,"
+	print it
+	print "is computer run!"
+
+233. action GO COMP when at Lab
+	print "O.K."
+	drop keyboard
+	look2
+
+234. action TYPE when at Lab
+	print "O.K."
+	print "Computer types:"
+	print "SYNTAX ERROR."
+
+235. action LOOK PAPE when here paper1
+	print "I see"
+	print "enough for 1 newspaper."
+
+236. action SCAN GEM when present WEB
+	print "Gems here, then SCORE!"
+	print "- says M. WEB!"
+
+action SCAN SCOR when present WEB
+	print "Gems here, then SCORE!"
+	print "- says M. WEB!"
+
+237. action LOOK SIGN when present Sign
+	print "O.K."
+	print "I see"
+	print "`Be more careful!` - C.E."
+
+238. action OPEN NEWS when present newspaper and !exists Gem17
+	print "O.K."
+	print "Found something!"
+	drop Gem17
+	look2
+
+239. action LOOK NEWS when present newspaper
+	print "O.K."
+	print "I see"
+	print "Bugle Headlines: `QUESTPROBE fever sweeps nation!`"
+
+240. action LOOK CLOC when present Clock
+	select_counter 4
+	print_counter
+	select_counter 4
+	print "moves used."
+
+action USE:
+	print "Sorry,"
+	print "nothing special"
+	print "happens."
+
+action HIT when flag 15
+	print "HUH?"
+	print "How?"
+
+action SAY:
+	print "O.K."
+	println_noun
+
+244. action SCAN when here WEB
+	print "That future is hidden!"
+	print "- says M. WEB!"
+
+action LOOK:
+	print "O.K."
+	print "I see"
+	print "nothing special"
+	look2
