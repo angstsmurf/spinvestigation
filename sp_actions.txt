@@ -5,8 +5,8 @@ Also added comments from comments.txt at the top of each action.
 1. 9		" INTRO "
 0
 100
-128 ISCLEAR 2
-73
+128 	1000 0000  2
+73		0100 1001  9 ISCLEAR 2
 58 SET 2
 2
 73 CONTINUE
@@ -40,7 +40,7 @@ Also added comments from comments.txt at the top of each action.
 79	SETCURRENT 71
 71
 119
-24
+24	"SPIDER-MAN" ?
 
 8	 "trademarks "
 0
@@ -49,13 +49,13 @@ Also added comments from comments.txt at the top of each action.
 0
 24 "SPIDER-MAN"
 128
-226 "," 226 - 75 = 151
+226 ","
 35 "MYSTERIO"
 128
-226  "," 226 - 75 = 151
+226  ","
 38 "DOCTOR OCTOPUS"
 128
-226 "," 226 - 75 = 151
+226 ","
 
 10
 
@@ -65,7 +65,7 @@ Also added comments from comments.txt at the top of each action.
 0
 42 "ELECTRO"
 128
-226 "," 226 - 75 = 151
+226 ","
 128
 146 "HYDRO-MAN" 146 - 76 = 70
 128
@@ -82,11 +82,11 @@ Also added comments from comments.txt at the top of each action.
 128
 0
 128
-153 "LIZARD" 153 - 75 = 78
+153 "LIZARD" 153 - 76 = 77
 128
 226 ","
 128
-158 "RINGMASTER" 158 - 75 = 83
+158 "RINGMASTER" 158 - 76 = 82
 128
 226 ","
 128
@@ -110,10 +110,10 @@ Also added comments from comments.txt at the top of each action.
 3	"END OF GAME "
 0
 100
-130 2 NOTSET  6
-200
-110
-1
+130		1000 0010	22
+200		1100 1000	8	ISSET 22 ?
+110		0110 1110  	14	DESTROYED ?
+1	"OK"
 0
 73 CONTINUE
 
@@ -122,13 +122,13 @@ Also added comments from comments.txt at the top of each action.
 0
 130
 200
-63
+63 GAME OVER?
 
 5. 5	" HAVE ELECTRO "
 0
 100
-132 CARRIED
-33 	" ELECTRO",34,33,1
+132 	1000 0100 33	" ELECTRO",34,33,1
+33 		0010 0001 1		CARRIED 33
 58 SET 6
 6
 37	"My Spider Sense tingles "
@@ -139,10 +139,10 @@ Also added comments from comments.txt at the top of each action.
 4	" SKY CIEL "
 0
 100
-2 PRESENT
-68
-128 0
-2
+2 		0000 0010	18
+68		0100 0100	8	ISSET 18
+128		1000 0000	0
+2		0000 0010	2	AVALIABLE 0 " I'm on the ceiling"
 59 DESTROY 0
 0 " I'm on the ceiling",0,0,0
 54 GOTO 24
@@ -152,10 +152,10 @@ Also added comments from comments.txt at the top of each action.
 4	" SKY CIEL "
 0
 100
-2 PRESENT
-36
-128 0 ISSET 2
-2
+2 	0000 0010	17
+36	0010 0100	8	ISSET 17
+128 1000 0000	0
+2	0000 0010	2	HERE 0 " I'm on the ceiling"
 54	GOTO 24
 24	Room 24: "*I'm on an Office Ceiling"
 59	DESTROY 0
@@ -165,12 +165,12 @@ Also added comments from comments.txt at the top of each action.
 12	"SET NEW EXIT TO SKYSCRAPER "
 0
 100
-0	ISCLEAR 1
-63
-3 3 PRESENT 4
-4
-130 2 NOTSET
-68	2
+0	0000 0000	1
+63	0011 1111	31				248 ?
+3 	0000 0011	24				3 AVAILABLE 248 ?
+4	0000 0100	4	In room		36	"strange mist below"
+130 1000 0010	18				2 HERE 36
+68
 99
 18
 19
@@ -188,10 +188,10 @@ Also added comments from comments.txt at the top of each action.
 2	"ITEMS WILL FALL FROM ROOF ROOM "
 0
 100
-3
-4
-128
-0
+3	0000 0011 24 "*I'm on an Office Ceiling"
+4	0000 0100 4 In room 24
+128	1000 0000
+0	0000 0000
 109
 30
 112
@@ -199,12 +199,12 @@ Also added comments from comments.txt at the top of each action.
 9
 0
 0
-124
-194
-124
-222
-128
-32
+124	0111 1100	230		28
+194	1100 0010	2		19 CURRENTEQ 28
+124	0111 1100	230		28
+222	1101 1110	30		250
+128	1000 0000	0
+32	0010 0000
 62
 131
 230
@@ -217,30 +217,29 @@ Also added comments from comments.txt at the top of each action.
 180 "fell!"
 
 3
-
 0
 0
-5 ABSENT 3
-114
-131 3
-192
-100
-1
-30
-113
-1
+5 		0000 0101	43
+114		0111 0010	148	18 HASMOVED 43 "torn piece of paper",0,82,1
+131		1000 0011	3	AVAILABLE
+192		1100 0000	3	Room 3: "Computer Lab"
+100		0110 0100	4	In room 3
+1		0000 0001
+30		0001 1110
+113		0111 0001
 
-7. 0	" RESET ELECTRO "
+7. 1	" RESET ELECTRO "
+0
 100
-0 ISCLEAR 3
-127
-4 NOTAT
-34 Room 34: "dimly lit Basement"
-0 ISCLEAR 6
-200
-0 ISCLEAR  3
-127
-132
+0 		0000 0000 3
+127		0111 1111 31
+4 		0000 0100 33
+34 		0010 0010 2  HERE  ELECTRO",34,33,1
+0 		0000 0000 6
+200		1100 1000 8  ISSET 6
+0   	0000 0000 3
+127		0111 1111 31
+132		1000 0100 4
 68 CLEAR 0
 60	CLEAR 6
 6
@@ -248,10 +247,10 @@ Also added comments from comments.txt at the top of each action.
 8, 9. 7		" DOC STUN "
 0	occur when carried arm (30) and flag 6
 100
-3 CARRIED (1)
-193	ARM	(30)
-128	ISSET
-200	6	200 / 32 = 6
+3 		0000 0011	30	" DOC's arm",0,36,0
+193		1100 0001	1 CARRIED 30
+128		1000 0000	6
+200		1100 1000	8 ISSET 6
 60 CLEAR 6
 6
 47	"Bolt hits doc's arm! "
@@ -266,12 +265,12 @@ Also added comments from comments.txt at the top of each action.
 100
 0
 127
-3	NOTCARRIED
-193	ARM	193 - 30 = 163
-4	INROOM
-34	Room 34: "dimly lit Basement"
-128	ISSET
-200	200 / 32 = 6
+3
+193
+4
+34
+128
+200
 60 CLEAR 6
 6
 42	"ELECTRO"
@@ -281,10 +280,10 @@ Also added comments from comments.txt at the top of each action.
 11. 6	" ELECTRO BOLT "
 0
 20
-4	INROOM
-34	Room 34: "dimly lit Basement"
-128	ISSET
-201	6	201 / 32 = 6
+4
+34
+128
+201
 58 SET 6
 6
 37	"My Spider Sense tingles "
@@ -296,8 +295,8 @@ Also added comments from comments.txt at the top of each action.
 12. 2	" HYDRO "
 0
 100
-134	134 - 128 = 6 CARRIED
-129	129 - 52 = 77
+134
+129
 53 DROP
 52	" HYDRO-MAN",38,51,0
 76	Look
@@ -305,10 +304,10 @@ Also added comments from comments.txt at the top of each action.
 13. 7	" HIT ELECTRO "
 0
 100
-0 ISSET
-136 136 / 32 = 4
-132 132 - 128 = 4 INROOM 34
-34	Room 34: "dimly lit Basement"
+0
+136
+132
+34
 17	"I hit"
 42	"ELECTRO"
 128
@@ -321,16 +320,16 @@ Also added comments from comments.txt at the top of each action.
 14. 1	" MISSED ELECTRO "
 0
 100
-128	ISSET
-136 136 / 32 = 4
+128
+136
 60 CLEAR 4
 4
 
 17. 5	 	"MYSTER****** "
 0
 20	20% chance
-129 129 - 128 = 1 INROOM?
-68 68 - 10 = 58 Room 10: "waiting room"
+129
+68
 3 "I see"
 35 "MYSTERIO"
 128
@@ -341,11 +340,11 @@ Also added comments from comments.txt at the top of each action.
 18. 2	" ON CIELING "
 0
 100
-0	ISSET 13
+0
 13
-0	ISSET 3
+0
 127
-128 ISSET
+128
 2	2
 73	CONTINUE
 59 DESTROY 0
@@ -354,23 +353,23 @@ Also added comments from comments.txt at the top of each action.
 19, 20. 1	 "ON CIELING NOT ELEVATOR OR BLDG "
 0
 0
-0	ISSET 4
+0
 159
-0	ISSET 6
+0
 196
-1 NOTAT
+1
 36
-1 NOTAT
+1
 100
-1 NOTAT
+1
 196
-2 NOTSET 3
+2
 100
 5
 4
 3
 4
-130 2 NOTSET 1 (OR NOTPRESENT MIST?)
+130
 36
 53 DROP 0
 0
@@ -378,7 +377,7 @@ Also added comments from comments.txt at the top of each action.
 21. 3	" ON WALL "
 0
 100
-128 ISCLEAR 1
+128
 45
 68 CLEAR 0
 73 CONTINUE
@@ -388,17 +387,17 @@ Also added comments from comments.txt at the top of each action.
 22, 32. 1	"SAME AS ON CIELING "
 0
 0
-0	ISCLEAR 4
+0
 159
-0	ISCLEAR 6
+0
 196
-1 INROOM
-36	Room 36: "small deserted Office"
-1	INROOM
+1
+36
+1
 100
-1	INROOM
+1
 196
-2	NOTSET
+2
 100
 5
 4
@@ -414,10 +413,10 @@ Also added comments from comments.txt at the top of each action.
 26. 5	" DROP ARM "
 0
 100
-3 CARRIED
-193	30. " DOC's arm",0,36,0
-128 ISCLEAR 5
-168	168 / 32 = 5
+3
+193
+128
+168
 59 DESTROY
 30	" DOC's arm",0,36,0
 38	"DOCTOR OCTOPUS"
@@ -428,10 +427,10 @@ Also added comments from comments.txt at the top of each action.
 27. 1	" DROP ARM NXT "
 0
 100
-3	CARRIED
-193	30. " DOC's arm",0,36,0
-128	ISCLEAR 5
-169 169 / 32 = 5
+3
+193
+128
+169
 58 SET 5
 5
 
@@ -440,11 +439,11 @@ Also added comments from comments.txt at the top of each action.
 100
 3	CARRIED
 193	30. " DOC's arm",0,36,0
-0	ISSET 3
-127 (127 / 32 = 3)
-131 (131 - 128 = 3) CARRIED ???
-226 ???
-59 DESTROY
+0
+127
+131
+226
+59 DESTROY 30
 30 " DOC's arm",0,36,0
 38 "DOCTOR OCTOPUS"
 128
@@ -457,20 +456,20 @@ Also added comments from comments.txt at the top of each action.
 29. 1	" DR OCK GET PRESS *** "
 0
 100
-8	INROOM
-34 Room 34: "dimly lit Basement"
-131	(131 - 128 = 3) CARRIED
-193	30. " DOC's arm",0,36,0
+8
+34
+131
+193
 38	"DOCTOR OCTOPUS"
 41	"other arms cling to presses!"
 
 30. 6	" RING GO! "
 0
 100
-7	INROOM? PRESENT?
-194	in Room 3: "Computer Lab" ? Present 62 " RINGMASTER",3,62,0?
-130 (130 - 128 = 2) ISSET?
-72	18?
+7
+194
+130
+72
 128
 158 "RINGMASTER"
 128
@@ -482,10 +481,10 @@ Also added comments from comments.txt at the top of each action.
 31. 3	" RESET RINGMASTER "
 0
 100
-0 ISSET 18?
-127 18?
-135	 (135 - 128 = 7) PRESENT?
-194	62 " RINGMASTER",3,62,0?
+0
+127
+135
+194
 60	CLEAR 18
 18
 60	CLEAR 19
@@ -494,9 +493,9 @@ Also added comments from comments.txt at the top of each action.
 32. 1	" NEXT RING "
 0
 100
-7	PRESENT
-194	62 " RINGMASTER",3,62,0?
-2 NOTSET
+7
+194
+2
 73
 129 (129 - 128 = 1) AT
 233
@@ -518,8 +517,8 @@ Also added comments from comments.txt at the top of each action.
 34. 12	" SAND AWAKES "
 0
 100
-6 PRESENT
-34	49. " sand all over the floor",4,47,0
+6
+34
 128 ISSET 7
 232 (232 / 32 = 7)
 37 "My Spider Sense tingles "
@@ -652,9 +651,9 @@ Also added comments from comments.txt at the top of each action.
 4		"IF WAS ON CIELING RESET "
 0
 0
-0 ISSET
+0
 26
-134 (134 - 128 = 6) NOTCARRIED?
+134
 32
 53 DROP
 0	" I'm on the ceiling",0,0,0
@@ -667,17 +666,17 @@ Also added comments from comments.txt at the top of each action.
 100
 6
 34
-0	ISSET 7
-233 (233 / 32 = 7)
-0	ISSET 3
-127	(127 / 32 = 3)
-0 	ISSET 2
+0
+233
+0
+127
+0
 2
-0 	ISSET
-127	(127 / 32 = 3)
-128 ISSET 1
+0
+127
+128
 34
-58	SET 7
+58
 7
 37 "My Spider Sense tingles "
 128
@@ -690,22 +689,22 @@ Also added comments from comments.txt at the top of each action.
 36. 1 	" NO SAND "
 0
 100
-0 ISCLEAR 3
+0
 127
-134 ABSENT
-34	49 " sand all over the floor",4,47,0?
+134
+34
 60	CLEAR 7
 7
 
 37. 2	" RESET SAND "
 0
 100
-6 DESTROYED?
-46 49 " sand all over the floor",4,47,0?
-0	ISCLEAR 3
+6
+46
+0
 127
-134 (134 - 128 = 6) ABSENT?
-66	50.	" SANDMAN",0,47,0
+134
+66
 72 SWAP
 49	" sand all over the floor",4,47,0
 50	" SANDMAN",0,47,0
@@ -714,9 +713,9 @@ Also added comments from comments.txt at the top of each action.
 0
 100
 3
-239	53. "ice statue",0,48,1
-135 (135 - 128 = 7) 7 LE
-14	31
+239
+135
+14
 72 SWAP
 53	"ice statue",0,48,1
 52	" HYDRO-MAN",38,51,0
@@ -727,10 +726,10 @@ Also added comments from comments.txt at the top of each action.
 41, 42. 5	"THAW "
 0
 100
-4	GT
-16	32
-134	(134 - 128 = 6) 6 DESTROYED
-238	52. " HYDRO-MAN",38,51,0
+4
+16
+134
+238
 72	SWAP
 53	"ice statue",0,48,1
 52	" HYDRO-MAN",38,51,0
@@ -741,7 +740,7 @@ Also added comments from comments.txt at the top of each action.
 2	" EGG BLOWS "
 0
 100
-129	(129 - 128 = 1) ISSET 8
+129
 8
 73 CONTINUE
 128
@@ -761,7 +760,7 @@ Also added comments from comments.txt at the top of each action.
 45. 1	" REMOVE GEM "
 0
 0
-1	ISSET 7
+1
 250
 132	(132 - 128 = 4) GT 128?
 128
@@ -771,7 +770,7 @@ Also added comments from comments.txt at the top of each action.
 46. 3
 0
 0
-128 ISCLEAR 0
+128
 0
 59	DESTROY
 16	"natter energy egg",36,10,1
@@ -781,8 +780,8 @@ Also added comments from comments.txt at the top of each action.
 47. 4	" EGG NEXT MOVE & TINGLE "
 0
 100
-130 (130 - 128 = 2) AT
-2 Room 36: "small deserted Office"
+130
+2
 58	SET 8
 8
 37 "My Spider Sense tingles "
@@ -792,10 +791,10 @@ Also added comments from comments.txt at the top of each action.
 49. 3	" MYSTERIO CLOUD "
 0
 20
-2 AT
-68	Room 18: "*I'm floating in the Sky"
-131	(131 - 128 = 3) PRESENT?
-130	(130 / 4 = 28) 28	"strange cloud",0,35,0
+2
+68
+131
+130
 59	DESTROY
 28	"strange cloud",0,35,0
 76 LOOK
@@ -804,21 +803,21 @@ Also added comments from comments.txt at the top of each action.
 0	" MYSTERIO CLOUD "
 0
 20
-130	(130 - 128 = 2) AT
-68 (68 / 3 = 18)	Room 18: "*I'm floating in the Sky"
+130
+68
 73 CONTINUE
 
 0	"DRAW ROOM FIRST IF REQUESTED "
 0
 0
-132	(132 - 128 = 4) GT
-72 (72 / 5 = 14)
+132
+72
 89 Redraw picture?
 
 50. 8	" MYSTERIO CLOUD "
 0
 0
-128 ISCLEAR 0
+128
 0
 53 DROP
 28	"strange cloud",0,35,0
@@ -833,8 +832,8 @@ Also added comments from comments.txt at the top of each action.
 51. 4	" SCALE "
 0
 100
-130 (130 - 128 = 2) AT
-196	Room 22: "paper room"
+130
+196
 81 SELECT 3
 3
 73 CONTINUE
@@ -844,8 +843,8 @@ Also added comments from comments.txt at the top of each action.
 52. 2	" OCK "
 0
 0
-132  (132 - 128 = 4) HERE?
-66	34. "stunned DOC OCK",0,36,1
+132
+66
 82	ADD 250
 128
 250
@@ -853,8 +852,8 @@ Also added comments from comments.txt at the top of each action.
 53. 2	" ELECTRO "
 0
 0
-132	 (132 - 128 = 4) HERE?
-98	35. "stunned ELECTRO",0,33,1
+132
+98
 82	ADD 185
 128
 185
@@ -862,8 +861,8 @@ Also added comments from comments.txt at the top of each action.
 54. 2	" CONNERS "
 0
 0
-134	(134 - 128 = 6) PRESENT?
-98	51. "sleeping Doc Conners",0,50,1
+134
+98
 82	ADD 170
 128
 170
@@ -871,8 +870,8 @@ Also added comments from comments.txt at the top of each action.
 55. 2	" HYDRO "
 0
 0
-134	(134 - 128 = 6) PRESENT?
-162 53. "ice statue",0,48,1
+134
+162
 82 ADD 200
 128
 200
@@ -880,8 +879,8 @@ Also added comments from comments.txt at the top of each action.
 56. 2	" HYDRO "
 0
 0
-134	(134 - 128 = 6) PRESENT?
-130	52. " HYDRO-MAN",38,51,0
+134
+130
 82	ADD 200
 128
 200
@@ -889,15 +888,15 @@ Also added comments from comments.txt at the top of each action.
 57. 1	" DESK "
 0
 0
-135 (135 - 128 = 7) HERE?
-66	58. "desk",15,57,1
+135
+66
 82	ADD 80
 80
 
 1	" COUCH "
 0
 0
-135	(135 - 128 = 7) HERE?
+135
 98
 82	ADD 62
 62
@@ -905,7 +904,7 @@ Also added comments from comments.txt at the top of each action.
 1	"CLOCK "
 0
 0
-136 (136 - 128 = 8) HERE?
+136
 226
 82	ADD 2
 2
@@ -921,7 +920,7 @@ Also added comments from comments.txt at the top of each action.
 0		"MUST BE LAST COMMAND. REDRAWS PICTURE IF ROOM CHANGED "
 0
 100
-132 (132 - 128 = 4) GT?
+132
 72
 89 DRAW
 3
@@ -1019,8 +1018,8 @@ Also added comments from comments.txt at the top of each action.
 4	"LEAVE ELEVATOR=EXIT "
 0
 0
-6	DESTROYED
-52	" HYDRO-MAN",38,51,0
+6
+52
 130 2
 96
 99
@@ -1032,9 +1031,9 @@ Also added comments from comments.txt at the top of each action.
 4
 0
 0
-6	DESTROYED
-53	"ice statue",0,48,1
-128 ISCLEAR 7
+6
+53
+128
 224
 99
 5
@@ -1062,15 +1061,15 @@ Also added comments from comments.txt at the top of each action.
 3
 0
 0
-6 DESTROYED
-53 	"ice statue",0,48,1
-0	ISCLEAR
+6
+53
+0
 32
-0	ISCLEAR
+0
 127
-6 DESTROYED
-53		"ice statue",0,48,1
-128	ISCLEAR 7
+6
+53
+128
 224
 99
 1
@@ -1189,7 +1188,7 @@ Also added comments from comments.txt at the top of each action.
 4
 0
 0
-128 ISCLEAR 3
+128
 105
 54 GOTO
 11	Room 11: "dimly lit Elevator Shaft"
@@ -1200,7 +1199,7 @@ Also added comments from comments.txt at the top of each action.
 2
 0
 0
-128  ISCLEAR 3
+128
 104
 54	GOTO
 14	Room 14: "dimly lit Elevator Shaft"
@@ -2396,14 +2395,14 @@ Also added comments from comments.txt at the top of each action.
 37
 
 67. 6	" MAKE WEB "
-13  == MIX
-37  == WEB  when at Laboratory and present paper and present chemicals
-1 AT
-164 Laboratory (13)
-5 PRESENT
-99 43 Paper
-133 PRESENT (133 - 128 = 5)
-67 42 chemicals
+13  MIX
+37  WEB  when at Laboratory and present paper and present chemicals
+1
+164
+5
+99
+133
+67
 128
 133 "Partial success only!"  58  (133 - 75)
 59 DESTROY
@@ -2444,12 +2443,12 @@ Also added comments from comments.txt at the top of each action.
 42	CALCIUM
 130
 40
-1	AT
-164	Laboratory (13)
-4 PRESENT
-227	" hydrochloric acid",39,40,1
-133	PRESENT
-3	" calcium carbonate",39,42,1
+1
+164
+4
+227
+133
+3
 59 DESTROY
 39	" hydrochloric acid",39,40,1
 59 DESTROY
@@ -2464,8 +2463,8 @@ Also added comments from comments.txt at the top of each action.
 0	ANY
 130
 0
-129	NOTAT
-164		Laboratory (13)
+129
+164
 6	"Sorry,"
 2	"I can't"
 128
@@ -2586,7 +2585,7 @@ Also added comments from comments.txt at the top of each action.
 74. 67
 14 CLOSE
 61 EYES
-130 (130 - 128 == 2) AT?
+130
 30
 129
 0
@@ -2610,8 +2609,8 @@ Also added comments from comments.txt at the top of each action.
 76. 4
 15 PUSH
 63	KNOB
-135	(135 - 128 = 7) HERE?
-226	"knob in the wall",3,63,0
+135
+226
 1	"OK"
 58 SET 19
 19
@@ -2623,8 +2622,8 @@ Also added comments from comments.txt at the top of each action.
 63	KNOB
 0
 127
-135 ABSENT
-226	63. "knob in the wall",3,63,0
+135
+226
 6	"Sorry,"
 128
 192 "I don't see the knob here."
@@ -2690,8 +2689,8 @@ Also added comments from comments.txt at the top of each action.
 79. 4
 2 TURN
 63 KNOB
-135 HERE
-226	63. "knob in the wall",3,63,0
+135
+226
 1	 "OK"
 20	"Click!"
 6	"Sorry,"
@@ -2701,8 +2700,8 @@ Also added comments from comments.txt at the top of each action.
 95. 2		" BIO GEM "
 3 GET
 9 BIOGEM
-129 PRESENT
-227	15. "*Bio Gem",36,59,5
+129
+227
 1 "OK"
 74 TAKE
 15 Bio Gem",36,59,5
@@ -2710,8 +2709,8 @@ Also added comments from comments.txt at the top of each action.
 96. 2
 5 	DROP
 9	BIOGEM
-129	PRESENT
-227 	15. "*Bio Gem",36,59,5
+129
+227
 1	"OK"
 53 DROP
 15  Bio Gem",36,59,5
@@ -2742,14 +2741,14 @@ Also added comments from comments.txt at the top of each action.
 103. 0
 10	INVENTORY
 0
-129	!flag 15
+129
 233
 66	INVENTORY
 
 104. 0
 3	TAKE
 16	INVENTORY
-129	!flag 15
+129
 233
 66 INVENTORY
 
@@ -2869,7 +2868,7 @@ Also added comments from comments.txt at the top of each action.
 1
 132
 129
-228 (228 - 128 = 100)
+228
 1	"OK"
 20	"Click!"
 
@@ -3185,7 +3184,7 @@ Also added comments from comments.txt at the top of each action.
 22 NICHE
 203
 195
-193	AT
+193
 1
 36
 128
@@ -3202,7 +3201,7 @@ Also added comments from comments.txt at the top of each action.
 11 LOOK
 22 NICHE
 203
-195 = present?
+195
 193
 1
 100
@@ -3779,8 +3778,8 @@ Also added comments from comments.txt at the top of each action.
 145. 4
 19 FEEL
 2 SOUTH
-130	130 - 128 = 2 AT
-68	60 - 50 = 18 ("*I'm floating in the Sky")
+130
+68
 30 "I feel"
 31 "a door. I enter."
 54	GOTO ROOM 23 ("small deserted Office")
