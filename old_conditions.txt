@@ -1,8 +1,5 @@
 ScottFree Conditions
 
-This is just for reference. If any of these values are used in Saga Plus, I haven't been
-able to work out how they are encoded.
-
 0	Parameter
 1	Item <arg> carried
 2	Item <arg> in room with player
