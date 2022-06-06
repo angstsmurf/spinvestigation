@@ -1,0 +1,3506 @@
+Action 0 0 100
+Comment: " INTRO "
+ ISZERO(9) 2
+ SET(58) 2
+ CONTINUE(73)
+ REDRAW?(89)
+ CLEAR(60) 34
+ SETCNT(99) 129 244 2
+
+
+Action 1 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 21 "Welcome friends to QUESTPROBE(TM) No. 2: SPIDER-MAN by Scott Adams. Dedicated: John Mathias a TRUE BELIEVER!"
+ CLRCNT?(109) 1
+ SETCNT(99) 2 3
+ CLRCNT?(109) 4
+
+
+Action 2 0 0
+Comment: "INTRO "
+ NO CONDITION (Arg:0)
+ SETCUR(79) 71
+ UNK119(119) 24
+
+
+Action 3 0 0
+Comment: "trademarks "
+ NO CONDITION (Arg:0)
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 150 "\,"
+ MESSAGE 35 "MYSTERIO"
+ PRINTMESS(128) 150 "\,"
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ PRINTMESS(128) 150 "\,"
+
+
+Action 4 0 0
+Comment: "TRADEMARKS "
+ NO CONDITION (Arg:0)
+ MESSAGE 42 "ELECTRO"
+ PRINTMESS(128) 150 "\,"
+ PRINTMESS(128) 70 "HYDRO-MAN"
+ PRINTMESS(128) 150 "\,"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 150 "\,"
+
+
+Action 5 0 0
+Comment: "TRADEMARKS "
+ NO CONDITION (Arg:0)
+ PRINTMESS(128) 77 "LIZARD"
+ PRINTMESS(128) 150 "\,"
+ PRINTMESS(128) 82 "RINGMASTER"
+ PRINTMESS(128) 150 "\,"
+ PRINTMESS(128) 148 "CHIEF EXAMINER, MADAME WEB,"
+ PRINTMESS(128) 149 "and their distinctive likenesses, are TMs of MARVEL COMICS GROUP and are used with permission."
+
+
+Action 6 0 0
+Comment: "TM "
+ NO CONDITION (Arg:0)
+ PRINTMESS(128) 153 "Questprobe is a TM of Marvel Comics & Scott Adams, inc."
+ PRINTMESS(128) 154 "Game design Copyright 1984 Scott Adams, inc. Text and art Copyright 1984 Marvel Comics."
+ PRINTMESS(128) 155 "Now on with the game..."
+ LOOK(76)
+
+
+Action 7 0 100
+Comment: "END OF GAME "
+ NOTZERO(8) 22
+ SYSCALL?(110) 1 0
+ CONTINUE(73)
+
+
+Action 8 0 0
+Comment: "DIDN'T RESTORE A SAVED GAME "
+ NOTZERO(8) 22
+ GAMEOVER(63)
+
+
+Action 9 0 100
+Comment: " HAVE ELECTRO "
+ CARRIED(1) 33
+ SET(58) 6
+ MESSAGE 37 "My Spider Sense tingles "
+ DROP(53) 33
+ LOOK(76)
+
+
+Action 10 0 100
+Comment: " SKY CIEL "
+ AT(4) 18 HERE(2) 0
+ DESTROY(59) 0
+ GOTO(54) 24
+ LOOK(76)
+
+
+Action 11 0 100
+Comment: " SKY CIEL "
+ AT(4) 17 HERE(2) 0
+ GOTO(54) 24
+ DESTROY(59) 0
+ LOOK(76)
+
+
+Action 12 0 100
+Comment: "SET NEW EXIT TO SKYSCRAPER "
+ OR(31) (Arg:1)  AT(4) 24 AT(4) 18
+ SETCNT(99) 18 19
+ SETCNT(99) 3 20
+ SETCNT(99) 17 21
+ NEWEXIT?(95) 21 20 19
+
+
+Action 13 0 100
+Comment: "ITEMS WILL FALL FROM ROOF ROOM "
+ AT(4) 24 NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 14 0 0
+Comment: ""
+ HERE(2) 230 OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ DROPIN(62) 131 230 18
+ MESSAGE 3 "I see"
+ PRINTOBJ(85) 131 230
+ PRINTMESS(128) 104 "fell!"
+
+
+Action 15 0 0
+Comment: ""
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 16 0 100
+Comment: " RESET ELECTRO "
+ NOT(31) (Arg:3)  NOTHERE(2) 33 NOTZERO(8) 6 NOT(31) (Arg:3)  NOTAT(4) 34
+ CLEAR(60) 6
+
+
+Action 17 0 100
+Comment: " DOC STUN "
+ CARRIED(1) 30 NOTZERO(8) 6
+ CLEAR(60) 6
+ MESSAGE 47 "Bolt hits doc's arm! "
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ MESSAGE 46 "is stunned!"
+ SWAP(72) 31 34
+
+
+Action 18 0 100
+Comment: " BOLT! DEAD! "
+ NOT(31) (Arg:3)  NOTCARRIED(32) 30 HERE(2) 33 NOTZERO(8) 6
+ CLEAR(60) 6
+ MESSAGE 42 "ELECTRO"
+ MESSAGE 44 "throws electrical bolt at me!"
+ DEATH(61)
+
+
+Action 19 0 20
+Comment: " ELECTRO BOLT "
+ HERE(2) 33 ISZERO(9) 6
+ SET(58) 6
+ MESSAGE 37 "My Spider Sense tingles "
+ MESSAGE 43 "towards"
+ MESSAGE 42 "ELECTRO"
+ PRINTMESS(128) 97 "\."
+
+
+Action 20 0 100
+Comment: " HYDRO "
+ CARRIED(1) 52
+ DROP(53) 52
+ LOOK(76)
+
+
+Action 21 0 100
+Comment: " HIT ELECTRO "
+ NOTZERO(8) 4 HERE(2) 33
+ MESSAGE 17 "I hit"
+ MESSAGE 42 "ELECTRO"
+ PRINTMESS(128) 97 "\."
+ SWAP(72) 33 35
+ LOOK(76)
+
+
+Action 22 0 100
+Comment: " MISSED ELECTRO "
+ NOTZERO(8) 4
+ CLEAR(60) 4
+
+
+Action 23 0 20
+Comment: " MYSTER****** "
+ AT(4) 10
+ MESSAGE 3 "I see"
+ MESSAGE 35 "MYSTERIO"
+ PRINTMESS(128) 52 "run by!"
+ SHOWIMG(90) 11
+
+
+Action 24 0 100
+Comment: " ON CIELING "
+ NODESTROYED(13) 0 NOT(31) (Arg:3)  NOTHERE(2) 0
+ CONTINUE(73)
+ DESTROY(59) 0
+
+
+Action 25 0 0
+Comment: "ON CIELING NOT ELEVATOR OR BLDG "
+ NOT(31) (Arg:4)  NOTAT(4) 6 NOTAT(4) 9 NOTAT(4) 11 NOTAT(4) 14 NOTAT(4) 19 NOTAT(4) 40 NOTAT(4) 24 NOTAT(4) 17
+ DROP(53) 0
+
+
+Action 26 0 100
+Comment: " ON WALL "
+ NODESTROYED(13) 1
+ CLEAR0FLAG(68)
+ CONTINUE(73)
+ DESTROY(59) 1
+
+
+Action 27 0 0
+Comment: "SAME AS ON CIELING "
+ NOT(31) (Arg:4)  NOTAT(4) 6 NOTAT(4) 9 NOTAT(4) 11 NOTAT(4) 14 NOTAT(4) 19 NOTAT(4) 40 NOTAT(4) 24 NOTAT(4) 17 NOTAT(4) 18
+ DROP(53) 1
+
+
+Action 28 0 100
+Comment: " DROP ARM "
+ CARRIED(1) 30 NOTZERO(8) 5
+ DESTROY(59) 30
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ MESSAGE 39 "pulls away."
+ CLEAR(60) 5
+
+
+Action 29 0 100
+Comment: " DROP ARM NXT "
+ CARRIED(1) 30 ISZERO(9) 5
+ SET(58) 5
+
+
+Action 30 0 100
+Comment: " DROP ARM "
+ CARRIED(1) 30 NOT(31) (Arg:3)  NOTHERE(2) 31
+ DESTROY(59) 30
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ PRINTMESS(128) 117 "\'"
+ MESSAGE 40 "arm "
+ MESSAGE 39 "pulls away."
+ CLEAR(60) 5
+
+
+Action 31 0 100
+Comment: " DR OCK GET PRESS *** "
+ HERE(2) 65 CARRIED(1) 30
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ MESSAGE 41 "other arms cling to presses!"
+
+
+Action 32 0 100
+Comment: " RING GO! "
+ HERE(2) 62 NOTZERO(8) 18
+ PRINTMESS(128) 82 "RINGMASTER"
+ PRINTMESS(128) 83 "commands me to leave! I do."
+ GOTO(54) 16
+ LOOK(76)
+
+
+Action 33 0 100
+Comment: " RESET RINGMASTER "
+ NOT(31) (Arg:3)  NOTHERE(2) 62
+ CLEAR(60) 18
+ CLEAR(60) 19
+
+
+Action 34 0 100
+Comment: " NEXT RING "
+ HERE(2) 62 ISZERO(9) 18 ISZERO(9) 15
+ SET(58) 18
+
+
+Action 35 0 100
+Comment: " MOVES "
+ NO CONDITION (Arg:0)
+ SWAPCUR(81) 4
+ ADD(82) 1
+ SWAPCUR(81) 4
+
+
+Action 36 0 100
+Comment: " SAND AWAKES "
+ HERE(2) 49 NOTZERO(8) 7
+ MESSAGE 37 "My Spider Sense tingles "
+ PRINTMESS(128) 97 "\."
+ SWAP(72) 49 50
+ PRINTMESS(128) 78 "Sand becomes"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 97 "\."
+ CONTINUE(73)
+
+
+Action 37 0 0
+Comment: "NO GRAPHICS "
+ ISZERO(9) 35
+ UNKNOWN(116)
+
+
+Action 38 0 0
+Comment: "LOAD ANIMATE PICTURES, IF NOT ALREADY LOADED "
+ ISZERO(9) 9
+ SETCNT(99) 20 15
+ SYSCALL?(110) 3 0
+ BEGIN?(112)
+
+
+Action 39 0 0
+Comment: "GET 1 PIC "
+ ISZERO(9) 9
+ SYSCALL?(110) 2 15
+
+
+Action 40 0 0
+Comment: "NEXT "
+ ISZERO(9) 9 NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:22)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 41 0 0
+Comment: "LOAD B050 SANDMAN "
+ ISZERO(9) 9
+ SETCNT(99) 50 15
+ SYSCALL?(110) 10 15
+
+
+Action 42 0 0
+Comment: "IF ON CIELING RESET "
+ NODESTROYED(13) 0
+ DROPIN(62) 0 49
+ DESTROY(59) 50
+ REDRAW?(89)
+
+
+Action 43 0 0
+Comment: "START THE ANIMATION, AND SAY PICS ARE LOADED "
+ NO CONDITION (Arg:0)
+ SET(58) 9
+ CLEAR(60) 10
+ CLRCNT?(109) 15
+ BEGIN?(112)
+
+
+Action 44 0 0
+Comment: "ANIMATE "
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 4 15
+
+
+Action 45 0 0
+Comment: "NEXT "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:3)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 46 0 0
+Comment: "SAY NO REDRAW NEEDED "
+ NO CONDITION (Arg:0)
+ CLEAR(60) 34
+
+
+Action 47 0 0
+Comment: "IF WAS ON CIELING RESET "
+ OBJIN(26) 0 NO CONDITION (Arg:49)
+ DROP(53) 0
+ DROP(53) 50
+ REDRAW?(89)
+
+
+Action 48 0 100
+Comment: " SAND NXT MOVE "
+ HERE(2) 49 ISZERO(9) 7 NOT(31) (Arg:3)  NOTHERE(2) 0 NOT(31) (Arg:3)  NOTHERE(2) 1
+ SET(58) 7
+ MESSAGE 37 "My Spider Sense tingles "
+ PRINTMESS(128) 97 "\."
+ PRINTMESS(128) 79 "Someone says"
+ PRINTMESS(128) 80 "OUCH!"
+
+
+Action 49 0 100
+Comment: " NO SAND "
+ NOT(31) (Arg:3)  NOTHERE(2) 49
+ CLEAR(60) 7
+
+
+Action 50 0 100
+Comment: " RESET SAND "
+ DESTROYED(14) 49 NOT(31) (Arg:3)  NOTHERE(2) 50
+ SWAP(72) 49 50
+
+
+Action 51 0 100
+Comment: " FREEEZE HYDRO AND AQUARIUM TOO "
+ CURLE(15) 31 DESTROYED(14) 56
+ SWAP(72) 53 52
+ SWAP(72) 56 55
+
+
+Action 52 0 100
+Comment: "THAW "
+ CURGT(16) 32 DESTROYED(14) 55
+ SWAP(72) 53 52
+ SWAP(72) 56 55
+
+
+Action 53 0 100
+Comment: " EGG BLOWS "
+ NOTZERO(8) 8
+ CONTINUE(73)
+ PRINTMESS(128) 101 "I sense a small explosion. "
+
+
+Action 54 0 0
+Comment: " DEAD "
+ PRESENT(3) 16
+ PRINTMESS(128) 67 "Egg explodes!"
+ DEATH(61)
+ DESTROY(59) 15
+
+
+Action 55 0 0
+Comment: " REMOVE GEM "
+ OBJIN(26) 15 NO CONDITION (Arg:36)
+ DESTROY(59) 15
+
+
+Action 56 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ DESTROY(59) 16
+ CLEAR(60) 8
+
+
+Action 57 0 100
+Comment: " EGG NEXT MOVE & TINGLE "
+ HERE(2) 16
+ SET(58) 8
+ MESSAGE 37 "My Spider Sense tingles "
+ PRINTMESS(128) 97 "\."
+
+
+Action 58 0 20
+Comment: " MYSTERIO CLOUD "
+ AT(4) 18 HERE(2) 28
+ DESTROY(59) 28
+ LOOK(76)
+ REDRAW?(89)
+
+
+Action 59 0 20
+Comment: ""
+ AT(4) 18
+ CONTINUE(73)
+
+
+Action 60 0 0
+Comment: "DRAW ROOM FIRST IF REQUESTED "
+ NOTZERO(8) 34
+ REDRAW?(89)
+
+
+Action 61 0 0
+Comment: " MYSTERIO CLOUD "
+ NO CONDITION (Arg:0)
+ DROP(53) 28
+ LOOK(76)
+ SETCNT(99) 28 15
+ SYSCALL?(110) 7 15
+
+
+Action 62 0 100
+Comment: " SCALE "
+ AT(4) 22
+ SWAPCUR(81) 3
+ CONTINUE(73)
+ SETCUR(79) 2
+
+
+Action 63 0 0
+Comment: " OCK "
+ HERE(2) 34
+ ADD(82) 128
+
+
+Action 64 0 0
+Comment: " ELECTRO "
+ HERE(2) 35
+ ADD(82) 128
+
+
+Action 65 0 0
+Comment: " CONNERS "
+ HERE(2) 51
+ ADD(82) 128
+
+
+Action 66 0 0
+Comment: " HYDRO "
+ HERE(2) 53
+ ADD(82) 128
+
+
+Action 67 0 0
+Comment: " HYDRO "
+ HERE(2) 52
+ ADD(82) 128
+
+
+Action 68 0 0
+Comment: " DESK "
+ HERE(2) 58
+ ADD(82) 80
+
+
+Action 69 0 0
+Comment: " COUCH "
+ HERE(2) 59
+ ADD(82) 62
+
+
+Action 70 0 0
+Comment: "CLOCK "
+ HERE(2) 71
+ ADD(82) 2
+
+
+Action 71 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ SWAPCUR(81) 3
+
+
+Action 72 0 100
+Comment: "MUST BE LAST COMMAND. REDRAWS PICTURE IF ROOM CHANGED "
+ NOTZERO(8) 34
+ REDRAW?(89)
+
+
+Action 73 RESTORE(39) GAME(17)
+Comment: ""
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 1 0
+ LOOK(76)
+
+
+Action 74 LOOK(11) MIRROR(34)
+Comment: "CLOSEUP "
+ PRESENT(3) 25
+ SHOWIMG(90) 26
+ UNKNOWN(116)
+
+
+Action 75 LOOK(11) ELECTRO(33)
+Comment: "CLOSEUP "
+ PRESENT(3) 35
+ SHOWIMG(90) 7
+ UNKNOWN(116)
+
+
+Action 76 LOOK(11) DR#2(36)
+Comment: "CLOSEUP "
+ PRESENT(3) 34
+ SHOWIMG(90) 8
+ UNKNOWN(116)
+
+
+Action 77 LOOK(11) ELECTRO(33)
+Comment: "CLOSEUP "
+ PRESENT(3) 33
+ SHOWIMG(90) 12
+ UNKNOWN(116)
+
+
+Action 78 LOOK(11) PAINTING(60)
+Comment: "CLOSEUP "
+ PRESENT(3) 60
+ SHOWIMG(90) 13
+ UNKNOWN(116)
+
+
+Action 79 LOOK(11) BIO(9)
+Comment: "CLOSEUP "
+ PRESENT(3) 15
+ SHOWIMG(90) 9
+ UNKNOWN(116)
+
+
+Action 80 LOOK(11) GEM(59)
+Comment: "CLOSEUP "
+ PRESENT(3) 15
+ SHOWIMG(90) 9
+ UNKNOWN(116)
+
+
+Action 81 LOOK(11) EGG(10)
+Comment: "CLOSEUP "
+ PRESENT(3) 16
+ SHOWIMG(90) 10
+ UNKNOWN(116)
+
+
+Action 82 LEAVE(29) ANY(0)
+Comment: "LEAVE OR DROP ITEM? "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ CONTINUE(73)
+ UNKNOWN(120)
+
+
+Action 83 0 0
+Comment: "LEAVE ELEVATOR=EXIT "
+ EQ(20) 49 NO CONDITION (Arg:19)
+ SETCNT(99) 28 48
+ UNKNOWN(121)
+ DONE(69)
+
+
+Action 84 0 0
+Comment: "MAKE DROP SOMETHING INSTEAD "
+ GTEQ(21) 49 NO CONDITION (Arg:7)
+ SETCNT(99) 5 48
+ UNKNOWN(121)
+ DONE(69)
+
+
+Action 85 0 0
+Comment: "MAKE VERB=EXIT "
+ NO CONDITION (Arg:0)
+ SETCNT(99) 28 48
+ UNKNOWN(121)
+
+
+Action 86 EXIT(28) ANY(0)
+Comment: "EXIT NORTH SOUTH ETC? "
+ NO CONDITION (Arg:0)
+ CONTINUE(73)
+ UNKNOWN(120)
+
+
+Action 87 0 0
+Comment: "PUT GO INTO VERB "
+ GTEQ(21) 49 NO CONDITION (Arg:1) NOT(31) (Arg:3)  LT(21) 49 NO CONDITION (Arg:7)
+ SETCNT(99) 1 48
+ UNKNOWN(121)
+
+
+Action 88 0 0
+Comment: "CONTINUE "
+ NO CONDITION (Arg:0)
+ UNKNOWN(116)
+
+
+Action 89 JUMP(16) DOWN(6)
+Comment: "GO DOWN FROM OFFICE CEILING "
+ AT(4) 24
+ MEANS(55) 1 6
+
+
+Action 90 JUMP(16) DOWN(6)
+Comment: "GO DOWN "
+ NO CONDITION (Arg:0)
+ MEANS(55) 1 6
+
+
+Action 91 GO(1) DOWN(6)
+Comment: "FROM CIELING. MUST PROCED GO ANY BELOW! CHANGE TO GET DOWN "
+193 (NONE)
+ OR(31) (Arg:1)  HERE(2) 0 HERE(2) 1
+ MEANS(55) 3 6
+
+
+Action 92 LOOK(11) ANY(0)
+Comment: "IF SAND,EGG OR RINGMASTER DON'T COUNT LOOK AS MOVE "
+128 (ANY) 0 (ANY)
+ OR(31) (Arg:1)  NOTZERO(8) 18 NOTZERO(8) 7 NOTZERO(8) 8
+ CLEAR(60) 18
+ CLEAR(60) 7
+ CLEAR(60) 8
+ UNKNOWN(116)
+
+
+Action 93 GO(1) DOWN(6)
+Comment: "ALL THE WAY DOWN SHAFT "
+202 (ALL)
+ OR(31) (Arg:1)  AT(4) 6 AT(4) 9 AT(4) 10 AT(4) 11 AT(4) 12 AT(4) 14 AT(4) 15 HERE(2) 23
+ MESSAGE 1 "OK"
+ GOTO(54) 6
+ LOOK(76)
+
+
+Action 94 GO(1) UP(5)
+Comment: "SEE IF REACHED TOP OF SHAFT FIRST "
+202 (ALL)
+ OR(31) (Arg:1)  AT(4) 6 AT(4) 9 AT(4) 10 AT(4) 11 AT(4) 12 AT(4) 14 AT(4) 15 HERE(2) 23
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 95 0 0
+Comment: "TOP FLOOR LESS 1 "
+ ISZERO(9) 3
+ GOTO(54) 11
+ PRINTMESS(128) 108 "BUMP!"
+ LOOK(76)
+
+
+Action 96 0 0
+Comment: "TOP FLOOR "
+ NOTZERO(8) 3
+ GOTO(54) 14
+ LOOK(76)
+
+
+Action 97 GO(1) UP(5)
+Comment: "TOP OF MAZE "
+202 (ALL)
+ OR(31) (Arg:1)  AT(4) 8 AT(4) 25 AT(4) 29 AT(4) 32 AT(4) 33 AT(4) 34
+ MESSAGE 1 "OK"
+ GOTO(54) 7
+ CLEAR(60) 6
+
+
+Action 98 GO(1) DOWN(6)
+Comment: "BOTTOM OF MAZE "
+202 (ALL)
+ OR(31) (Arg:1)  AT(4) 8 AT(4) 25 AT(4) 29 AT(4) 32 AT(4) 33
+ MESSAGE 1 "OK"
+ GOTO(54) 34
+ LOOK(76)
+
+
+Action 99 GO(1) NORTH(1)
+Comment: ""
+ AT(4) 18
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 100 GO(1) SOUTH(2)
+Comment: ""
+ AT(4) 18
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 101 GO(1) WEST(4)
+Comment: ""
+ AT(4) 18
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 102 GO(1) UP(5)
+Comment: "SOMETHING IN WAY "
+ NOT(31) (Arg:8)  NOTAT(4) 11 ISZERO(9) 3 OR(31) (Arg:1)  NOTAT(4) 17
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 103 GO(1) DOWN(6)
+Comment: ""
+ AT(4) 17
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 104 EXIT(28) ANY(0)
+Comment: "LEAVE ROOM (NOT WINDOW) "
+ NOT(31) (Arg:3)  NOUNIS?(28) 230 NO CONDITION (Arg:14)
+ MEANS(55) 5 27
+
+
+Action 105 DROP(5) ROOM(27)
+Comment: "LEAVE THE ROOM. CNT #19 IS ROOM EXIT TO TRY (0-5) "
+ NO CONDITION (Arg:0)
+ BEGIN?(112)
+ CLRCNT?(109) 19
+ CLEAR0FLAG(68)
+
+
+Action 106 0 0
+Comment: "GET A ROOM NUMBER IN 20 "
+ NO CONDITION (Arg:0)
+ SETTOEXIT?(94) 20 32 19
+
+
+Action 107 0 0
+Comment: "GO TO THE ROOM "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 20 NO CONDITION (Arg:0)
+ SWAPCNT(98) 20 32
+ SET(58) 34
+ MESSAGE 1 "OK"
+ LOOK(76)
+ UNKNOWN(115)
+ SET0FLAG(67)
+
+
+Action 108 0 0
+Comment: ""
+ NOT(31) (Arg:3)  NOTEQUAL(20) 19 NO CONDITION (Arg:5)
+ ADDCNT(100) 1 19
+ LOOP?(113)
+
+
+Action 109 0 0
+Comment: "HOW? "
+ ISZERO(9) 0
+ MESSAGE 16 "How?"
+
+
+Action 110 GO(1) ICE#1(53)
+Comment: ""
+203 (IN)
+ HERE(2) 55
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 99 "I'm too big"
+
+
+Action 111 GO(1) ANY(0)
+Comment: " AUTO MOVE INTO A ROOM. SET EXIT # INTO 5 "
+ NO CONDITION (Arg:0)
+ UNKNOWN(0)
+ LOOK(64)
+ SETCNTNOUN?(131) 230 5
+ CONTINUE(73)
+
+
+Action 112 0 0
+Comment: " NOT A DIRECTION "
+ NOT(31) (Arg:8)  NOT(31) (Arg:3)  LT(21) 5 NO CONDITION (Arg:1) NOT(31) (Arg:6)  LT(21) 5 NO CONDITION (Arg:7) OR(31) (Arg:1)  NOT(31) (Arg:7)
+ UNKNOWN(116)
+ DONE(69)
+
+
+Action 113 0 0
+Comment: " SET EXIT OF ROOM INTO COUNTER 6 "
+ NO CONDITION (Arg:0)
+ DECREASE(101) 1 5
+ SETTOEXIT?(94) 6 32 5
+
+
+Action 114 0 0
+Comment: " NO EXIT "
+ EQ(20) 6 NO CONDITION (Arg:0)
+ ECHONOUN(84)
+ PRINTMESS(128) 98 "isn't a visible exit."
+ UNKNOWN(116)
+ UNKNOWN(92)
+ UNKNOWN(117)
+ DONE(69)
+
+
+Action 115 0 0
+Comment: " MOVE TO ROOM "
+ NO CONDITION (Arg:0)
+ SWAPCNT(98) 6 32
+ SET(58) 34
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 122 "I go "
+ ECHONOUN(84)
+ PRINTMESS(128) 97 "\."
+
+
+Action 116 GO(1) COUCH(58)
+Comment: "SAVE ROOM IN COUNTER 12 "
+ HERE(2) 59
+ MESSAGE 1 "OK"
+ SWAPCNT(98) 32 12
+ GOTO(54) 19
+ LOOK(76)
+
+
+Action 117 GET(3) UP(5)
+Comment: "LEAVE COUCH "
+128 (ANY) 58 (COUCH) 129 (NONE) 0 (ANY)
+ AT(4) 19
+ MESSAGE 1 "OK"
+ SWAPCNT(98) 12 32
+ SET(58) 34
+ LOOK(76)
+
+
+Action 118 DROP(5) COUCH(58)
+Comment: "LEAVE COUCH "
+ AT(4) 19
+ MESSAGE 1 "OK"
+ SWAPCNT(98) 12 32
+ SET(58) 34
+ LOOK(76)
+
+
+Action 119 GET(3) ROOM(27)
+Comment: "GET ALL OF ROOM BECOMES GET ALL "
+202 (ALL)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ CLRCNT?(109) 49
+ UNKNOWN(121)
+
+
+Action 120 DROP(5) ME(7)
+Comment: ""
+202 (ALL)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ CLRCNT?(109) 49
+ UNKNOWN(121)
+
+
+Action 121 GET(3) ANY(0)
+Comment: " PICKUP EVERYTHING TAKEABLE "
+202 (ALL) 131 (AT) 0 (ANY) 136 (FROM) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 19
+ CLEAR(60) 20
+
+
+Action 122 0 0
+Comment: "IF NOUN INPUT=(NOTHING INPUT) OR OBJECTS'S NOUN=NOUN THEN GOOD "
+ OR(31) (Arg:1)  NOUNIS?(28) 230 NO CONDITION (Arg:0) NOT(31) (Arg:9)  UNK29(29) 230 NO CONDITION (Arg:230)
+ SET(58) 20
+
+
+Action 123 0 0
+Comment: "HYDRO MAN & AQUARIUM! "
+ NOTZERO(8) 20 HERE(2) 52 EQ(20) 30 NO CONDITION (Arg:55)
+ SET(58) 19
+
+
+Action 124 0 0
+Comment: "get one "
+ NOTZERO(8) 20 ISZERO(9) 19 HERE(2) 230 OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ GET(52) 131 230
+ MESSAGE 8 "I've got"
+ PRNOBJART(122) 131 230
+ PRINTMESS(128) 97 "\."
+ SET0FLAG(67)
+
+
+Action 125 0 0
+Comment: "  next loop "
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ CLEAR(60) 19
+ CLEAR(60) 20
+ LOOP?(113)
+
+
+Action 126 0 0
+Comment: ""
+ ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 156 "nothing's takeable!"
+
+
+Action 127 DROP(5) ANY(0)
+Comment: " DROP EVERYTHING TAKEABLE "
+202 (ALL)
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 20
+ CLEAR(60) 21
+
+
+Action 128 0 0
+Comment: "IF NOUN INPUT=(NOTHING INPUT) OR OBJECTS'S NOUN=NOUN THEN GOOD "
+ OR(31) (Arg:1)  NOUNIS?(28) 230 NO CONDITION (Arg:0) NOT(31) (Arg:9)  UNK29(29) 230 NO CONDITION (Arg:230)
+ SET(58) 20
+
+
+Action 129 0 0
+Comment: ""
+ NOTZERO(8) 20 CARRIED(1) 230 OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ DROP(53) 131 230
+ PRINTMESS(128) 100 "I leave"
+ PRNOBJART(122) 131 230
+ SET(58) 21
+
+
+Action 130 0 0
+Comment: "IN ELVATOR SHAFT "
+ NOTZERO(8) 21 OR(31) (Arg:1)  NOT(31) (Arg:6)  NOTAT(4) 6 NOTAT(4) 9 NOTAT(4) 11 NOTAT(4) 14 NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ PRINTMESS(128) 141 "\, I set it down so it won't fall"
+
+
+Action 131 0 0
+Comment: "  DROP one "
+ NOTZERO(8) 21
+ PRINTMESS(128) 97 "\."
+ SET0FLAG(67)
+
+
+Action 132 0 0
+Comment: ""
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ CLEAR(60) 20
+ CLEAR(60) 21
+ LOOP?(113)
+
+
+Action 133 0 0
+Comment: ""
+ ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 111 "I don't have that."
+
+
+Action 134 DROP(5) ANY(0)
+Comment: ""
+131 (AT) 32 (BUTTON) 131 (AT) 15 (FAN)
+ HERE(2) 20
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+
+
+Action 135 0 0
+Comment: "DON'T KILL DOC CONNERS OR HYDROMAN "
+ UNK29(29) 230 NO CONDITION (Arg:230) NOT(31) (Arg:6)  OR(31) (Arg:1)  NOTEQUAL(20) 30 NO CONDITION (Arg:53) NOTEQUAL(20) 30 NO CONDITION (Arg:51) NOTEQUAL(20) 30 NO CONDITION (Arg:52) NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 143 "isn't a killer!"
+ DONE(69)
+
+
+Action 136 0 0
+Comment: "WAS DESTROYED "
+ UNK29(29) 230 NO CONDITION (Arg:230) PRESENT(3) 230 OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ DROPIN(62) 131 230 49
+ MESSAGE 17 "I hit"
+ MESSAGE 19 "fan! Spang!"
+ MESSAGE 3 "I see"
+ PRINTOBJ(85) 131 230
+ PRINTMESS(128) 112 "was destroyed!"
+ UNKNOWN(115)
+ SET0FLAG(67)
+
+
+Action 137 0 0
+Comment: "HEAVY "
+ NOTZERO(8) 0 NOT(31) (Arg:6)  OR(31) (Arg:1)  NOTEQUAL(20) 30 NO CONDITION (Arg:56) NOTEQUAL(20) 30 NO CONDITION (Arg:58) NOTEQUAL(20) 30 NO CONDITION (Arg:55) NOTEQUAL(20) 30 NO CONDITION (Arg:59) NOTEQUAL(20) 30 NO CONDITION (Arg:71) NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ CLRCNT?(109) 2
+ SWAP(72) 20 21
+ LOOK(76)
+
+
+Action 138 0 0
+Comment: "END OF NEXT LOOP "
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 139 0 0
+Comment: "DON'T HAVE IT "
+ ISZERO(9) 0
+ PRINTMESS(128) 110 "I don't see it here."
+
+
+Action 140 DROP(5) HAND(30)
+Comment: "GET GEM FROM TANK "
+139 (IN) 53 (ICE#1)
+ NO CONDITION (Arg:0)
+ SETCNT(99) 3 48
+ SETCNT(99) 59 49
+ SETCNT(99) 8 52
+ UNKNOWN(121)
+
+
+Action 141 SHUT(14) SHAFT(19)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 142 DROP(5) ICE#1(53)
+Comment: ""
+131 (AT) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 5 48
+ SETCNT(99) 39 49
+ UNKNOWN(121)
+
+
+Action 143 DROP(5) ICE#1(53)
+Comment: ""
+131 (AT) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(0)
+ UNKNOWN(0)
+ UNKNOWN(0)
+ UNKNOWN(0)
+ UNKNOWN(120)
+ SETCNT(99) 39 49
+ UNKNOWN(121)
+
+
+Action 144 DROP(5) WATER(39)
+Comment: ""
+131 (AT) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 5 48
+ UNKNOWN(121)
+
+
+Action 145 DROP(5) WATER(39)
+Comment: ""
+131 (AT) 33 (ELECTRO) 134 (ABOVE) 33 (ELECTRO)
+ PRESENT(3) 55 HERE(2) 35
+ DROPIN(62) 55 49
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 102 "He dodged & I missed! Drat!"
+
+
+Action 146 GO(1) SKYSCRAPER(24)
+Comment: ""
+ AT(4) 18
+ GOTO(54) 17
+ PRINTMESS(128) 100 "I leave"
+
+
+Action 147 GO(1) SKYSCRAPER(24)
+Comment: "BUMP "
+ AT(4) 17
+ PRINTMESS(128) 108 "BUMP!"
+ MESSAGE 27 "Something stops me!"
+
+
+Action 148 EMPTY(30) CHEM#2(42)
+Comment: "DROP CHEM#2 "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 5 48
+ UNKNOWN(121)
+
+
+Action 149 DROP(5) CHEM#2(42)
+Comment: "DRY HIM OUT "
+134 (ABOVE) 51 (HYDROMAN) 131 (AT) 51 (HYDROMAN)
+ PRESENT(3) 41 PRESENT(3) 52
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 120 "I dried him out!"
+ DESTROY(59) 52
+ DESTROY(59) 41
+ LOOK(76)
+
+
+Action 150 DROP(5) CHEM#2(42)
+Comment: "DRY HIM OUT "
+134 (ABOVE) 81 (LIZARD) 131 (AT) 81 (LIZARD)
+ PRESENT(3) 41 PRESENT(3) 38
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 120 "I dried him out!"
+ SWAP(72) 51 38
+ DESTROY(59) 41
+ LOOK(76)
+
+
+Action 151 KISS(37) WEB(37)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ MESSAGE 30 "I feel"
+ MESSAGE 4 "nothing special"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 152 FLY(35) ANY(0)
+Comment: "CAN'T DO THAT YET "
+128 (ANY) 0 (ANY)
+ AT(4) 0
+ UNKNOWN(0)
+
+
+Action 153 LOOK(11) UP(5)
+Comment: ""
+ AT(4) 17
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 109 "clear blue sky!"
+
+
+Action 154 SAY(22) HELLO(64)
+Comment: "MAYBE I SHOULD SPEAK TO them? "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ PRINTMESS(128) 118 "Maybe I should talk to that character?"
+
+
+Action 155 OPEN(6) CARPET(13)
+Comment: "NO VANDAL "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 66 "is no vandal!"
+
+
+Action 156 HIT(21) LIZARD(81)
+Comment: ""
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY) 139 (IN) 0 (ANY)
+ HERE(2) 38
+ MESSAGE 23 "I exert my Spider strength!"
+ CONTINUE(73)
+
+
+Action 157 0 50
+Comment: " MISS HIM "
+ NO CONDITION (Arg:0)
+ PRINTMESS(128) 102 "He dodged & I missed! Drat!"
+ DONE(69)
+
+
+Action 158 0 0
+Comment: " NO DAMAGE "
+ NO CONDITION (Arg:0)
+ MESSAGE 17 "I hit"
+ PRINTMESS(128) 60 "& I do no damage!"
+
+
+Action 159 OPEN(6) KNOB(63)
+Comment: "PULL KNOB "
+ HERE(2) 63
+ MESSAGE 1 "OK"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 160 DRINK(31) FACE(28)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 147 "I'm no HULK!"
+
+
+Action 161 HIT(21) ME(7)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 147 "I'm no HULK!"
+
+
+Action 162 DRINK(31) ANY(0)
+Comment: "I CAN'T DO THAT YET. (WEARING A MASK!) "
+128 (ANY) 0 (ANY)
+ AT(4) 0
+ MESSAGE 1 "OK"
+
+
+Action 163 OPEN(6) COSTUME(54)
+Comment: "WEBBED SHUT "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 146 "It's webbed together!"
+
+
+Action 164 SET(25) DESK(57)
+Comment: ""
+ HERE(2) 58
+ MESSAGE 1 "OK"
+
+
+Action 165 SET(25) COUCH(58)
+Comment: ""
+ HERE(2) 59
+ MESSAGE 1 "OK"
+
+
+Action 166 GO(1) WINDOW(14)
+Comment: ""
+195 (AT) 203 (IN) 193 (NONE)
+ NO CONDITION (Arg:0)
+ CONTINUE(73)
+
+
+Action 167 0 0
+Comment: "FROM OUTSIDE "
+ AT(4) 17
+ MESSAGE 1 "OK"
+ GOTO(54) 10
+ LOOK(76)
+ DONE(69)
+
+
+Action 168 0 0
+Comment: "TO OUTSIDE BY MYSTERIO "
+ AT(4) 10
+ GOTO(54) 17
+ MESSAGE 1 "OK"
+ LOOK(76)
+ DONE(69)
+
+
+Action 169 0 0
+Comment: "ROOM BY WINDOW "
+ UNK5(5) 32 NO CONDITION (Arg:200)
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 121 "I'm at the"
+ ECHONOUN(84)
+ PRINTMESS(128) 97 "\."
+ DONE(69)
+
+
+Action 170 0 0
+Comment: "NOT A WINDOW HERE! "
+ NO CONDITION (Arg:0)
+ UNKNOWN(116)
+
+
+Action 171 GO(1) WINDOW(14)
+Comment: ""
+204 (OUT)
+ UNK5(5) 32 NO CONDITION (Arg:200)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 172 GO(1) WINDOW(14)
+Comment: "I CAN'T DO THAT HERE "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 173 JUMP(16) WINDOW(14)
+Comment: ""
+204 (OUT)
+ UNK5(5) 32 NO CONDITION (Arg:200)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 174 OPEN(6) WINDOW(14)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 175 GO(1) BUTTON(32)
+Comment: "BY ELEVATOR "
+ UNK5(5) 32 NO CONDITION (Arg:203)
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 121 "I'm at the"
+ ECHONOUN(84)
+
+
+Action 176 LOOK(11) CHEM#2(42)
+Comment: ""
+ PRESENT(3) 41
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 140 "it's a drying agent!"
+
+
+Action 177 HIT(21) WEB(37)
+Comment: ""
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 37
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 106 "she's my friend!"
+
+
+Action 178 MIX(13) WEB(37)
+Comment: " BABY FORMULA "
+128 (ANY) 0 (ANY)
+ AT(4) 13 CARRIED(1) 48 NOT(31) (Arg:3)  ABSENT(3) 43
+ MESSAGE 6 "Sorry,"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 75 "baby"
+ PRINTMESS(128) 74 "formula!"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 55 "no useable formula!"
+
+
+Action 179 MIX(13) ANY(0)
+Comment: " TOO MANY INGREDIENTS "
+ AT(4) 13 PRESENT(3) 39 PRESENT(3) 40 PRESENT(3) 42
+ MESSAGE 6 "Sorry,"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 58 "too many ingredients."
+ MESSAGE 29 "Be more specific."
+
+
+Action 180 LOOK(11) PAPER#3(82)
+Comment: " TORN PAPER "
+195 (AT) 193 (NONE)
+ PRESENT(3) 43
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 54 "partial web formula, needs exotic powders!"
+
+
+Action 181 MIX(13) WEB(37)
+Comment: "NO FORMULA "
+128 (ANY) 0 (ANY)
+ AT(4) 13 NOT(31) (Arg:3)  ABSENT(3) 43
+ MESSAGE 6 "Sorry,"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 55 "no useable formula!"
+
+
+Action 182 MIX(13) WEB(37)
+Comment: "NO CHEMICALS "
+128 (ANY) 0 (ANY)
+ AT(4) 13 NOT(31) (Arg:3)  ABSENT(3) 42
+ MESSAGE 6 "Sorry,"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 56 "no chems!"
+
+
+Action 183 MIX(13) WEB(37)
+Comment: "SET TO MIX WEB "
+130 (WITH) 43 (CHEM#1) 136 (FROM) 43 (CHEM#1)
+ NO CONDITION (Arg:0)
+ MEANS(55) 13 37
+
+
+Action 184 MIX(13) WEB(37)
+Comment: " MAKE WEB "
+ AT(4) 13 PRESENT(3) 43 PRESENT(3) 42
+ PRINTMESS(128) 57 "Partial success only!"
+ DESTROY(59) 42
+ SETCNT(99) 25 1
+
+
+Action 185 MIX(13) CHEM#3(40)
+Comment: "MIX CALCIUM WITH ACID "
+130 (WITH) 42 (CHEM#2)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ UNK97(97) 49 53
+ UNKNOWN(121)
+
+
+Action 186 MIX(13) CHEM#2(42)
+Comment: "ADD WITH ACID "
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 2 52
+ SETCNT(99) 40 53
+ UNKNOWN(121)
+
+
+Action 187 MIX(13) CHEM#2(42)
+Comment: "CALCIUM CHLORIDE "
+130 (WITH) 40 (CHEM#3)
+ AT(4) 13 PRESENT(3) 39 PRESENT(3) 40
+ DESTROY(59) 39
+ DESTROY(59) 40
+ DROP(53) 41
+ MESSAGE 1 "OK"
+ LOOK(76)
+
+
+Action 188 MIX(13) ANY(0)
+Comment: "SORRY CAN'T "
+130 (WITH) 0 (ANY)
+ AT(4) 13
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 189 JUMP(16) DOWN(6)
+Comment: "SET VERB TO GET "
+ NO CONDITION (Arg:0)
+ MEANS(55) 3 6
+
+
+Action 190 GO(1) FLOOR(20)
+Comment: " FROM WALL OR CIELING "
+ NO CONDITION (Arg:0)
+ MEANS(55) 3 6
+
+
+Action 191 GET(3) CEILING(8)
+Comment: "GET DOWN "
+201 (OFF)
+ NO CONDITION (Arg:0)
+ MEANS(55) 3 6
+
+
+Action 192 GET(3) WALL(11)
+Comment: "GET DOWN "
+201 (OFF)
+ NO CONDITION (Arg:0)
+ MEANS(55) 3 6
+
+
+Action 193 GET(3) DOWN(6)
+Comment: ""
+137 (OFF) 8 (CEILING) 137 (OFF) 11 (WALL) 129 (NONE) 0 (ANY)
+ OR(31) (Arg:1)  HERE(2) 0 HERE(2) 1
+ MESSAGE 1 "OK"
+ DESTROY(59) 1
+ DESTROY(59) 0
+ CLEAR(60) 6
+ LOOK(76)
+ REDRAW?(89)
+
+
+Action 194 GET(3) MYSTERIO(12)
+Comment: "SAME AS CHADE MSYTERIO "
+ NO CONDITION (Arg:0)
+ MEANS(55) 34 12
+
+
+Action 195 CHASE(34) MYSTERIO(12)
+Comment: ""
+ AT(4) 10
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 107 "he vanished to the west!"
+
+
+Action 196 STOP(36) MYSTERIO(12)
+Comment: ""
+ AT(4) 10
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 107 "he vanished to the west!"
+
+
+Action 197 HIT(21) MYSTERIO(12)
+Comment: ""
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 5 "HUH?"
+ MESSAGE 16 "How?"
+
+
+Action 198 QUIT(12) ANY(0)
+Comment: ""
+ NO CONDITION (Arg:0)
+ SET(58) 22
+
+
+Action 199 SHUT(14) EYES(61)
+Comment: ""
+130 (WITH) 30 (HAND) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ LIGHTSOUT(56)
+ LOOK(76)
+ REDRAW?(89)
+
+
+Action 200 OPEN(6) EYES(61)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ LIGHTSON(57)
+ LOOK(76)
+ REDRAW?(89)
+
+
+Action 201 PUSH(15) KNOB(63)
+Comment: "TURNED IT "
+ HERE(2) 63
+ MESSAGE 1 "OK"
+ SET(58) 19
+ PRINTMESS(128) 113 "I pushed the knob. "
+
+
+Action 202 TURN(2) KNOB(63)
+Comment: "NO KNOB HERE "
+ NOT(31) (Arg:3)  NOTHERE(2) 63
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 116 "I don't see the knob here."
+
+
+Action 203 TURN(2) KNOB(63)
+Comment: ""
+ HERE(2) 62 NOTZERO(8) 19
+ MESSAGE 20 "Click!"
+ SWAP(72) 62 17
+
+
+Action 204 HIT(21) RINGMASTER(62)
+Comment: " GO NEXT! "
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 62 ISZERO(9) 15
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 205 KNOCK(33) RINGMASTER(62)
+Comment: ""
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 62 ISZERO(9) 15
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 206 GET(3) RINGMASTER(62)
+Comment: " GO NEXT! "
+ HERE(2) 62 ISZERO(9) 15
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 207 TURN(2) KNOB(63)
+Comment: ""
+ HERE(2) 63
+ MESSAGE 1 "OK"
+ MESSAGE 20 "Click!"
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 208 GET(3) BIO(9)
+Comment: " BIO GEM "
+ PRESENT(3) 15
+ MESSAGE 1 "OK"
+ STEAL(74) 15
+
+
+Action 209 DROP(5) BIO(9)
+Comment: ""
+ PRESENT(3) 15
+ MESSAGE 1 "OK"
+ DROP(53) 15
+
+
+Action 210 GO(1) WALL(11)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ DROP(53) 1
+ DESTROY(59) 0
+
+
+Action 211 SAY(22) WEB(37)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ MESSAGE 49 ""Ask me to scan! For example SCAN LIZARD""
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 212 INVENTORY(10) ANY(0)
+Comment: " NOT DARK "
+ ISZERO(9) 15
+ INVENTORY(66)
+
+
+Action 213 GET(3) INVENTORY(16)
+Comment: ""
+ ISZERO(9) 15
+ INVENTORY(66)
+
+
+Action 214 SCORE(23) ANY(0)
+Comment: ""
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ CLRCNT?(109) 13
+ CLRCNT?(109) 12
+ BEGIN?(112)
+
+
+Action 215 0 0
+Comment: "GOT ONE "
+ UNK23(23) 230 NO CONDITION (Arg:34) OBJFLAG?(30) 230 NO CONDITION (Arg:4)
+ ADDCNT(100) 1 12
+
+
+Action 216 0 0
+Comment: "ADD TOTAL GEMS FOUND "
+ OBJFLAG?(30) 230 NO CONDITION (Arg:4)
+ ADDCNT(100) 1 13
+
+
+Action 217 0 0
+Comment: "NEXT "
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 218 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ PRINTMESS(128) 144 "I've stored"
+ PRNCOUNT?(102) 12
+ PRINTMESS(128) 145 "gems, on a scale of 0 to 100 that rates a:"
+ SETCNT(99) 100 14
+ MULTIPLY?(65) 14 12
+
+
+Action 219 0 0
+Comment: "OUTPUT SCORE "
+ NO CONDITION (Arg:0)
+ DIVIDE?(91) 13 12 14
+ PRNCOUNT?(102) 12
+
+
+Action 220 0 0
+Comment: "WON "
+ NO CONDITION (Arg:0) EQ(20) 12 NO CONDITION (Arg:100)
+ PRINTMESS(128) 105 "CHIEF EXAMINER appears & says: "Congratulations!" "
+ PRINTMESS(128) 152 "& "Save this password: MICAH"."
+ SET(58) 22
+
+
+Action 221 SAVE(17) GAME(17)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ CLEAR(60) 9
+ CLEAR(60) 10
+ SAVE(71)
+
+
+Action 222 PUSH(15) BUTTON(32)
+Comment: " ELEVATOR "
+ OR(31) (Arg:1)  AT(4) 5 AT(4) 10 AT(4) 12 AT(4) 15
+ MESSAGE 1 "OK"
+ MESSAGE 20 "Click!"
+
+
+Action 223 OPEN(6) SHAFT(19)
+Comment: " DOOR "
+ HERE(2) 22
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+ SWAP(72) 23 22
+ BEGIN?(112)
+ SETCNT(99) 1 15
+ SYSCALL?(110) 3 0
+
+
+Action 224 0 0
+Comment: "DONE NO GRAPHICS ON! "
+ ISZERO(9) 35
+ LOOK(76)
+ DONE(69)
+
+
+Action 225 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 2 15
+
+
+Action 226 0 0
+Comment: "LOAD SPECIAL PICS 1-5 INTO ANIMATE BUFFER "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:5)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 227 0 0
+Comment: "IF ON CIELING RESET "
+ NODESTROYED(13) 0
+ DROPIN(62) 0 49
+ DESTROY(59) 23
+ REDRAW?(89)
+
+
+Action 228 0 0
+Comment: "START ANIMATE & SAY SANDMAN NOT LOADED "
+ NO CONDITION (Arg:0)
+ BEGIN?(112)
+ CLRCNT?(109) 15
+ CLEAR(60) 9
+ SYSCALL?(110) 6 0
+
+
+Action 229 0 0
+Comment: "ANIMATE 1 "
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 4 15
+
+
+Action 230 0 0
+Comment: ""
+ NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:4)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 231 0 0
+Comment: "DRAW OPEN SHAFT LAST "
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 6 0
+ SETCNT(99) 23 15
+ SYSCALL?(110) 7 15
+ CLEAR(60) 34
+
+
+Action 232 0 0
+Comment: "IF WAS ON CIELING RESET "
+ OBJIN(26) 0 NO CONDITION (Arg:49)
+ DROP(53) 0
+ DROP(53) 23
+ REDRAW?(89)
+
+
+Action 233 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ LOOK(76)
+
+
+Action 234 LOOK(11) MIRROR(34)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 25
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 97 "\."
+
+
+Action 235 GO(1) SHAFT(19)
+Comment: " FROM WAITING,ALSO PUT IN NEW EXIT "
+ HERE(2) 23
+ MESSAGE 1 "OK"
+ SETCNT(99) 2 19
+ SETCNT(99) 6 20
+ NEWEXIT?(95) 32 19 20
+ GOTO(54) 6
+ LOOK(76)
+
+
+Action 236 LOOK(11) SHAFT(19)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 23
+ MESSAGE 3 "I see"
+ MESSAGE 25 "it's empty!"
+
+
+Action 237 JUMP(16) UP(5)
+Comment: "GO CIELING "
+134 (ABOVE) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MEANS(55) 1 8
+
+
+Action 238 JUMP(16) CEILING(8)
+Comment: "GO CIELING "
+134 (ABOVE) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MEANS(55) 1 8
+
+
+Action 239 GO(1) CEILING(8)
+Comment: " NOT ELEVATRO OR BLDG "
+134 (ABOVE) 0 (ANY) 129 (NONE) 0 (ANY)
+ NOT(31) (Arg:4)  NOTAT(4) 6 NOTAT(4) 9 NOTAT(4) 11 NOTAT(4) 14 NOTAT(4) 19 NOTAT(4) 40
+ MESSAGE 1 "OK"
+ DROP(53) 0
+ DESTROY(59) 1
+ CLEAR(60) 6
+ REDRAW?(89)
+
+
+Action 240 LOOK(11) WALL(11)
+Comment: "IN ELEVTAOR. LOOK SHAFT "
+195 (AT) 193 (NONE)
+ NO CONDITION (Arg:0)
+ MEANS(55) 11 19
+
+
+Action 241 LOOK(11) SHAFT(19)
+Comment: " ELEVATOR "
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 6 DESTROYED(14) 4
+ MESSAGE 3 "I see"
+ MESSAGE 26 "mostly empty tool niches."
+
+
+Action 242 LOOK(11) SHAFT(19)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 9 DESTROYED(14) 5
+ MESSAGE 3 "I see"
+ MESSAGE 26 "mostly empty tool niches."
+
+
+Action 243 LOOK(11) SHAFT(19)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 11 DESTROYED(14) 6
+ MESSAGE 3 "I see"
+ MESSAGE 26 "mostly empty tool niches."
+
+
+Action 244 GET(3) GEM(59)
+Comment: "LOOK NICHE "
+136 (FROM) 22 (NICHE)
+ NO CONDITION (Arg:0)
+ MEANS(55) 11 22
+ UNKNOWN(116)
+
+
+Action 245 LOOK(11) NICHE(22)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 6 DESTROYED(14) 4
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 4
+ STEAL(74) 4
+ PRINTMESS(128) 97 "\."
+
+
+Action 246 LOOK(11) NICHE(22)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 9 DESTROYED(14) 5
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 5
+ STEAL(74) 5
+ PRINTMESS(128) 97 "\."
+
+
+Action 247 LOOK(11) NICHE(22)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 11 DESTROYED(14) 6
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 6
+ STEAL(74) 6
+ PRINTMESS(128) 97 "\."
+
+
+Action 248 LOOK(11) NICHE(22)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 14 DESTROYED(14) 7
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 7
+ STEAL(74) 7
+ PRINTMESS(128) 97 "\."
+
+
+Action 249 LOOK(11) SHAFT(19)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 14 DESTROYED(14) 7
+ MESSAGE 3 "I see"
+ MESSAGE 26 "mostly empty tool niches."
+
+
+Action 250 LOOK(11) ANY(0)
+Comment: ""
+198 (ABOVE)
+ AT(4) 11 ISZERO(9) 3
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ MESSAGE 28 "the elevator bottom."
+
+
+Action 251 LOOK(11) UP(5)
+Comment: ""
+193 (NONE) 128 (ANY) 0 (ANY)
+ AT(4) 11 ISZERO(9) 3
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ MESSAGE 28 "the elevator bottom."
+
+
+Action 252 RAISE(26) SHAFT(19)
+Comment: "EL UP "
+ AT(4) 11 ISZERO(9) 3
+ SET(58) 3
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+
+
+Action 253 SET(25) SHAFT(19)
+Comment: "ELEVATOR UP "
+ AT(4) 11 ISZERO(9) 3
+ SET(58) 3
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+
+
+Action 254 PUSH(15) UP(5)
+Comment: " ELV UP "
+134 (ABOVE) 19 (SHAFT) 129 (NONE) 0 (ANY) 131 (AT) 19 (SHAFT)
+ AT(4) 11 ISZERO(9) 3
+ SET(58) 3
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+
+
+Action 255 PUSH(15) SHAFT(19)
+Comment: " ELVA UUP "
+ AT(4) 11 ISZERO(9) 3
+ SET(58) 3
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+
+
+Action 256 LOOK(11) SKY(25)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ AT(4) 17 DESTROYED(14) 28
+ MESSAGE 3 "I see"
+ MESSAGE 34 "something!"
+ PRINTOBJ(85) 28
+ DROP(53) 28
+ LOOK(76)
+
+
+Action 257 LOOK(11) CLOUD(35)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 28
+ MESSAGE 3 "I see"
+ MESSAGE 35 "MYSTERIO"
+ PRINTMESS(128) 97 "\."
+
+
+Action 258 GO(1) CLOUD(35)
+Comment: " 142 "
+ NO CONDITION (Arg:0)
+ MESSAGE 16 "How?"
+ MESSAGE 2 "I can't"
+ MESSAGE 36 "reach it."
+
+
+Action 259 OPEN(6) FAN(15)
+Comment: ""
+ HERE(2) 20
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 14 "blades would hurt!"
+
+
+Action 260 STOP(36) FAN(15)
+Comment: ""
+ HERE(2) 20
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 14 "blades would hurt!"
+
+
+Action 261 GO(1) FAN(15)
+Comment: ""
+ HERE(2) 20
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 14 "blades would hurt!"
+
+
+Action 262 LOOK(11) FAN(15)
+Comment: " SLOW? "
+203 (IN) 195 (AT) 193 (NONE) 199 (BEHIND)
+ AT(4) 7
+ MESSAGE 13 "RPMS fan rotates:"
+ SWAPCUR(81) 2
+ PRINTCUR(78)
+ PRINTMESS(128) 97 "\."
+ MESSAGE 3 "I see"
+ MESSAGE 15 "a button beyond the fan."
+ SWAPCUR(81) 2
+
+
+Action 263 LOOK(11) DR#2(36)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ PRESENT(3) 34 DESTROYED(14) 19
+ MESSAGE 1 "OK"
+ STEAL(74) 19
+ LOOK(76)
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 19
+
+
+Action 264 PUSH(15) BUTTON(32)
+Comment: " PUSH "
+128 (ANY) 0 (ANY)
+ AT(4) 7
+ LOOK(76)
+ MESSAGE 16 "How?"
+
+
+Action 265 DROP(5) WEB(37)
+Comment: "CAST WEB "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 8 48
+ UNKNOWN(121)
+
+
+Action 266 CAST(8) ANY(0)
+Comment: "CAST WEB AT ITEM "
+130 (WITH) 37 (WEB)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ SETCNT(99) 3 52
+ SWAPCNT(98) 49 53
+ SETCNT(99) 37 49
+ UNKNOWN(121)
+
+
+Action 267 CAST(8) WEB(37)
+Comment: "CAST WEB ANIMATION "
+128 (ANY) 0 (ANY)
+ GTEQ(21) 1 NO CONDITION (Arg:1)
+ SETCNT(99) 14 15
+ CONTINUE(73)
+
+
+Action 268 0 0
+Comment: "NO GRAPHICS "
+ ISZERO(9) 35
+ UNKNOWN(116)
+
+
+Action 269 0 0
+Comment: "IF ON CIELING RESET FLIP FLAG "
+ NODESTROYED(13) 0
+ DROPIN(62) 0 49
+
+
+Action 270 0 0
+Comment: "CLEAR GRAPHICS. FOR LOOP. "
+ ISZERO(9) 10
+ SYSCALL?(110) 3 0
+ BEGIN?(112)
+
+
+Action 271 0 0
+Comment: " LOAD PICTURE "
+ ISZERO(9) 10
+ SYSCALL?(110) 2 15
+
+
+Action 272 0 0
+Comment: "NEXT "
+ ISZERO(9) 10 NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:18)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 273 0 0
+Comment: "START ANIMATE. SAY SANDMAN NOT IN. "
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 15
+ SET(58) 10
+ CLEAR(60) 9
+ BEGIN?(112)
+
+
+Action 274 0 0
+Comment: "ANIMATE 1 "
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 4 15
+
+
+Action 275 0 0
+Comment: "NEXT "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 15 NO CONDITION (Arg:4)
+ ADDCNT(100) 1 15
+ LOOP?(113)
+
+
+Action 276 0 0
+Comment: "CLEAN OFF WEB "
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 15
+ SYSCALL?(110) 4 15
+
+
+Action 277 0 0
+Comment: "IF WAS ON CIELING RESET "
+ OBJIN(26) 0 NO CONDITION (Arg:49)
+ DROP(53) 0
+
+
+Action 278 0 0
+Comment: "CONTINUE "
+ NO CONDITION (Arg:0)
+ SYSCALL?(110) 6 0
+ REDRAW?(89)
+ UNKNOWN(116)
+
+
+Action 279 CAST(8) WEB(37)
+Comment: " SEE IF ANY FLUID FIRST "
+131 (AT) 15 (FAN)
+ AT(4) 7
+ SWAPCUR(81) 1
+ CONTINUE(73)
+
+
+Action 280 0 0
+Comment: " EMPTY "
+ CURLE(15) 0
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 8 "I've got"
+ MESSAGE 9 "no web fluid!"
+ SWAPCUR(81) 1
+ DONE(69)
+
+
+Action 281 0 0
+Comment: " -1 THEN SET FAN MOTOR COUNTER "
+ NO CONDITION (Arg:0)
+ DECCUR(77)
+ SWAPCUR(81) 1
+ SWAPCUR(81) 2
+ MESSAGE 1 "OK"
+
+
+Action 282 0 0
+Comment: " -50 FRM FAN. I HIT FAN. "
+ CURGT(16) 51
+ SUB(83) 50
+ MESSAGE 17 "I hit"
+ MESSAGE 19 "fan! Spang!"
+
+
+Action 283 0 0
+Comment: " -50 FRM FAN "
+ CURGT(16) 51
+ SUB(83) 50
+
+
+Action 284 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ SWAPCUR(81) 2
+
+
+Action 285 CAST(8) WEB(37)
+Comment: ""
+131 (AT) 32 (BUTTON)
+ AT(4) 7
+ SWAPCUR(81) 1
+ CONTINUE(73)
+
+
+Action 286 0 0
+Comment: " EMPTY "
+ CURLE(15) 0
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 8 "I've got"
+ MESSAGE 9 "no web fluid!"
+ SWAPCUR(81) 1
+ DONE(69)
+
+
+Action 287 0 0
+Comment: " -1 "
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ DECCUR(77)
+ SWAPCUR(81) 1
+ SWAPCUR(81) 2
+
+
+Action 288 0 0
+Comment: " FAST "
+ CURGT(16) 50
+ MESSAGE 17 "I hit"
+ MESSAGE 19 "fan! Spang!"
+ SUB(83) 25
+
+
+Action 289 0 0
+Comment: " SLOW "
+ CURLE(15) 50 HERE(2) 20
+ MESSAGE 17 "I hit"
+ MESSAGE 18 "it"
+ SWAP(72) 20 21
+ SETCUR(79) 0
+
+
+Action 290 0 0
+Comment: ""
+ CURLE(15) 50
+ MESSAGE 20 "Click!"
+ LOOK(76)
+
+
+Action 291 0 0
+Comment: " DONE "
+ NO CONDITION (Arg:0)
+ SWAPCUR(81) 2
+
+
+Action 292 JUMP(16) ANY(0)
+Comment: " SKY "
+ AT(4) 17
+ MESSAGE 1 "OK"
+ GOTO(54) 18
+ LOOK(76)
+
+
+Action 293 GO(1) SKY(25)
+Comment: " SKY "
+ AT(4) 17
+ MESSAGE 1 "OK"
+ GOTO(54) 18
+ LOOK(76)
+
+
+Action 294 GO(1) FOREWARD(26)
+Comment: " SKY "
+ AT(4) 17
+ MESSAGE 1 "OK"
+ GOTO(54) 18
+ LOOK(76)
+
+
+Action 295 FEEL(19) NORTH(1)
+Comment: " SKY "
+ AT(4) 18
+ MESSAGE 30 "I feel"
+ MESSAGE 31 "a door. I enter."
+ GOTO(54) 21
+ LOOK(76)
+
+
+Action 296 FEEL(19) SOUTH(2)
+Comment: ""
+ AT(4) 18
+ MESSAGE 30 "I feel"
+ MESSAGE 31 "a door. I enter."
+ GOTO(54) 23
+ LOOK(76)
+
+
+Action 297 FEEL(19) WEST(4)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 30 "I feel"
+ MESSAGE 4 "nothing special"
+ PRINTMESS(128) 97 "\."
+
+
+Action 298 FEEL(19) EAST(3)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 30 "I feel"
+ MESSAGE 4 "nothing special"
+ PRINTMESS(128) 97 "\."
+
+
+Action 299 FEEL(19) UP(5)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 30 "I feel"
+ MESSAGE 4 "nothing special"
+ PRINTMESS(128) 97 "\."
+
+
+Action 300 FEEL(19) DOWN(6)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 30 "I feel"
+ MESSAGE 32 "the floor in that direction."
+ PRINTMESS(128) 97 "\."
+
+
+Action 301 FEEL(19) ANY(0)
+Comment: ""
+ AT(4) 18
+ MESSAGE 30 "I feel"
+ MESSAGE 32 "the floor in that direction."
+
+
+Action 302 OPEN(6) SHAFT(19)
+Comment: "OPEN MESH "
+ NO CONDITION (Arg:0)
+ MEANS(55) 6 56
+
+
+Action 303 OPEN(6) MESH(56)
+Comment: ""
+137 (OFF) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 26
+ MESSAGE 1 "OK"
+ MESSAGE 23 "I exert my Spider strength!"
+ SWAP(72) 26 27
+ STEAL(74) 64
+
+
+Action 304 GO(1) SHAFT(19)
+Comment: " A/C "
+ HERE(2) 27
+ MESSAGE 1 "OK"
+ GOTO(54) 7
+ LOOK(76)
+
+
+Action 305 LOOK(11) DOWN(6)
+Comment: ""
+193 (NONE)
+ AT(4) 17
+ MESSAGE 3 "I see"
+ MESSAGE 33 "I'm on the TOP floor!"
+
+
+Action 306 GO(1) FAN(15)
+Comment: ""
+ HERE(2) 29
+ MESSAGE 1 "OK"
+ GOTO(54) 7
+ LOOK(76)
+
+
+Action 307 GO(1) FAN(15)
+Comment: ""
+ HERE(2) 21
+ MESSAGE 1 "OK"
+ GOTO(54) 8
+ LOOK(76)
+
+
+Action 308 GET(3) DR#2(36)
+Comment: " DOC ARM "
+ HERE(2) 31 DESTROYED(14) 30
+ SHOWIMG(90) 6
+ MESSAGE 8 "I've got"
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ MESSAGE 40 "arm "
+ PRINTMESS(128) 97 "\."
+ STEAL(74) 30
+
+
+Action 309 DROP(5) DR#2(36)
+Comment: " DOC ARM "
+ CARRIED(1) 30
+ MESSAGE 1 "OK"
+ DESTROY(59) 30
+ CLEAR(60) 5
+
+
+Action 310 JUMP(16) ANY(0)
+Comment: " ELECTRO "
+ NOTZERO(8) 6
+ MESSAGE 1 "OK"
+ MESSAGE 42 "ELECTRO"
+ MESSAGE 45 "misses!"
+ CLEAR(60) 6
+
+
+Action 311 JUMP(16) ANY(0)
+Comment: ""
+ ISZERO(9) 6
+ MESSAGE 5 "HUH?"
+
+
+Action 312 HIT(21) ELECTRO(33)
+Comment: " HIT "
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 33
+ SET(58) 6
+ SET(58) 4
+ MESSAGE 37 "My Spider Sense tingles "
+ PRINTMESS(128) 97 "\."
+
+
+Action 313 LOOK(11) ELECTRO(33)
+Comment: " . "
+195 (AT) 193 (NONE)
+ PRESENT(3) 35 DESTROYED(14) 18
+ MESSAGE 1 "OK"
+ STEAL(74) 18
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 18
+ PRINTMESS(128) 97 "\."
+
+
+Action 314 SCAN(7) LIZARD(81)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ MESSAGE 50 "CaCO3+HCl->CaCl2+..."
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 315 SCAN(7) MYSTERIO(12)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ MESSAGE 51 "It maps odd!"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 316 GO(1) CRIB(46)
+Comment: ""
+203 (IN)
+ HERE(2) 44
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 99 "I'm too big"
+ PRINTMESS(128) 97 "\."
+
+
+Action 317 HIT(21) SANDMAN(47)
+Comment: ""
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 50
+ MESSAGE 23 "I exert my Spider strength!"
+ MESSAGE 17 "I hit"
+ PRINTMESS(128) 62 "him"
+ PRINTMESS(128) 60 "& I do no damage!"
+
+
+Action 318 SCAN(7) SANDMAN(47)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 61 "You're above"
+ PRINTMESS(128) 62 "him"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 319 LOOK(11) DR#1(50)
+Comment: ""
+195 (AT) 193 (NONE)
+ PRESENT(3) 51 DESTROYED(14) 2
+ MESSAGE 1 "OK"
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 2
+ STEAL(74) 2
+
+
+Action 320 HIT(21) HYDROMAN(51)
+Comment: ""
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 52
+ MESSAGE 23 "I exert my Spider strength!"
+ MESSAGE 17 "I hit"
+ PRINTMESS(128) 62 "him"
+ PRINTMESS(128) 60 "& I do no damage!"
+
+
+Action 321 SCAN(7) HYDROMAN(51)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 63 "Solid!"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 322 LOOK(11) THERMOSTAT(52)
+Comment: ""
+195 (AT) 193 (NONE)
+ HERE(2) 54
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 64 "it's set at:"
+ PRINTCUR(78)
+
+
+Action 323 SET(25) THERMOSTAT(52)
+Comment: ""
+ HERE(2) 54
+ PRINTMESS(128) 65 "Raise or lower?"
+
+
+Action 324 RAISE(26) ANY(0)
+Comment: ""
+ NOT(31) (Arg:3)  NOTHERE(2) 54
+ MESSAGE 3 "I see"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 325 RAISE(26) ANY(0)
+Comment: "NOT ANY & NOT THERMOSTAT "
+ NOT(31) (Arg:4)  NOUNIS?(28) 230 NO CONDITION (Arg:0) NOUNIS?(28) 230 NO CONDITION (Arg:52)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 326 RAISE(26) ANY(0)
+Comment: ""
+ HERE(2) 54 CURGT(16) 90
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 327 LOWER(27) ANY(0)
+Comment: ""
+ HERE(2) 54 CURLE(15) 31
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 328 RAISE(26) ANY(0)
+Comment: ""
+ HERE(2) 54
+ MESSAGE 1 "OK"
+ ADD(82) 20
+ PRINTMESS(128) 64 "it's set at:"
+ PRINTCUR(78)
+
+
+Action 329 LOWER(27) ANY(0)
+Comment: ""
+ HERE(2) 54
+ MESSAGE 1 "OK"
+ SUB(83) 20
+ PRINTMESS(128) 64 "it's set at:"
+ PRINTCUR(78)
+
+
+Action 330 LOOK(11) WEST(4)
+Comment: ""
+195 (AT) 193 (NONE)
+ AT(4) 35 OBJIN(26) 15 NO CONDITION (Arg:36)
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 68 "Bio Gem!"
+
+
+Action 331 CAST(8) WEB(37)
+Comment: " SEE IF ANY FLUID FIRST "
+131 (AT) 59 (GEM) 131 (AT) 9 (BIO)
+ AT(4) 35 OBJIN(26) 15 NO CONDITION (Arg:36)
+ SWAPCUR(81) 1
+ CONTINUE(73)
+
+
+Action 332 0 0
+Comment: " EMPTY "
+ CURLE(15) 0
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 8 "I've got"
+ MESSAGE 9 "no web fluid!"
+ SWAPCUR(81) 1
+ DONE(69)
+
+
+Action 333 0 0
+Comment: " -1 & GET IT   "
+ AT(4) 35 OR(31) (Arg:1)  HERE(2) 15
+ DECCUR(77)
+ SWAPCUR(81) 1
+ MESSAGE 1 "OK"
+ MESSAGE 8 "I've got"
+ MESSAGE 18 "it"
+ STEAL(74) 15
+
+
+Action 334 LOOK(11) ICE#1(53)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ PRESENT(3) 55 DESTROYED(14) 14
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 69 "a gem in the water."
+
+
+Action 335 GET(3) GEM(59)
+Comment: "HYRDO IN THE WAY "
+136 (FROM) 53 (ICE#1) 136 (FROM) 39 (WATER)
+ PRESENT(3) 55 PRESENT(3) 52
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 70 "HYDRO-MAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 336 GET(3) GEM(59)
+Comment: "GOT IT "
+136 (FROM) 53 (ICE#1) 136 (FROM) 39 (WATER)
+ PRESENT(3) 55 DESTROYED(14) 14
+ MESSAGE 1 "OK"
+ STEAL(74) 14
+ MESSAGE 8 "I've got"
+ MESSAGE 18 "it"
+ PRINTMESS(128) 97 "\."
+
+
+Action 337 EMPTY(30) WATER(39)
+Comment: "EMPTY AQUARIUM "
+136 (FROM) 0 (ANY) 131 (AT) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MEANS(55) 30 53
+
+
+Action 338 EMPTY(30) ICE#1(53)
+Comment: ""
+128 (ANY) 0 (ANY)
+ PRESENT(3) 55 HERE(2) 52
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 70 "HYDRO-MAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 339 EMPTY(30) ICE#1(53)
+Comment: ""
+128 (ANY) 0 (ANY)
+ PRESENT(3) 55 DESTROYED(14) 14
+ MESSAGE 1 "OK"
+ DROP(53) 14
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 14
+ PRINTMESS(128) 97 "\."
+ LOOK(76)
+
+
+Action 340 GET(3) ICE#1(53)
+Comment: " MULTIPLE COMMAND SO THE GET ANY BELOW WON'T ACTIVATE ON IT "
+ HERE(2) 55
+ CONTINUE(73)
+
+
+Action 341 0 0
+Comment: ""
+ HERE(2) 52
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 70 "HYDRO-MAN"
+ PRINTMESS(128) 59 "won't let me!"
+ DONE(69)
+
+
+Action 342 0 0
+Comment: "GOT IT "
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ STEAL(74) 55
+ MESSAGE 8 "I've got"
+ PRINTOBJ(85) 55
+ PRINTMESS(128) 97 "\."
+
+
+Action 343 GO(1) SHAFT(19)
+Comment: ""
+ AT(4) 10
+ MESSAGE 1 "OK"
+ GOTO(54) 9
+ LOOK(76)
+
+
+Action 344 GO(1) SHAFT(19)
+Comment: ""
+ AT(4) 12
+ MESSAGE 1 "OK"
+ GOTO(54) 11
+ LOOK(76)
+
+
+Action 345 GO(1) SHAFT(19)
+Comment: ""
+ AT(4) 15
+ MESSAGE 1 "OK"
+ GOTO(54) 14
+ LOOK(76)
+
+
+Action 346 HIT(21) DR#2(36)
+Comment: ""
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ HERE(2) 31
+ MESSAGE 24 "SPIDER-MAN"
+ MESSAGE 45 "misses!"
+ MESSAGE 38 "DOCTOR OCTOPUS"
+ MESSAGE 39 "pulls away."
+ CLEAR(60) 5
+ DESTROY(59) 30
+
+
+Action 347 OPEN(6) DESK(57)
+Comment: ""
+ PRESENT(3) 58 DESTROYED(14) 3
+ MESSAGE 1 "OK"
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 3
+ STEAL(74) 3
+
+
+Action 348 LOOK(11) PAINTING(60)
+Comment: ""
+195 (AT) 193 (NONE)
+ PRESENT(3) 60
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 73 "a framed portrait of J.J.Jameson."
+
+
+Action 349 OPEN(6) PAINTING(60)
+Comment: ""
+136 (FROM) 60 (PAINTING) 129 (NONE) 0 (ANY)
+ PRESENT(3) 60
+ MESSAGE 23 "I exert my Spider strength!"
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 43
+ PRINTMESS(128) 97 "\."
+ SWAP(72) 61 60
+ STEAL(74) 43
+
+
+Action 350 LOOK(11) CRIB(46)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 44 DESTROYED(14) 48
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 74 "formula!"
+
+
+Action 351 LOOK(11) CRIB(46)
+Comment: ""
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 44 DESTROYED(14) 13
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 123 "a gem!"
+
+
+Action 352 LOOK(11) CRIB(46)
+Comment: "LOOK CRIB (REMOVE PRESP ETC) "
+203 (IN) 195 (AT) 193 (NONE)
+ HERE(2) 44
+ MEANS(55) 11 46
+
+
+Action 353 GET(3) GEM(59)
+Comment: "SANDMAN STOPS ME "
+128 (ANY) 0 (ANY)
+ DESTROYED(14) 13 HERE(2) 49 NOT(31) (Arg:4)  NOTHERE(2) 1 NOTHERE(2) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 354 GET(3) GEM(59)
+Comment: "SANDMAN WON'T LET ME "
+136 (FROM) 46 (CRIB) 129 (NONE) 0 (ANY)
+ DESTROYED(14) 13 HERE(2) 44 HERE(2) 50
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 355 GET(3) GEM(59)
+Comment: "GOT IT "
+136 (FROM) 46 (CRIB) 129 (NONE) 0 (ANY)
+ HERE(2) 44 DESTROYED(14) 13 DESTROYED(14) 50 OR(31) (Arg:1)  NOT(31) (Arg:6)  NOTHERE(2) 0 NOTHERE(2) 1 NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ MESSAGE 8 "I've got"
+ PRINTOBJ(85) 13
+ PRINTMESS(128) 97 "\."
+ STEAL(74) 13
+
+
+Action 356 GET(3) FORMULA(45)
+Comment: "SANDMAN WON'T LET ME "
+128 (ANY) 0 (ANY)
+ DESTROYED(14) 48 HERE(2) 49 NOT(31) (Arg:4)  NOTHERE(2) 1 NOTHERE(2) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 357 GET(3) FORMULA(45)
+Comment: "SANDMAN WON'T LET ME "
+136 (FROM) 46 (CRIB) 129 (NONE) 0 (ANY)
+ DESTROYED(14) 48 HERE(2) 44 HERE(2) 50
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 72 "SANDMAN"
+ PRINTMESS(128) 59 "won't let me!"
+
+
+Action 358 GET(3) FORMULA(45)
+Comment: "GOT IT "
+136 (FROM) 46 (CRIB) 129 (NONE) 0 (ANY)
+ HERE(2) 44 DESTROYED(14) 50 DESTROYED(14) 48 OR(31) (Arg:1)  NOT(31) (Arg:6)  NOTHERE(2) 0 NOTHERE(2) 1 NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ MESSAGE 8 "I've got"
+ PRINTOBJ(85) 48
+ PRINTMESS(128) 97 "\."
+ STEAL(74) 48
+
+
+Action 359 SAY(22) HYDROMAN(51)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 52
+ PRINTMESS(128) 76 ""You'll never get MY gem!" says"
+ PRINTMESS(128) 70 "HYDRO-MAN"
+
+
+Action 360 SAY(22) SANDMAN(47)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 50 DESTROYED(14) 13
+ PRINTMESS(128) 76 ""You'll never get MY gem!" says"
+ PRINTMESS(128) 72 "SANDMAN"
+
+
+Action 361 SAY(22) DR#2(36)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 31
+ PRINTMESS(128) 76 ""You'll never get MY gem!" says"
+ MESSAGE 38 "DOCTOR OCTOPUS"
+
+
+Action 362 SAY(22) LIZARD(81)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 38
+ PRINTMESS(128) 76 ""You'll never get MY gem!" says"
+ PRINTMESS(128) 77 "LIZARD"
+
+
+Action 363 SAY(22) ELECTRO(33)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 33
+ PRINTMESS(128) 76 ""You'll never get MY gem!" says"
+ MESSAGE 42 "ELECTRO"
+
+
+Action 364 SCAN(7) MAZE(21)
+Comment: ""
+ HERE(2) 37
+ PRINTMESS(128) 65 "Raise or lower?"
+ PRINTMESS(128) 61 "You're above"
+ MESSAGE 18 "it"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 365 SAY(22) RINGMASTER(62)
+Comment: ""
+128 (ANY) 0 (ANY)
+ HERE(2) 62
+ PRINTMESS(128) 81 ""To defeat me's easy! Push knob & turn it!" says"
+ PRINTMESS(128) 82 "RINGMASTER"
+ PRINTMESS(128) 97 "\."
+
+
+Action 366 DIE(4) ANY(0)
+Comment: " DIE TEST "
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ DEATH(61)
+
+
+Action 367 DROP(5) DEAD(31)
+Comment: " DIE TEST "
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ DEATH(61)
+
+
+Action 368 LOOK(11) PRESS(66)
+Comment: ""
+195 (AT) 193 (NONE)
+ HERE(2) 65
+ MESSAGE 3 "I see"
+ MESSAGE 18 "it"
+ PRINTMESS(128) 91 "is stopped."
+
+
+Action 369 LOOK(11) DIAL(67)
+Comment: ""
+195 (AT) 193 (NONE)
+ HERE(2) 67
+ SWAPCUR(81) 3
+ PRINTCUR(78)
+ PRINTMESS(128) 85 "pounds of paper"
+ SWAPCUR(81) 3
+
+
+Action 370 CAST(8) WEB(37)
+Comment: " SHOOT WEB "
+128 (ANY) 0 (ANY)
+ GTEQ(21) 1 NO CONDITION (Arg:1)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+ MESSAGE 11 "Web quickly dissolves."
+
+
+Action 371 CAST(8) WEB(37)
+Comment: " NO WEB LEFT "
+128 (ANY) 0 (ANY)
+ NOT(31) (Arg:3)  LT(21) 1 NO CONDITION (Arg:1)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 8 "I've got"
+ MESSAGE 9 "no web fluid!"
+
+
+Action 372 LISTEN(32) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 373 WAIT(20) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+
+
+Action 374 HIT(21) ANY(0)
+Comment: ""
+139 (IN) 0 (ANY) 130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 66 "is no vandal!"
+
+
+Action 375 SET(25) ANY(0)
+Comment: " SET "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 376 HELP(18) ANY(0)
+Comment: " HELP "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 22 "but you may order a HINT & SOLUTION Book! Phone (305)-862-6917 for ordering info."
+
+
+Action 377 FEEL(19) ANY(0)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 378 LOOK(11) SOMETHING(23)
+Comment: ""
+195 (AT) 193 (NONE)
+ NO CONDITION (Arg:0)
+ MESSAGE 5 "HUH?"
+ MESSAGE 29 "Be more specific."
+
+
+Action 379 MIX(13) HOLE(55)
+Comment: "NOT A VANDAL "
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 66 "is no vandal!"
+
+
+Action 380 MIX(13) ANY(0)
+Comment: " NOT LAB "
+ NOT(31) (Arg:3)  NOTAT(4) 13
+ MESSAGE 6 "Sorry,"
+ MESSAGE 8 "I've got"
+ PRINTMESS(128) 53 "no facilities here."
+
+
+Action 381 MIX(13) ANY(0)
+Comment: ""
+ AT(4) 13
+ MESSAGE 6 "Sorry,"
+ MESSAGE 29 "Be more specific."
+
+
+Action 382 WAKE(24) ANY(0)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 97 "\."
+
+
+Action 383 KILL(38) ANY(0)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 24 "SPIDER-MAN"
+ PRINTMESS(128) 143 "isn't a killer!"
+
+
+Action 384 TYPE(9) RUN(69)
+Comment: " COMPUTER "
+134 (ABOVE) 41 (COMPUTER) 129 (NONE) 0 (ANY)
+ AT(4) 3 NODESTROYED(13) 66 DESTROYED(14) 69
+ SWAPCUR(81) 3
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+ PRINTMESS(128) 86 "Computer types:"
+
+
+Action 385 0 0
+Comment: ""
+ CURLE(15) 182
+ PRINTMESS(128) 88 "need 950"
+ PRINTMESS(128) 85 "pounds of paper"
+ PRINTMESS(128) 89 "to start presses!"
+
+
+Action 386 0 0
+Comment: ""
+ CURGT(16) 182
+ PRINTMESS(128) 90 "printing complete!"
+ DESTROY(59) 66
+ DROPIN(62) 69 34
+
+
+Action 387 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ SWAPCUR(81) 3
+
+
+Action 388 TYPE(9) NEW(73)
+Comment: ""
+134 (ABOVE) 41 (COMPUTER) 129 (NONE) 0 (ANY)
+ AT(4) 3
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 389 0 0
+Comment: "ERASE GAME IF NO NEWSPAPER "
+ DESTROYED(14) 69
+ MESSAGE 1 "OK"
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 114 "but that worked! THIS PROGRAM'S NOW ERASED FROM MEMORY!"
+ SET(58) 22
+ DONE(69)
+
+
+Action 390 0 0
+Comment: " GIVE GEM IF MADE A NEWSPAPER "
+ NODESTROYED(13) 69 DESTROYED(14) 72
+ PRINTMESS(128) 105 "CHIEF EXAMINER appears & says: "Congratulations!" "
+ MESSAGE 12 "I found & got a"
+ PRINTOBJ(85) 5
+ STEAL(74) 72
+ DONE(69)
+
+
+Action 391 0 0
+Comment: "MADE A NEWSPAPER & ALREADY GOT GEM "
+ NO CONDITION (Arg:0)
+ UNKNOWN(116)
+
+
+Action 392 GO(1) PRESS(66)
+Comment: ""
+195 (AT) 193 (NONE)
+ HERE(2) 65
+ MESSAGE 27 "Something stops me!"
+ MESSAGE 6 "Sorry,"
+ MESSAGE 18 "it"
+ PRINTMESS(128) 92 "is computer run!"
+
+
+Action 393 GO(1) COMPUTER(41)
+Comment: ""
+195 (AT) 193 (NONE)
+ AT(4) 3
+ MESSAGE 1 "OK"
+ DROP(53) 70
+ LOOK(76)
+
+
+Action 394 TYPE(9) ANY(0)
+Comment: ""
+134 (ABOVE) 41 (COMPUTER) 129 (NONE) 0 (ANY)
+ AT(4) 3
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 86 "Computer types:"
+ PRINTMESS(128) 87 "SYNTAX ERROR."
+
+
+Action 395 LOOK(11) PAPER#1(44)
+Comment: " BLANK PAPER "
+195 (AT) 193 (NONE)
+ HERE(2) 66
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 84 "enough for 1 newspaper."
+
+
+Action 396 SCAN(7) GEM(59)
+Comment: ""
+ PRESENT(3) 37
+ PRINTMESS(128) 94 "Gems here, then SCORE!"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 397 LOOK(11) SIGN(77)
+Comment: ""
+195 (AT) 193 (NONE)
+ PRESENT(3) 32
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 93 ""Be more careful!" signed CHIEF EXAMINER"
+
+
+Action 398 LOOK(11) SIGN(77)
+Comment: ""
+195 (AT) 193 (NONE)
+ PRESENT(3) 24
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 142 ""To prove yourself worthy of these powers you must show you can supply the brainpower! You must collect all the *Gems & store them properly away! Good Luck"-Chief Examiner."
+
+
+Action 399 LOOK(11) PAPER#2(74)
+Comment: " NEWSPAPER "
+195 (AT) 193 (NONE)
+ PRESENT(3) 69
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 95 "Bugle Headlines:"QUESTPROBE fever sweeps nation!""
+ PRINTMESS(128) 151 "The puzzle on page 2 says: "A gem is in reverse new type!""
+
+
+Action 400 LOOK(11) CLOCK(80)
+Comment: ""
+195 (AT) 193 (NONE)
+ PRESENT(3) 71
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ SWAPCUR(81) 4
+ PRINTCUR(78)
+ SWAPCUR(81) 4
+ PRINTMESS(128) 96 "moves used."
+
+
+Action 401 SAY(22) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+
+
+Action 402 SCAN(7) ANY(0)
+Comment: ""
+ HERE(2) 37
+ MESSAGE 48 "That future is hidden!"
+ PRINTMESS(128) 71 "- says MADAME WEB!"
+
+
+Action 403 KNOCK(33) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 404 RAISE(26) ANY(0)
+Comment: "NOTHING SPECIAL "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 405 GET(3) ANY(0)
+Comment: "flag 20=1 then item was takeable, flag 0=1 then item was got "
+130 (WITH) 7 (ME) 129 (NONE) 0 (ANY)
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 20
+
+
+Action 406 0 0
+Comment: "say it is takeable & available "
+ UNK29(29) 230 NO CONDITION (Arg:230) OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ SET(58) 20
+ SET0FLAG(67)
+
+
+Action 407 0 0
+Comment: "was not in really room "
+ NOTZERO(8) 0 NOT(31) (Arg:3)  NOTHERE(2) 230
+ CLEAR0FLAG(68)
+
+
+Action 408 0 0
+Comment: "was in room so get it! "
+ NOTZERO(8) 0
+ GET(52) 131 230
+ MESSAGE 8 "I've got"
+ PRNOBJART(122) 131 230
+ PRINTMESS(128) 97 "\."
+ UNKNOWN(115)
+
+
+Action 409 0 0
+Comment: ""
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 410 0 0
+Comment: "beyond my power to do that. (not takeable) "
+ ISZERO(9) 20 ISZERO(9) 0
+ PRINTMESS(128) 115 "It's beyond my power to do that!"
+ DONE(69)
+
+
+Action 411 0 0
+Comment: "didn't find it. (I don't see it here) "
+ ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 110 "I don't see it here."
+
+
+Action 412 DROP(5) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 21
+
+
+Action 413 0 0
+Comment: ""
+ UNK29(29) 230 NO CONDITION (Arg:230) CARRIED(1) 230 OBJFLAG?(30) 230 NO CONDITION (Arg:1)
+ DROP(53) 131 230
+ PRINTMESS(128) 100 "I leave"
+ PRNOBJART(122) 131 230
+ SET(58) 21
+
+
+Action 414 0 0
+Comment: "IN ELVATOR SHAFT "
+ NOTZERO(8) 21 OR(31) (Arg:1)  NOT(31) (Arg:6)  NOTAT(4) 6 NOTAT(4) 9 NOTAT(4) 11 NOTAT(4) 14 NOT(31) (Arg:0)  NOT(31) (Arg:7)
+ PRINTMESS(128) 141 "\, I set it down so it won't fall"
+
+
+Action 415 0 0
+Comment: ""
+ NOTZERO(8) 21
+ PRINTMESS(128) 97 "\."
+ UNKNOWN(115)
+ SET0FLAG(67)
+
+
+Action 416 0 0
+Comment: ""
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 417 0 0
+Comment: ""
+ ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 111 "I don't have that."
+
+
+Action 418 SHUT(14) UP(5)
+Comment: ""
+ NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+
+
+Action 419 GO(1) ANY(0)
+Comment: "NOTHING INPUT "BE MORE SPECIFIC" "
+ NOUNIS?(28) 230 NO CONDITION (Arg:0)
+ MESSAGE 5 "HUH?"
+ MESSAGE 29 "Be more specific."
+
+
+Action 420 GO(1) FOREWARD(26)
+Comment: "BE MORE SPECIFIC "
+ NO CONDITION (Arg:0)
+ MESSAGE 29 "Be more specific."
+
+
+Action 421 GO(1) ANY(0)
+Comment: "GO TO AN ITEM IN ROOM "
+195 (AT) 193 (NONE)
+ NO CONDITION (Arg:0)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 422 0 0
+Comment: "OK I'M AT THE ... "
+ HERE(2) 230 UNK29(29) 230 NO CONDITION (Arg:230)
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 121 "I'm at the"
+ PRINTOBJ(85) 131 230
+ PRINTMESS(128) 97 "\."
+ DONE(69)
+
+
+Action 423 0 0
+Comment: ""
+ LE(18) 43 NO CONDITION (Arg:30)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 424 0 0
+Comment: "CAN'T DO THAT HERE "
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 425 GO(1) ANY(0)
+Comment: "I CAN'T DO THAT YET "
+128 (ANY) 0 (ANY)
+ AT(4) 0
+ UNKNOWN(0)
+
+
+Action 426 PUSH(15) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens. "
+
+
+Action 427 LOOK(11) ANY(0)
+Comment: "CAN'T DO THAT YET "
+203 (IN) 199 (BEHIND) 197 (UNDER)
+ NO CONDITION (Arg:0)
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 119 "do that yet."
+
+
+Action 428 LOOK(11) ANY(0)
+Comment: ""
+128 (ANY) 0 (ANY)
+ NO CONDITION (Arg:0)
+ UNKNOWN(120)
+ CONTINUE(73)
+
+
+Action 429 0 0
+Comment: "LOOK WITH A NOUN SAY I SEE NOTHING SPECIAL "
+ NOT(31) (Arg:4)  NOTEQUAL(20) 49 NO CONDITION (Arg:0)
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ MESSAGE 4 "nothing special"
+ PRINTMESS(128) 97 "\."
+
+
+Action 430 0 0
+Comment: ""
+ NO CONDITION (Arg:0)
+ LOOK(76)
