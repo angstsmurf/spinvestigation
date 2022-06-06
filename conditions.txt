@@ -1,0 +1,74 @@
+Saga Plus Conditions
+
+0	Second parameter for previous condition.
+1	Item <arg> carried? May be negated.
+2	Item <arg> in room with player? May be negated.
+3	Item <arg> carried or in room with player? May be negated.
+4	In room <arg>? May be negated.
+5	Room description message id == <arg2> ? Only seen with <arg1> == 32
+6	Unknown
+7	Unknown
+8	BitFlag <arg> is set.
+9	BitFlag <arg> is cleared.
+10	Does the player carry anything? May be negated
+11	Unknown
+12	Unknown
+13	Item <arg> is in game		[not in room 0]
+14	Item <arg> is not in game	[in room 0]
+15	CurrentCounter <= <arg>
+16	CurrentCounter > <arg> . May be negated.
+17	Counter <arg> > <arg2> . May be negated. Only seen in Questprobe 3.
+18	Counter <arg> <= Counter <arg2>
+19	CurrentCounter == <arg>
+20	Counter <arg> == <arg2>. May be negated.
+21	Counter <arg> >= <arg2>. May be negated.
+22	Unknown
+23	Unknown
+24	Unknown
+25	Unknown
+26	Object <arg> is in room <arg2>
+27	Unknown
+28	Noun == <arg2> if <arg1> is 230. Second noun == <arg2> if <arg1> is 231.
+29	Is the dictionary word of object <arg1> == <arg2>?
+	Only seen in loops, with <arg1> 230 and <arg2> also 230. A comment in Questprobe 2
+	says "OBJECTS'S NOUN=NOUN"
+30	Is flag <arg2> of object <arg1> set?
+
+31  Modifier, see discussion below.
+
+
+- Some conditions take a second parameter from a following 0 condition.
+- An argument of 230 seems to mean "the noun object", the object that matches the noun of the command, at least when the argument represents an object.
+- For condition 28, <arg 230> means <arg 2> is the first noun and <arg 231> means <arg 2> is the second noun.
+
+
+
+Condition 31, modifier
+
+
+if arg is 1 (or 8?), the conditions are ORed rather than ANDed, so that only one of
+them has to be true for the action to fire.
+
+Is arg 6: left parenthesis "("?
+Is arg 7: right parenthesis ")"?
+If arg is 0, ORing is switched off?
+If arg is 4, negate all the following conditions.
+If arg is 3, negate a single condition.
+Arg 9?
+
+
+There are several places in Buckaroo Banzai where this pattern (numbers in
+parentheses are arguments to condition 31, letters are other conditions)
+
+	(8) (6) (0)  A B  (7) (6)  C D  (1) (7) (0)  E F G ...
+
+is used to mean IF ((A AND B) OR (C AND D)) AND E AND F AND G ...
+
+
+In Questprobe 2, the pattern
+
+	(8)  A  B  (1)  C
+
+means IF (A AND B) OR (C)
+
+
