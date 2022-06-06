@@ -1,0 +1,2660 @@
+Action 0 0 0
+Comment: " "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 1 0 0
+Comment: "DIGGING ANIMATION SEQUENCE. TRIGGERED BY FLAG 36 "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 2 0 0
+Comment: " "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 3 0 100
+Comment: "RESET TRIGGER "
+ NOTZERO(8) 36
+ CLEAR(60) 36 
+ CONTINUE(73) 
+
+
+Action 4 0 0
+Comment: "IF GRAPHICS NOT ON, ABORT SEQ.  "
+ ISZERO(9) 35
+ DONE(69) 
+
+
+Action 5 0 0
+Comment: "CLEAR BUFFER "
+ ISZERO(9) 7
+ BEGIN?(112) 
+ SETCNT(99) 3 4 
+ LOADFILE?(110) 3 0 
+
+
+Action 6 0 0
+Comment: "LOAD A FRAME "
+ ISZERO(9) 7
+ LOADFILE?(110) 2 4 
+
+
+Action 7 0 0
+Comment: "LOOP FOR ALL FRAMES "
+ ISZERO(9) 7 NOT(31) (Arg:3)  NOTEQUAL(20) 4 (Arg 2: 9)
+ ADDCNT(100) 1 4 
+ LOOP?(113) 
+
+
+Action 8 0 0
+Comment: "REMOVE REPEAT "
+ ISZERO(9) 7
+ RMVLOOP?(114) 
+
+
+Action 9 0 0
+Comment: "GET GREEN BACKGROUND "
+ (Arg 2: 0)
+ LOADFILE?(110) 5 2 
+
+
+Action 10 0 0
+Comment: "IF NOT ALREADY LOADED, ASK FOR A KEYPRESS "
+ ISZERO(9) 7
+ LOADFILE?(110) 6 0 
+
+
+Action 11 0 0
+Comment: "REPEAT SEQUENCE 3 TIMES "
+ (Arg 2: 0)
+ CLRCNT?(109) 5 
+ BEGIN?(112) 
+
+
+Action 12 0 0
+Comment: "SET SEQ LOADED FLAG "
+ (Arg 2: 0)
+ ADDCNT(100) 1 5 
+ SET(58) 7 
+ BEGIN?(112) 
+ CLRCNT?(109) 4 
+
+
+Action 13 0 0
+Comment: "DRAW A FRAME "
+ (Arg 2: 0)
+ LOADFILE?(110) 4 4 
+
+
+Action 14 0 0
+Comment: "REPEAT FOR ALL FRAMES "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 4 (Arg 2: 6)
+ ADDCNT(100) 1 4 
+ LOOP?(113) 
+
+
+Action 15 0 0
+Comment: "REMOVE REPEAT "
+ (Arg 2: 0)
+ RMVLOOP?(114) 
+
+
+Action 16 0 0
+Comment: "STRIKE GROUND W AX 3 TIMES "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 5 (Arg 2: 3)
+ LOOP?(113) 
+
+
+Action 17 0 0
+Comment: "REMOVE REPEAT "
+ (Arg 2: 0)
+ RMVLOOP?(114) 
+
+
+Action 18 0 0
+Comment: " "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 19 0 0
+Comment: " explosion flag 39 = trigger "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 20 0 100
+Comment: ""
+ NOTZERO(8) 39
+ CLEAR(60) 39 
+ PRINTMESS(128) 74 "The car catches fire and blows up." 
+ PRINTMESS(128) 75 "I'm one dead buckaroo." 
+ GOTO(54) 35 
+
+
+Action 21 0 0
+Comment: "  "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 22 0 100
+Comment: "flashlight batteries go dead "
+ NOTZERO(8) 16 ISZERO(9) 28
+ SET(58) 28 
+ SWAP(72) 31 9 
+
+
+Action 23 0 100
+Comment: "clr 14 w hold radio "
+ CARRIED(1) 30
+ CLEAR(60) 14 
+
+
+Action 24 0 100
+Comment: " bomb radio msg "
+ HERE(2) 43 HERE(2) 19 NOTZERO(8) 29 NOTZERO(8) 30 NOTZERO(8) 14
+ PRINTMESS(128) 58 "I hear the bomb will explode in" 
+ SWAPCUR(81) 1 
+ PRINTCUR(78) 
+ SWAPCUR(81) 1 
+ MESSAGE 17 "moves" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 25 0 100
+Comment: "if carrying either radio or battery not both reset connected flag "
+ HERE(2) 30 CARRIED(1) 19
+ CLEAR(60) 29 
+
+
+Action 26 0 100
+Comment: "same as above "
+ HERE(2) 19 CARRIED(1) 30
+ CLEAR(60) 29 
+
+
+Action 27 0 100
+Comment: "IF CARRYING RADIO THE RESET RADIO CONNECTED TO ANTENNA FLAG "
+ CARRIED(1) 30
+ CLEAR(60) 14 
+
+
+Action 28 0 0
+Comment: " initializing stuff "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 29 0 100
+Comment: "INTRO COUNTERS SET "
+ ISZERO(9) 2
+ REDRAW?(89) 
+ SETCUR(79) 130 
+ UNKNOWN(238)
+ CLRCNT?(109) 7 
+ UNK97(97) 7 35 
+ SET(58) 4 
+ SWAPCUR(81) 1 
+ CONTINUE(73) 
+
+
+Action 30 0 0
+Comment: "INTRO MSGS "
+ (Arg 2: 0)
+ PRINTMESS(128) 83 "Buckaroo Banzai" 
+ PRINTMESS(128) 137 "is a trademark of 20th Century Fox & Sherwood productions." 
+ PRINTMESS(128) 83 "Buckaroo Banzai" 
+ PRINTMESS(128) 84 "adventure by Phillip Case and Scott Adams." 
+ PRINTMESS(128) 154 "Graphics by Kem McNair." 
+ UNK119(119) 128 
+ UNKNOWN(159)
+
+
+Action 31 0 0
+Comment: "SET LIGHT COUNTER (3) TO MAX (35) TURNS "
+ (Arg 2: 0)
+ SETCNT(99) 35 3 
+
+
+Action 32 0 0
+Comment: "DEDICATION MSG "
+ (Arg 2: 0)
+ PRINTMESS(128) 149 "Dedicated to: Christopher James Case." 
+ SET(58) 2 
+ SET(58) 37 
+ UNK97(97) 7 35 
+
+
+Action 33 0 0
+Comment: " end of init stuff "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 34 0 100
+Comment: "IF INSIDE CAR, CHECK THESE AUTO'S "
+ AT(4) 29
+ CONTINUE(73) 
+
+
+Action 35 0 100
+Comment: "set up for eog test "
+ (Arg 2: 0)
+ SWAPCUR(81) 1 
+
+
+Action 36 0 100
+Comment: ""
+ CUREQ(19) 0
+ MESSAGE 19 "An atomic explosion erupts." 
+ PRINTMESS(128) 75 "I'm one dead buckaroo." 
+ GOTO(54) 35 
+
+
+Action 37 0 100
+Comment: "put bomb ctr in 1 "
+ (Arg 2: 0)
+ SWAPCUR(81) 1 
+
+
+Action 38 0 100
+Comment: "bomb ticks down "
+ (Arg 2: 0)
+ SWAPCUR(81) 1 
+ DECCUR(77) 
+ SWAPCUR(81) 1 
+
+
+Action 39 0 100
+Comment: ""
+ NOT(31) (Arg:3)  NOTAT(4) 8 CARRIED(1) 26
+ CLEAR(60) 12 
+
+
+Action 40 0 100
+Comment: "GAME IS OVER IF I'M IN ROOM 35 "
+ AT(4) 35
+ LOOK(76) 
+ REDRAW?(89) 
+ GAMEOVER(63) 
+
+
+Action 41 0 100
+Comment: "IF FLASH (ON) NOT IN R.0 AND LIGHT CTR NOT =0 THEN DEC LIGHT CTR "
+ NOT(31) (Arg:4)  DESTROYED(14) 9 NOTEQUAL(20) 3 (Arg 2: 0)
+ DECCNT(101) 1 3 
+
+
+Action 42 0 100
+Comment: "FLASHLIGHT GOES DIM WITH TEN MOVES LEFT "
+ PRESENT(3) 9 NOT(31) (Arg:4)  DESTROYED(14) 9 LT(21) 3 (Arg 2: 11) NOTEQUAL(20) 3 (Arg 2: 0)
+ PRINTMESS(128) 141 "The flashlight" 
+ PRINTMESS(128) 146 "is getting dimmer." 
+
+
+Action 43 0 100
+Comment: "FLASHLIGHT RUNS OUT, BATTERYS DEAD FLAG IS SET, LIGHTS ARE SWAPED, ROOM IS DESCRIBED "
+ EQ(20) 3 (Arg 2: 0) ISZERO(9) 28
+ PRINTMESS(128) 141 "The flashlight" 
+ PRINTMESS(128) 144 "has gone out." 
+ SET(58) 28 
+ SWAP(72) 9 31 
+
+
+Action 44 0 100
+Comment: ""
+ OR(31) (Arg:1)  AT(4) 2 AT(4) 14 AT(4) 16 AT(4) 27 AT(4) 30 AT(4) 31 AT(4) 32 AT(4) 33 AT(4) 34
+ LIGHTSOUT(56) 
+
+
+Action 45 0 100
+Comment: ""
+ NOT(31) (Arg:4)  NOTAT(4) 2 NOTAT(4) 14 NOTAT(4) 16 NOTAT(4) 27 NOTAT(4) 30 NOTAT(4) 31 NOTAT(4) 32 NOTAT(4) 33 NOTAT(4) 34
+ LIGHTSON(57) 
+
+
+Action 46 0 100
+Comment: "charge battery "
+ NOTZERO(8) 9 NOTZERO(8) 10 NOTZERO(8) 11 NOTZERO(8) 31
+ SET(58) 30 
+
+
+Action 47 0 100
+Comment: "no go freeway "
+ ISZERO(9) 3 AT(4) 12
+ SET(58) 3 
+ SETCUR(79) 2 
+ SWAPCUR(81) 1 
+
+
+Action 48 0 100
+Comment: "if has cables then reset cables connected to terms flag "
+ CARRIED(1) 51
+ CLEAR(60) 9 
+
+
+Action 49 0 100
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  CARRIED(1) 19 NOT(31) (Arg:3)  NOTCARRIED(1) 51 MOD(31) (Arg:7)  MOD(31) (Arg:6)  CARRIED(1) 51 NOT(31) (Arg:3)  NOTCARRIED(1) 19 OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  NOTZERO(8) 10
+ CLEAR(60) 10 
+
+
+Action 50 0 0
+Comment: "THE ABOVE LINE IS (HAS BATTERY*-HAV CABLES)+(HAS CABLES+-HAV BATTERY)*CONNECTED FLAG=SET "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 51 0 100
+Comment: "THIS LINE MUST BE THE NEXT TO LAST AUTO "
+ NOTZERO(8) 34
+ REDRAW?(89) 
+
+
+Action 52 0 100
+Comment: "THIS LINE MUST BE THE LAST AUTO "
+ NOTZERO(8) 37 NOTZERO(8) 38
+ LOOK(76) 
+ CLEAR(60) 38 
+
+
+Action 53 LOOK(2) TABLE(20)
+Comment: ""
+200 (UNDER) 
+ HERE(2) 17
+ SHOWIMG(90) 1 
+ UNK116(116) 
+
+
+Action 54 LOOK(2) TABLE(20)
+Comment: ""
+195 (AT) 193 (NONE) 
+ HERE(2) 17
+ PRINTMESS(128) 155 "The table is made of solid Oak and appears to be very heavy." 
+
+
+Action 55 BRIEF(48) ANY(0)
+Comment: ""
+ (Arg 2: 0)
+ CLEAR(60) 37 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 152 "\, From now on rooms will not normally be described unless you type look." 
+
+
+Action 56 VERBOSE(49) ANY(0)
+Comment: ""
+ (Arg 2: 0)
+ SET(58) 37 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 153 "\, From now on rooms will automatically be described in full." 
+ LOOK(76) 
+ CLEAR(60) 38 
+
+
+Action 57 EXIT(4) ANY(0)
+Comment: "THIS EXIT ANY HANDLES (EXIT DIRECTION) ONLY!!! "
+ (Arg 2: 0)
+ CONTINUE(73) 
+ UNKNOWN(120)
+
+
+Action 58 0 0
+Comment: "REPLACE EXIT WITH GO "
+ GTEQ(21) 49 (Arg 2: 1) NOT(31) (Arg:3)  LT(21) 49 (Arg 2: 7)
+ SETCNT(99) 1 48 
+ FAILED?(121) 
+
+
+Action 59 0 0
+Comment: ""
+ (Arg 2: 0)
+ UNK116(116) 
+
+
+Action 60 EXIT(4) ANY(0)
+Comment: "THIS IS THE GP EXIT ROUTINE "
+ (Arg 2: 0)
+ BEGIN?(112) 
+ CLRCNT?(109) 19 
+ CLEAR0FLAG(68) 
+
+
+Action 61 0 0
+Comment: "PUT THE ROOM # IN CTR 20 "
+ (Arg 2: 0)
+ GETEXIT(94) 20 32 19 
+
+
+Action 62 0 0
+Comment: "ENTER A ROOM "
+ NOT(31) (Arg:3)  NOTEQUAL(20) 20 (Arg 2: 0)
+ SWAPCNT(98) 20 32 
+ SET(58) 34 
+ MESSAGE 1 "OK" 
+ UNKNOWN(115)
+ SET0FLAG(67) 
+
+
+Action 63 0 0
+Comment: ""
+ NOT(31) (Arg:3)  NOTEQUAL(20) 19 (Arg 2: 5)
+ ADDCNT(100) 1 19 
+ LOOP?(113) 
+
+
+Action 64 0 0
+Comment: "HOW ? "
+ ISZERO(9) 0
+ MESSAGE 50 "How?" 
+
+
+Action 65 PMUP(23) GAS(54)
+Comment: ""
+134 (IN) 56 (JUG) 129 (NONE) 0 (ANY) 
+ NOT(31) (Arg:3)  NOTCARRIED(1) 45
+ MESSAGE 13 "I can't," 
+ MESSAGE 11 "there's no" 
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 80 "container" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 66 START(22) PUMP#1(14)
+Comment: "CANT START THE GAS PUMPS! "
+ AT(4) 0
+ UNKNOWN(0)
+
+
+Action 67 FIND(24) ANY(0)
+Comment: ""
+ AT(4) 0
+ UNKNOWN(0)
+
+
+Action 68 PUSH(32) COCKPIT(47)
+Comment: "go thru stone dor "
+ AT(4) 14
+ PRINTMESS(128) 79 "I go thru door. Slam!!! It closes behind me." 
+ GOTO(54) 28 
+
+
+Action 69 UNCONNECT(25) HOSE(45)
+Comment: "REMOVE FUEL HOSE FROM PUMP "
+132 (FROM) 31 (PUMP#2) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 26 NOTZERO(8) 13
+ CLEAR(60) 13 
+ CLEAR(60) 12 
+ STEAL(74) 40 
+ MESSAGE 1 "OK" 
+
+
+Action 70 GET(3) HOSE(45)
+Comment: "REMOVE FUEL HOSE FROM PUMP "
+132 (FROM) 31 (PUMP#2) 
+ CARRIED(1) 26 NOTZERO(8) 13
+ CLEAR(60) 13 
+ CLEAR(60) 12 
+ STEAL(74) 40 
+ MESSAGE 1 "OK" 
+
+
+Action 71 PMUP(23) GAS(54)
+Comment: "PUMP GAS "
+134 (IN) 56 (JUG) 129 (NONE) 0 (ANY) 
+ NOTZERO(8) 12 HERE(2) 24 CARRIED(1) 45
+ MESSAGE 1 "OK" 
+ SWAP(72) 46 45 
+ SET(58) 20 
+
+
+Action 72 PMUP(23) GAS(54)
+Comment: "CANT PUMP GAS INTO ANYTHING ELSE "
+134 (IN) 0 (ANY) 
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 85 "I can't do that...yet" 
+
+
+Action 73 PUT(20) HOSE(45)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 26 NOTZERO(8) 13
+ PRINTMESS(128) 71 "It does" 
+ PRINTMESS(128) 70 "reach deep enough to get the gasoline." 
+ SET(58) 12 
+
+
+Action 74 PUT(20) HOSE(45)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 40
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 72 "I lose the fuel hose in the underground tank. I think I made a mistake." 
+ DESTROY(59) 40 
+
+
+Action 75 PUT(20) HOSE(45)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 26 ISZERO(9) 13
+ PRINTMESS(128) 69 "It doesn't" 
+ PRINTMESS(128) 70 "reach deep enough to get the gasoline." 
+
+
+Action 76 PUT(20) PUMP#2(31)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 26 NOTZERO(8) 13
+ PRINTMESS(128) 71 "It does" 
+ PRINTMESS(128) 70 "reach deep enough to get the gasoline." 
+ SET(58) 12 
+
+
+Action 77 PUT(20) PUMP#2(31)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 40
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 72 "I lose the fuel hose in the underground tank. I think I made a mistake." 
+ DESTROY(59) 40 
+
+
+Action 78 PUT(20) PUMP#2(31)
+Comment: ""
+134 (IN) 11 (PIPE) 129 (NONE) 0 (ANY) 
+ HERE(2) 24 CARRIED(1) 26 ISZERO(9) 13
+ PRINTMESS(128) 69 "It doesn't" 
+ PRINTMESS(128) 70 "reach deep enough to get the gasoline." 
+
+
+Action 79 LOOK(2) PUMP#2(31)
+Comment: ""
+ PRESENT(3) 26 NOTZERO(8) 13
+ MESSAGE 2 "I see" 
+ MESSAGE 18 "the hose is" 
+ PRINTMESS(128) 64 "10" 
+ PRINTMESS(128) 65 "ft long." 
+
+
+Action 80 LOOK(2) PUMP#2(31)
+Comment: "look at pump no hose "
+ PRESENT(3) 26 ISZERO(9) 13
+ MESSAGE 2 "I see" 
+ MESSAGE 18 "the hose is" 
+ PRINTMESS(128) 63 "6" 
+ PRINTMESS(128) 65 "ft long." 
+
+
+Action 81 TRANSMIT(18) WARFIN(53)
+Comment: ""
+ AT(4) 13 NOTZERO(8) 14 NOTZERO(8) 29 NOTZERO(8) 30
+ SET0FLAG(67) 
+ CONTINUE(73) 
+
+
+Action 82 0 0
+Comment: ""
+ NOTZERO(8) 0 ISZERO(9) 1
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ MESSAGE 20 "happens" 
+ CONTINUE(73) 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 83 0 0
+Comment: ""
+ NOTZERO(8) 0 ISZERO(9) 1
+ CLEAR0FLAG(68) 
+ CONTINUE(73) 
+
+
+Action 84 0 0
+Comment: ""
+ NOTZERO(8) 0
+ MESSAGE 26 "Bomb acknowledges code." 
+ CLEAR0FLAG(68) 
+ SET(58) 17 
+
+
+Action 85 TRANSMIT(18) YOYODYNE(9)
+Comment: ""
+ AT(4) 13 NOTZERO(8) 14 NOTZERO(8) 17 NOTZERO(8) 29 NOTZERO(8) 30
+ MESSAGE 26 "Bomb acknowledges code." 
+ MESSAGE 27 "The earth is safe again." 
+ GAMEOVER(63) 
+
+
+Action 86 GO(1) STATION(7)
+Comment: ""
+ HERE(2) 2
+ GOTO(54) 8 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 87 GO(1) BOOTH(8)
+Comment: ""
+ HERE(2) 12
+ GOTO(54) 9 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 88 GO(1) YOYODYNE(9)
+Comment: ""
+ HERE(2) 1
+ GOTO(54) 1 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 89 LOOK(2) STAIRS(10)
+Comment: "LOOK STAIRS IN YOYO "
+ HERE(2) 16
+ MESSAGE 2 "I see" 
+ MESSAGE 4 "a darkened passageway leading below." 
+
+
+Action 90 GO(1) STAIRS(10)
+Comment: "GO STAIR IN YOYO "
+ HERE(2) 16
+ GOTO(54) 2 
+ MESSAGE 1 "OK" 
+ LIGHTSOUT(56) 
+ SET(58) 38 
+
+
+Action 91 GO(1) STAIRS(10)
+Comment: ""
+ AT(4) 2
+ GOTO(54) 1 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 92 CLIMB(14) STAIRS(10)
+Comment: ""
+ HERE(2) 16
+ GOTO(54) 2 
+ MESSAGE 1 "OK" 
+ LIGHTSOUT(56) 
+ SET(58) 38 
+
+
+Action 93 CLIMB(14) STAIRS(10)
+Comment: ""
+ AT(4) 2
+ GOTO(54) 1 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 94 GO(1) TUNNEL(83)
+Comment: ""
+ AT(4) 14
+ GOTO(54) 16 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 95 LOOK(2) PIPE(11)
+Comment: "look spout at staton "
+ HERE(2) 13
+ MESSAGE 2 "I see" 
+ MESSAGE 5 "it's padlocked." 
+
+
+Action 96 GET(3) TABLE(20)
+Comment: "CANT GET THE TABLE IN THE OFFICE "
+ AT(4) 1
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 148 "it's too heavy." 
+
+
+Action 97 PUSH(32) TABLE(20)
+Comment: "CANT PUSH/PULL/MOVE/ETC THE TABLE IN THE OFFICE "
+ AT(4) 1
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 148 "it's too heavy." 
+
+
+Action 98 GO(1) HOUSE(12)
+Comment: "GO HOUSE FROM STREET "
+ HERE(2) 6
+ GOTO(54) 26 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 99 GO(1) HOUSE(12)
+Comment: "GO HOUSE WHEN INSIDE GARAGE "
+ AT(4) 26
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 85 "I can't do that...yet" 
+
+
+Action 100 GO(1) HARDWARE(13)
+Comment: ""
+ HERE(2) 3
+ GOTO(54) 17 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 101 DISPLAY(46) DEDICATION(82)
+Comment: ""
+ (Arg 2: 0)
+ PRINTMESS(128) 149 "Dedicated to: Christopher James Case." 
+
+
+Action 102 LOOK(2) PUMP#1(14)
+Comment: ""
+ HERE(2) 11
+ MESSAGE 2 "I see" 
+ MESSAGE 6 "they don't seem to be turned" 
+ MESSAGE 32 "on" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 103 LOOK(2) CONSOLE(15)
+Comment: ""
+ HERE(2) 14
+ MESSAGE 2 "I see" 
+ MESSAGE 7 "a switch to the gas pumps." 
+
+
+Action 104 THROW(31) SWITCH(17)
+Comment: "THROW SWITCH=PUSH SWITCH "
+ (Arg 2: 0)
+ UNKNOWN(120)
+ SETCNT(99) 32 48 
+ FAILED?(121) 
+
+
+Action 105 PUSH(32) SWITCH(17)
+Comment: ""
+ HERE(2) 14
+ MESSAGE 3 "nothing" 
+ MESSAGE 20 "happens" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 106 LOOK(2) TABLE(20)
+Comment: "LOOK UNDER TABLE FIND SAFE "
+200 (UNDER) 
+ HERE(2) 17
+ DROPIN(62) 18 1 
+ MESSAGE 1 "OK" 
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 90 "a safe mounted in the floor." 
+
+
+Action 107 LOOK(2) PILE(19)
+Comment: ""
+ HERE(2) 15 OBJIN(26) 19 (Arg 2: 0)
+ DROPIN(62) 19 9 
+ MESSAGE 1 "OK" 
+ MESSAGE 2 "I see" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 108 LOOK(2) DOWN(6)
+Comment: "LOOK DOWN STAIRS "
+ AT(4) 1
+ MESSAGE 2 "I see" 
+ MESSAGE 4 "a darkened passageway leading below." 
+
+
+Action 109 LOOK(2) SAFE(28)
+Comment: ""
+ HERE(2) 18
+ MESSAGE 2 "I see" 
+ MESSAGE 10 "it's a key safe." 
+
+
+Action 110 OPEN(7) JAR(60)
+Comment: "CANT OPEN THE JAR OF FLUID "
+ PRESENT(3) 49
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 69 "It doesn't" 
+ MESSAGE 47 "open" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 111 OPEN(7) TOOL(24)
+Comment: "get tool from toolbox  "
+ PRESENT(3) 7 OBJIN(26) 22 (Arg 2: 0)
+ SWAP(72) 7 20 
+ STEAL(74) 21 
+ STEAL(74) 22 
+ STEAL(74) 31 
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 112 OPEN(7) PIPE(11)
+Comment: "unlock tanks lock "
+130 (WITH) 25 (KEY) 129 (NONE) 0 (ANY) 
+ HERE(2) 13 CARRIED(1) 21
+ SWAP(72) 24 13 
+ MESSAGE 1 "OK" 
+
+
+Action 113 GO(1) SHACK(33)
+Comment: ""
+ AT(4) 20
+ MESSAGE 1 "OK" 
+ GOTO(54) 25 
+ SET(58) 38 
+
+
+Action 114 GET(3) LAKE(79)
+Comment: "FILL EMPTY JUG WITH LAKE WATER "
+134 (IN) 56 (JUG) 130 (WITH) 56 (JUG) 
+ AT(4) 21 PRESENT(3) 45
+ SWAP(72) 53 45 
+ MESSAGE 1 "OK" 
+
+
+Action 115 FILL(21) JUG(56)
+Comment: "FILL EMPTY JUG IN THE LAKE "
+130 (WITH) 79 (LAKE) 134 (IN) 79 (LAKE) 132 (FROM) 79 (LAKE) 129 (NONE) 0 (ANY) 
+ AT(4) 21 PRESENT(3) 45
+ SWAP(72) 53 45 
+ MESSAGE 1 "OK" 
+
+
+Action 116 PUT(20) LAKE(79)
+Comment: "SET VOCAB TO MATCH NEXT LINE "
+134 (IN) 21 (BATTERY) 
+ (Arg 2: 0)
+ MEANS(55) 21 21 
+
+
+Action 117 FILL(21) BATTERY(21)
+Comment: "fill BATT w water "
+130 (WITH) 79 (LAKE) 134 (IN) 79 (LAKE) 129 (NONE) 0 (ANY) 
+ PRESENT(3) 19 AT(4) 21
+ SET(58) 31 
+ MESSAGE 1 "OK" 
+
+
+Action 118 LOOK(2) BATTERY(21)
+Comment: "HAS THE BATTERY "
+ PRESENT(3) 19
+ CONTINUE(73) 
+
+
+Action 119 0 0
+Comment: "CABLES ATTACHED MSG? "
+ NOTZERO(8) 10
+ MESSAGE 43 "(Jumper cable attached)" 
+
+
+Action 120 0 0
+Comment: "I SEE "
+ (Arg 2: 0)
+ MESSAGE 2 "I see" 
+
+
+Action 121 0 0
+Comment: "NO? "
+ ISZERO(9) 31
+ MESSAGE 11 "there's no" 
+
+
+Action 122 0 0
+Comment: "WATER IN THE BATTERY "
+ (Arg 2: 0)
+ MESSAGE 12 "water in the battery." 
+
+
+Action 123 LOOK(2) TOOL(24)
+Comment: ""
+ PRESENT(3) 7
+ MESSAGE 22 "A small sticker on the lid of the toolbox reads "Sam's Service Station"." 
+
+
+Action 124 CHECK(10) BATTERY(21)
+Comment: ""
+130 (WITH) 29 (HYDROMETER) 129 (NONE) 0 (ANY) 
+ PRESENT(3) 19 CARRIED(1) 25 NOTZERO(8) 30
+ MESSAGE 14 "Battery tests:" 
+ MESSAGE 15 "Weak" 
+
+
+Action 125 CHECK(10) BATTERY(21)
+Comment: "dead black "
+130 (WITH) 29 (HYDROMETER) 129 (NONE) 0 (ANY) 
+ PRESENT(3) 19 CARRIED(1) 25 ISZERO(9) 30
+ MESSAGE 14 "Battery tests:" 
+ MESSAGE 16 "Dead" 
+
+
+Action 126 CHECK(10) BATTERY(21)
+Comment: ""
+130 (WITH) 29 (HYDROMETER) 129 (NONE) 0 (ANY) 
+ PRESENT(3) 22 CARRIED(1) 25 NOTZERO(8) 30
+ MESSAGE 14 "Battery tests:" 
+ MESSAGE 15 "Weak" 
+
+
+Action 127 CHECK(10) LAKE(79)
+Comment: "TEST LAKE WATER "
+130 (WITH) 29 (HYDROMETER) 129 (NONE) 0 (ANY) 
+ AT(4) 21 PRESENT(3) 25
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 151 "It's lake water." 
+
+
+Action 128 CHECK(10) TERMINALS(55)
+Comment: "CANT TEST POWER TERMINALS "
+130 (WITH) 29 (HYDROMETER) 129 (NONE) 0 (ANY) 
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 85 "I can't do that...yet" 
+
+
+Action 129 LOOK(2) GLOVE(48)
+Comment: "look inside the glove box "
+ AT(4) 29 ISZERO(9) 18
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+ STEAL(74) 41 
+ SET(58) 18 
+ STEAL(74) 49 
+
+
+Action 130 TURN(34) FLASHLIGHT(37)
+Comment: ""
+201 (ON) 193 (NONE) 137 (ON) 0 (ANY) 129 (NONE) 0 (ANY) 
+ ISZERO(9) 28 PRESENT(3) 31
+ SWAP(72) 9 31 
+ CONTINUE(73) 
+
+
+Action 131 0 0
+Comment: "TURN ON A BRIGHT FLASHLIGHT "
+ GTEQ(21) 3 (Arg 2: 11)
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 141 "The flashlight" 
+ PRINTMESS(128) 142 "shines bright." 
+ SET(58) 34 
+ DONE(69) 
+
+
+Action 132 0 0
+Comment: "TURN ON A DIM FLASHLIGHT "
+ NOT(31) (Arg:3)  LT(21) 3 (Arg 2: 10)
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 141 "The flashlight" 
+ PRINTMESS(128) 143 "is now" 
+ PRINTMESS(128) 145 "dim." 
+
+
+Action 133 TURN(34) FLASHLIGHT(37)
+Comment: "DEAD FLASHLIGHT BATTERYS "
+201 (ON) 193 (NONE) 137 (ON) 0 (ANY) 129 (NONE) 0 (ANY) 
+ NOTZERO(8) 28 PRESENT(3) 31
+ MESSAGE 13 "I can't," 
+ MESSAGE 25 "the batterys are dead." 
+
+
+Action 134 TURN(34) FLASHLIGHT(37)
+Comment: ""
+202 (OFF) 193 (NONE) 138 (OFF) 0 (ANY) 129 (NONE) 0 (ANY) 
+ PRESENT(3) 9
+ SWAP(72) 9 31 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 141 "The flashlight" 
+ PRINTMESS(128) 143 "is now" 
+ MESSAGE 31 "off" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 135 LOOK(2) BOMB(38)
+Comment: "look live bomb 1 "
+ AT(4) 24 CARRIED(1) 9 ISZERO(9) 1
+ MESSAGE 2 "I see" 
+ MESSAGE 30 "light" 
+ MESSAGE 28 "marked 'RFI Shield' is" 
+ MESSAGE 32 "on" 
+ MESSAGE 2 "I see" 
+ MESSAGE 29 "a switch" 
+ CONTINUE(73) 
+
+
+Action 136 0 0
+Comment: " "
+ OBJIN(26) 33 (Arg 2: 0)
+ MESSAGE 34 "and an envelope" 
+
+
+Action 137 PUSH(32) SWITCH(17)
+Comment: "turn off rfi "
+ AT(4) 24 CARRIED(1) 9
+ SET(58) 1 
+ MESSAGE 2 "I see" 
+ MESSAGE 21 "something" 
+ MESSAGE 20 "happens" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 138 LOOK(2) BOMB(38)
+Comment: " "
+ AT(4) 24 CARRIED(1) 9 NOTZERO(8) 1
+ MESSAGE 30 "light" 
+ MESSAGE 28 "marked 'RFI Shield' is" 
+ MESSAGE 31 "off" 
+ CONTINUE(73) 
+
+
+Action 139 0 0
+Comment: " "
+ OBJIN(26) 33 (Arg 2: 0)
+ MESSAGE 34 "and an envelope" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 140 GET(3) ENVELOPE(27)
+Comment: "get enve in b room "
+ AT(4) 24 OBJIN(26) 33 (Arg 2: 0) CARRIED(1) 9
+ MESSAGE 1 "OK" 
+ GET(52) 33 
+
+
+Action 141 OPEN(7) ENVELOPE(27)
+Comment: "open envelope "
+ CARRIED(1) 33 NOT(31) (Arg:3)  NOTCARRIED(1) 28
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ STEAL(74) 28 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 142 LOOK(2) MOUNTAIN(41)
+Comment: "look mount "
+ AT(4) 22
+ MESSAGE 2 "I see" 
+ MESSAGE 37 "a ledge about 15' up with a small peak." 
+
+
+Action 143 DIG(41) ANY(0)
+Comment: "dig hole #1 "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ AT(4) 11 CARRIED(1) 23 ISZERO(9) 26
+ SET(58) 26 
+ MESSAGE 1 "OK" 
+ DROPIN(62) 34 11 
+ SET(58) 36 
+
+
+Action 144 DIG(41) ANY(0)
+Comment: "dig hole 2 "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ NOTZERO(8) 26 CARRIED(1) 23 AT(4) 11
+ DROPIN(62) 35 11 
+ MESSAGE 1 "OK" 
+ SET(58) 36 
+
+
+Action 145 LOOK(2) HOLE(43)
+Comment: "look hole "
+ HERE(2) 34 OBJIN(26) 36 (Arg 2: 0)
+ MESSAGE 2 "I see" 
+ MESSAGE 38 "an underground phone line." 
+
+
+Action 146 CUT(12) LINE(44)
+Comment: "cut cable # 1 "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ HERE(2) 34 CARRIED(1) 23 ISZERO(9) 25 OBJIN(26) 36 (Arg 2: 0)
+ MESSAGE 2 "I see" 
+ MESSAGE 39 "the line is severed." 
+ SET(58) 25 
+
+
+Action 147 CUT(12) LINE(44)
+Comment: "cut cable pt 2 "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ HERE(2) 35 NOTZERO(8) 25 CARRIED(1) 23 OBJIN(26) 36 (Arg 2: 0)
+ SET(58) 24 
+ MESSAGE 2 "I see" 
+ MESSAGE 39 "the line is severed." 
+
+
+Action 148 PUSH(32) LINE(44)
+Comment: "get cable "
+ HERE(2) 35 NOTZERO(8) 24 OBJIN(26) 36 (Arg 2: 0)
+ GET(52) 36 
+ MESSAGE 1 "OK" 
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 149 GET(3) LINE(44)
+Comment: "get LINE FROM FIELD "
+ HERE(2) 35 NOTZERO(8) 24 OBJIN(26) 36 (Arg 2: 0)
+ GET(52) 36 
+ MESSAGE 1 "OK" 
+
+
+Action 150 GET(3) LINE(44)
+Comment: "GET THE DANGLING LINE "
+ HERE(2) 37
+ DESTROY(59) 37 
+ GET(52) 36 
+ MESSAGE 1 "OK" 
+
+
+Action 151 THROW(31) LINE(44)
+Comment: "throw rope to ledge "
+ CARRIED(1) 36 AT(4) 22
+ DESTROY(59) 36 
+ DROP(53) 37 
+ MESSAGE 1 "OK" 
+
+
+Action 152 CLIMB(14) LINE(44)
+Comment: "climb cable w anythg "
+ HERE(2) 37 SOMETHING(10) 0
+ MESSAGE 13 "I can't," 
+ MESSAGE 41 "while carrying anything." 
+
+
+Action 153 CLIMB(14) LINE(44)
+Comment: ""
+ HERE(2) 37 NOT(31) (Arg:3)  SOMETHING(10) 0
+ GOTO(54) 23 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 154 TIE(16) LINE(44)
+Comment: "tie PHONE LINE to pick "
+131 (AT) 40 (PICK) 
+ HERE(2) 37 PRESENT(3) 23
+ MESSAGE 1 "OK" 
+ SET(58) 23 
+ DESTROY(59) 23 
+
+
+Action 155 GET(3) BAUXITE(42)
+Comment: ""
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ AT(4) 23 NOT(31) (Arg:3)  NOTCARRIED(1) 23 HERE(2) 4
+ MESSAGE 13 "I can't," 
+ MESSAGE 44 "It's imbedded in solid rock" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 156 GET(3) BAUXITE(42)
+Comment: "get BAUXITE w pick "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 23 AT(4) 23 HERE(2) 4
+ MESSAGE 1 "OK" 
+ DESTROY(59) 4 
+ GET(52) 38 
+
+
+Action 157 OPEN(7) SAFE(28)
+Comment: "open safe in yoyo "
+130 (WITH) 25 (KEY) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 28 HERE(2) 18
+ GET(52) 39 
+ MESSAGE 1 "OK" 
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 158 LOOK(2) PAPER(39)
+Comment: "look disarm code "
+ CARRIED(1) 39
+ MESSAGE 2 "I see" 
+ MESSAGE 45 "a handwritten note that reads "Disarm Code: 1=Warfin 2=Yoyodyne"." 
+
+
+Action 159 LOOK(2) CAR(32)
+Comment: "look car "
+ HERE(2) 27
+ MESSAGE 2 "I see" 
+ MESSAGE 46 "the cockpit is" 
+ MESSAGE 47 "open" 
+ PRINTMESS(128) 92 "\." 
+ CONTINUE(73) 
+
+
+Action 160 0 0
+Comment: "look car pt 2 "
+ (Arg 2: 0)
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 77 "power terminals" 
+
+
+Action 161 0 0
+Comment: "CONNECTED TO CABLES MSG "
+ NOTZERO(8) 9
+ MESSAGE 43 "(Jumper cable attached)" 
+
+
+Action 162 0 0
+Comment: ""
+ (Arg 2: 0)
+ MESSAGE 49 "a fuel tank and a jet engine" 
+
+
+Action 163 0 0
+Comment: "look car pt 3 "
+ ISZERO(9) 21
+ PRINTMESS(128) 73 "connected by a hose." 
+
+
+Action 164 0 0
+Comment: ""
+ NOTZERO(8) 11
+ PRINTMESS(128) 76 "The engine is idling." 
+
+
+Action 165 UNCONNECT(25) HOSE(45)
+Comment: "CHANGE UNCONNECT TO GET "
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ (Arg 2: 0)
+ UNKNOWN(120)
+ SETCNT(99) 3 48 
+ FAILED?(121) 
+
+
+Action 166 GET(3) HOSE(45)
+Comment: "get hose from car  "
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ HERE(2) 27 ISZERO(9) 21 ISZERO(9) 11
+ GET(52) 40 
+ SET(58) 21 
+ MESSAGE 1 "OK" 
+
+
+Action 167 GO(1) COCKPIT(47)
+Comment: ""
+ HERE(2) 27
+ GOTO(54) 29 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 168 CLOSE(15) COCKPIT(47)
+Comment: "close cockpit "
+ AT(4) 29 ISZERO(9) 22
+ MESSAGE 1 "OK" 
+ MESSAGE 46 "the cockpit is" 
+ MESSAGE 48 "closed" 
+ PRINTMESS(128) 92 "\." 
+ SET(58) 22 
+
+
+Action 169 LOOK(2) DASH(49)
+Comment: "look inside car pt 1 "
+ AT(4) 29
+ MESSAGE 2 "I see" 
+ MESSAGE 51 "starter button & glove compartment." 
+ MESSAGE 46 "the cockpit is" 
+ CONTINUE(73) 
+
+
+Action 170 0 0
+Comment: "look inside car pt 2 "
+ ISZERO(9) 22
+ MESSAGE 47 "open" 
+ PRINTMESS(128) 92 "\." 
+ PRINTMESS(128) 52 "Fuel gauge reads" 
+
+
+Action 171 0 0
+Comment: "look inside car pt 3 "
+ NOTZERO(8) 22
+ MESSAGE 48 "closed" 
+ PRINTMESS(128) 92 "\." 
+ PRINTMESS(128) 52 "Fuel gauge reads" 
+
+
+Action 172 0 0
+Comment: "look inside car pt 4 "
+ NOTZERO(8) 19
+ PRINTMESS(128) 53 "full" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 173 0 0
+Comment: "look inside car pt 5 "
+ NOTZERO(8) 8
+ PRINTMESS(128) 53 "full" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 174 0 0
+Comment: "look inside car pt 6 "
+ ISZERO(9) 19 ISZERO(9) 8
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 175 OPEN(7) GLOVE(48)
+Comment: " "
+ AT(4) 29 ISZERO(9) 18
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 92 "\." 
+ STEAL(74) 41 
+ CONTINUE(73) 
+
+
+Action 176 0 0
+Comment: " "
+ (Arg 2: 0)
+ SET(58) 18 
+ STEAL(74) 49 
+
+
+Action 177 LOOK(2) FORMULA(50)
+Comment: ""
+ CARRIED(1) 41
+ PRINTMESS(128) 55 "The formula describes the procedure to make a special jet fuel from " 
+ PRINTMESS(128) 56 "gasoline, sand, bauxite, and a special catalyst." 
+
+
+Action 178 LOOK(2) RADIO(34)
+Comment: "look radio "
+ PRESENT(3) 30
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 57 "a transmit switch" 
+ CONTINUE(73) 
+
+
+Action 179 0 0
+Comment: "no battery msg "
+ ISZERO(9) 29
+ MESSAGE 24 "There's no battery" 
+ CONTINUE(73) 
+
+
+Action 180 0 0
+Comment: "no antenna "
+ ISZERO(9) 14
+ PRINTMESS(128) 59 "There's no antenna" 
+ CONTINUE(73) 
+
+
+Action 181 0 0
+Comment: ""
+ NOTZERO(8) 14 NOTZERO(8) 29 NOTZERO(8) 30 NOTZERO(8) 31
+ SET0FLAG(67) 
+ CONTINUE(73) 
+
+
+Action 182 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 61 "It's not working." 
+ CONTINUE(73) 
+
+
+Action 183 0 0
+Comment: ""
+ (Arg 2: 0)
+ CLEAR0FLAG(68) 
+
+
+Action 184 PUSH(32) SWITCH(17)
+Comment: ""
+ AT(4) 13 HERE(2) 19 NOTZERO(8) 14 NOTZERO(8) 30
+ PRINTMESS(128) 62 "To send a radio transmission say "TRANSMIT something"." 
+
+
+Action 185 MAKE(26) FUEL(57)
+Comment: "fuel pt 1 "
+134 (IN) 62 (VAT) 129 (NONE) 0 (ANY) 
+ AT(4) 2 PRESENT(3) 9 PRESENT(3) 38 PRESENT(3) 49 PRESENT(3) 46
+ CONTINUE(73) 
+
+
+Action 186 0 0
+Comment: "fuel pt 2 "
+ PRESENT(3) 48 PRESENT(3) 41
+ DESTROY(59) 38 
+ DESTROY(59) 49 
+ DESTROY(59) 48 
+ SET0FLAG(67) 
+
+
+Action 187 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 85 "I can't do that...yet" 
+
+
+Action 188 0 0
+Comment: "fuel pt 3 "
+ NOTZERO(8) 0
+ DESTROY(59) 46 
+ GET(52) 50 
+ MESSAGE 1 "OK" 
+ CLEAR0FLAG(68) 
+
+
+Action 189 PUSH(32) BUTTON(61)
+Comment: "car fueled w gas "
+ AT(4) 29 NOTZERO(8) 8
+ SET(58) 39 
+
+
+Action 190 PUSH(32) BUTTON(61)
+Comment: "car not fueled "
+ AT(4) 29 ISZERO(9) 19
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ MESSAGE 20 "happens" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 191 PUSH(32) BUTTON(61)
+Comment: "hose off car "
+ AT(4) 29 NOTZERO(8) 21
+ SET(58) 39 
+
+
+Action 192 PUSH(32) BUTTON(61)
+Comment: "hose is dirty "
+ AT(4) 29 NOTZERO(8) 20
+ SET(58) 39 
+
+
+Action 193 PUSH(32) BUTTON(61)
+Comment: "idling engine "
+ AT(4) 29 ISZERO(9) 22
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 76 "The engine is idling." 
+ SET(58) 11 
+
+
+Action 194 PUSH(32) BUTTON(61)
+Comment: "DRIVE CAR TO MAIN ST. & swap dashes "
+ AT(4) 29 NOTZERO(8) 4
+ CLEAR(60) 4 
+ SET(58) 5 
+ PRINTMESS(128) 78 "I drive the jet car to Main Street for an attempt at entering the mountain." 
+ DESTROY(59) 55 
+ DROP(53) 56 
+
+
+Action 195 PUSH(32) BUTTON(61)
+Comment: "DRIVE CAR TO CAVE & swap dashes "
+ AT(4) 29 NOTZERO(8) 5
+ CLEAR(60) 5 
+ SET(58) 6 
+ CLEAR(60) 19 
+ DESTROY(59) 56 
+ DROP(53) 42 
+ CONTINUE(73) 
+
+
+Action 196 0 0
+Comment: "WHAT FOLLOWS IS THE TRUCK->MOUNTAIN ANNIMATION SEQUENCE "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 197 0 0
+Comment: "TEXT MODE "
+ ISZERO(9) 35
+ PRINTMESS(128) 81 "I drive inside the mountain." 
+ LIGHTSOUT(56) 
+ DONE(69) 
+
+
+Action 198 0 0
+Comment: ""
+ (Arg 2: 0)
+ CLEAR(60) 7 
+ BEGIN?(112) 
+ SETCNT(99) 10 4 
+ LOADFILE?(110) 3 0 
+
+
+Action 199 0 0
+Comment: ""
+ (Arg 2: 0)
+ LOADFILE?(110) 2 4 
+
+
+Action 200 0 0
+Comment: "LOOP "
+ (Arg 2: 0) NOT(31) (Arg:3)  NOTEQUAL(20) 4 (Arg 2: 17)
+ ADDCNT(100) 1 4 
+ LOOP?(113) 
+
+
+Action 201 0 0
+Comment: ""
+ (Arg 2: 0)
+ RMVLOOP?(114) 
+ LOADFILE?(110) 6 0 
+ BEGIN?(112) 
+ CLRCNT?(109) 4 
+
+
+Action 202 0 0
+Comment: ""
+ (Arg 2: 0)
+ LOADFILE?(110) 4 4 
+
+
+Action 203 0 0
+Comment: ""
+ (Arg 2: 0) NOT(31) (Arg:3)  NOTEQUAL(20) 4 (Arg 2: 7)
+ ADDCNT(100) 1 4 
+ LOOP?(113) 
+
+
+Action 204 0 0
+Comment: ""
+ (Arg 2: 0)
+ RMVLOOP?(114) 
+ PRINTMESS(128) 81 "I drive inside the mountain." 
+ LIGHTSOUT(56) 
+ REDRAW?(89) 
+
+
+Action 205 GET(3) HOSE(45)
+Comment: "GET HOSE W CAR IDLING "
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ HERE(2) 27 NOTZERO(8) 11
+ SET(58) 39 
+
+
+Action 206 OPEN(7) COCKPIT(47)
+Comment: ""
+ AT(4) 29 NOTZERO(8) 22
+ CLEAR(60) 22 
+ CLEAR(60) 11 
+ MESSAGE 1 "OK" 
+ MESSAGE 46 "the cockpit is" 
+ MESSAGE 47 "open" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 207 WASH(28) HOSE(45)
+Comment: "wash the fuel hose "
+ CARRIED(1) 40 AT(4) 21
+ CLEAR(60) 20 
+ MESSAGE 1 "OK" 
+
+
+Action 208 GET(3) UP(5)
+Comment: ""
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ NOTZERO(8) 22
+ MESSAGE 13 "I can't," 
+ MESSAGE 46 "the cockpit is" 
+ MESSAGE 48 "closed" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 209 GET(3) UP(5)
+Comment: ""
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ AT(4) 29 NOTZERO(8) 4
+ GOTO(54) 19 
+ DROPIN(62) 27 19 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 210 GET(3) UP(5)
+Comment: ""
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ AT(4) 29 NOTZERO(8) 5
+ GOTO(54) 3 
+ DROPIN(62) 27 3 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 211 GET(3) UP(5)
+Comment: ""
+132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY) 
+ AT(4) 29 NOTZERO(8) 6
+ GOTO(54) 24 
+ DROPIN(62) 27 24 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 212 OPEN(7) COCKPIT(47)
+Comment: ""
+ AT(4) 14
+ PRINTMESS(128) 79 "I go thru door. Slam!!! It closes behind me." 
+ GOTO(54) 28 
+ LIGHTSON(57) 
+ SET(58) 38 
+
+
+Action 213 START(22) CAR(32)
+Comment: ""
+ AT(4) 29
+ MESSAGE 50 "How?" 
+
+
+Action 214 CLIMB(14) MOUNTAIN(41)
+Comment: ""
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY) 
+ AT(4) 22
+ MESSAGE 50 "How?" 
+
+
+Action 215 GO(1) MOUNTAIN(41)
+Comment: ""
+ AT(4) 22
+ MESSAGE 50 "How?" 
+
+
+Action 216 GO(1) LAKE(79)
+Comment: ""
+ AT(4) 20
+ GOTO(54) 21 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 217 SAY(40) ANY(0)
+Comment: ""
+ (Arg 2: 0)
+ MESSAGE 1 "OK" 
+ ECHONOUN(84) 
+
+
+Action 218 GO(1) CAR(32)
+Comment: ""
+ HERE(2) 27
+ GOTO(54) 29 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 219 OPEN(7) GLOVE(48)
+Comment: ""
+ AT(4) 29
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ MESSAGE 20 "happens" 
+
+
+Action 220 GO(1) SHED(46)
+Comment: ""
+ AT(4) 7
+ GOTO(54) 13 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 221 GET(3) LINE(44)
+Comment: "get line w no pick "
+ AT(4) 23 ISZERO(9) 23
+ GET(52) 36 
+ DESTROY(59) 37 
+
+
+Action 222 PUSH(32) LINE(44)
+Comment: "pull line w no pick "
+ AT(4) 23 ISZERO(9) 23
+ GET(52) 36 
+ DESTROY(59) 37 
+
+
+Action 223 GET(3) LINE(44)
+Comment: "get line & pick "
+ AT(4) 23 NOTZERO(8) 23
+ DESTROY(59) 37 
+ STEAL(74) 36 
+ SET0FLAG(67) 
+ CONTINUE(73) 
+
+
+Action 224 0 0
+Comment: "get line & pick pt 2 "
+ NOTZERO(8) 0
+ CLEAR0FLAG(68) 
+ STEAL(74) 23 
+ CLEAR(60) 23 
+
+
+Action 225 PUSH(32) LINE(44)
+Comment: "get line & pick "
+ AT(4) 23 NOTZERO(8) 23
+ DESTROY(59) 37 
+ STEAL(74) 36 
+ STEAL(74) 23 
+ CONTINUE(73) 
+
+
+Action 226 0 0
+Comment: "get line & pick "
+ (Arg 2: 0)
+ CLEAR(60) 23 
+ MESSAGE 1 "OK" 
+ MESSAGE 9 "I've got" 
+ MESSAGE 21 "something" 
+
+
+Action 227 CLOSE(15) TOOL(24)
+Comment: ""
+ PRESENT(3) 20
+ SWAP(72) 20 7 
+
+
+Action 228 OPEN(7) TOOL(24)
+Comment: ""
+ PRESENT(3) 7
+ SWAP(72) 7 20 
+
+
+Action 229 LOOK(2) STAIRS(10)
+Comment: "look stair, get jug "
+ AT(4) 2 NOT(31) (Arg:3)  NOTCARRIED(1) 45 DESTROYED(14) 45 PRESENT(3) 9
+ STEAL(74) 45 
+ MESSAGE 2 "I see" 
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 82 "under the staircase, I get it." 
+
+
+Action 230 GET(3) BAUXITE(42)
+Comment: ""
+ HERE(2) 38 NOT(31) (Arg:3)  NOTAT(4) 23
+ GET(52) 38 
+
+
+Action 231 GET(3) LAKE(79)
+Comment: "HOW? "
+ AT(4) 21
+ MESSAGE 50 "How?" 
+
+
+Action 232 GO(1) COCKPIT(47)
+Comment: "THIS LINE IS GO DOOR IN MINE SHAFT TO EXIT MOUNTAIN "
+ AT(4) 14
+ GOTO(54) 28 
+ LIGHTSON(57) 
+ MESSAGE 1 "OK" 
+ SET(58) 38 
+
+
+Action 233 SLEEP(8) ANY(0)
+Comment: "sleep till boom!!! "
+ (Arg 2: 0)
+ MESSAGE 19 "An atomic explosion erupts." 
+ PRINTMESS(128) 75 "I'm one dead buckaroo." 
+ GOTO(54) 35 
+
+
+Action 234 LOOK(2) ME(73)
+Comment: ""
+ (Arg 2: 0)
+ MESSAGE 1 "OK" 
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 83 "Buckaroo Banzai" 
+
+
+Action 235 LOOK(2) HOSE(45)
+Comment: ""
+ CARRIED(1) 40 NOTZERO(8) 20
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 86 "residue inside it." 
+
+
+Action 236 LOOK(2) HOSE(45)
+Comment: ""
+ CARRIED(1) 40 ISZERO(9) 20
+ MESSAGE 2 "I see" 
+ PRINTMESS(128) 87 "it's clean." 
+
+
+Action 237 MAKE(26) FUEL(57)
+Comment: "no formula!! "
+134 (IN) 62 (VAT) 129 (NONE) 0 (ANY) 
+ NOT(31) (Arg:3)  ABSENT(3) 41 AT(4) 2
+ PRINTMESS(128) 88 "How can I do that without having the formula?" 
+
+
+Action 238 MAKE(26) FUEL(57)
+Comment: "something missing "
+134 (IN) 62 (VAT) 129 (NONE) 0 (ANY) 
+ AT(4) 2 CARRIED(1) 9
+ MESSAGE 21 "something" 
+ PRINTMESS(128) 89 "is missing." 
+
+
+Action 239 PUT(20) HOSE(45)
+Comment: "put hose on car "
+ CARRIED(1) 40 HERE(2) 27
+ MESSAGE 1 "OK" 
+ CLEAR(60) 21 
+ DESTROY(59) 40 
+
+
+Action 240 CHARGE(19) BATTERY(21)
+Comment: ""
+ CARRIED(1) 19
+ MESSAGE 50 "How?" 
+
+
+Action 241 PUSH(32) SWITCH(17)
+Comment: ""
+ CARRIED(1) 30
+ MESSAGE 1 "OK" 
+ MESSAGE 3 "nothing" 
+ MESSAGE 20 "happens" 
+
+
+Action 242 TRANSMIT(18) ANY(0)
+Comment: ""
+ AT(4) 0
+ UNKNOWN(0)
+
+
+Action 243 PUSH(32) CAR(32)
+Comment: ""
+ HERE(2) 27
+ MESSAGE 40 "Not with these hands." 
+
+
+Action 244 USE(33) ANY(0)
+Comment: ""
+ (Arg 2: 0)
+ PRINTMESS(128) 69 "It doesn't" 
+ MESSAGE 35 "work" 
+
+
+Action 245 LISTEN(44) ANY(0)
+Comment: ""
+ AT(4) 23 ISZERO(9) 29 ISZERO(9) 14
+ MESSAGE 33 "I don't hear anything." 
+
+
+Action 246 SWIM(27) ANY(0)
+Comment: ""
+ AT(4) 21
+ MESSAGE 1 "OK" 
+
+
+Action 247 PUSH(32) LINE(44)
+Comment: "pull attached cable "
+ HERE(2) 34 ISZERO(9) 24
+ MESSAGE 13 "I can't," 
+ MESSAGE 42 "it's still attached." 
+
+
+Action 248 GET(3) LINE(44)
+Comment: "get attached cable "
+ HERE(2) 34 ISZERO(9) 24
+ MESSAGE 13 "I can't," 
+ MESSAGE 42 "it's still attached." 
+
+
+Action 249 CUT(12) LINE(44)
+Comment: "CUT PHONE LINE INSIDE THE HOLES "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ NOT(31) (Arg:3)  NOTCARRIED(1) 23 HERE(2) 34
+ MESSAGE 40 "Not with these hands." 
+
+
+Action 250 CUT(12) ANY(0)
+Comment: "CUT ANYTHING ELSE "
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY) 
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ MESSAGE 20 "happens" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 251 DIG(41) ANY(0)
+Comment: "dig without pick "
+ NOT(31) (Arg:3)  NOTCARRIED(1) 23
+ MESSAGE 40 "Not with these hands." 
+
+
+Action 252 DIG(41) ANY(0)
+Comment: "DIG AT BEACH WITH PICK "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ AT(4) 20
+ MESSAGE 1 "OK" 
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ MESSAGE 20 "happens" 
+
+
+Action 253 DIG(41) ANY(0)
+Comment: "DIG ELSEWHERE WITH PICK "
+130 (WITH) 40 (PICK) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 23
+ PRINTMESS(128) 131 "Sorry," 
+ MESSAGE 13 "I can't," 
+ PRINTMESS(128) 136 "\\ do that here." 
+
+
+Action 254 CLIMB(14) ANY(0)
+Comment: "CLIMB UNCLIMBABLES "
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 85 "I can't do that...yet" 
+
+
+Action 255 OPEN(7) PIPE(11)
+Comment: "wrong key to tanks "
+130 (WITH) 25 (KEY) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 28 NOT(31) (Arg:3)  NOTCARRIED(1) 21
+ MESSAGE 13 "I can't," 
+ MESSAGE 23 "the key doesn't fit." 
+
+
+Action 256 OPEN(7) SAFE(28)
+Comment: "wrong key to safe "
+130 (WITH) 25 (KEY) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 21 NOT(31) (Arg:3)  NOTCARRIED(1) 28
+ MESSAGE 13 "I can't," 
+ MESSAGE 23 "the key doesn't fit." 
+
+
+Action 257 LOOK(2) ANY(0)
+Comment: "NOT DARK OR LIGHT AVAILABLE LOOK "
+ OR(31) (Arg:1)  ISZERO(9) 15 PRESENT(3) 9
+ MESSAGE 1 "OK" 
+ MESSAGE 2 "I see" 
+ MESSAGE 3 "nothing" 
+ MESSAGE 8 "special" 
+ PRINTMESS(128) 92 "\." 
+ LOOK(76) 
+
+
+Action 258 LOOK(2) ANY(0)
+Comment: "DARK LOOK "
+ NOTZERO(8) 15
+ LOOK(76) 
+
+
+Action 259 FILL(21) CAR(32)
+Comment: "CHANGE FILL CAR TO FUEL CAR "
+130 (WITH) 0 (ANY) 132 (FROM) 56 (JUG) 129 (NONE) 0 (ANY) 
+ HERE(2) 27
+ MEANS(55) 47 32 
+
+
+Action 260 EMPTY(45) ANY(0)
+Comment: "CHANGE INPUT TO ACCEPT ON NEXT LINE "
+134 (IN) 32 (CAR) 
+ OR(31) (Arg:1)  NOUNIS(28) 230 (Arg 2: 54) NOUNIS(28) 230 (Arg 2: 79) NOUNIS(28) 230 (Arg 2: 57) NOUNIS(28) 230 (Arg 2: 56)
+ MEANS(55) 47 32 
+
+
+Action 261 LEUF(47) CAR(32)
+Comment: "FUEL CAR FROM TANK START "
+130 (WITH) 0 (ANY) 132 (FROM) 56 (JUG) 129 (NONE) 0 (ANY) 
+ HERE(2) 27
+ CLEAR0FLAG(68) 
+ CONTINUE(73) 
+
+
+Action 262 0 0
+Comment: "DONT HAVE ANY JUGS "
+ NOT(31) (Arg:4)  ABSENT(3) 45 ABSENT(3) 46 ABSENT(3) 53 ABSENT(3) 50
+ PRINTMESS(128) 85 "I can't do that...yet" 
+ DONE(69) 
+
+
+Action 263 0 0
+Comment: "JUG IS EMPTY "
+ PRESENT(3) 45
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 139 "the jug is" 
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 264 0 0
+Comment: "TANK ALREADY FULL "
+ OR(31) (Arg:1)  NOTZERO(8) 8 NOTZERO(8) 19
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 150 "the fuel tank on the jet car is already" 
+ PRINTMESS(128) 53 "full" 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 265 0 0
+Comment: "TANK FUELED WITH JET FUEL "
+ PRESENT(3) 50
+ SWAP(72) 50 45 
+ SET(58) 19 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 139 "the jug is" 
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 266 0 0
+Comment: "THIS LINE CONTINUES ON NEXT LINE "
+ OR(31) (Arg:1)  PRESENT(3) 53 PRESENT(3) 46
+ CLEAR(60) 19 
+ SET(58) 8 
+ DESTROY(59) 53 
+ SET0FLAG(67) 
+
+
+Action 267 0 0
+Comment: "TANK FILLED WITH EITHER WATER OR GAS "
+ NOTZERO(8) 0
+ CLEAR0FLAG(68) 
+ DESTROY(59) 46 
+ GET(52) 45 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 139 "the jug is" 
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 268 EMPTY(45) ANY(0)
+Comment: ""
+134 (IN) 21 (BATTERY) 
+ OR(31) (Arg:1)  NOUNIS(28) 230 (Arg 2: 56) NOUNIS(28) 230 (Arg 2: 57) NOUNIS(28) 230 (Arg 2: 79) NOUNIS(28) 230 (Arg 2: 54)
+ SETCNT(99) 21 48 
+ SETCNT(99) 21 49 
+ SETCNT(99) 4 52 
+ SET0FLAG(67) 
+ CONTINUE(73) 
+
+
+Action 269 0 0
+Comment: "CHANGE VOCAB TO MATCH ON NEXT COMMAND "
+ NOTZERO(8) 0
+ CLEAR0FLAG(68) 
+ SETCNT(99) 56 53 
+ CLRCNT?(109) 50 
+ CLRCNT?(109) 51 
+ FAILED?(121) 
+
+
+Action 270 FILL(21) BATTERY(21)
+Comment: "FILL BATTERY FROM JUG START "
+130 (WITH) 0 (ANY) 132 (FROM) 56 (JUG) 
+ PRESENT(3) 19
+ CLEAR0FLAG(68) 
+ CONTINUE(73) 
+
+
+Action 271 0 0
+Comment: "DONT HAVE ANY OF THE JUGS "
+ NOT(31) (Arg:4)  ABSENT(3) 45 ABSENT(3) 46 ABSENT(3) 53 ABSENT(3) 50
+ PRINTMESS(128) 85 "I can't do that...yet" 
+ DONE(69) 
+
+
+Action 272 0 0
+Comment: "BATTERY ALREADY FULL "
+ NOTZERO(8) 31
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 138 "the battery is already" 
+ PRINTMESS(128) 53 "full" 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 273 0 0
+Comment: "FILL BATTERY WITH WATER "
+ PRESENT(3) 53
+ SWAP(72) 53 45 
+ SET(58) 31 
+ MESSAGE 1 "OK" 
+ DONE(69) 
+
+
+Action 274 0 0
+Comment: "THE JUG IS EMPTY "
+ PRESENT(3) 45
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 139 "the jug is" 
+ PRINTMESS(128) 54 "empty" 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 275 0 0
+Comment: "CONTINUE ON NEXT LINE "
+ OR(31) (Arg:1)  PRESENT(3) 50 PRESENT(3) 46
+ DESTROY(59) 50 
+ DESTROY(59) 46 
+ GET(52) 45 
+ SWAP(72) 54 19 
+ SET0FLAG(67) 
+
+
+Action 276 0 0
+Comment: "JET FUEL OR GAS DESTROYS BATTERY "
+ NOTZERO(8) 0
+ CLEAR0FLAG(68) 
+ PRINTMESS(128) 140 "The fuel causes the battery to melt into a useless mass of black plastic." 
+ CLEAR(60) 30 
+ CLEAR(60) 31 
+ CLEAR(60) 29 
+ CLEAR(60) 10 
+
+
+Action 277 FILL(21) BATTERY(21)
+Comment: "FILL BATTERY WHEN CONDITIONS NOT MEET-HOW? "
+ PRESENT(3) 19
+ MESSAGE 50 "How?" 
+
+
+Action 278 FILL(21) JUG(56)
+Comment: "FILL JUG WHEN OTHER CONDITIONS NOT MET-HOW? "
+130 (WITH) 0 (ANY) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 45
+ MESSAGE 50 "How?" 
+
+
+Action 279 EMPTY(45) JUG(56)
+Comment: "EMPTY ANY FILLED JUG "
+137 (ON) 80 (BEACH) 129 (NONE) 0 (ANY) 
+ OR(31) (Arg:1)  PRESENT(3) 53 PRESENT(3) 50 PRESENT(3) 46
+ MESSAGE 1 "OK" 
+ DESTROY(59) 53 
+ DESTROY(59) 30 
+ DESTROY(59) 46 
+ GET(52) 45 
+
+
+Action 280 INVENTORY(29) ANY(0)
+Comment: ""
+ (Arg 2: 0)
+ INVENTORY(66) 
+
+
+Action 281 QUIT(9) ANY(0)
+Comment: "PLAYER QUITS "
+ (Arg 2: 0)
+ GAMEOVER(63) 
+
+
+Action 282 SAVE(5) GAME(23)
+Comment: ""
+ (Arg 2: 0)
+ SAVE(71) 
+
+
+Action 283 LOAD(11) GAME(23)
+Comment: ""
+ (Arg 2: 0)
+ LOADFILE?(110) 1 0 
+
+
+Action 284 PUT(20) ANY(0)
+Comment: "DEFAULT PUT ANY "
+134 (IN) 0 (ANY) 
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 85 "I can't do that...yet" 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 285 HELP(13) ANY(0)
+Comment: "no help today "
+ (Arg 2: 0)
+ MESSAGE 36 "Sorry Buck, not today." 
+
+
+Action 286 REPLACE(43) HOSE(45)
+Comment: "IF CAR AVAIL AND HAS HOSE THEN REPLACE "
+128 (ANY) 32 (CAR) 129 (NONE) 0 (ANY) 
+ CARRIED(1) 40 HERE(2) 27
+ MESSAGE 1 "OK" 
+ CLEAR(60) 21 
+ DESTROY(59) 40 
+
+
+Action 287 REPLACE(43) ANY(0)
+Comment: "REPLACE ANY=DROP ANY "
+ (Arg 2: 0)
+ UNKNOWN(120)
+ SETCNT(99) 6 48 
+ FAILED?(121) 
+
+
+Action 288 CONNECT(17) ANY(0)
+Comment: ""
+130 (WITH) 0 (ANY) 131 (AT) 0 (ANY) 
+ (Arg 2: 0)
+ CONTINUE(73) 
+
+
+Action 289 0 0
+Comment: ""
+ NOUNIS(28) 230 (Arg 2: 45) NOUNIS(28) 231 (Arg 2: 32) CARRIED(1) 40 HERE(2) 27
+ MESSAGE 1 "OK" 
+ CLEAR(60) 21 
+ DESTROY(59) 40 
+ DONE(69) 
+
+
+Action 290 0 0
+Comment: "THE ABOVE LINE IS N1=HOSE*N2=CAR THEN CONNECT HOSE TO CAR "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 291 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 45) NOUNIS(28) 231 (Arg 2: 31) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 31) NOUNIS(28) 231 (Arg 2: 45) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  CARRIED(1) 40 CARRIED(1) 26 CARRIED(1) 22
+ PRINTMESS(128) 67 "By using the tape, you are able to keep the fuel hose" 
+ PRINTMESS(128) 68 "firmly attached to the hand pump." 
+ SET(58) 13 
+ DESTROY(59) 40 
+ DONE(69) 
+
+
+Action 292 0 0
+Comment: "THE ABOVE LINE IS (N1=HOSE*N2=PUMP)+(N1=PUMP*N2=HOSE)*HAS HOSE, PUMP, TAPE. "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 293 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 45) NOUNIS(28) 231 (Arg 2: 31) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 31) NOUNIS(28) 231 (Arg 2: 45) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  CARRIED(1) 40 CARRIED(1) 26 NOT(31) (Arg:3)  NOTCARRIED(1) 22
+ PRINTMESS(128) 66 "The fuel hose does not stay" 
+ PRINTMESS(128) 68 "firmly attached to the hand pump." 
+ DONE(69) 
+
+
+Action 294 0 0
+Comment: "THE ABOVE LINE IS (N1=HOSE*N2=PUMP)+(N1=PUMP*N2=HOSE)*HAS HOSE,PUMP,-HAVE TAPE. "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 295 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 58) NOUNIS(28) 231 (Arg 2: 55) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 55) NOUNIS(28) 231 (Arg 2: 58) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  HERE(2) 27 PRESENT(3) 51
+ MESSAGE 1 "OK" 
+ SET(58) 9 
+ DROP(53) 51 
+ DONE(69) 
+
+
+Action 296 0 0
+Comment: "THE ABOVE LINE IS (N1=CABLE*N2=TERMINALS)+(N1=TERMINALS*N2=CABLE)*RMW JET CAR*AVL CABLES "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 297 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 58) NOUNIS(28) 231 (Arg 2: 21) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 21) NOUNIS(28) 231 (Arg 2: 58) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  PRESENT(3) 19 PRESENT(3) 51
+ MESSAGE 1 "OK" 
+ SET(58) 10 
+ DONE(69) 
+
+
+Action 298 0 0
+Comment: "THE ABOVE LINE IS (N1=CABLE*N2=BATTERY)+(N1=BATTERY*N2=CABLE)*RMW JET CAR*AVL CABLE*AVL BATT "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 299 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 51) NOUNIS(28) 231 (Arg 2: 34) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 34) NOUNIS(28) 231 (Arg 2: 51) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  AT(4) 13 HERE(2) 30
+ MESSAGE 1 "OK" 
+ SET(58) 14 
+ DONE(69) 
+
+
+Action 300 0 0
+Comment: "THE ABOVE LINE IS (N1=RADIO*N2=ANTENNA)+(N1=ANTENNA*N2=RADIO)*IN ROOM13*AVL RADIO THEN SET CONNECTED FLAG "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 301 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 21) NOUNIS(28) 231 (Arg 2: 34) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 34) NOUNIS(28) 231 (Arg 2: 21) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  HERE(2) 19 HERE(2) 30
+ MESSAGE 1 "OK" 
+ SET(58) 29 
+ DONE(69) 
+
+
+Action 302 0 0
+Comment: "THE ABOVE LINE IS (N1=BATTERY*N2=RADIO)+(N1=RADIO*N2=BATTERY)*AVL RADIO*AVL BATTERY THEN SET CONNECTED FLAG "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 303 0 0
+Comment: ""
+ MOD(31) (Arg:8)  MOD(31) (Arg:6)  MOD(31) (Arg:0)  NOUNIS(28) 230 (Arg 2: 21) NOUNIS(28) 231 (Arg 2: 55) MOD(31) (Arg:7)  MOD(31) (Arg:6)  NOUNIS(28) 230 (Arg 2: 55) NOUNIS(28) 231 (Arg 2: 21) OR(31) (Arg:1)  MOD(31) (Arg:7)  MOD(31) (Arg:0)  PRESENT(3) 19
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 147 "they're not compatible." 
+ DONE(69) 
+
+
+Action 304 0 0
+Comment: "THE ABOVE LINE GIVES NOT COMP MSG IF PLAYER CONNECTS BATTERY TO TERMINALS "
+ (Arg 2: 0)
+ UNKNOWN(0)
+
+
+Action 305 0 0
+Comment: "IF EITHER NOUN=PIPE THEN ABORT TO NOT COMPATIBLE MSG "
+ OR(31) (Arg:1)  NOUNIS(28) 230 (Arg 2: 11) NOUNIS(28) 231 (Arg 2: 11)
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 147 "they're not compatible." 
+ DONE(69) 
+
+
+Action 306 0 0
+Comment: "ANY OTHER LEGAL CONNECT PHRASE GETS SORRY MSG "
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ MESSAGE 13 "I can't," 
+ PRINTMESS(128) 136 "\\ do that here." 
+
+
+Action 307 CONNECT(17) ANY(0)
+Comment: "THIS CONNECT ANY HANDLES A 1 NOUN CONNECT I.E. CONNECT BATTERY "
+ (Arg 2: 0)
+ PRINTMESS(128) 60 "Please tell me both of the things you want connected." 
+
+
+Action 308 GET(3) ANY(0)
+Comment: " GET ALL "
+197 (ALL) 131 (AT) 0 (ANY) 132 (FROM) 0 (ANY) 129 (NONE) 0 (ANY) 
+ (Arg 2: 0)
+ CLRCNT?(109) 30 
+ BEGIN?(112) 
+ CLEAR0FLAG(68) 
+ CLEAR(60) 19 
+ CLEAR(60) 60 
+
+
+Action 309 0 0
+Comment: ""
+ OR(31) (Arg:1)  NOUNIS(28) 230 (Arg 2: 0) MOD(31) (Arg:9)  DICTWORD(29) 230 (Arg 2: 230)
+ SET(58) 60 
+
+
+Action 310 0 0
+Comment: ""
+ NOTZERO(8) 60 ISZERO(9) 19 HERE(2) 230 OBJFLAG(30) 230 (Arg 2: 1)
+ GET(52) 131 230 
+ MESSAGE 9 "I've got" 
+ PRNOBJART(122) 131 230 
+ PRINTMESS(128) 92 "\." 
+ SET0FLAG(67) 
+
+
+Action 311 0 0
+Comment: ""
+ LE(18) 43 (Arg 2: 30)
+ ADDCNT(100) 1 30 
+ CLEAR(60) 19 
+ CLEAR(60) 60 
+ LOOP?(113) 
+
+
+Action 312 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 132 "nothing here can be taken." 
+
+
+Action 313 DROP(6) ANY(0)
+Comment: "        DROP ALL "
+197 (ALL) 
+ (Arg 2: 0)
+ CLRCNT?(109) 30 
+ BEGIN?(112) 
+ CLEAR0FLAG(68) 
+ CLEAR(60) 60 
+ CLEAR(60) 61 
+ UNKNOWN(0)
+
+
+Action 314 0 0
+Comment: ""
+ MOD(31) (Arg:8)  NOUNIS(28) 230 (Arg 2: 0) OR(31) (Arg:1)  MOD(31) (Arg:9)  DICTWORD(29) 230 (Arg 2: 230)
+ SET(58) 60 
+
+
+Action 315 0 0
+Comment: ""
+ NOTZERO(8) 60 CARRIED(1) 230 OBJFLAG(30) 230 (Arg 2: 1)
+ DROP(53) 131 230 
+ PRINTMESS(128) 95 "I leave" 
+ PRNOBJART(122) 131 230 
+ SET(58) 61 
+
+
+Action 316 0 0
+Comment: ""
+ NOTZERO(8) 61
+ PRINTMESS(128) 92 "\." 
+ SET0FLAG(67) 
+
+
+Action 317 0 0
+Comment: ""
+ LE(18) 43 (Arg 2: 30)
+ ADDCNT(100) 1 30 
+ CLEAR(60) 60 
+ CLEAR(60) 61 
+ LOOP?(113) 
+
+
+Action 318 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 94 "I don't have that." 
+
+
+Action 319 GET(3) ANY(0)
+Comment: "                GET ANY "
+130 (WITH) 73 (ME) 129 (NONE) 0 (ANY) 
+ (Arg 2: 0)
+ CLRCNT?(109) 30 
+ BEGIN?(112) 
+ CLEAR0FLAG(68) 
+ CLEAR(60) 60 
+
+
+Action 320 0 0
+Comment: ""
+ DICTWORD(29) 230 (Arg 2: 230) OBJFLAG(30) 230 (Arg 2: 1)
+ SET(58) 60 
+ SET0FLAG(67) 
+
+
+Action 321 0 0
+Comment: ""
+ NOTZERO(8) 0 NOT(31) (Arg:3)  NOTHERE(2) 230
+ CLEAR0FLAG(68) 
+
+
+Action 322 0 0
+Comment: ""
+ NOTZERO(8) 0
+ GET(52) 131 230 
+ MESSAGE 9 "I've got" 
+ PRNOBJART(122) 131 230 
+ PRINTMESS(128) 92 "\." 
+ UNKNOWN(115)
+
+
+Action 323 0 0
+Comment: ""
+ LE(18) 43 (Arg 2: 30)
+ ADDCNT(100) 1 30 
+ LOOP?(113) 
+
+
+Action 324 0 0
+Comment: ""
+ ISZERO(9) 60 ISZERO(9) 0
+ MESSAGE 13 "I can't," 
+ PRINTMESS(128) 133 "\\ get that." 
+ DONE(69) 
+
+
+Action 325 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 134 "I don't see it here." 
+
+
+Action 326 DROP(6) ANY(0)
+Comment: "                     DROP ANY "
+128 (ANY) 0 (ANY) 
+ (Arg 2: 0)
+ CLRCNT?(109) 30 
+ BEGIN?(112) 
+ CLEAR0FLAG(68) 
+ CLEAR(60) 61 
+
+
+Action 327 0 0
+Comment: ""
+ DICTWORD(29) 230 (Arg 2: 230) CARRIED(1) 230 OBJFLAG(30) 230 (Arg 2: 1)
+ DROP(53) 131 230 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 95 "I leave" 
+ PRNOBJART(122) 131 230 
+ PRINTMESS(128) 92 "\." 
+ SET(58) 61 
+
+
+Action 328 0 0
+Comment: ""
+ NOTZERO(8) 61
+ UNKNOWN(115)
+ SET0FLAG(67) 
+
+
+Action 329 0 0
+Comment: ""
+ LE(18) 43 (Arg 2: 30)
+ ADDCNT(100) 1 30 
+ LOOP?(113) 
+
+
+Action 330 0 0
+Comment: ""
+ ISZERO(9) 0
+ PRINTMESS(128) 131 "Sorry," 
+ PRINTMESS(128) 94 "I don't have that." 
+
+
+Action 331 GO(1) ANY(0)
+Comment: "NOUN IN 5, CHAIN ON "
+ (Arg 2: 0)
+ UNKNOWN(64) 
+ SETCNTNOUN?(131) 230 5 
+ CONTINUE(73) 
+
+
+Action 332 0 0
+Comment: "NOT A DIR "
+ MOD(31) (Arg:8)  NOT(31) (Arg:3)  LT(21) 5 (Arg 2: 1) MOD(31) (Arg:6)  GTEQ(21) 5 (Arg 2: 7) OR(31) (Arg:1)  MOD(31) (Arg:7) 
+ UNK116(116) 
+ DONE(69) 
+
+
+Action 333 0 0
+Comment: "ROOM EXIT IN CTR 6 "
+ (Arg 2: 0)
+ DECCNT(101) 1 5 
+ GETEXIT(94) 6 32 5 
+
+
+Action 334 0 0
+Comment: "NOT AVAIL EXIT "
+ EQ(20) 6 (Arg 2: 0)
+ ECHONOUN(84) 
+ PRINTMESS(128) 93 "is not a visible exit." 
+ UNK116(116) 
+ UNKNOWN(92)
+ UNKNOWN(117)
+ DONE(69) 
+
+
+Action 335 0 0
+Comment: ""
+ (Arg 2: 0)
+ SWAPCNT(98) 6 32 
+ SET(58) 34 
+ SET(58) 38 
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 91 "I go " 
+ ECHONOUN(84) 
+ PRINTMESS(128) 92 "\." 
+
+
+Action 336 GO(1) ANY(0)
+Comment: "GO TO OBJECT IN ROOM "
+195 (AT) 193 (NONE) 
+ (Arg 2: 0)
+ CLRCNT?(109) 30 
+ BEGIN?(112) 
+
+
+Action 337 0 0
+Comment: ""
+ HERE(2) 230 DICTWORD(29) 230 (Arg 2: 230)
+ MESSAGE 1 "OK" 
+ PRINTMESS(128) 135 "I'm at the" 
+ PRINTOBJ(85) 131 230 
+ PRINTMESS(128) 92 "\." 
+ DONE(69) 
+
+
+Action 338 0 0
+Comment: ""
+ LE(18) 43 (Arg 2: 30)
+ ADDCNT(100) 1 30 
+ LOOP?(113) 
+
+
+Action 339 0 0
+Comment: ""
+ (Arg 2: 0)
+ PRINTMESS(128) 131 "Sorry," 
+ MESSAGE 13 "I can't," 
+ PRINTMESS(128) 136 "\\ do that here." 
+
+
+Action 340 GO(1) ANY(0)
+Comment: "CAN'T DO THAT HERE "
+128 (ANY) 0 (ANY) 
+ AT(4) 0
+ UNKNOWN(0)
