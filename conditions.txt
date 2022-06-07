@@ -54,7 +54,7 @@ Is arg 7: right parenthesis ")"?
 If arg is 0, ORing is switched off?
 If arg is 4, negate all the following conditions.
 If arg is 3, negate a single condition.
-Arg 9?
+Arg 9? Only seen before condition 29, DICTWORD.
 
 
 There are several places in Buckaroo Banzai where this pattern (numbers in
