@@ -3,7 +3,8 @@ Saga Plus Commands
 - An argument of 230 seems to mean "the noun object", the object that matches the entered noun, at least when the argument represents an object.
 
 0		Does nothing.
-1-51		Print message 0-50. Put a space before if it does not begin with "\".
+1-51		Print message 0-50. Print a space before the message if it doesn't begin
+		with a "\".
 52		Get item <arg>. Checks if you can carry it first.
 53		Drops item <arg>.
 54		Moves to room <arg>.
@@ -17,11 +18,12 @@ Saga Plus Commands
 62		Item <arg2> is put in room <arg2>.
 63		Game over.
 64		Unknown.
-65		Counter <arg1> = Counter <arg1> * Counter <arg2> ? Used to calculate score.
+65		Multiply? Counter <arg1> = Counter <arg1> * Counter <arg2>?
+		Used to calculate score.
 66		Inventory.
 67		BitFlag 0 is set.
 68		BitFlag 0 is cleared.
-69		Done, stop reading lines (negates Continue.)
+69		Done, stop reading lines (cancels Continue command.)
 70		Screen is cleared.
 71		Saves the game.
 72		Swap two item locations.
@@ -35,7 +37,7 @@ Saga Plus Commands
 79		Set current counter value.
 80		Put object <Counter<arg1>> in room <Counter<arg2>> ? Questprobe 3 uses this a lot.
 81		Select a counter. Current counter is swapped with backup counter <arg>.
-82		Add <arg> to current counter.
+82		Add <arg> to current counter. Will use a second argument if <arg> has bit 7 set.
 83		Subtract <arg> from current counter.
 84		Echo noun player typed.
 85		Print the name of object <arg>.
@@ -43,7 +45,7 @@ Saga Plus Commands
 87		Swap current location value with backup location? Can't find any use of this.
 88		Wait 2 seconds.
 89		Redraw picture.
-90		Draw close-up image <arg> (Followed by waiting for key?)
+90		Draw close-up image <arg> (+ "Press any key" + wait for keypress)
 91		Divide? takes 3 arguments. Used to calculate score percentage.
 94		Counter <arg1> = Exit Counter<arg3> of room <Counter<arg2>>.
 95		Exit Counter<arg2> of room <Counter<arg1>> is set to <arg3>.
@@ -61,9 +63,11 @@ Saga Plus Commands
 114		Cancel loop?
 116		Unknown. Wait for key? Newline?
 119		Unknown.
+120		Unknown.
 121		Keep reading actions?
 122		Print name of object <arg> with indefinite article.
 123		Unknown, 2 arguments. Questprobe 3 uses this with 21,3 or 3,21.
 125		Unknown, 2 arguments. Swap value of bitflags <arg1> and <arg2>?
 128		Print message <arg - 76>.
-131		Set counter <arg2> to <arg1>.
+131		Set counter <arg2> to <arg1>. Will use a third argument if <arg2>
+		is greater than 31.

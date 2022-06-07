@@ -10,7 +10,7 @@ Saga Plus Conditions
 7	Unknown
 8	BitFlag <arg> is set.
 9	BitFlag <arg> is cleared.
-10	Does the player carry anything? May be negated
+10	Does the player carry anything? May be negated.
 11	Unknown
 12	Unknown
 13	Item <arg> is in game		[not in room 0]
@@ -32,9 +32,9 @@ Saga Plus Conditions
 29	Is the dictionary word of object <arg1> == <arg2>?
 	Only seen in loops, with <arg1> 230 and <arg2> also 230. A comment in Questprobe 2
 	says "OBJECTS'S NOUN=NOUN"
-30	Is flag <arg2> of object <arg1> set?
+30	Is object flag <arg2> of object <arg1> set?
 
-31  Modifier, see discussion below.
+31  Modifier. See discussion below.
 
 
 - Some conditions take a second parameter from a following 0 condition.
