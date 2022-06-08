@@ -1,0 +1,3682 @@
+Action 0: (0)(100)
+Conditions: ISZERO(9) 2
+ UNK119(119) 1
+ SET(58) 12
+ SET(58) 2
+ CONTINUE(73)
+ REDRAW?(89)
+ CLEAR(60) 34
+
+
+Action 1: (0)(0)
+No conditions
+ MESSAGE 21 "QUESTPROBE 3: FANTASTIC FOUR Chpt. 1 by Scott Adams. Dedicated: Keith Campbell."
+ CLRCNT?(109) 47
+
+
+Action 2: (0)(0)
+No conditions
+ MESSAGE 13 "THING"
+ MESSAGE 12 "\,"
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 56 "CHIEF EXAMINER"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 157 "RINGMASTER"
+ MESSAGE 12 "\,"
+
+
+Action 3: (0)(0)
+No conditions
+ PRINTMESS(128) 158 "FIRE EATER"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 159 "LIVE WIRE"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 160 "THE CLOWN"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 162 "PRINCESS PYTHON"
+
+
+Action 4: (0)(0)
+No conditions
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 163 "CANNONBALL"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 164 "FLYING GAMBONNOS"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 165 "BLOB"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 166 "XANDU"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 59 "DOCTOR DOOM"
+ MESSAGE 12 "\,"
+
+
+Action 5: (0)(0)
+No conditions
+ PRINTMESS(128) 149 "& their distinctive likenesses, are TMs of MARVEL COMICS GROUP & are used with permission."
+
+
+Action 6: (0)(0)
+No conditions
+ PRINTMESS(128) 153 "QUESTPROBE's a TM of Marvel Comics & SAI."
+ PRINTMESS(128) 154 "Game design Copyright 1985 Scott Adams, inc. Text & art Copyright 1985 Marvel Comics."
+ PRINTMESS(128) 155 "Now on with the game..."
+ LOOK(76)
+
+
+Action 7: (0)(100)
+Conditions: NOTZERO(8) 22
+ PRINTMESS(128) 52 "Game's now over!"
+ LOADFILE?(110) 1 0
+ CONTINUE(73)
+
+
+Action 8: (0)(0)
+Conditions: NOTZERO(8) 22
+ GAMEOVER(63)
+
+
+Action 9: (0)(0)
+No conditions
+ LOOK(76)
+ CLEAR(60) 63
+
+
+Action 10: (0)(100)
+No conditions
+ CLEAR(60) 18
+ ADD(82) 1
+
+
+Action 11: (0)(100)
+Conditions: CARRIED(1) 46
+ GOTO(54) 6
+ REDRAW?(89)
+ LOOK(76)
+ PRINTMESS(128) 56 "CHIEF EXAMINER"
+ PRINTMESS(128) 57 "says:"
+ PRINTMESS(128) 178 "Congratulations! Save this password: MAEGEN!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 12: (0)(100)
+Conditions: NOTZERO(8) 17 AT(4) 7
+ GOTO(54) 1
+
+
+Action 13: (0)(100)
+Conditions: NOTZERO(8) 17
+ CLEAR(60) 17
+ CLEAR(60) 4
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 35 "is"
+ MESSAGE 37 "not"
+ MESSAGE 36 "flying"
+ MESSAGE 51 "\!"
+
+
+Action 14: (0)(100)
+Conditions: AT(4) 4
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 144 "glow to the east"
+ MESSAGE 41 "\."
+
+
+Action 15: (0)(100)
+Conditions: CARRIED(1) 17
+ DROP(53) 17
+ STEAL(74) 1
+ DROPIN(62) 2 99
+
+
+Action 16: (0)(100)
+Conditions: CARRIED(1) 18
+ DROP(53) 18
+ STEAL(74) 2
+ DROPIN(62) 1 99
+
+
+Action 17: (0)(100)
+Conditions: NODESTROYED(13) 1 NOT(31) 4  NOTCARRIED(1) 1 OBJIN(26) 1 99
+ SAME(75) 17 1
+ DESTROY(59) 2
+ DESTROY(59) 1
+
+
+Action 18: (0)(100)
+Conditions: NODESTROYED(13) 2 NOT(31) 4  NOTCARRIED(1) 2 OBJIN(26) 2 99
+ SAME(75) 18 2
+ DESTROY(59) 2
+ DESTROY(59) 1
+
+
+Action 19: (0)(100)
+Conditions: MOD(31) 8  CARRIED(1) 1 CARRIED(1) 2 MOD(31) 6  OBJIN(26) 1 99 OBJIN(26) 2 99 OR(31) 1  MOD(31) 7
+ DESTROY(59) 1
+ DESTROY(59) 2
+
+
+Action 20: (0)(100)
+Conditions: CUREQ(19) 20
+ MESSAGE 28 "Blub!"
+ CLEAR0FLAG(68)
+ CONTINUE(73)
+
+
+Action 21: (0)(0)
+Conditions: NOTZERO(8) 3
+ LIGHTSOUT(56)
+ GOTO(54) 3
+ STEAL(74) 7
+
+
+Action 22: (0)(0)
+Conditions: ISZERO(9) 3
+ LIGHTSOUT(56)
+ SET(58) 14
+ SET(58) 13
+ DROPIN(62) 17 3
+ DROPIN(62) 7 99
+
+
+Action 23: (0)(0)
+Conditions: OR(31) 1  AT(4) 1 AT(4) 2 NOTZERO(8) 3
+ MESSAGE 13 "THING"
+ MESSAGE 35 "is"
+ MESSAGE 44 "sucked down"
+ MESSAGE 51 "\!"
+ SET0FLAG(67)
+
+
+Action 24: (0)(0)
+Conditions: NODESTROYED(13) 1
+ SET(58) 14
+
+
+Action 25: (0)(0)
+Conditions: NOTZERO(8) 0 ISZERO(9) 35
+ CLEAR0FLAG(68)
+
+
+Action 26: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 3 0
+ SETCNT(99) 1 30
+ BEGIN?(112)
+
+
+Action 27: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 2 30
+
+
+Action 28: (0)(0)
+Conditions: NOTZERO(8) 0 NOT(31) 3  LT(21) 30 6
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 29: (0)(0)
+Conditions: NOTZERO(8) 0
+ UNK125(125) 15 21
+ LIGHTSON(57)
+ CLRCNT?(109) 30
+ LOADFILE?(110) 6 0
+ BEGIN?(112)
+
+
+Action 30: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 4 30
+
+
+Action 31: (0)(0)
+Conditions: NOTZERO(8) 0 NOT(31) 3  LT(21) 30 5
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 32: (0)(0)
+Conditions: NOTZERO(8) 0
+ UNK125(125) 2 15
+
+
+Action 33: (0)(100)
+Conditions: CURLE(15) 35
+ CONTINUE(73)
+
+
+Action 34: (0)(0)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4
+ DONE(69)
+
+
+Action 35: (0)(0)
+Conditions: OR(31) 1  AT(4) 2 AT(4) 3
+ MESSAGE 20 "I'm"
+ MESSAGE 43 "being"
+ MESSAGE 44 "sucked down"
+ PRINTMESS(128) 146 "by"
+ MESSAGE 34 "something!"
+
+
+Action 36: (0)(100)
+Conditions: HERE(2) 22
+ PRINTMESS(128) 95 "Wooooooo"
+ MESSAGE 41 "\."
+
+
+Action 37: (0)(100)
+Conditions: OR(31) 1  AT(4) 13 AT(4) 17 AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 MOD(31) 0  ISZERO(9) 3 DESTROYED(14) 22
+ PRINTMESS(128) 90 "Going down the shaft's a"
+ CONTINUE(73)
+
+
+Action 38: (0)(0)
+Conditions: ISZERO(9) 12
+ PRINTMESS(128) 92 "strong wind"
+ MESSAGE 51 "\!"
+
+
+Action 39: (0)(0)
+Conditions: NOTZERO(8) 12
+ PRINTMESS(128) 93 "virtual hurricane"
+ MESSAGE 51 "\!"
+
+
+Action 40: (0)(0)
+Conditions: MOD(31) 8  NOTZERO(8) 12 NOT(31) 3  NOTEQUAL(20) 2 3 NOT(31) 3  UNK22(22) 2 MOD(31) 6  ISZERO(9) 12 EQ(20) 2 1 OR(31) 1  MOD(31) 7
+ CLEAR(60) 4
+ CLRCNT?(109) 2
+ MESSAGE 32 "Flame's OUT!"
+
+
+Action 41: (0)(100)
+Conditions: OR(31) 1  AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 SOMETHING(10) 18 SOMETHING(10) 19 SOMETHING(10) 20 SOMETHING(10) 21
+ CLRCNT?(109) 30
+ CONTINUE(73)
+
+
+Action 42: (0)(0)
+Conditions: ISZERO(9) 3
+ SET(58) 25
+ DROP(53) 18
+
+
+Action 43: (0)(0)
+Conditions: NOTZERO(8) 3
+ SET(58) 23
+ DROP(53) 17
+
+
+Action 44: (0)(0)
+No conditions
+ BEGIN?(112)
+
+
+Action 45: (0)(0)
+No conditions
+ PUTINCNT?(80) 131 230 21
+ CLEAR0FLAG(68)
+
+
+Action 46: (0)(0)
+Conditions: GTEQ(21) 21 18 NOT(31) 4  LT(21) 21 22
+ SET0FLAG(67)
+
+
+Action 47: (0)(0)
+Conditions: ISZERO(9) 0 LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 48: (0)(0)
+Conditions: ISZERO(9) 0
+ DONE(69)
+
+
+Action 49: (0)(0)
+Conditions: NOTZERO(8) 0 EQ(20) 30 18 NOTZERO(8) 4
+ CLEAR0FLAG(68)
+
+
+Action 50: (0)(0)
+Conditions: NOTZERO(8) 0 EQ(20) 30 17 NODESTROYED(13) 1 NOTZERO(8) 4
+ CLEAR0FLAG(68)
+
+
+Action 51: (0)(0)
+Conditions: NOTZERO(8) 0
+ SWAPCNT(98) 32 21
+ SETCNT(99) 21 32
+ BEGIN?(112)
+
+
+Action 52: (0)(0)
+Conditions: NOTZERO(8) 0
+ CLEAR(60) 20
+ CLEAR(60) 19
+
+
+Action 53: (0)(0)
+Conditions: NOTZERO(8) 0 HERE(2) 230
+ ADDCNT(100) 1 32
+ DROP(53) 131 230
+ DECCNT(101) 1 32
+ SET(58) 20
+
+
+Action 54: (0)(0)
+Conditions: NOTZERO(8) 0 NOTZERO(8) 20 OBJIN(26) 230 22
+ DROPIN(62) 131 230 13
+ SET(58) 19
+
+
+Action 55: (0)(0)
+Conditions: NOTZERO(8) 0 NOTZERO(8) 19 EQ(20) 30 18
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 35 "is"
+ MESSAGE 47 "smashed"
+ MESSAGE 51 "\!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 56: (0)(0)
+Conditions: NOTZERO(8) 0 GTEQ(21) 32 19
+ DECCNT(101) 1 32
+ LOOP?(113)
+
+
+Action 57: (0)(0)
+Conditions: NOTZERO(8) 0
+ RMVLOOP?(114)
+ SWAPCNT(98) 21 32
+
+
+Action 58: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 59: (0)(100)
+Conditions: NOTZERO(8) 25
+ PUTINCNT?(80) 18 32
+ DESTROY(59) 18
+ CLEAR(60) 25
+
+
+Action 60: (0)(100)
+Conditions: NOTZERO(8) 23
+ PUTINCNT?(80) 17 32
+ DESTROY(59) 17
+ CLEAR(60) 23
+
+
+Action 61: (0)(100)
+Conditions: OR(31) 1  AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 MOD(31) 6  ISZERO(9) 4 MOD(31) 6  NOTZERO(8) 3 MOD(31) 0  DESTROYED(14) 1 OR(31) 1  MOD(31) 7  MOD(31) 0  MOD(31) 7
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 91 "falling"
+ MESSAGE 51 "\!"
+
+
+Action 62: (0)(100)
+Conditions: NOTZERO(8) 26 HERE(2) 9
+ PRINTMESS(128) 157 "RINGMASTER"
+ PRINTMESS(128) 108 "commands me to leave."
+ PRINTMESS(128) 109 "I do"
+ MESSAGE 41 "\."
+ GOTO(54) 27
+
+
+Action 63: (0)(100)
+Conditions: HERE(2) 9 ISZERO(9) 15
+ SET(58) 26
+
+
+Action 64: (0)(100)
+Conditions: AT(4) 25
+ DESTROY(59) 1
+ DESTROY(59) 2
+
+
+Action 65: (0)(100)
+Conditions: ISZERO(9) 13 CARRIED(1) 2 NOT(31) 3  NOTHERE(2) 18
+ DROP(53) 18
+
+
+Action 66: (0)(100)
+Conditions: ISZERO(9) 13 CARRIED(1) 1 NOT(31) 3  NOTHERE(2) 17
+ DROP(53) 17
+
+
+Action 67: (0)(100)
+Conditions: CARRIED(1) 1 NOT(31) 3  NOTHERE(2) 17
+ PUTINCNT?(80) 17 32
+ SET(58) 34
+ MESSAGE 13 "THING"
+ PRINTMESS(128) 54 "takes me along!"
+
+
+Action 68: (0)(100)
+Conditions: NOTZERO(8) 13
+ CLEAR(60) 13
+
+
+Action 69: (0)(100)
+Conditions: OR(31) 1  OBJIN(26) 18 3 ISZERO(9) 3 MOD(31) 0  AT(4) 3
+ CLEAR(60) 4
+ CLRCNT?(109) 3
+
+
+Action 70: (0)(100)
+Conditions: GTEQ(21) 2 1
+ SWAPCNT(98) 4 21
+ CONTINUE(73)
+ UNK123(123) 21 3
+
+
+Action 71: (0)(0)
+Conditions: GTEQ(21) 3 1
+ DONE(69)
+
+
+Action 72: (0)(0)
+No conditions
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 32 "Flame's OUT!"
+ CLRCNT?(109) 2
+
+
+Action 73: (0)(0)
+Conditions: NOTZERO(8) 4
+ CLEAR(60) 4
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 33 "falls"
+ MESSAGE 41 "\."
+
+
+Action 74: (0)(100)
+Conditions: OR(31) 1  OBJIN(26) 18 7 ISZERO(9) 3 MOD(31) 0  ISZERO(9) 4 AT(4) 7
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 79 "dies"
+ PRINTMESS(128) 80 "from"
+ PRINTMESS(128) 81 "fall"
+ MESSAGE 41 "\."
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 75: (0)(100)
+Conditions: ISZERO(9) 3 ISZERO(9) 4 AT(4) 2 NOT(31) 3  NOTHERE(2) 5 GTEQ(21) 2 1
+ CONTINUE(73)
+
+
+Action 76: (0)(0)
+Conditions: GTEQ(21) 2 2
+ DROP(53) 5
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 55 "tar"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 77: (0)(0)
+Conditions: 0 NOT(31) 3  NOTHERE(2) 5
+ MESSAGE 32 "Flame's OUT!"
+ CLRCNT?(109) 2
+
+
+Action 78: (0)(100)
+Conditions: NODESTROYED(13) 5 DESTROYED(14) 12
+ SWAP(72) 12 13
+ DESTROY(59) 19
+
+
+Action 79: (0)(100)
+Conditions: EQ(20) 2 0
+ ADDCNT(100) 1 3
+
+
+Action 80: (0)(100)
+Conditions: GTEQ(21) 3 81
+ SETCNT(99) 80 3
+
+
+Action 81: (0)(100)
+Conditions: NODESTROYED(13) 32
+ ADDCNT(100) 1 7
+ CONTINUE(73)
+
+
+Action 82: (0)(0)
+Conditions: GTEQ(21) 7 50
+ DESTROY(59) 32
+
+
+Action 83: (0)(100)
+Conditions: OR(31) 1  AT(4) 17 AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 HERE(2) 23 MOD(31) 0  PRESENT(3) 32
+ PRINTMESS(128) 112 "Candle flickers"
+ MESSAGE 41 "\."
+
+
+Action 84: (0)(100)
+No conditions
+ CONTINUE(73)
+
+
+Action 85: (0)(0)
+Conditions: NODESTROYED(13) 17
+ PUTINCNT?(80) 17 21
+
+
+Action 86: (0)(0)
+Conditions: NODESTROYED(13) 18
+ PUTINCNT?(80) 18 21
+
+
+Action 87: (0)(0)
+Conditions: MOD(31) 8  AT(4) 3 CARRIED(1) 32 MOD(31) 6  OBJIN(26) 32 99 EQ(20) 21 3 OR(31) 1  MOD(31) 7
+ SWAP(72) 32 26
+
+
+Action 88: (0)(100)
+No conditions
+ CONTINUE(73)
+
+
+Action 89: (0)(0)
+Conditions: OR(31) 1  ISZERO(9) 3 HERE(2) 18 MOD(31) 0  GTEQ(21) 2 1 ISZERO(9) 28
+ LIGHTSON(57)
+ DONE(69)
+
+
+Action 90: (0)(0)
+Conditions: OR(31) 1  PRESENT(3) 32 MOD(31) 6  PRESENT(3) 17 PRESENT(3) 18 MOD(31) 0  OBJIN(26) 32 99 OR(31) 1  MOD(31) 7  MOD(31) 0  ISZERO(9) 28
+ LIGHTSON(57)
+ DONE(69)
+
+
+Action 91: (0)(0)
+Conditions: OR(31) 1  AT(4) 3 AT(4) 4 AT(4) 9 AT(4) 10 AT(4) 11 AT(4) 12 AT(4) 13 AT(4) 15 AT(4) 30 AT(4) 31 AT(4) 32
+ LIGHTSOUT(56)
+ DONE(69)
+
+
+Action 92: (0)(0)
+Conditions: ISZERO(9) 28
+ LIGHTSON(57)
+
+
+Action 93: (0)(100)
+Conditions: NODESTROYED(13) 1
+ UNK125(125) 15 14
+
+
+Action 94: (0)(100)
+Conditions: NODESTROYED(13) 30 OBJIN(26) 17 24
+ DROPIN(62) 17 25
+
+
+Action 95: (0)(100)
+Conditions: NOTZERO(8) 38
+ SWAP(72) 47 48
+ DROPIN(62) 33 22
+ CLEAR(60) 38
+ SET(58) 40
+
+
+Action 96: (0)(100)
+Conditions: CARRIED(1) 48
+ DESTROY(59) 48
+ DROP(53) 33
+ DROP(53) 47
+
+
+Action 97: (0)(100)
+Conditions: HERE(2) 33
+ REDRAW?(89)
+ LOOK(76)
+ LOADFILE?(110) 6 0
+ PRINTMESS(128) 166 "XANDU"
+ PRINTMESS(128) 108 "commands me to leave."
+ PRINTMESS(128) 109 "I do"
+ MESSAGE 41 "\."
+ GOTO(54) 26
+
+
+Action 98: (0)(100)
+Conditions: NOTZERO(8) 39 ISZERO(9) 40
+ SET(58) 38
+
+
+Action 99: (0)(100)
+Conditions: DESTROYED(14) 35
+ SET(58) 39
+
+
+Action 100: (0)(100)
+Conditions: OR(31) 1  HERE(2) 40 HERE(2) 41 HERE(2) 42
+ PRINTMESS(128) 169 "HISSES."
+
+
+Action 101: (0)(100)
+Conditions: OR(31) 1  HERE(2) 41 HERE(2) 42 MOD(31) 6  MOD(31) 0  ISZERO(9) 3 GTEQ(21) 2 1 OR(31) 1  PRESENT(3) 32 MOD(31) 0  MOD(31) 7  OR(31) 1  NOTZERO(8) 37
+ CONTINUE(73)
+
+
+Action 102: (0)(0)
+Conditions: NOT(31) 3  NOTHERE(2) 35
+ LOOK(76)
+
+
+Action 103: (0)(0)
+No conditions
+ DESTROY(59) 35
+ PRINTMESS(128) 150 "BOOM!"
+ PRINTMESS(128) 170 "Gas"
+ PRINTMESS(128) 171 "explodes"
+ MESSAGE 38 "and"
+ PRINTMESS(128) 172 "tunnel collapses causing small earthquake in castle above!"
+ CONTINUE(73)
+
+
+Action 104: (0)(0)
+Conditions: OR(31) 1  HERE(2) 41 HERE(2) 42 OBJIN(26) 18 30 OBJIN(26) 18 31
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 79 "dies"
+ MESSAGE 51 "\!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 105: (0)(0)
+No conditions
+ DESTROY(59) 36
+ SETCNT(99) 29 20
+ SETCNT(99) 2 21
+ CLRCNT?(109) 19
+ SETEXIT(95) 20 21 19
+
+
+Action 106: (0)(0)
+No conditions
+ CLEAR(60) 37
+ SWAP(72) 33 48
+ DESTROY(59) 47
+
+
+Action 107: (0)(100)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4 GTEQ(21) 2 1
+ SWAPCNT(98) 4 21
+ UNK123(123) 3 21
+ CONTINUE(73)
+
+
+Action 108: (0)(0)
+Conditions: NOT(31) 3  LT(21) 21 1
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 89 "tiring"
+ MESSAGE 51 "\!"
+
+
+Action 109: (0)(100)
+Conditions: NOTZERO(8) 18
+ CLEAR(60) 18
+
+
+Action 110: (0)(100)
+Conditions: NOTZERO(8) 5 LE(18) 47 8
+ CLEAR(60) 5
+ CONTINUE(73)
+
+
+Action 111: (0)(0)
+Conditions: NOTZERO(8) 3 OR(31) 1  HERE(2) 17
+ MESSAGE 13 "THING"
+ PRINTMESS(128) 53 "breathed"
+ MESSAGE 41 "\."
+
+
+Action 112: (0)(100)
+Conditions: NOTZERO(8) 6 LE(18) 47 9
+ CLEAR(60) 6
+ CONTINUE(73)
+
+
+Action 113: (0)(0)
+Conditions: ISZERO(9) 3 OR(31) 1  HERE(2) 18
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 53 "breathed"
+ MESSAGE 41 "\."
+
+
+Action 114: (0)(100)
+Conditions: NODESTROYED(13) 30 NOT(31) 3  OBJIN(26) 29 24
+ DESTROY(59) 30
+
+
+Action 115: (0)(100)
+Conditions: ISZERO(9) 5 NOTZERO(8) 3 AT(4) 3
+ MESSAGE 13 "THING"
+ MESSAGE 50 "drowned!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 116: (0)(100)
+Conditions: ISZERO(9) 5 ISZERO(9) 3 OBJIN(26) 17 3
+ MESSAGE 13 "THING"
+ MESSAGE 50 "drowned!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 117: (0)(100)
+Conditions: ISZERO(9) 6 ISZERO(9) 3 AT(4) 3
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 50 "drowned!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 118: (0)(100)
+Conditions: ISZERO(9) 6 NOTZERO(8) 3 EQ(20) 1 3
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 50 "drowned!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 119: (0)(100)
+Conditions: MOD(31) 8  NODESTROYED(13) 5 CURLE(15) 20 OR(31) 1  NOTZERO(8) 9
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 55 "tar"
+ PRINTMESS(128) 139 "on"
+ MESSAGE 13 "THING"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 51 "\!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 120: (0)(100)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4
+ MESSAGE 20 "I'm"
+ MESSAGE 36 "flying"
+ MESSAGE 41 "\."
+
+
+Action 121: (0)(100)
+Conditions: NOTZERO(8) 3 NOTZERO(8) 4 GT(17) 1 32
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 35 "is"
+ MESSAGE 36 "flying"
+ MESSAGE 41 "\."
+
+
+Action 122: (0)(100)
+Conditions: NOTZERO(8) 10 MOD(31) 8  AT(4) 7 MOD(31) 6  ISZERO(9) 3 OR(31) 1  OBJIN(26) 18 7 MOD(31) 0  MOD(31) 7
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 71 "shot"
+ PRINTMESS(128) 73 "by deathray from the castle"
+ MESSAGE 51 "\!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 123: (0)(100)
+Conditions: ISZERO(9) 3 ISZERO(9) 10 AT(4) 7 DESTROYED(14) 12
+ SET(58) 10
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 70 "being"
+ PRINTMESS(128) 71 "shot"
+ PRINTMESS(128) 72 "at"
+ PRINTMESS(128) 73 "by deathray from the castle"
+ MESSAGE 51 "\!"
+
+
+Action 124: (0)(100)
+Conditions: NOTZERO(8) 8
+ CONTINUE(73)
+ PRINTMESS(128) 150 "BOOM!"
+
+
+Action 125: (0)(0)
+Conditions: PRESENT(3) 15
+ PRINTMESS(128) 67 "Egg explodes!"
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 79 "dies"
+ MESSAGE 41 "\."
+ DESTROY(59) 15
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 126: (0)(0)
+Conditions: OBJIN(26) 15 16
+ DESTROY(59) 15
+
+
+Action 127: (0)(0)
+No conditions
+ DESTROY(59) 16
+ CLEAR(60) 8
+
+
+Action 128: (0)(100)
+Conditions: HERE(2) 16
+ SET(58) 8
+
+
+Action 129: (0)(100)
+Conditions: AT(4) 2
+ UNK125(125) 34 20
+ PUTINCNT?(80) 17 20
+ PUTINCNT?(80) 18 21
+ PUTINCNT?(80) 5 5
+ CONTINUE(73)
+ CLEAR0FLAG(68)
+
+
+Action 130: (0)(0)
+No conditions
+ DESTROY(59) 17
+ DESTROY(59) 18
+ DESTROY(59) 5
+
+
+Action 131: (0)(0)
+Conditions: SOMETHING(10) 2
+ SET0FLAG(67)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 132: (0)(0)
+Conditions: NOTZERO(8) 0 HERE(2) 230
+ MESSAGE 3 "I see"
+ PRINTOBJ(85) 131 230
+ MESSAGE 35 "is"
+ MESSAGE 44 "sucked down"
+ MESSAGE 41 "\."
+ DROPIN(62) 131 230 49
+
+
+Action 133: (0)(0)
+Conditions: NOTZERO(8) 0 LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 134: (0)(0)
+No conditions
+ UNK97(97) 32 20
+ DROP(53) 17
+ UNK97(97) 32 21
+ DROP(53) 18
+
+
+Action 135: (0)(0)
+No conditions
+ UNK97(97) 32 5
+ DROP(53) 5
+ UNK97(97) 32 20
+
+
+Action 136: (0)(0)
+No conditions
+ UNK125(125) 20 34
+
+
+Action 137: (0)(100)
+Conditions: OBJIN(26) 29 49 OBJIN(26) 18 25
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 79 "dies"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 138: (0)(100)
+Conditions: OBJIN(26) 31 25
+ SET(58) 30
+ DESTROY(59) 31
+
+
+Action 139: (0)(100)
+Conditions: NOTZERO(8) 27
+ CLEAR(60) 27
+ CLEAR(60) 30
+ PRINTMESS(128) 150 "BOOM!"
+ SETCNT(99) 5 21
+ CONTINUE(73)
+
+
+Action 140: (0)(0)
+Conditions: NOTZERO(8) 31 EQ(20) 16 3
+ MESSAGE 1 "OK"
+ SETCNT(99) 26 21
+
+
+Action 141: (0)(0)
+Conditions: ISZERO(9) 31 EQ(20) 16 3
+ PRINTMESS(128) 165 "BLOB"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 114 "hit"
+ MESSAGE 38 "and"
+ PRINTMESS(128) 120 "isn't affected"
+ MESSAGE 51 "\!"
+
+
+Action 142: (0)(0)
+Conditions: EQ(20) 16 2
+ PRINTOBJ(85) 4
+ MESSAGE 35 "is"
+ PRINTMESS(128) 114 "hit"
+ MESSAGE 38 "and"
+ PRINTMESS(128) 120 "isn't affected"
+ MESSAGE 51 "\!"
+
+
+Action 143: (0)(0)
+No conditions
+ CLEAR0FLAG(68)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 144: (0)(0)
+Conditions: OBJIN(26) 230 25
+ SET0FLAG(67)
+
+
+Action 145: (0)(0)
+Conditions: NOTZERO(8) 0 EQ(20) 30 18
+ MESSAGE 14 "HUMAN TORCH"
+ PRINTMESS(128) 79 "dies"
+ PRINTMESS(128) 80 "from"
+ PRINTMESS(128) 116 "impact"
+ MESSAGE 51 "\!"
+ SET(58) 22
+ UNKNOWN(111)
+
+
+Action 146: (0)(0)
+Conditions: NOTZERO(8) 0
+ UNK97(97) 32 21
+ DROP(53) 131 230
+ UNK97(97) 32 21
+
+
+Action 147: (0)(0)
+Conditions: LE(18) 43 30
+ CLEAR0FLAG(68)
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 148: (0)(0)
+No conditions
+ CLEAR0FLAG(68)
+
+
+Action 149: (0)(0)
+Conditions: OBJIN(26) 17 26 NOTZERO(8) 35
+ SET0FLAG(67)
+
+
+Action 150: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 5 7
+ SETCNT(99) 8 30
+ SETCNT(99) 17 21
+ SETCNT(99) 9 20
+ BEGIN?(112)
+
+
+Action 151: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 3 0
+ BEGIN?(112)
+
+
+Action 152: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 2 30
+
+
+Action 153: (0)(0)
+Conditions: NOTZERO(8) 0 NOT(31) 3  GT17(17) 30 21
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 154: (0)(0)
+Conditions: NOTZERO(8) 0 EQ(20) 21 17
+ LOADFILE?(110) 6 0
+
+
+Action 155: (0)(0)
+Conditions: NOTZERO(8) 0
+ CLRCNT?(109) 30
+ RMVLOOP?(114)
+ SETCNT(99) 1 5
+ BEGIN?(112)
+
+
+Action 156: (0)(0)
+Conditions: NOTZERO(8) 0
+ LOADFILE?(110) 4 30
+ UNKNOWN(93)
+ MESSAGE 5 "HUH?"
+
+
+Action 157: (0)(0)
+Conditions: NOTZERO(8) 0 NOT(31) 3  GT17(17) 30 20
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 158: (0)(0)
+Conditions: NOTZERO(8) 0 EQ(20) 21 17
+ SETCNT(99) 18 30
+ SETCNT(99) 20 21
+ SETCNT(99) 2 20
+ RMVLOOP?(114)
+ LOOP?(113)
+
+
+Action 159: (0)(100)
+Conditions: NOTZERO(8) 31
+ CLEAR(60) 31
+ PRINTMESS(128) 165 "BLOB"
+ PRINTMESS(128) 152 "returns to his post"
+ MESSAGE 51 "\!"
+
+
+Action 160: (0)(100)
+Conditions: MOD(31) 8  NOTZERO(8) 15 ISZERO(9) 32 MOD(31) 6  ISZERO(9) 15 NOTZERO(8) 32 OR(31) 1  MOD(31) 7
+ SET(58) 34
+ UNK125(125) 15 32
+
+
+Action 161: (0)(100)
+Conditions: NOT(31) 3  NOTEQUAL(20) 11 0
+ DECCNT(101) 1 11
+ SET(58) 34
+ UNKNOWN(124)
+ UNKNOWN(111)
+
+
+Action 162: (0)(100)
+Conditions: OR(31) 1  CUREQ(19) 5 CUREQ(19) 13
+ SET(58) 34
+
+
+Action 163: (0)(100)
+Conditions: NOTZERO(8) 34
+ REDRAW?(89)
+ LOOK(76)
+ CLEAR(60) 34
+ SET0FLAG(67)
+ CONTINUE(73)
+
+
+Action 164: (0)(0)
+Conditions: AT(4) 32 ISZERO(9) 12
+ SETCNT(99) 20 20
+ CLEAR0FLAG(68)
+
+
+Action 165: (0)(0)
+Conditions: AT(4) 2 HERE(2) 17 CURGT(16) 12
+ SETCNT(99) 17 20
+ CLEAR0FLAG(68)
+
+
+Action 166: (0)(0)
+Conditions: AT(4) 2 HERE(2) 17 CURGT(16) 4 NOTZERO(8) 0
+ SETCNT(99) 16 20
+ CLEAR0FLAG(68)
+
+
+Action 167: (0)(0)
+Conditions: AT(4) 2 HERE(2) 17 CURLE(15) 4
+ SETCNT(99) 15 20
+ CLEAR0FLAG(68)
+
+
+Action 168: (0)(0)
+Conditions: AT(4) 2 HERE(2) 18 NOTZERO(8) 4
+ SETCNT(99) 18 20
+ CLEAR0FLAG(68)
+
+
+Action 169: (0)(0)
+Conditions: AT(4) 2 HERE(2) 18 ISZERO(9) 4
+ SETCNT(99) 19 20
+ CLEAR0FLAG(68)
+
+
+Action 170: (0)(0)
+Conditions: AT(4) 7 OBJIN(26) 28 27
+ SETCNT(99) 23 20
+ CLEAR0FLAG(68)
+
+
+Action 171: (0)(0)
+Conditions: ISZERO(9) 0
+ LOADFILE?(110) 7 20
+
+
+Action 172: SAVE(17) SHOP(94)
+No conditions
+ CLEAR(60) 60
+ MESSAGE 9 "say again"
+
+
+Action 173: WAIT(20) SHOP(94)
+Extra words: 69 (WIRE)
+No conditions
+ SETCNT(99) 40 20
+ MESSAGE 1 "OK"
+ UNKNOWN(93)
+ MESSAGE 20 "I'm"
+ SET(58) 63
+ SET(58) 60
+
+
+Action 174: SAVE(17) GAME(17)
+No conditions
+ MESSAGE 1 "OK"
+ SET(58) 63
+ SAVE(71)
+
+
+Action 175: DROP(5) GAME(17)
+No conditions
+ MEANS(55) 7 17
+
+
+Action 176: RESTORE(7) GAME(17)
+No conditions
+ LOADFILE?(110) 1 0
+ SET(58) 34
+
+
+Action 177: INVENTORY(10) ANY(0)
+Conditions: ISZERO(9) 15
+ INVENTORY(66)
+ SET(58) 63
+
+
+Action 178: SWITCH(9) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: OR(31) 1  NOUNIS(28) 231 22 NOUNIS(28) 231 21 NOUNIS(28) 231 0 MOD(31) 0  NOTZERO(8) 7
+ CONTINUE(73)
+
+
+Action 179: (0)(0)
+No conditions
+ MESSAGE 1 "OK"
+ UNK125(125) 15 0
+ UNK125(125) 14 15
+ UNK125(125) 0 14
+ UNK125(125) 15 32
+
+
+Action 180: (0)(0)
+No conditions
+ UNK125(125) 28 0
+ UNK125(125) 29 28
+ UNK125(125) 0 29
+ SET(58) 34
+
+
+Action 181: (0)(0)
+No conditions
+ CLEAR0FLAG(68)
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 182: (0)(0)
+Conditions: CARRIED(1) 230
+ DROPIN(62) 131 230 99
+ SET0FLAG(67)
+
+
+Action 183: (0)(0)
+Conditions: NOUNIS(28) 75 UNK12(12) 212
+ UNKNOWN(96)
+
+
+Action 184: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ CLEAR0FLAG(68)
+ LOOP?(113)
+
+
+Action 185: (0)(0)
+Conditions: NOTZERO(8) 3
+ CLEAR(60) 3
+ UNK119(119) 14
+ DROP(53) 17
+ PUTINCNT?(80) 18 32
+ DESTROY(59) 18
+ DONE(69)
+
+
+Action 186: (0)(0)
+Conditions: ISZERO(9) 3
+ SET(58) 3
+ UNK119(119) 13
+ DROP(53) 18
+ PUTINCNT?(80) 17 32
+ DESTROY(59) 17
+
+
+Action 187: STOP(36) GAME(17)
+No conditions
+ SET(58) 22
+
+
+Action 188: GO(1) ANY(0)
+Extra words: 205 (UP) 206 (DOWN)
+Conditions: OR(31) 1  NOUNIS(28) 230 40 NOUNIS(28) 230 41 NOUNIS(28) 230 42
+ SWAPCNT(98) 49 53
+ CLRCNT?(109) 49
+ SETCNT(99) 3 52
+ FAILED?(121)
+
+
+Action 189: GO(1) ANY(0)
+Extra words: 131 (AT) 0 (ANY) 130 (WITH) 0 (ANY)
+Conditions: OR(31) 1  NOUNIS(28) 231 40 NOUNIS(28) 231 41 NOUNIS(28) 231 42 MOD(31) 0  ISZERO(9) 3
+ SET(58) 4
+ SET(58) 36
+ SWAPCNT(98) 49 18
+ SWAPCNT(98) 50 17
+ CONTINUE(73)
+
+
+Action 190: (0)(0)
+No conditions
+ SETCNT(99) 6 50
+ SETCNT(99) 41 48
+ SWAPCNT(98) 53 49
+ CLRCNT?(109) 52
+ FAILED?(121)
+
+
+Action 191: GO(1) ANY(0)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4 AT(4) 2 EQ(20) 3 1
+ PRINTMESS(128) 82 "Flame on!"
+ MESSAGE 32 "Flame's OUT!"
+ CLRCNT?(109) 3
+ MEANS(55) 53 1
+ UNKNOWN(117)
+
+
+Action 192: GO(1) CASTLE(24)
+Extra words: 198 (ON) 205 (UP)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4 AT(4) 5
+ CLEAR(60) 10
+ GOTO(54) 7
+ MESSAGE 1 "OK"
+
+
+Action 193: GO(1) SMOKE(29)
+Extra words: 203 (IN) 193 (NONE)
+Conditions: NOTZERO(8) 4 ISZERO(9) 3 AT(4) 7
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 88 "lost"
+ MESSAGE 51 "\!"
+ GOTO(54) 1
+
+
+Action 194: GO(1) ANY(0)
+Conditions: OR(31) 1  CURLE(15) 35 OBJIN(26) 29 99 MOD(31) 0  NOTZERO(8) 4 ISZERO(9) 3 CARRIED(1) 1
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 42 "budge"
+ MESSAGE 13 "THING"
+ MESSAGE 41 "\."
+
+
+Action 195: GO(1) ANY(0)
+Extra words: 205 (UP) 200 (FROM)
+Conditions: OR(31) 1  AT(4) 2 AT(4) 1 AT(4) 5 AT(4) 7 AT(4) 8 AT(4) 27 AT(4) 28 AT(4) 34 MOD(31) 0  NOTZERO(8) 4 ISZERO(9) 3
+ MESSAGE 1 "OK"
+ GOTO(54) 7
+ CLEAR(60) 10
+
+
+Action 196: GO(1) HILL(13)
+Conditions: NOTZERO(8) 4 ISZERO(9) 3
+ CLEAR(60) 10
+ CONTINUE(73)
+
+
+Action 197: (0)(0)
+Conditions: CARRIED(1) 1 AT(4) 2
+ MESSAGE 2 "I can't"
+ MESSAGE 41 "\."
+ UNK116(116)
+
+
+Action 198: (0)(0)
+Conditions: NOT(31) 4  NOTAT(4) 2 NOTAT(4) 1 NOTAT(4) 7 NOTAT(4) 5
+ UNK116(116)
+
+
+Action 199: (0)(0)
+Conditions: DESTROYED(14) 12 NOT(31) 3  NOTAT(4) 7
+ CLEAR(60) 17
+ GOTO(54) 7
+
+
+Action 200: (0)(0)
+Conditions: NODESTROYED(13) 12
+ GOTO(54) 8
+
+
+Action 201: GO(1) HILL(13)
+Conditions: OR(31) 1  AT(4) 1 AT(4) 5
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 49 "the"
+ PRINTMESS(128) 69 "terrain's too rugged"
+ MESSAGE 41 "\."
+ UNK116(116)
+
+
+Action 202: GO(1) TAR(15)
+Conditions: ISZERO(9) 3 AT(4) 7
+ GOTO(54) 1
+ MESSAGE 1 "OK"
+
+
+Action 203: GO(1) FIELD(52)
+Conditions: ISZERO(9) 3 AT(4) 7
+ GOTO(54) 5
+ MESSAGE 1 "OK"
+
+
+Action 204: GO(1) ANY(0)
+Extra words: 206 (DOWN)
+Conditions: ISZERO(9) 3 AT(4) 7
+ GOTO(54) 2
+ MESSAGE 1 "OK"
+
+
+Action 205: GO(1) CASTLE(24)
+Conditions: ISZERO(9) 3 AT(4) 7
+ MESSAGE 1 "OK"
+ GOTO(54) 5
+
+
+Action 206: GO(1) HOLE(37)
+Extra words: 205 (UP) 203 (IN)
+Conditions: AT(4) 13 ISZERO(9) 3 NOTZERO(8) 4
+ MESSAGE 1 "OK"
+ GOTO(54) 21
+
+
+Action 207: GO(1) ANY(0)
+Extra words: 205 (UP) 206 (DOWN)
+Conditions: OR(31) 1  AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 MOD(31) 6  NOTZERO(8) 3 ISZERO(9) 4 MOD(31) 6  MOD(31) 0  NOTZERO(8) 12 NOT(31) 3  NOTEQUAL(20) 2 3 OR(31) 1  MOD(31) 7  MOD(31) 6  MOD(31) 0  ISZERO(9) 12 NOT(31) 3  LT(21) 2 2 OR(31) 1  MOD(31) 7  MOD(31) 0  MOD(31) 7
+ CLEAR(60) 63
+ MESSAGE 2 "I can't"
+ MESSAGE 51 "\!"
+
+
+Action 208: GO(1) ANY(0)
+Extra words: 205 (UP)
+Conditions: OR(31) 1  AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 MOD(31) 0  ISZERO(9) 3 NOTZERO(8) 4
+ DECCNT(101) 1 32
+ MESSAGE 1 "OK"
+ SET(58) 34
+
+
+Action 209: GO(1) ANY(0)
+Extra words: 206 (DOWN)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4
+ CONTINUE(73)
+
+
+Action 210: (0)(0)
+Conditions: OR(31) 1  AT(4) 17 AT(4) 18 AT(4) 19 AT(4) 20
+ ADDCNT(100) 1 32
+ MESSAGE 1 "OK"
+ SET(58) 34
+ DONE(69)
+
+
+Action 211: (0)(0)
+Conditions: AT(4) 21
+ MESSAGE 1 "OK"
+ GOTO(54) 13
+ DONE(69)
+
+
+Action 212: (0)(0)
+No conditions
+ UNK116(116)
+
+
+Action 213: GO(1) FLAME(36)
+Extra words: 203 (IN)
+Conditions: OR(31) 1  HERE(2) 11 HERE(2) 10
+ CONTINUE(73)
+
+
+Action 214: (0)(0)
+Conditions: CARRIED(1) 1
+ SET(58) 3
+
+
+Action 215: (0)(0)
+Conditions: NOTZERO(8) 3
+ SET(58) 9
+ DONE(69)
+
+
+Action 216: (0)(0)
+Conditions: OR(31) 1  CARRIED(1) 32 CARRIED(1) 26
+ DESTROY(59) 32
+ DESTROY(59) 26
+
+
+Action 217: (0)(0)
+Conditions: CARRIED(1) 31
+ DESTROY(59) 31
+
+
+Action 218: (0)(0)
+Conditions: HERE(2) 10
+ MESSAGE 1 "OK"
+ GOTO(54) 16
+ DONE(69)
+
+
+Action 219: (0)(0)
+Conditions: HERE(2) 11
+ MESSAGE 1 "OK"
+ GOTO(54) 14
+
+
+Action 220: GO(1) ANY(0)
+Extra words: 200 (FROM)
+No conditions
+ SETCNT(99) 28 48
+ CLRCNT?(109) 50
+ FAILED?(121)
+
+
+Action 221: LEAVE(29) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ CONTINUE(73)
+
+
+Action 222: (0)(0)
+Conditions: OR(31) 1  EQ(20) 49 58 EQ(20) 49 63 EQ(20) 49 60 EQ(20) 49 43 EQ(20) 49 15 EQ(20) 49 47 EQ(20) 49 24
+ SETCNT(99) 28 48
+ FAILED?(121)
+
+
+Action 223: (0)(0)
+Conditions: GTEQ(21) 49 7
+ SETCNT(99) 5 48
+ FAILED?(121)
+
+
+Action 224: (0)(0)
+No conditions
+ SETCNT(99) 28 48
+ FAILED?(121)
+
+
+Action 225: EXIT(28) CASTLE(24)
+Conditions: AT(4) 26
+ GOTO(54) 5
+
+
+Action 226: EXIT(28) TAR(15)
+Conditions: ISZERO(9) 3
+ MEANS(55) 1 19
+
+
+Action 227: EXIT(28) ANY(0)
+No conditions
+ CONTINUE(73)
+
+
+Action 228: (0)(0)
+Conditions: GTEQ(21) 49 1 NOT(31) 3  LT(21) 49 7
+ SETCNT(99) 1 48
+ FAILED?(121)
+
+
+Action 229: (0)(0)
+No conditions
+ UNK116(116)
+
+
+Action 230: EXIT(28) ANY(0)
+No conditions
+ MEANS(55) 5 27
+
+
+Action 231: DROP(5) ROOM(27)
+Conditions: AT(4) 24
+ MESSAGE 1 "OK"
+ PUTINCNT?(80) 28 32
+ SET(58) 34
+
+
+Action 232: DROP(5) ROOM(27)
+Conditions: AT(4) 25
+ PUTINCNT?(80) 30 32
+ CONTINUE(73)
+
+
+Action 233: (0)(0)
+Conditions: UNK22(22) 32
+ PUTINCNT?(80) 29 32
+
+
+Action 234: (0)(0)
+No conditions
+ SET(58) 34
+
+
+Action 235: DROP(5) ROOM(27)
+No conditions
+ BEGIN?(112)
+ CLRCNT?(109) 19
+ CLEAR0FLAG(68)
+
+
+Action 236: (0)(0)
+No conditions
+ GETEXIT(94) 20 32 19
+
+
+Action 237: (0)(0)
+Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
+ SWAPCNT(98) 20 32
+ SET(58) 34
+ MESSAGE 1 "OK"
+ UNKNOWN(115)
+ SET0FLAG(67)
+
+
+Action 238: (0)(0)
+Conditions: NOT(31) 3  NOTEQUAL(20) 19 5
+ ADDCNT(100) 1 19
+ LOOP?(113)
+
+
+Action 239: (0)(0)
+Conditions: AT(4) 2
+ MEANS(55) 1 19
+
+
+Action 240: (0)(0)
+Conditions: ISZERO(9) 0
+ SET(58) 63
+ MESSAGE 16 "How?"
+
+
+Action 241: GO(1) ANY(0)
+Extra words: 205 (UP)
+Conditions: NOUNIS(28) 230 0
+ MEANS(55) 1 5
+
+
+Action 242: GO(1) ANY(0)
+Extra words: 206 (DOWN)
+Conditions: NOUNIS(28) 230 0
+ MEANS(55) 1 6
+
+
+Action 243: GO(1) ANY(0)
+No conditions
+ UNKNOWN(64)
+ SETCNTNOUN?(131) 230 5
+ CONTINUE(73)
+
+
+Action 244: (0)(0)
+Conditions: OR(31) 1  UNK22(22) 5 GTEQ(21) 5 7
+ UNK116(116)
+
+
+Action 245: (0)(0)
+No conditions
+ DECCNT(101) 1 5
+ GETEXIT(94) 6 32 5
+
+
+Action 246: (0)(0)
+Conditions: UNK22(22) 6
+ ECHONOUN(84)
+ PRINTMESS(128) 98 "isn't a visible exit."
+ UNK116(116)
+ UNKNOWN(92)
+ UNKNOWN(117)
+
+
+Action 247: (0)(0)
+No conditions
+ SWAPCNT(98) 6 32
+ SET(58) 34
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 122 "I go "
+ ECHONOUN(84)
+ MESSAGE 41 "\."
+
+
+Action 248: GO(1) SHOP(94)
+Conditions: AT(4) 28
+ MESSAGE 1 "OK"
+ GOTO(54) 33
+
+
+Action 249: GO(1) SHACK(58)
+Extra words: 203 (IN)
+Conditions: HERE(2) 27
+ MESSAGE 1 "OK"
+ GOTO(54) 23
+
+
+Action 250: GO(1) CIRCUS(62)
+Extra words: 203 (IN)
+Conditions: HERE(2) 28
+ CLEAR(60) 26
+ MESSAGE 1 "OK"
+ GOTO(54) 24
+
+
+Action 251: GO(1) CANNON(60)
+Extra words: 203 (IN)
+Conditions: HERE(2) 29 NOT(31) 4  OBJIN(26) 17 25 OBJIN(26) 18 25
+ MESSAGE 1 "OK"
+ GOTO(54) 25
+
+
+Action 252: GO(1) HOLE(37)
+Extra words: 206 (DOWN) 203 (IN)
+Conditions: MOD(31) 8  CARRIED(1) 29 MOD(31) 6  NODESTROYED(13) 1 OBJIN(26) 29 99 OR(31) 1  MOD(31) 7
+ MESSAGE 6 "Sorry,"
+ PRINTOBJ(85) 29
+ MESSAGE 7 "won't"
+ MESSAGE 41 "\."
+
+
+Action 253: GO(1) HOLE(37)
+Extra words: 206 (DOWN) 203 (IN)
+Conditions: HERE(2) 21
+ MESSAGE 1 "OK"
+ GOTO(54) 18
+
+
+Action 254: GO(1) HOLE(37)
+Extra words: 203 (IN)
+Conditions: HERE(2) 35
+ MESSAGE 1 "OK"
+ GOTO(54) 32
+
+
+Action 255: GO(1) HOLE(37)
+Extra words: 203 (IN) 206 (DOWN)
+Conditions: HERE(2) 36
+ MESSAGE 1 "OK"
+ GOTO(54) 31
+
+
+Action 256: GO(1) VILLAGE(86)
+Extra words: 203 (IN) 193 (NONE)
+Conditions: AT(4) 27
+ MESSAGE 1 "OK"
+ GOTO(54) 28
+
+
+Action 257: GO(1) CAVE(47)
+Extra words: 203 (IN)
+Conditions: HERE(2) 20
+ MESSAGE 1 "OK"
+ GOTO(54) 17
+
+
+Action 258: GO(1) VALLEY(14)
+Conditions: AT(4) 8 NOTZERO(8) 4 ISZERO(9) 3
+ MESSAGE 1 "OK"
+ GOTO(54) 7
+
+
+Action 259: GO(1) HOLE(37)
+Conditions: HERE(2) 23 NOTZERO(8) 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 260: GO(1) TAR(15)
+Extra words: 203 (IN) 206 (DOWN) 198 (ON)
+Conditions: AT(4) 1
+ MESSAGE 1 "OK"
+ GOTO(54) 2
+ CONTINUE(73)
+
+
+Action 261: (0)(0)
+Conditions: NOT(31) 3  NOTEQUAL(20) 50 6 NOTZERO(8) 4 ISZERO(9) 3
+ SET(58) 17
+
+
+Action 262: GO(1) THING(21)
+Conditions: CURLE(15) 20 AT(4) 1
+ MESSAGE 1 "OK"
+ GOTO(54) 2
+
+
+Action 263: GO(1) BLOB(66)
+Extra words: 199 (BEHIND) 198 (ON) 139 (IN) 0 (ANY) 129 (NONE) 0 (ANY)
+No conditions
+ SETCNT(99) 24 49
+ SETCNT(99) 11 50
+ FAILED?(121)
+
+
+Action 264: GO(1) CASTLE(24)
+Extra words: 203 (IN)
+Conditions: AT(4) 5
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 165 "BLOB"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 106 "blocking the entrance."
+
+
+Action 265: GO(1) TAR(15)
+Extra words: 196 (BY)
+Conditions: NOT(31) 3  NOTAT(4) 1
+ MEANS(55) 1 19
+
+
+Action 266: GO(1) ANY(0)
+Conditions: AT(4) 2
+ CONTINUE(73)
+
+
+Action 267: (0)(0)
+Conditions: NOT(31) 3  LT(21) 48 5
+ SETCNT(99) 19 49
+ FAILED?(121)
+
+
+Action 268: (0)(0)
+No conditions
+ UNK116(116)
+
+
+Action 269: GO(1) SHORE(19)
+Conditions: AT(4) 2 ISZERO(9) 3 CARRIED(1) 1
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 42 "budge"
+ MESSAGE 13 "THING"
+ MESSAGE 41 "\."
+ MEANS(55) 53 1
+ UNKNOWN(117)
+
+
+Action 270: GO(1) SHORE(19)
+Conditions: OR(31) 1  AT(4) 7 AT(4) 2 MOD(31) 0  ISZERO(9) 3 NOTZERO(8) 4
+ MESSAGE 1 "OK"
+ GOTO(54) 1
+
+
+Action 271: GO(1) SHORE(19)
+Conditions: AT(4) 2
+ MESSAGE 6 "Sorry,"
+ MESSAGE 20 "I'm"
+ MESSAGE 44 "sucked down"
+ MESSAGE 41 "\."
+ MEANS(55) 53 1
+ UNKNOWN(117)
+
+
+Action 272: GO(1) ANY(0)
+Conditions: NOUNIS(28) 230 0
+ MESSAGE 5 "HUH?"
+ MESSAGE 29 "Be more specific."
+ SET(58) 63
+
+
+Action 273: GO(1) FOREWARD(26)
+No conditions
+ MESSAGE 29 "Be more specific."
+
+
+Action 274: GO(1) ANY(0)
+Extra words: 195 (AT) 196 (BY) 193 (NONE)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 275: (0)(0)
+Conditions: HERE(2) 230 DICTWORD(29) 230 230
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 121 "I'm at the"
+ PRINTOBJ(85) 131 230
+ MESSAGE 41 "\."
+ DONE(69)
+
+
+Action 276: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 277: (0)(0)
+No conditions
+ UNK116(116)
+
+
+Action 278: GO(1) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ CLEAR(60) 17
+ UNK116(116)
+ UNKNOWN(117)
+
+
+Action 279: LOOK(11) ANY(0)
+No conditions
+ SET(58) 63
+ UNK116(116)
+
+
+Action 280: LOOK(11) FLAME(36)
+Conditions: HERE(2) 10 NODESTROYED(13) 15
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 138 "on other side"
+ PRINTOBJ(85) 16
+ MESSAGE 38 "and"
+ PRINTOBJ(85) 15
+ MESSAGE 41 "\."
+
+
+Action 281: LOOK(11) CIRCUS(62)
+Conditions: HERE(2) 9
+ MESSAGE 3 "I see"
+ CONTINUE(73)
+ PRINTMESS(128) 157 "RINGMASTER"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 158 "FIRE EATER"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 159 "LIVE WIRE"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 160 "THE CLOWN"
+ MESSAGE 12 "\,"
+
+
+Action 282: (0)(0)
+No conditions
+ PRINTMESS(128) 162 "PRINCESS PYTHON"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 163 "CANNONBALL"
+ MESSAGE 12 "\,"
+ PRINTMESS(128) 164 "FLYING GAMBONNOS"
+ MESSAGE 41 "\."
+
+
+Action 283: LOOK(11) ME(7)
+Conditions: NOTZERO(8) 3
+ SETCNT(99) 21 49
+ FAILED?(121)
+
+
+Action 284: LOOK(11) ROCK#1(49)
+Extra words: 197 (UNDER)
+Conditions: HERE(2) 22
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 102 "it's loosely capping a shaft"
+ MESSAGE 41 "\."
+
+
+Action 285: LOOK(11) ME(7)
+Conditions: ISZERO(9) 3
+ SETCNT(99) 22 49
+ FAILED?(121)
+
+
+Action 286: LOOK(11) TAR(15)
+Extra words: 196 (BY) 203 (IN) 193 (NONE)
+Conditions: OR(31) 1  AT(4) 1 AT(4) 2 AT(4) 7 MOD(31) 0  NODESTROYED(13) 5
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 55 "tar"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+
+
+Action 287: LOOK(11) TAR(15)
+Extra words: 196 (BY) 203 (IN) 193 (NONE)
+Conditions: OR(31) 1  AT(4) 2 AT(4) 1 MOD(31) 0  ISZERO(9) 3 CURLE(15) 20
+ MESSAGE 3 "I see"
+ MESSAGE 13 "THING"
+ PRINTMESS(128) 94 "way out in the pit"
+ MESSAGE 43 "being"
+ MESSAGE 44 "sucked down"
+ MESSAGE 41 "\."
+
+
+Action 288: LOOK(11) WATCH(95)
+Conditions: CARRIED(1) 37 ISZERO(9) 15
+ SETCNT(99) 100 21
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ PRINTCUR(78)
+ PRINTMESS(128) 177 "moves."
+ CONTINUE(73)
+
+
+Action 289: (0)(0)
+Conditions: ISZERO(9) 3
+ SWAPCNT(98) 3 20
+ MULTIPLY?(65) 20 21
+ SETCNT(99) 80 0
+ DIVIDE?(91) 0 21 20
+
+
+Action 290: (0)(0)
+No conditions
+ MESSAGE 20 "I'm"
+ PRNCNT(102) 21
+ PRINTMESS(128) 101 "\% rested."
+
+
+Action 291: LOOK(11) ANY(0)
+Extra words: 195 (AT) 193 (NONE)
+No conditions
+ CONTINUE(73)
+
+
+Action 292: (0)(0)
+Conditions: CURGT(16) 20
+ UNK116(116)
+
+
+Action 293: (0)(0)
+Conditions: NOT(31) 4  NOUNIS(28) 230 21 NOUNIS(28) 230 22
+ UNK116(116)
+
+
+Action 294: (0)(0)
+Conditions: NOUNIS(28) 230 21 NOT(31) 4  NOTAT(4) 2 NOTAT(4) 1
+ UNK116(116)
+
+
+Action 295: (0)(0)
+Conditions: MOD(31) 8  MOD(31) 6  NOTZERO(8) 3 NOT(31) 3  NOTHERE(2) 18 MOD(31) 6  NOT(31) 3  NOTAT(4) 2 OR(31) 1  MOD(31) 7  NOTZERO(8) 4 MOD(31) 0  MOD(31) 7  NOUNIS(28) 230 22
+ UNK116(116)
+
+
+Action 296: (0)(0)
+Conditions: NOUNIS(28) 230 21 ISZERO(9) 3 NOT(31) 4  NOTAT(4) 2 NOTAT(4) 1
+ UNK116(116)
+
+
+Action 297: (0)(0)
+No conditions
+ MESSAGE 3 "I see"
+
+
+Action 298: (0)(0)
+Conditions: NOUNIS(28) 230 22
+ MESSAGE 14 "HUMAN TORCH"
+
+
+Action 299: (0)(0)
+Conditions: NOUNIS(28) 230 21
+ MESSAGE 13 "THING"
+
+
+Action 300: (0)(0)
+No conditions
+ MESSAGE 17 "stuck in tar up to"
+ MESSAGE 18 "his"
+
+
+Action 301: (0)(0)
+Conditions: CURGT(16) 16
+ MESSAGE 27 "mouth."
+
+
+Action 302: (0)(0)
+Conditions: CURGT(16) 12 CURLE(15) 16
+ MESSAGE 26 "neck."
+
+
+Action 303: (0)(0)
+Conditions: CURGT(16) 8 CURLE(15) 12
+ MESSAGE 25 "chest."
+
+
+Action 304: (0)(0)
+Conditions: CURGT(16) 4 CURLE(15) 8
+ MESSAGE 24 "waist."
+
+
+Action 305: (0)(0)
+Conditions: CURLE(15) 4
+ MESSAGE 23 "knees."
+
+
+Action 306: (0)(0)
+Conditions: MOD(31) 8  NOUNIS(28) 230 21 ISZERO(9) 3 MOD(31) 6  NOUNIS(28) 230 22 NOTZERO(8) 3 OR(31) 1  MOD(31) 7
+ MESSAGE 40 "He"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 97 "somnambulent"
+ MESSAGE 41 "\."
+
+
+Action 307: LOOK(11) TORCH(22)
+Extra words: 193 (NONE) 195 (AT)
+Conditions: MOD(31) 8  NOTZERO(8) 3 HERE(2) 18 OR(31) 1  ISZERO(9) 3
+ MESSAGE 1 "OK"
+ MESSAGE 14 "HUMAN TORCH"
+ MESSAGE 35 "is"
+ CONTINUE(73)
+
+
+Action 308: (0)(0)
+Conditions: ISZERO(9) 4
+ MESSAGE 37 "not"
+
+
+Action 309: (0)(0)
+No conditions
+ MESSAGE 36 "flying"
+ MESSAGE 38 "and"
+ MESSAGE 35 "is"
+
+
+Action 310: (0)(0)
+Conditions: EQ(20) 2 0
+ MESSAGE 37 "not"
+
+
+Action 311: (0)(0)
+No conditions
+ MESSAGE 39 "burning"
+
+
+Action 312: (0)(0)
+Conditions: EQ(20) 2 1
+ PRINTMESS(128) 72 "at"
+ PRINTMESS(128) 75 "low"
+ PRINTMESS(128) 78 "flame"
+
+
+Action 313: (0)(0)
+Conditions: EQ(20) 2 2
+ PRINTMESS(128) 72 "at"
+ PRINTMESS(128) 76 "high"
+ PRINTMESS(128) 78 "flame"
+
+
+Action 314: (0)(0)
+Conditions: EQ(20) 2 3
+ PRINTMESS(128) 72 "at"
+ PRINTMESS(128) 77 "super"
+ PRINTMESS(128) 76 "high"
+ PRINTMESS(128) 78 "flame"
+
+
+Action 315: (0)(0)
+No conditions
+ MESSAGE 41 "\."
+
+
+Action 316: (0)(0)
+Conditions: NOTZERO(8) 3
+ MESSAGE 40 "He"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 97 "somnambulent"
+ MESSAGE 41 "\."
+
+
+Action 317: (0)(0)
+Conditions: ISZERO(9) 3
+ MEANS(55) 10 0
+ UNKNOWN(111)
+
+
+Action 318: LOOK(11) CASTLE(24)
+Conditions: AT(4) 5
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 165 "BLOB"
+ PRINTMESS(128) 106 "blocking the entrance."
+
+
+Action 319: LOOK(11) LEVER(91)
+Conditions: HERE(2) 43
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 173 "left's marked LOW & right HIGH."
+
+
+Action 320: LOOK(11) HOLE(37)
+Extra words: 203 (IN) 205 (UP) 195 (AT) 193 (NONE)
+Conditions: HERE(2) 23
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 321: (0)(0)
+Conditions: NODESTROYED(13) 22
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 123 "see"
+ PRINTMESS(128) 124 "the top"
+ MESSAGE 41 "\."
+
+
+Action 322: (0)(0)
+Conditions: DESTROYED(14) 22
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 124 "the top"
+ MESSAGE 41 "\."
+
+
+Action 323: LOOK(11) HOLE(37)
+Extra words: 203 (IN) 195 (AT) 206 (DOWN) 193 (NONE)
+Conditions: HERE(2) 21
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 74 "it"
+ PRINTMESS(128) 85 "seems"
+ PRINTMESS(128) 86 "to be bottomless"
+ MESSAGE 51 "\!"
+
+
+Action 324: LOOK(11) SOMETHING(12)
+Extra words: 195 (AT) 193 (NONE)
+No conditions
+ MESSAGE 5 "HUH?"
+ MESSAGE 29 "Be more specific."
+
+
+Action 325: LOOK(11) ANY(0)
+Extra words: 203 (IN) 199 (BEHIND) 197 (UNDER)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 119 "do that yet."
+
+
+Action 326: LOOK(11) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ CLEAR0FLAG(68)
+ CONTINUE(73)
+
+
+Action 327: (0)(0)
+Conditions: NOT(31) 4  NOTEQUAL(20) 49 0
+ MESSAGE 1 "OK"
+ MESSAGE 3 "I see"
+ MESSAGE 4 "nothing special"
+ MESSAGE 41 "\."
+
+
+Action 328: (0)(0)
+No conditions
+ LOOK(76)
+
+
+Action 329: PLUG(23) ANY(0)
+Extra words: 130 (WITH) 0 (ANY)
+No conditions
+ SETCNT(99) 5 48
+ UNK97(97) 49 53
+ SETCNT(99) 11 52
+ FAILED?(121)
+
+
+Action 330: DROP(5) TAR(15)
+Extra words: 139 (IN) 37 (HOLE)
+Conditions: CARRIED(1) 7 HERE(2) 44
+ MESSAGE 6 "Sorry,"
+ PRINTOBJ(85) 7
+ MESSAGE 35 "is"
+ MESSAGE 44 "sucked down"
+ PRINTOBJ(85) 44
+ MESSAGE 51 "\!"
+
+
+Action 331: DROP(5) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 7
+ PRINTMESS(128) 87 "I"
+ MESSAGE 7 "won't"
+ PRINTMESS(128) 103 "do that here."
+ SET(58) 63
+
+
+Action 332: GIVE(47) ANY(0)
+Extra words: 138 (ALL) 0 (ANY)
+No conditions
+ SWAPCNT(98) 52 50
+ SWAPCNT(98) 49 53
+ SETCNT(99) 3 52
+ CONTINUE(73)
+
+
+Action 333: (0)(0)
+No conditions
+ SETCNT(99) 38 49
+ FAILED?(121)
+
+
+Action 334: GIVE(47) TORCH(22)
+Extra words: 130 (WITH) 0 (ANY)
+No conditions
+ UNK97(97) 49 53
+ SETCNT(99) 3 52
+ FAILED?(121)
+
+
+Action 335: GIVE(47) THING(21)
+Extra words: 130 (WITH) 0 (ANY)
+No conditions
+ UNK97(97) 49 53
+ SETCNT(99) 3 52
+ FAILED?(121)
+
+
+Action 336: GET(3) ANY(0)
+Extra words: 136 (FROM) 21 (THING) 136 (FROM) 22 (TORCH)
+Conditions: OR(31) 1  HERE(2) 17 HERE(2) 18
+ SET(58) 18
+ CLRCNT?(109) 52
+ CLRCNT?(109) 53
+ FAILED?(121)
+
+
+Action 337: GIVE(47) ANY(0)
+Extra words: 131 (AT) 21 (THING) 131 (AT) 22 (TORCH)
+Conditions: OR(31) 1  HERE(2) 17 HERE(2) 18
+ SET(58) 18
+ CLRCNT?(109) 52
+ CLRCNT?(109) 53
+ SETCNT(99) 5 48
+ FAILED?(121)
+
+
+Action 338: GET(3) ROOM(27)
+Extra words: 202 (ALL)
+No conditions
+ CLRCNT?(109) 49
+ FAILED?(121)
+
+
+Action 339: DROP(5) ME(7)
+Extra words: 202 (ALL)
+No conditions
+ CLRCNT?(109) 49
+ FAILED?(121)
+
+
+Action 340: GET(3) ANY(0)
+Extra words: 202 (ALL)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 19
+ CLEAR(60) 20
+
+
+Action 341: (0)(0)
+No conditions
+ SETCNT(99) 50 21
+
+
+Action 342: (0)(0)
+Conditions: OR(31) 1  NOUNIS(28) 230 0 NOUNIS(28) 230 38 MOD(31) 9  DICTWORD(29) 230 230
+ SET(58) 20
+
+
+Action 343: (0)(0)
+Conditions: OR(31) 1  HERE(2) 17 HERE(2) 18 MOD(31) 0  NOTZERO(8) 18
+ SETCNT(99) 99 21
+
+
+Action 344: (0)(0)
+Conditions: ISZERO(9) 18
+ SWAPCNT(98) 32 21
+
+
+Action 345: (0)(0)
+Conditions: ISZERO(9) 3 NOTZERO(8) 20 OBJFLAG(30) 230 16
+ CLEAR(60) 20
+
+
+Action 346: (0)(0)
+Conditions: NOTZERO(8) 20 ISZERO(9) 19 UNK23(23) 230 21 OBJFLAG(30) 230 1
+ GET(52) 131 230
+ MESSAGE 8 "I've got"
+ PRNOBJART(122) 131 230
+ MESSAGE 41 "\."
+ SET0FLAG(67)
+
+
+Action 347: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ CLEAR(60) 19
+ CLEAR(60) 20
+ LOOP?(113)
+
+
+Action 348: (0)(0)
+Conditions: ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 156 "nothing's takeable!"
+
+
+Action 349: DROP(5) ANY(0)
+Extra words: 202 (ALL)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 20
+ CLEAR(60) 21
+
+
+Action 350: (0)(0)
+Conditions: OR(31) 1  NOUNIS(28) 230 0 NOUNIS(28) 230 38 MOD(31) 9  DICTWORD(29) 230 230
+ SET(58) 20
+
+
+Action 351: (0)(0)
+No conditions
+ SWAPCNT(98) 32 21
+
+
+Action 352: (0)(0)
+Conditions: OR(31) 1  HERE(2) 17 HERE(2) 18 MOD(31) 0  NOTZERO(8) 18
+ SETCNT(99) 99 21
+
+
+Action 353: (0)(0)
+Conditions: MOD(31) 8  NOTZERO(8) 3 OBJFLAG(30) 230 16 OR(31) 1  ISZERO(9) 18
+ SWAPCNT(98) 32 21
+
+
+Action 354: (0)(0)
+No conditions
+ UNK97(97) 32 21
+
+
+Action 355: (0)(0)
+Conditions: NOTZERO(8) 20 CARRIED(1) 230 OBJFLAG(30) 230 1
+ DROP(53) 131 230
+ PRINTMESS(128) 100 "I leave"
+ PRNOBJART(122) 131 230
+ SET(58) 21
+
+
+Action 356: (0)(0)
+No conditions
+ UNK97(97) 32 21
+
+
+Action 357: (0)(0)
+Conditions: NOTZERO(8) 21
+ MESSAGE 41 "\."
+ SET0FLAG(67)
+
+
+Action 358: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ CLEAR(60) 20
+ CLEAR(60) 21
+ LOOP?(113)
+
+
+Action 359: (0)(0)
+Conditions: ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 111 "I don't have that."
+
+
+Action 360: DROP(5) ANY(0)
+Extra words: 142 (DOWN) 37 (HOLE) 139 (IN) 37 (HOLE)
+No conditions
+ SETCNT(99) 44 48
+ FAILED?(121)
+
+
+Action 361: DROP(5) ROCK#2(50)
+Extra words: 133 (UNDER) 49 (ROCK#1) 142 (DOWN) 37 (HOLE)
+Conditions: HERE(2) 22 PRESENT(3) 24
+ MESSAGE 1 "OK"
+ DROPIN(62) 24 18
+
+
+Action 362: PUSH(15) ROCK#2(50)
+Extra words: 133 (UNDER) 49 (ROCK#1)
+Conditions: HERE(2) 22 PRESENT(3) 24
+ MESSAGE 1 "OK"
+ DROPIN(62) 24 18
+
+
+Action 363: THROW(44) ANY(0)
+Extra words: 142 (DOWN) 37 (HOLE) 131 (AT) 37 (HOLE) 139 (IN) 37 (HOLE)
+Conditions: HERE(2) 21
+ BEGIN?(112)
+ CLRCNT?(109) 30
+
+
+Action 364: (0)(0)
+Conditions: PRESENT(3) 230 OBJFLAG(30) 230 1 DICTWORD(29) 230 230
+ DROPIN(62) 131 230 18
+ MESSAGE 1 "OK"
+ DONE(69)
+
+
+Action 365: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 366: (0)(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 110 "I don't see it here."
+
+
+Action 367: GET(3) THING(21)
+Extra words: 136 (FROM) 15 (TAR)
+No conditions
+ SETCNT(99) 15 48
+ FAILED?(121)
+
+
+Action 368: GET(3) ANY(0)
+Extra words: 193 (NONE) 130 (WITH) 7 (ME) 129 (NONE) 0 (ANY)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 20
+
+
+Action 369: (0)(0)
+Conditions: DICTWORD(29) 230 230 OBJFLAG(30) 230 1
+ SET(58) 20
+ SET0FLAG(67)
+
+
+Action 370: (0)(0)
+Conditions: NOTZERO(8) 0 ISZERO(9) 3 OBJFLAG(30) 230 16
+ CLEAR(60) 20
+ CLEAR0FLAG(68)
+
+
+Action 371: (0)(0)
+Conditions: NOTZERO(8) 0 ISZERO(9) 18 NOT(31) 3  NOTHERE(2) 230
+ CLEAR0FLAG(68)
+
+
+Action 372: (0)(0)
+Conditions: NOTZERO(8) 0 NOTZERO(8) 18 NOT(31) 3  OBJIN(26) 230 99
+ CLEAR0FLAG(68)
+
+
+Action 373: (0)(0)
+Conditions: NOTZERO(8) 0 NOTZERO(8) 18 NOT(31) 4  NOTHERE(2) 17 NOTHERE(2) 18
+ CLEAR0FLAG(68)
+
+
+Action 374: (0)(0)
+Conditions: NOTZERO(8) 0
+ GET(52) 131 230
+ MESSAGE 8 "I've got"
+ PRNOBJART(122) 131 230
+ MESSAGE 41 "\."
+ UNKNOWN(115)
+
+
+Action 375: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 376: (0)(0)
+Conditions: ISZERO(9) 20 ISZERO(9) 0
+ PRINTMESS(128) 115 "Beyond my power to do that!"
+ DONE(69)
+
+
+Action 377: (0)(0)
+Conditions: ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 110 "I don't see it here."
+
+
+Action 378: DROP(5) ANY(0)
+Extra words: 193 (NONE) 128 (ANY) 0 (ANY)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+ CLEAR0FLAG(68)
+ CLEAR(60) 21
+
+
+Action 379: (0)(0)
+No conditions
+ SWAPCNT(98) 32 21
+
+
+Action 380: (0)(0)
+Conditions: EQ(20) 52 11 EQ(20) 53 60 HERE(2) 29
+ SETCNT(99) 25 21
+
+
+Action 381: (0)(0)
+Conditions: OR(31) 1  HERE(2) 17 HERE(2) 18 MOD(31) 0  NOTZERO(8) 18
+ SETCNT(99) 99 21
+
+
+Action 382: (0)(0)
+Conditions: NOTZERO(8) 3 OBJFLAG(30) 230 16
+ SWAPCNT(98) 32 21
+
+
+Action 383: (0)(0)
+Conditions: DICTWORD(29) 230 230 CARRIED(1) 230 OBJFLAG(30) 230 1
+ UNK97(97) 32 21
+ DROP(53) 131 230
+ UNK97(97) 32 21
+ PRINTMESS(128) 100 "I leave"
+ PRNOBJART(122) 131 230
+ SET(58) 21
+
+
+Action 384: (0)(0)
+Conditions: NOTZERO(8) 21
+ MESSAGE 41 "\."
+ UNKNOWN(115)
+ SET0FLAG(67)
+
+
+Action 385: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 386: (0)(0)
+Conditions: ISZERO(9) 0
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 111 "I don't have that."
+
+
+Action 387: DIG(12) ANY(0)
+Extra words: 139 (IN) 20 (FLOOR) 139 (IN) 52 (FIELD) 129 (NONE) 0 (ANY)
+Conditions: DESTROYED(14) 45 AT(4) 5
+ MESSAGE 1 "OK"
+ STEAL(74) 45
+ MESSAGE 8 "I've got"
+ MESSAGE 34 "something!"
+ INVENTORY(66)
+
+
+Action 388: DIG(12) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens"
+ MESSAGE 41 "\."
+
+
+Action 389: CFLAME(43) ANY(0)
+Conditions: ISZERO(9) 3
+ SET(58) 63
+ CONTINUE(73)
+
+
+Action 390: (0)(0)
+Conditions: OR(31) 1  NOT(31) 3  NOTAT(4) 2 HERE(2) 5 MOD(31) 0  UNK22(22) 2
+ SETCNT(99) 41 48
+ SETCNT(99) 40 49
+ SETCNT(99) 6 50
+ FAILED?(121)
+
+
+Action 391: BURN(41) ANY(0)
+Extra words: 198 (ON) 195 (AT)
+Conditions: ISZERO(9) 3
+ CLRCNT?(109) 20
+ CONTINUE(73)
+
+
+Action 392: (0)(0)
+Conditions: AT(4) 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 65 "there"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 62 "no"
+ PRINTMESS(128) 61 "oxygen"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 393: (0)(0)
+Conditions: NOUNIS(28) 230 42
+ SETCNT(99) 80 21
+ SETCNT(99) 3 20
+
+
+Action 394: (0)(0)
+Conditions: NOUNIS(28) 230 41
+ SETCNT(99) 15 21
+ SETCNT(99) 2 20
+
+
+Action 395: (0)(0)
+Conditions: NOUNIS(28) 230 40
+ SETCNT(99) 2 21
+ SETCNT(99) 1 20
+
+
+Action 396: (0)(0)
+Conditions: OR(31) 1  NOUNIS(28) 230 0 UNK22(22) 20
+ MESSAGE 6 "Sorry,"
+ MESSAGE 9 "say again"
+ MESSAGE 11 "as FLAME ON LOW, HIGH or NOVA."
+ SET(58) 63
+ DONE(69)
+
+
+Action 397: (0)(0)
+Conditions: LE(18) 21 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 20 "I'm"
+ MESSAGE 31 "too tired."
+ MEANS(55) 53 1
+ UNKNOWN(117)
+
+
+Action 398: (0)(0)
+No conditions
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 82 "Flame on!"
+ SWAPCNT(98) 20 2
+ SWAPCNT(98) 21 4
+ UNKNOWN(104)
+ MESSAGE 4 "nothing special"
+
+
+Action 399: (0)(0)
+Conditions: NOTZERO(8) 36
+ MEANS(55) 1 0
+ CLEAR(60) 36
+ SWAPCNT(98) 17 50
+ SWAPCNT(98) 18 49
+ FAILED?(121)
+ UNKNOWN(111)
+
+
+Action 400: (0)(0)
+Conditions: ISZERO(9) 63
+ UNK123(123) 21 3
+
+
+Action 401: STOP(36) FLAME(36)
+Conditions: ISZERO(9) 3
+ MESSAGE 1 "OK"
+ CLEAR(60) 4
+ CLRCNT?(109) 2
+ MESSAGE 20 "I'm"
+ MESSAGE 37 "not"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+ DONE(69)
+
+
+Action 402: STOP(36) CANDLE(55)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: PRESENT(3) 32
+ MESSAGE 1 "OK"
+ SWAP(72) 32 26
+
+
+Action 403: STOP(36) ANY(0)
+Extra words: 136 (FROM) 36 (FLAME)
+Conditions: ISZERO(9) 3
+ UNK97(97) 49 53
+ SETCNT(99) 25 48
+ FAILED?(121)
+
+
+Action 404: STOP(36) FLAME(36)
+Extra words: 139 (IN) 0 (ANY)
+Conditions: ISZERO(9) 3
+ SETCNT(99) 36 49
+ SETCNT(99) 8 52
+ FAILED?(121)
+
+
+Action 405: ABSORB(25) FLAME(36)
+Extra words: 136 (FROM) 15 (TAR) 129 (NONE) 0 (ANY)
+Conditions: OR(31) 1  AT(4) 2 AT(4) 1 MOD(31) 0  ISZERO(9) 3 NODESTROYED(13) 5
+ MESSAGE 1 "OK"
+ SWAP(72) 13 12
+ DESTROY(59) 5
+ ADDCNT(100) 50 3
+
+
+Action 406: ABSORB(25) FLAME(36)
+Extra words: 136 (FROM) 87 (JET) 129 (NONE) 0 (ANY)
+Conditions: OR(31) 1  HERE(2) 40 HERE(2) 39 MOD(31) 0  ISZERO(9) 3
+ MESSAGE 1 "OK"
+ PRINTOBJ(85) 39
+ PRINTMESS(128) 174 "relights."
+
+
+Action 407: ABSORB(25) FLAME(36)
+Extra words: 136 (FROM) 36 (FLAME) 129 (NONE) 0 (ANY)
+Conditions: OR(31) 1  HERE(2) 10 HERE(2) 11 MOD(31) 0  ISZERO(9) 3
+ ADDCNT(100) 20 3
+ MESSAGE 1 "OK"
+ PRINTOBJ(85) 10
+ PRINTMESS(128) 174 "relights."
+
+
+Action 408: ABSORB(25) FLAME(36)
+Extra words: 136 (FROM) 55 (CANDLE)
+Conditions: ISZERO(9) 3 PRESENT(3) 32
+ MESSAGE 1 "OK"
+ SWAP(72) 32 26
+
+
+Action 409: BURN(41) ANY(0)
+Extra words: 139 (IN) 0 (ANY)
+No conditions
+ SWAPCNT(98) 53 49
+ CLRCNT?(109) 52
+ CLRCNT?(109) 53
+ FAILED?(121)
+
+
+Action 410: SET(51) ANY(0)
+Extra words: 134 (ON) 36 (FLAME)
+No conditions
+ SETCNT(99) 46 48
+ CLRCNT?(109) 52
+ CLRCNT?(109) 53
+ FAILED?(121)
+
+
+Action 411: BURN(41) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ SETCNT(99) 46 48
+ FAILED?(121)
+
+
+Action 412: MELT(46) CANDLE(55)
+Conditions: ISZERO(9) 3
+ CONTINUE(73)
+
+
+Action 413: (0)(0)
+Conditions: PRESENT(3) 26
+ MESSAGE 1 "OK"
+ SWAP(72) 32 26
+ DONE(69)
+
+
+Action 414: (0)(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 110 "I don't see it here."
+
+
+Action 415: MELT(46) CANDLE(55)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: NOTZERO(8) 3 PRESENT(3) 26 HERE(2) 10
+ MESSAGE 1 "OK"
+ SWAP(72) 32 26
+
+
+Action 416: MELT(46) CANNON(60)
+Extra words: 130 (WITH) 55 (CANDLE) 129 (NONE) 0 (ANY)
+Conditions: PRESENT(3) 32 NOTZERO(8) 30 HERE(2) 29
+ SET(58) 27
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 113 "fuse"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+ SET(58) 63
+
+
+Action 417: MELT(46) ANY(0)
+Extra words: 130 (WITH) 0 (ANY) 131 (AT) 0 (ANY) 129 (NONE) 0 (ANY)
+Conditions: ISZERO(9) 3
+ CONTINUE(73)
+
+
+Action 418: (0)(0)
+Conditions: EQ(20) 53 0
+ SETCNT(99) 36 53
+
+
+Action 419: (0)(0)
+No conditions
+ SETCNT(99) 44 48
+ SWAPCNT(98) 49 21
+ SWAPCNT(98) 53 49
+
+
+Action 420: (0)(0)
+No conditions
+ SWAPCNT(98) 21 53
+ SETCNT(99) 3 52
+ FAILED?(121)
+
+
+Action 421: THROW(44) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: ISZERO(9) 3
+ SWAPCNT(98) 2 10
+ CONTINUE(73)
+
+
+Action 422: (0)(0)
+Conditions: EQ(20) 49 40
+ SETCNT(99) 1 10
+ SETCNT(99) 36 49
+
+
+Action 423: (0)(0)
+Conditions: EQ(20) 49 41
+ SETCNT(99) 2 10
+ SETCNT(99) 36 49
+
+
+Action 424: (0)(0)
+Conditions: EQ(20) 49 42
+ SETCNT(99) 3 10
+ SETCNT(99) 36 49
+
+
+Action 425: (0)(0)
+No conditions
+ FAILED?(121)
+
+
+Action 426: THROW(44) FLAME(36)
+Conditions: ISZERO(9) 3
+ MESSAGE 29 "Be more specific."
+
+
+Action 427: THROW(44) FLAME(36)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: NOTZERO(8) 3
+ MESSAGE 2 "I can't"
+ MESSAGE 20 "I'm"
+ MESSAGE 13 "THING"
+ MESSAGE 51 "\!"
+
+
+Action 428: THROW(44) FLAME(36)
+Extra words: 131 (AT) 0 (ANY) 139 (IN) 0 (ANY) 141 (UP) 0 (ANY) 142 (DOWN) 0 (ANY)
+Conditions: ISZERO(9) 3
+ CONTINUE(73)
+
+
+Action 429: (0)(0)
+Conditions: AT(4) 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 62 "no"
+ PRINTMESS(128) 61 "oxygen"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 430: (0)(0)
+Conditions: EQ(20) 10 0
+ NOP(0)
+ SETCNT(99) 1 10
+
+
+Action 431: (0)(0)
+Conditions: EQ(20) 10 1
+ SETCNT(99) 2 21
+
+
+Action 432: (0)(0)
+Conditions: EQ(20) 10 2
+ SETCNT(99) 15 21
+
+
+Action 433: (0)(0)
+Conditions: EQ(20) 10 3
+ SETCNT(99) 80 21
+
+
+Action 434: (0)(0)
+Conditions: LE(18) 21 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 20 "I'm"
+ MESSAGE 31 "too tired."
+ DONE(69)
+
+
+Action 435: (0)(0)
+No conditions
+ MESSAGE 1 "OK"
+ UNKNOWN(104)
+ MESSAGE 21 "QUESTPROBE 3: FANTASTIC FOUR Chpt. 1 by Scott Adams. Dedicated: Keith Campbell."
+ UNK123(123) 21 3
+ ADDCNT(100) 1 3
+
+
+Action 436: (0)(0)
+Conditions: OR(31) 1  AT(4) 29 AT(4) 30 AT(4) 31 MOD(31) 0  NODESTROYED(13) 36
+ SET(58) 37
+ SET(58) 63
+ DONE(69)
+
+
+Action 437: (0)(0)
+Conditions: NOUNIS(28) 231 15 MOD(31) 6  OR(31) 1  AT(4) 2 AT(4) 1 MOD(31) 0  MOD(31) 7  OR(31) 1  MOD(31) 6  GTEQ(21) 10 2 NODESTROYED(13) 5 MOD(31) 0  MOD(31) 7
+ DROPIN(62) 5 2
+ PRINTMESS(128) 55 "tar"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+ DONE(69)
+
+
+Action 438: (0)(0)
+Conditions: NOUNIS(28) 231 21 HERE(2) 17
+ SET(58) 9
+ DONE(69)
+
+
+Action 439: (0)(0)
+Conditions: NOUNIS(28) 231 58 AT(4) 23
+ GOTO(54) 1
+
+
+Action 440: (0)(0)
+Conditions: NOUNIS(28) 231 58 HERE(2) 27
+ DESTROY(59) 27
+ DONE(69)
+
+
+Action 441: (0)(0)
+Conditions: NOUNIS(28) 231 66 EQ(20) 10 1
+ PRINTMESS(128) 165 "BLOB"
+ PRINTMESS(128) 120 "isn't affected"
+ PRINTMESS(128) 146 "by"
+ PRINTMESS(128) 78 "flame"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 442: (0)(0)
+Conditions: NOUNIS(28) 231 66
+ PRINTMESS(128) 165 "BLOB"
+ PRINTMESS(128) 118 "steps into an alcove"
+ MESSAGE 41 "\."
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 78 "flame"
+ PRINTMESS(128) 147 "misses"
+ MESSAGE 51 "\!"
+ SET(58) 31
+ DONE(69)
+
+
+Action 443: (0)(0)
+Conditions: HERE(2) 9 EQ(20) 10 1
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 158 "FIRE EATER"
+ PRINTMESS(128) 148 "swallows"
+ PRINTMESS(128) 78 "flame"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 444: (0)(0)
+Conditions: MOD(31) 8  NOUNIS(28) 231 63 HERE(2) 28 OR(31) 1  HERE(2) 9
+ MESSAGE 6 "Sorry,"
+ PRINTOBJ(85) 28
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 51 "\!"
+ PUTINCNT?(80) 28 32
+ SET(58) 34
+ SWAP(72) 28 30
+ DONE(69)
+
+
+Action 445: (0)(0)
+Conditions: NOUNIS(28) 231 60 HERE(2) 29 NOTZERO(8) 30
+ SET(58) 27
+ PRINTMESS(128) 113 "fuse"
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+ SET(58) 63
+ DONE(69)
+
+
+Action 446: (0)(0)
+Conditions: NOUNIS(28) 231 78 PRESENT(3) 31
+ PRINTOBJ(85) 31
+ MESSAGE 35 "is"
+ MESSAGE 39 "burning"
+ MESSAGE 41 "\."
+ DESTROY(59) 31
+ DONE(69)
+
+
+Action 447: (0)(0)
+Conditions: NOUNIS(28) 231 60 AT(4) 25
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+ DONE(69)
+
+
+Action 448: (0)(0)
+Conditions: NOUNIS(28) 231 49 HERE(2) 22 DESTROYED(14) 24 GTEQ(21) 10 2
+ PRINTMESS(128) 74 "it"
+ PRINTMESS(128) 175 "chips"
+ MESSAGE 51 "\!"
+ DROP(53) 24
+ DONE(69)
+
+
+Action 449: (0)(0)
+Conditions: NOUNIS(28) 231 10 PRESENT(3) 16
+ DONE(69)
+
+
+Action 450: (0)(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 74 "it"
+ MESSAGE 35 "is"
+ MESSAGE 37 "not"
+ MESSAGE 39 "burning"
+ MESSAGE 51 "\!"
+
+
+Action 451: SAY(22) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: ISZERO(9) 7 HERE(2) 6
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 56 "CHIEF EXAMINER"
+ PRINTMESS(128) 57 "says:"
+ PRINTMESS(128) 58 "In this test you must free ALICIA MASTERS from"
+ PRINTMESS(128) 59 "DOCTOR DOOM"
+ MESSAGE 41 "\."
+ CONTINUE(73)
+
+
+Action 452: (0)(0)
+No conditions
+ SET(58) 7
+ CLRCNT?(109) 47
+ PRINTMESS(128) 60 "You'll have to master the powers of 2 MARVEL SUPER HEROS (TM). You'll be able to switch your point of view at any time. Good Luck!"
+ SETCNT(99) 79 3
+
+
+Action 453: (0)(50)
+No conditions
+ GOTO(54) 1
+ DROPIN(62) 17 2
+ UNK119(119) 14
+ CLEAR(60) 3
+ DONE(69)
+
+
+Action 454: (0)(0)
+No conditions
+ GOTO(54) 2
+ DROPIN(62) 18 1
+ UNK119(119) 13
+ SET(58) 3
+ GET(52) 37
+
+
+Action 455: SAY(22) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MESSAGE 1 "OK"
+
+
+Action 456: HBR(39) ANY(0)
+No conditions
+ SET(58) 63
+ CONTINUE(73)
+
+
+Action 457: (0)(0)
+Conditions: NOTZERO(8) 3 ISZERO(9) 5
+ SET(58) 5
+ SWAPCNT(98) 47 8
+ ADDCNT(100) 30 8
+ MESSAGE 1 "OK"
+ DONE(69)
+
+
+Action 458: (0)(0)
+Conditions: ISZERO(9) 3 ISZERO(9) 6
+ SET(58) 6
+ SWAPCNT(98) 47 9
+ ADDCNT(100) 10 9
+ MESSAGE 1 "OK"
+ DONE(69)
+
+
+Action 459: (0)(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 63 "already"
+ PRINTMESS(128) 64 "doing that"
+
+
+Action 460: BREATH(24) ANY(0)
+Conditions: NOTZERO(8) 3
+ MESSAGE 1 "OK"
+ CLEAR(60) 5
+
+
+Action 461: BREATH(24) ANY(0)
+Conditions: ISZERO(9) 3
+ MESSAGE 1 "OK"
+ CLEAR(60) 6
+
+
+Action 462: THROW(44) ROCK#2(50)
+Extra words: 131 (AT) 10 (EGG) 131 (AT) 9 (BIO) 139 (IN) 36 (FLAME)
+Conditions: OR(31) 1  AT(4) 14 AT(4) 16 MOD(31) 0  PRESENT(3) 24
+ MESSAGE 1 "OK"
+ SET(58) 8
+ DESTROY(59) 24
+
+
+Action 463: THROW(44) ROCK#2(50)
+Extra words: 141 (UP) 37 (HOLE) 139 (IN) 37 (HOLE)
+Conditions: NOTZERO(8) 3 PRESENT(3) 24 HERE(2) 23
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 464: (0)(0)
+Conditions: OR(31) 1  EQ(20) 51 3 EQ(20) 51 5 EQ(20) 51 6
+ DROPIN(62) 24 17
+ PRINTMESS(128) 104 "Dust rains down"
+ SWAP(72) 22 21
+ LIGHTSON(57)
+ MESSAGE 41 "\."
+ DONE(69)
+
+
+Action 465: (0)(0)
+No conditions
+ PRINTMESS(128) 145 "I gently toss it up."
+ MESSAGE 3 "I see"
+ PRINTMESS(128) 74 "it"
+ PRINTMESS(128) 81 "fall"
+ PRINTMESS(128) 105 "back"
+ MESSAGE 41 "\."
+ DROP(53) 24
+
+
+Action 466: THROW(44) ANY(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ PRINTMESS(128) 87 "I"
+ MESSAGE 7 "won't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 467: FEEL(19) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: HERE(2) 35
+ MESSAGE 30 "I feel"
+ PRNOBJART(122) 35
+ MESSAGE 41 "\."
+
+
+Action 468: FEEL(19) ANY(0)
+Extra words: 206 (DOWN) 197 (UNDER) 193 (NONE) 130 (WITH) 30 (HAND) 129 (NONE) 0 (ANY)
+Conditions: OR(31) 1  NOUNIS(28) 230 0 NOUNIS(28) 230 15 MOD(31) 0  AT(4) 3 CURGT(16) 34
+ MESSAGE 30 "I feel"
+ MESSAGE 45 "machinery"
+ MESSAGE 41 "\."
+
+
+Action 469: FEEL(19) ANY(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens"
+ MESSAGE 41 "\."
+
+
+Action 470: HIT(21) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: OR(31) 1  NOUNIS(28) 230 11 NOUNIS(28) 230 24 NOUNIS(28) 230 37
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens"
+ PRINTMESS(128) 74 "it"
+ MESSAGE 35 "is"
+ PRINTMESS(128) 84 "Admantium lined"
+ MESSAGE 51 "\!"
+
+
+Action 471: HIT(21) ANY(0)
+Conditions: OR(31) 1  NOUNIS(28) 230 23 NOUNIS(28) 230 6 MOD(31) 0  AT(4) 3 CURGT(16) 34
+ MESSAGE 46 "IT'S CLOBBERIN' TIME!"
+ PRINTMESS(128) 87 "I"
+ MESSAGE 47 "smashed"
+ MESSAGE 48 "my way through"
+ MESSAGE 49 "the"
+ MESSAGE 45 "machinery"
+ MESSAGE 41 "\."
+ GOTO(54) 11
+
+
+Action 472: HIT(21) CHIEF(16)
+Conditions: HERE(2) 6 ISZERO(9) 7
+ MESSAGE 1 "OK"
+ GOTO(54) 2
+ SET(58) 7
+ UNK119(119) 14
+ CLRCNT?(109) 47
+ CONTINUE(73)
+
+
+Action 473: (0)(0)
+No conditions
+ SETCNT(99) 79 3
+ DROPIN(62) 17 2
+
+
+Action 474: HIT(21) BLOB(66)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 5
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 475: (0)(0)
+Conditions: NOTZERO(8) 3
+ MESSAGE 46 "IT'S CLOBBERIN' TIME!"
+
+
+Action 476: (0)(0)
+No conditions
+ PRINTMESS(128) 165 "BLOB"
+ PRINTMESS(128) 120 "isn't affected"
+ MESSAGE 51 "\!"
+
+
+Action 477: HIT(21) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ CONTINUE(73)
+
+
+Action 478: (0)(0)
+Conditions: ISZERO(9) 28 AT(4) 24
+ SET(58) 26
+
+
+Action 479: (0)(0)
+Conditions: AT(4) 24
+ PRINTMESS(128) 147 "misses"
+ MESSAGE 51 "\!"
+ DONE(69)
+
+
+Action 480: (0)(0)
+No conditions
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 66 "no vandal!"
+
+
+Action 481: PUSH(15) LEVER(91)
+Extra words: 131 (AT) 93 (RIGHT) 130 (WITH) 93 (RIGHT)
+Conditions: HERE(2) 43
+ SET(58) 12
+ SET(58) 34
+ MESSAGE 1 "OK"
+
+
+Action 482: PUSH(15) LEVER(91)
+Extra words: 131 (AT) 92 (LEFT) 130 (WITH) 92 (LEFT)
+Conditions: HERE(2) 43
+ NOP(0)
+ CLEAR(60) 12
+ SET(58) 34
+ MESSAGE 1 "OK"
+
+
+Action 483: EAT(31) ANY(0)
+No conditions
+ CLRCNT?(109) 30
+ BEGIN?(112)
+
+
+Action 484: (0)(0)
+Conditions: MOD(31) 9  DICTWORD(29) 230 230 OBJFLAG(30) 230 8
+ MESSAGE 1 "OK"
+ DROPIN(62) 131 230 49
+ DONE(69)
+
+
+Action 485: (0)(0)
+Conditions: LE(18) 43 30
+ ADDCNT(100) 1 30
+ LOOP?(113)
+
+
+Action 486: (0)(0)
+No conditions
+ UNK116(116)
+ UNKNOWN(117)
+
+
+Action 487: CLEAN(52) TAR(15)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 0
+ NOP(0)
+
+
+Action 488: PUSH(15) CANNON(60)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: OR(31) 1  HERE(2) 29 HERE(2) 30 MOD(31) 0  ISZERO(9) 3
+ MESSAGE 6 "Sorry,"
+ MESSAGE 7 "won't"
+ MESSAGE 42 "budge"
+ MESSAGE 51 "\!"
+
+
+Action 489: FAIM(53) CANNON(60)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ SET(58) 27
+ SETCNT(99) 50 48
+ FAILED?(121)
+
+
+Action 490: AIM(50) CANNON(60)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: PRESENT(3) 29
+ CLRCNT?(109) 16
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+
+
+Action 491: (0)(0)
+Conditions: EQ(20) 53 24 EQ(20) 52 3
+ SETCNT(99) 2 16
+
+
+Action 492: (0)(0)
+Conditions: OR(31) 1  EQ(20) 52 11 EQ(20) 52 3 MOD(31) 6  EQ(20) 53 66 EQ(20) 53 80 MOD(31) 0  MOD(31) 7
+ SETCNT(99) 3 16
+
+
+Action 493: (0)(0)
+Conditions: NOTZERO(8) 27
+ CLEAR(60) 27
+ MEANS(55) 41 60
+ UNKNOWN(111)
+
+
+Action 494: WAIT(20) ANY(0)
+No conditions
+ CONTINUE(73)
+ CLRCNT?(109) 11
+
+
+Action 495: (0)(0)
+Conditions: NOUNIS(28) 230 48
+ SETCNT(99) 9 11
+ MESSAGE 1 "OK"
+
+
+Action 496: (0)(0)
+Conditions: NOUNIS(28) 230 44
+ SETCNT(99) 4 11
+ MESSAGE 1 "OK"
+
+
+Action 497: (0)(0)
+Conditions: NOUNIS(28) 230 45
+ SETCNT(99) 14 11
+ MESSAGE 1 "OK"
+
+
+Action 498: (0)(0)
+Conditions: NOUNIS(28) 230 46
+ SETCNT(99) 49 11
+ MESSAGE 1 "OK"
+
+
+Action 499: (0)(0)
+Conditions: NOUNIS(28) 230 0 NOTZERO(8) 24
+ MESSAGE 1 "OK"
+ DONE(69)
+
+
+Action 500: (0)(0)
+Conditions: NOUNIS(28) 230 0
+ SET(58) 24
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 107 "also valid "
+ PRINTMESS(128) 83 "as: WAIT 5,10,15 or 50 turns."
+ DONE(69)
+
+
+Action 501: (0)(0)
+Conditions: EQ(20) 11 0
+ MESSAGE 6 "Sorry,"
+ MESSAGE 9 "say again"
+ PRINTMESS(128) 83 "as: WAIT 5,10,15 or 50 turns."
+ SET(58) 63
+ DONE(69)
+
+
+Action 502: SMELL(8) ANY(0)
+Conditions: OR(31) 1  HERE(2) 39 HERE(2) 40 HERE(2) 41 HERE(2) 42
+ MESSAGE 1 "OK"
+ PRINTMESS(128) 170 "Gas"
+ MESSAGE 51 "\!"
+
+
+Action 503: SMELL(8) ANY(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 51 "\!"
+
+
+Action 504: LISTEN(48) ANY(0)
+Conditions: HERE(2) 22
+ PRINTMESS(128) 96 "I hear"
+ PRINTMESS(128) 99 "the wind whistling under the rock"
+ MESSAGE 41 "\."
+
+
+Action 505: LISTEN(48) ANY(0)
+Conditions: OR(31) 1  HERE(2) 39 HERE(2) 40 HERE(2) 41 HERE(2) 42 HERE(2) 43
+ PRINTMESS(128) 96 "I hear"
+ PRINTMESS(128) 169 "HISSES."
+
+
+Action 506: LISTEN(48) ANY(0)
+No conditions
+ PRINTMESS(128) 96 "I hear"
+ MESSAGE 4 "nothing special"
+ MESSAGE 41 "\."
+
+
+Action 507: HELP(18) THING(21)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MEANS(55) 15 21
+
+
+Action 508: SAVE(17) THING(21)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MEANS(55) 15 21
+
+
+Action 509: PUSH(15) THING(21)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 1
+ MESSAGE 2 "I can't"
+ PRINTMESS(128) 103 "do that here."
+
+
+Action 510: PUSH(15) THING(21)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: HERE(2) 17 AT(4) 2
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 42 "budge"
+ MESSAGE 13 "THING"
+ MESSAGE 51 "\!"
+
+
+Action 511: PUSH(15) BLOB(66)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 5
+ PRINTMESS(128) 165 "BLOB"
+ MESSAGE 7 "won't"
+ MESSAGE 42 "budge"
+ MESSAGE 41 "\."
+
+
+Action 512: PUSH(15) ROCK#1(49)
+Conditions: HERE(2) 22
+ MESSAGE 6 "Sorry,"
+ MESSAGE 7 "won't"
+ MESSAGE 42 "budge"
+ MESSAGE 41 "\."
+
+
+Action 513: LAND(45) ANY(0)
+Conditions: ISZERO(9) 3 NOTZERO(8) 4
+ MESSAGE 1 "OK"
+ CONTINUE(73)
+ SET(58) 17
+
+
+Action 514: (0)(0)
+Conditions: NOT(31) 4  UNK22(22) 49
+ SETCNT(99) 1 48
+ FAILED?(121)
+ UNKNOWN(111)
+
+
+Action 515: FLI(42) ANY(0)
+Conditions: ISZERO(9) 3 NOT(31) 3  UNK22(22) 2
+ SET(58) 4
+ SET(58) 63
+
+
+Action 516: SHUT(14) EYES(61)
+Extra words: 130 (WITH) 30 (HAND) 129 (NONE) 0 (ANY)
+No conditions
+ MESSAGE 1 "OK"
+ LIGHTSOUT(56)
+ SET(58) 28
+
+
+Action 517: OPEN(6) EYES(61)
+Conditions: NOTZERO(8) 28
+ MESSAGE 1 "OK"
+ CLEAR(60) 28
+
+
+Action 518: LAUGH(32) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 4 "nothing special"
+ MESSAGE 10 "happens"
+ MESSAGE 41 "\."
+
+
+Action 519: HELP(18) THING(21)
+Extra words: 128 (ANY) 0 (ANY)
+No conditions
+ MEANS(55) 8 21
+ UNKNOWN(111)
+
+
+Action 520: HELP(18) ANY(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 2 "I can't"
+ MESSAGE 22 "but order a HINT BOOK! Call (305)-862-6917."
+
+
+Action 521: KILL(38) ANY(0)
+No conditions
+ MESSAGE 6 "Sorry,"
+ MESSAGE 20 "I'm"
+ PRINTMESS(128) 143 "not a killer!"
+
+
+Action 522: SHUT(14) ANY(0)
+Extra words: 205 (UP)
+No conditions
+ MESSAGE 1 "OK"
+
+
+Action 523: UNLOCK(13) ANY(0)
+Extra words: 128 (ANY) 0 (ANY)
+Conditions: AT(4) 0
+ NOP(0)
