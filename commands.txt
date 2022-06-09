@@ -17,7 +17,8 @@ Saga Plus Commands
 61		Death. Dark flag cleared, player moved to last room.
 62		Item <arg2> is put in room <arg2>.
 63		Game over.
-64		Unknown.
+64		Set counter <arg2> to <arg1>. Will use a third argument if <arg2> has
+		bit 7 set.
 65		Multiply: Counter <arg2> = Counter <arg1> * Counter <arg2>
 66		Inventory.
 67		BitFlag 0 is set.
@@ -41,7 +42,7 @@ Saga Plus Commands
 84		Echo noun player typed.
 85		Print the name of object <arg>.
 86		Print current second noun?
-87		Swap current location value with backup location? Can't find any use of this.
+87		Unknown.
 88		Wait 2 seconds.
 89		Redraw picture.
 90		Draw close-up image <arg> ( + "Press any key" + wait for keypress )
@@ -59,17 +60,17 @@ Saga Plus Commands
 102		Print the value of counter <arg>.
 109		Set counter <arg> to 0
 110		Load file? 1,0 means restore. <arg2> seems to be counter holding picture number.
-112		Begin loop here (next action?)
-113		Loop back.
+112		Loop starts at next action.
+113		Loop back to action set with 112.
 114		Cancel loop?
 116		Done? (Stop reading actions)
 119		Set the initial part of prompt to message <arg>. ("Message <arg>, I want you to ")
-120		Unknown.
-121		Keep reading actions? 120 and 121 tend to come in pairs, with some input words-
-		changing stuff between them.
+		if <arg> is 128, use <arg2> - 76.
+120		Copy input words to counters: Counter 48 is set to verb, 49 to noun,
+		52 preposition, 53 second noun.
+121		Copy counters to input words, reverse of 120.
 122		Print name of object <arg> with indefinite article.
 123		counter <arg2> = counter <arg1> + counter <arg2>?.
+124		Unknown
 125		Unknown, 2 arguments. Swap value of bitflags <arg1> and <arg2>?
 128		Print message <arg - 76>.
-131		Set counter <arg2> to <arg1>. Will use a third argument if <arg2>
-		is greater than 31.
