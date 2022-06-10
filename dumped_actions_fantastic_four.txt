@@ -1,6 +1,6 @@
 Action 0: (0)(100)
 Conditions: ISZERO(9) 2
- UNK119(119) 1
+ SETPROMPT(119) 1
  SET(58) 12
  SET(58) 2
  CONTINUE(73)
@@ -11,7 +11,7 @@ Conditions: ISZERO(9) 2
 Action 1: (0)(0)
 No conditions
  MESSAGE 21 "QUESTPROBE 3: FANTASTIC FOUR Chpt. 1 by Scott Adams. Dedicated: Keith Campbell."
- CLRCNT?(109) 47
+ CLRCNT(109) 47
 
 
 Action 2: (0)(0)
@@ -203,8 +203,8 @@ Conditions: NOTZERO(8) 0 ISZERO(9) 35
 Action 26: (0)(0)
 Conditions: NOTZERO(8) 0
  LOADFILE?(110) 3 0
- SETCNT(99) 1 30
- BEGIN?(112)
+ SETTOA(99) 1 30
+ BEGIN(112)
 
 
 Action 27: (0)(0)
@@ -215,16 +215,16 @@ Conditions: NOTZERO(8) 0
 Action 28: (0)(0)
 Conditions: NOTZERO(8) 0 NOT(31) 3  LT(21) 30 6
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 29: (0)(0)
 Conditions: NOTZERO(8) 0
  UNK125(125) 15 21
  LIGHTSON(57)
- CLRCNT?(109) 30
+ CLRCNT(109) 30
  LOADFILE?(110) 6 0
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 30: (0)(0)
@@ -235,7 +235,7 @@ Conditions: NOTZERO(8) 0
 Action 31: (0)(0)
 Conditions: NOTZERO(8) 0 NOT(31) 3  LT(21) 30 5
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 32: (0)(0)
@@ -289,13 +289,13 @@ Conditions: NOTZERO(8) 12
 Action 40: (0)(0)
 Conditions: MOD(31) 8  NOTZERO(8) 12 NOT(31) 3  NOTEQUAL(20) 2 3 NOT(31) 3  UNK22(22) 2 MOD(31) 6  ISZERO(9) 12 EQ(20) 2 1 OR(31) 1  MOD(31) 7
  CLEAR(60) 4
- CLRCNT?(109) 2
+ CLRCNT(109) 2
  MESSAGE 32 "Flame's OUT!"
 
 
 Action 41: (0)(100)
 Conditions: OR(31) 1  AT(4) 18 AT(4) 19 AT(4) 20 AT(4) 21 SOMETHING(10) 18 SOMETHING(10) 19 SOMETHING(10) 20 SOMETHING(10) 21
- CLRCNT?(109) 30
+ CLRCNT(109) 30
  CONTINUE(73)
 
 
@@ -313,7 +313,7 @@ Conditions: NOTZERO(8) 3
 
 Action 44: (0)(0)
 No conditions
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 45: (0)(0)
@@ -328,9 +328,9 @@ Conditions: GTEQ(21) 21 18 NOT(31) 4  LT(21) 21 22
 
 
 Action 47: (0)(0)
-Conditions: ISZERO(9) 0 LE(18) 43 30
+Conditions: ISZERO(9) 0 LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 48: (0)(0)
@@ -350,9 +350,9 @@ Conditions: NOTZERO(8) 0 EQ(20) 30 17 NODESTROYED(13) 1 NOTZERO(8) 4
 
 Action 51: (0)(0)
 Conditions: NOTZERO(8) 0
- SWAPCNT(98) 32 21
- SETCNT(99) 21 32
- BEGIN?(112)
+ SETTOC(98) 32 21
+ SETTOA(99) 21 32
+ BEGIN(112)
 
 
 Action 52: (0)(0)
@@ -388,19 +388,19 @@ Conditions: NOTZERO(8) 0 NOTZERO(8) 19 EQ(20) 30 18
 Action 56: (0)(0)
 Conditions: NOTZERO(8) 0 GTEQ(21) 32 19
  DECCNT(101) 1 32
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 57: (0)(0)
 Conditions: NOTZERO(8) 0
- RMVLOOP?(114)
- SWAPCNT(98) 21 32
+ BREAK(114)
+ SETTOC(98) 21 32
 
 
 Action 58: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 59: (0)(100)
@@ -470,14 +470,14 @@ Conditions: NOTZERO(8) 13
 Action 69: (0)(100)
 Conditions: OR(31) 1  OBJIN(26) 18 3 ISZERO(9) 3 MOD(31) 0  AT(4) 3
  CLEAR(60) 4
- CLRCNT?(109) 3
+ CLRCNT(109) 3
 
 
 Action 70: (0)(100)
 Conditions: GTEQ(21) 2 1
- SWAPCNT(98) 4 21
+ SETTOC(98) 4 21
  CONTINUE(73)
- UNK123(123) 21 3
+ ADDCNT(123) 21 3
 
 
 Action 71: (0)(0)
@@ -489,7 +489,7 @@ Action 72: (0)(0)
 No conditions
  MESSAGE 14 "HUMAN TORCH"
  MESSAGE 32 "Flame's OUT!"
- CLRCNT?(109) 2
+ CLRCNT(109) 2
 
 
 Action 73: (0)(0)
@@ -530,7 +530,7 @@ Conditions: GTEQ(21) 2 2
 Action 77: (0)(0)
 Conditions: 0 NOT(31) 3  NOTHERE(2) 5
  MESSAGE 32 "Flame's OUT!"
- CLRCNT?(109) 2
+ CLRCNT(109) 2
 
 
 Action 78: (0)(100)
@@ -546,7 +546,7 @@ Conditions: EQ(20) 2 0
 
 Action 80: (0)(100)
 Conditions: GTEQ(21) 3 81
- SETCNT(99) 80 3
+ SETTOA(99) 80 3
 
 
 Action 81: (0)(100)
@@ -699,9 +699,9 @@ Conditions: OR(31) 1  HERE(2) 41 HERE(2) 42 OBJIN(26) 18 30 OBJIN(26) 18 31
 Action 105: (0)(0)
 No conditions
  DESTROY(59) 36
- SETCNT(99) 29 20
- SETCNT(99) 2 21
- CLRCNT?(109) 19
+ SETTOA(99) 29 20
+ SETTOA(99) 2 21
+ CLRCNT(109) 19
  SETEXIT(95) 20 21 19
 
 
@@ -714,8 +714,8 @@ No conditions
 
 Action 107: (0)(100)
 Conditions: ISZERO(9) 3 NOTZERO(8) 4 GTEQ(21) 2 1
- SWAPCNT(98) 4 21
- UNK123(123) 3 21
+ SETTOC(98) 4 21
+ ADDCNT(123) 3 21
  CONTINUE(73)
 
 
@@ -732,7 +732,7 @@ Conditions: NOTZERO(8) 18
 
 
 Action 110: (0)(100)
-Conditions: NOTZERO(8) 5 LE(18) 47 8
+Conditions: NOTZERO(8) 5 LT(18) 47 8
  CLEAR(60) 5
  CONTINUE(73)
 
@@ -745,7 +745,7 @@ Conditions: NOTZERO(8) 3 OR(31) 1  HERE(2) 17
 
 
 Action 112: (0)(100)
-Conditions: NOTZERO(8) 6 LE(18) 47 9
+Conditions: NOTZERO(8) 6 LT(18) 47 9
  CLEAR(60) 6
  CONTINUE(73)
 
@@ -897,8 +897,8 @@ No conditions
 Action 131: (0)(0)
 Conditions: SOMETHING(10) 2
  SET0FLAG(67)
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 132: (0)(0)
@@ -912,24 +912,24 @@ Conditions: NOTZERO(8) 0 HERE(2) 230
 
 
 Action 133: (0)(0)
-Conditions: NOTZERO(8) 0 LE(18) 43 30
+Conditions: NOTZERO(8) 0 LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 134: (0)(0)
 No conditions
- UNK97(97) 32 20
+ SWAPNCT(97) 32 20
  DROP(53) 17
- UNK97(97) 32 21
+ SWAPNCT(97) 32 21
  DROP(53) 18
 
 
 Action 135: (0)(0)
 No conditions
- UNK97(97) 32 5
+ SWAPNCT(97) 32 5
  DROP(53) 5
- UNK97(97) 32 20
+ SWAPNCT(97) 32 20
 
 
 Action 136: (0)(0)
@@ -956,14 +956,14 @@ Conditions: NOTZERO(8) 27
  CLEAR(60) 27
  CLEAR(60) 30
  PRINTMESS(128) 150 "BOOM!"
- SETCNT(99) 5 21
+ SETTOA(99) 5 21
  CONTINUE(73)
 
 
 Action 140: (0)(0)
 Conditions: NOTZERO(8) 31 EQ(20) 16 3
  MESSAGE 1 "OK"
- SETCNT(99) 26 21
+ SETTOA(99) 26 21
 
 
 Action 141: (0)(0)
@@ -989,8 +989,8 @@ Conditions: EQ(20) 16 2
 Action 143: (0)(0)
 No conditions
  CLEAR0FLAG(68)
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 144: (0)(0)
@@ -1011,16 +1011,16 @@ Conditions: NOTZERO(8) 0 EQ(20) 30 18
 
 Action 146: (0)(0)
 Conditions: NOTZERO(8) 0
- UNK97(97) 32 21
+ SWAPNCT(97) 32 21
  DROP(53) 131 230
- UNK97(97) 32 21
+ SWAPNCT(97) 32 21
 
 
 Action 147: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  CLEAR0FLAG(68)
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 148: (0)(0)
@@ -1036,16 +1036,16 @@ Conditions: OBJIN(26) 17 26 NOTZERO(8) 35
 Action 150: (0)(0)
 Conditions: NOTZERO(8) 0
  LOADFILE?(110) 5 7
- SETCNT(99) 8 30
- SETCNT(99) 17 21
- SETCNT(99) 9 20
- BEGIN?(112)
+ SETTOA(99) 8 30
+ SETTOA(99) 17 21
+ SETTOA(99) 9 20
+ BEGIN(112)
 
 
 Action 151: (0)(0)
 Conditions: NOTZERO(8) 0
  LOADFILE?(110) 3 0
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 152: (0)(0)
@@ -1056,7 +1056,7 @@ Conditions: NOTZERO(8) 0
 Action 153: (0)(0)
 Conditions: NOTZERO(8) 0 NOT(31) 3  GT17(17) 30 21
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 154: (0)(0)
@@ -1066,10 +1066,10 @@ Conditions: NOTZERO(8) 0 EQ(20) 21 17
 
 Action 155: (0)(0)
 Conditions: NOTZERO(8) 0
- CLRCNT?(109) 30
- RMVLOOP?(114)
- SETCNT(99) 1 5
- BEGIN?(112)
+ CLRCNT(109) 30
+ BREAK(114)
+ SETTOA(99) 1 5
+ BEGIN(112)
 
 
 Action 156: (0)(0)
@@ -1082,16 +1082,16 @@ Conditions: NOTZERO(8) 0
 Action 157: (0)(0)
 Conditions: NOTZERO(8) 0 NOT(31) 3  GT17(17) 30 20
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 158: (0)(0)
 Conditions: NOTZERO(8) 0 EQ(20) 21 17
- SETCNT(99) 18 30
- SETCNT(99) 20 21
- SETCNT(99) 2 20
- RMVLOOP?(114)
- LOOP?(113)
+ SETTOA(99) 18 30
+ SETTOA(99) 20 21
+ SETTOA(99) 2 20
+ BREAK(114)
+ LOOPBACK(113)
 
 
 Action 159: (0)(100)
@@ -1132,43 +1132,43 @@ Conditions: NOTZERO(8) 34
 
 Action 164: (0)(0)
 Conditions: AT(4) 32 ISZERO(9) 12
- SETCNT(99) 20 20
+ SETTOA(99) 20 20
  CLEAR0FLAG(68)
 
 
 Action 165: (0)(0)
 Conditions: AT(4) 2 HERE(2) 17 CURGT(16) 12
- SETCNT(99) 17 20
+ SETTOA(99) 17 20
  CLEAR0FLAG(68)
 
 
 Action 166: (0)(0)
 Conditions: AT(4) 2 HERE(2) 17 CURGT(16) 4 NOTZERO(8) 0
- SETCNT(99) 16 20
+ SETTOA(99) 16 20
  CLEAR0FLAG(68)
 
 
 Action 167: (0)(0)
 Conditions: AT(4) 2 HERE(2) 17 CURLE(15) 4
- SETCNT(99) 15 20
+ SETTOA(99) 15 20
  CLEAR0FLAG(68)
 
 
 Action 168: (0)(0)
 Conditions: AT(4) 2 HERE(2) 18 NOTZERO(8) 4
- SETCNT(99) 18 20
+ SETTOA(99) 18 20
  CLEAR0FLAG(68)
 
 
 Action 169: (0)(0)
 Conditions: AT(4) 2 HERE(2) 18 ISZERO(9) 4
- SETCNT(99) 19 20
+ SETTOA(99) 19 20
  CLEAR0FLAG(68)
 
 
 Action 170: (0)(0)
 Conditions: AT(4) 7 OBJIN(26) 28 27
- SETCNT(99) 23 20
+ SETTOA(99) 23 20
  CLEAR0FLAG(68)
 
 
@@ -1186,7 +1186,7 @@ No conditions
 Action 173: WAIT(20) SHOP(94)
 Extra words: 69 (WIRE)
 No conditions
- SETCNT(99) 40 20
+ SETTOA(99) 40 20
  MESSAGE 1 "OK"
  UNKNOWN(93)
  MESSAGE 20 "I'm"
@@ -1244,8 +1244,8 @@ No conditions
 Action 181: (0)(0)
 No conditions
  CLEAR0FLAG(68)
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 182: (0)(0)

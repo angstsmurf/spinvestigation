@@ -5,22 +5,22 @@ Conditions: ISZERO(9) 2
  CONTINUE(73)
  REDRAW?(89)
  CLEAR(60) 34
- SETCNT(99) 129 244 2
+ SETTOA(99) 129 244 2
 
 
 Action 1: (0)(0)
 No conditions
  MESSAGE 21 "Welcome friends to QUESTPROBE(TM) No. 2: SPIDER-MAN by Scott Adams. Dedicated: John Mathias a TRUE BELIEVER!"
- CLRCNT?(109) 1
- SETCNT(99) 2 3
- CLRCNT?(109) 4
+ CLRCNT(109) 1
+ SETTOA(99) 2 3
+ CLRCNT(109) 4
 
 
 Action 2: (0)(0)
 Comment: "INTRO "
 No conditions
  SETCUR(79) 71
- UNK119(119) 24
+ SETPROMPT(119) 24
 
 
 Action 3: (0)(0)
@@ -106,17 +106,17 @@ Conditions: AT(4) 17 HERE(2) 0
 Action 12: (0)(100)
 Comment: "SET NEW EXIT TO SKYSCRAPER "
 Conditions: OR(31) 1  AT(4) 24 AT(4) 18
- SETCNT(99) 18 19
- SETCNT(99) 3 20
- SETCNT(99) 17 21
+ SETTOA(99) 18 19
+ SETTOA(99) 3 20
+ SETTOA(99) 17 21
  SETEXIT(95) 21 20 19
 
 
 Action 13: (0)(100)
 Comment: "ITEMS WILL FALL FROM ROOF ROOM "
 Conditions: AT(4) 24 0
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 14: (0)(0)
@@ -128,9 +128,9 @@ Conditions: HERE(2) 230 OBJFLAG(30) 230 1
 
 
 Action 15: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 16: (0)(100)
@@ -305,15 +305,15 @@ Conditions: HERE(2) 49 NOTZERO(8) 7
 Action 37: (0)(0)
 Comment: "NO GRAPHICS "
 Conditions: ISZERO(9) 35
- UNK116(116)
+ DONE2?(116)
 
 
 Action 38: (0)(0)
 Comment: "LOAD ANIMATE PICTURES, IF NOT ALREADY LOADED "
 Conditions: ISZERO(9) 9
- SETCNT(99) 20 15
+ SETTOA(99) 20 15
  LOADFILE?(110) 3 0
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 39: (0)(0)
@@ -326,13 +326,13 @@ Action 40: (0)(0)
 Comment: "NEXT "
 Conditions: ISZERO(9) 9 NOT(31) 3  NOTEQUAL(20) 15 22
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 41: (0)(0)
 Comment: "LOAD B050 SANDMAN "
 Conditions: ISZERO(9) 9
- SETCNT(99) 50 15
+ SETTOA(99) 50 15
  LOADFILE?(110) 10 15
 
 
@@ -349,8 +349,8 @@ Comment: "START THE ANIMATION, AND SAY PICS ARE LOADED "
 No conditions
  SET(58) 9
  CLEAR(60) 10
- CLRCNT?(109) 15
- BEGIN?(112)
+ CLRCNT(109) 15
+ BEGIN(112)
 
 
 Action 44: (0)(0)
@@ -363,7 +363,7 @@ Action 45: (0)(0)
 Comment: "NEXT "
 Conditions: NOT(31) 3  NOTEQUAL(20) 15 3
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 46: (0)(0)
@@ -475,7 +475,7 @@ Comment: " MYSTERIO CLOUD "
 No conditions
  DROP(53) 28
  LOOK(76)
- SETCNT(99) 28 15
+ SETTOA(99) 28 15
  LOADFILE?(110) 7 15
 
 
@@ -556,56 +556,56 @@ Action 74: LOOK(11) MIRROR(34)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 25
  SHOWIMG(90) 26
- UNK116(116)
+ DONE2?(116)
 
 
 Action 75: LOOK(11) ELECTRO(33)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 35
  SHOWIMG(90) 7
- UNK116(116)
+ DONE2?(116)
 
 
 Action 76: LOOK(11) DR#2(36)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 34
  SHOWIMG(90) 8
- UNK116(116)
+ DONE2?(116)
 
 
 Action 77: LOOK(11) ELECTRO(33)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 33
  SHOWIMG(90) 12
- UNK116(116)
+ DONE2?(116)
 
 
 Action 78: LOOK(11) PAINTING(60)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 60
  SHOWIMG(90) 13
- UNK116(116)
+ DONE2?(116)
 
 
 Action 79: LOOK(11) BIO(9)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 15
  SHOWIMG(90) 9
- UNK116(116)
+ DONE2?(116)
 
 
 Action 80: LOOK(11) GEM(59)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 15
  SHOWIMG(90) 9
- UNK116(116)
+ DONE2?(116)
 
 
 Action 81: LOOK(11) EGG(10)
 Comment: "CLOSEUP "
 Conditions: PRESENT(3) 16
  SHOWIMG(90) 10
- UNK116(116)
+ DONE2?(116)
 
 
 Action 82: LEAVE(29) ANY(0)
@@ -613,50 +613,50 @@ Comment: "LEAVE OR DROP ITEM? "
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
  CONTINUE(73)
- UNKNOWN(120)
+ GETWORDS(120)
 
 
 Action 83: (0)(0)
 Comment: "LEAVE ELEVATOR=EXIT "
 Conditions: EQ(20) 49 19
- SETCNT(99) 28 48
- FAILED?(121)
+ SETTOA(99) 28 48
+ SETWORDS(121)
  DONE(69)
 
 
 Action 84: (0)(0)
 Comment: "MAKE DROP SOMETHING INSTEAD "
 Conditions: GTEQ(21) 49 7
- SETCNT(99) 5 48
- FAILED?(121)
+ SETTOA(99) 5 48
+ SETWORDS(121)
  DONE(69)
 
 
 Action 85: (0)(0)
 Comment: "MAKE VERB=EXIT "
 No conditions
- SETCNT(99) 28 48
- FAILED?(121)
+ SETTOA(99) 28 48
+ SETWORDS(121)
 
 
 Action 86: EXIT(28) ANY(0)
 Comment: "EXIT NORTH SOUTH ETC? "
 No conditions
  CONTINUE(73)
- UNKNOWN(120)
+ GETWORDS(120)
 
 
 Action 87: (0)(0)
 Comment: "PUT GO INTO VERB "
 Conditions: GTEQ(21) 49 1 NOT(31) 3  LT(21) 49 7
- SETCNT(99) 1 48
- FAILED?(121)
+ SETTOA(99) 1 48
+ SETWORDS(121)
 
 
 Action 88: (0)(0)
 Comment: "CONTINUE "
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 89: JUMP(16) DOWN(6)
@@ -685,7 +685,7 @@ Conditions: OR(31) 1  NOTZERO(8) 18 NOTZERO(8) 7 NOTZERO(8) 8
  CLEAR(60) 18
  CLEAR(60) 7
  CLEAR(60) 8
- UNK116(116)
+ DONE2?(116)
 
 
 Action 93: GO(1) DOWN(6)
@@ -778,8 +778,8 @@ Conditions: NOT(31) 3  NOUNIS(28) 230 14
 Action 105: DROP(5) ROOM(27)
 Comment: "LEAVE THE ROOM. CNT #19 IS ROOM EXIT TO TRY (0-5) "
 No conditions
- BEGIN?(112)
- CLRCNT?(109) 19
+ BEGIN(112)
+ CLRCNT(109) 19
  CLEAR0FLAG(68)
 
 
@@ -792,7 +792,7 @@ No conditions
 Action 107: (0)(0)
 Comment: "GO TO THE ROOM "
 Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
- SWAPCNT(98) 20 32
+ SETTOC(98) 20 32
  SET(58) 34
  MESSAGE 1 "OK"
  LOOK(76)
@@ -803,7 +803,7 @@ Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
 Action 108: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 19 5
  ADDCNT(100) 1 19
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 109: (0)(0)
@@ -824,15 +824,14 @@ Action 111: GO(1) ANY(0)
 Comment: " AUTO MOVE INTO A ROOM. SET EXIT # INTO 5 "
 No conditions
  NOP(0)
- UNKNOWN(64)
- SETCNTNOUN?(131) 230 5
+ SETCNT(64) 131 230 5
  CONTINUE(73)
 
 
 Action 112: (0)(0)
 Comment: " NOT A DIRECTION "
 Conditions: MOD(31) 8  NOT(31) 3  LT(21) 5 1 MOD(31) 6  GTEQ(21) 5 7 OR(31) 1  MOD(31) 7
- UNK116(116)
+ DONE2?(116)
  DONE(69)
 
 
@@ -848,7 +847,7 @@ Comment: " NO EXIT "
 Conditions: EQ(20) 6 0
  ECHONOUN(84)
  PRINTMESS(128) 98 "isn't a visible exit."
- UNK116(116)
+ DONE2?(116)
  UNKNOWN(92)
  UNKNOWN(117)
  DONE(69)
@@ -857,7 +856,7 @@ Conditions: EQ(20) 6 0
 Action 115: (0)(0)
 Comment: " MOVE TO ROOM "
 No conditions
- SWAPCNT(98) 6 32
+ SETTOC(98) 6 32
  SET(58) 34
  MESSAGE 1 "OK"
  PRINTMESS(128) 122 "I go "
@@ -869,7 +868,7 @@ Action 116: GO(1) COUCH(58)
 Comment: "SAVE ROOM IN COUNTER 12 "
 Conditions: HERE(2) 59
  MESSAGE 1 "OK"
- SWAPCNT(98) 32 12
+ SETTOC(98) 32 12
  GOTO(54) 19
  LOOK(76)
 
@@ -879,7 +878,7 @@ Comment: "LEAVE COUCH "
 Extra words: 128 (ANY) 58 (COUCH) 129 (NONE) 0 (ANY)
 Conditions: AT(4) 19
  MESSAGE 1 "OK"
- SWAPCNT(98) 12 32
+ SETTOC(98) 12 32
  SET(58) 34
  LOOK(76)
 
@@ -888,7 +887,7 @@ Action 118: DROP(5) COUCH(58)
 Comment: "LEAVE COUCH "
 Conditions: AT(4) 19
  MESSAGE 1 "OK"
- SWAPCNT(98) 12 32
+ SETTOC(98) 12 32
  SET(58) 34
  LOOK(76)
 
@@ -897,25 +896,25 @@ Action 119: GET(3) ROOM(27)
 Comment: "GET ALL OF ROOM BECOMES GET ALL "
 Extra words: 202 (ALL)
 No conditions
- UNKNOWN(120)
- CLRCNT?(109) 49
- FAILED?(121)
+ GETWORDS(120)
+ CLRCNT(109) 49
+ SETWORDS(121)
 
 
 Action 120: DROP(5) ME(7)
 Extra words: 202 (ALL)
 No conditions
- UNKNOWN(120)
- CLRCNT?(109) 49
- FAILED?(121)
+ GETWORDS(120)
+ CLRCNT(109) 49
+ SETWORDS(121)
 
 
 Action 121: GET(3) ANY(0)
 Comment: " PICKUP EVERYTHING TAKEABLE "
 Extra words: 202 (ALL) 131 (AT) 0 (ANY) 136 (FROM) 0 (ANY) 129 (NONE) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 19
  CLEAR(60) 20
@@ -945,11 +944,11 @@ Conditions: NOTZERO(8) 20 ISZERO(9) 19 HERE(2) 230 OBJFLAG(30) 230 1
 
 Action 125: (0)(0)
 Comment: "  next loop "
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 19
  CLEAR(60) 20
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 126: (0)(0)
@@ -962,8 +961,8 @@ Action 127: DROP(5) ANY(0)
 Comment: " DROP EVERYTHING TAKEABLE "
 Extra words: 202 (ALL)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 20
  CLEAR(60) 21
@@ -997,11 +996,11 @@ Conditions: NOTZERO(8) 21
 
 
 Action 132: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 20
  CLEAR(60) 21
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 133: (0)(0)
@@ -1013,8 +1012,8 @@ Conditions: ISZERO(9) 0
 Action 134: DROP(5) ANY(0)
 Extra words: 131 (AT) 32 (BUTTON) 131 (AT) 15 (FAN)
 Conditions: HERE(2) 20
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
 
 
@@ -1043,16 +1042,16 @@ Conditions: DICTWORD(29) 230 230 PRESENT(3) 230 OBJFLAG(30) 230 1
 Action 137: (0)(0)
 Comment: "HEAVY "
 Conditions: NOTZERO(8) 0 MOD(31) 6  OR(31) 1  EQ(20) 30 56 EQ(20) 30 58 EQ(20) 30 55 EQ(20) 30 59 EQ(20) 30 71 MOD(31) 0  MOD(31) 7
- CLRCNT?(109) 2
+ CLRCNT(109) 2
  SWAP(72) 20 21
  LOOK(76)
 
 
 Action 138: (0)(0)
 Comment: "END OF NEXT LOOP "
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 139: (0)(0)
@@ -1065,10 +1064,10 @@ Action 140: DROP(5) HAND(30)
 Comment: "GET GEM FROM TANK "
 Extra words: 139 (IN) 53 (ICE#1)
 No conditions
- SETCNT(99) 3 48
- SETCNT(99) 59 49
- SETCNT(99) 8 52
- FAILED?(121)
+ SETTOA(99) 3 48
+ SETTOA(99) 59 49
+ SETTOA(99) 8 52
+ SETWORDS(121)
 
 
 Action 141: SHUT(14) SHAFT(19)
@@ -1082,10 +1081,10 @@ No conditions
 Action 142: DROP(5) ICE#1(53)
 Extra words: 131 (AT) 0 (ANY)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 5 48
- SETCNT(99) 39 49
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 5 48
+ SETTOA(99) 39 49
+ SETWORDS(121)
 
 
 Action 143: DROP(5) ICE#1(53)
@@ -1095,17 +1094,17 @@ No conditions
  NOP(0)
  NOP(0)
  NOP(0)
- UNKNOWN(120)
- SETCNT(99) 39 49
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 39 49
+ SETWORDS(121)
 
 
 Action 144: DROP(5) WATER(39)
 Extra words: 131 (AT) 0 (ANY)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 5 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 5 48
+ SETWORDS(121)
 
 
 Action 145: DROP(5) WATER(39)
@@ -1133,9 +1132,9 @@ Action 148: EMPTY(30) CHEM#2(42)
 Comment: "DROP CHEM#2 "
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 5 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 5 48
+ SETWORDS(121)
 
 
 Action 149: DROP(5) CHEM#2(42)
@@ -1300,7 +1299,7 @@ Conditions: ROOMDESC(5) 32 200
 Action 170: (0)(0)
 Comment: "NOT A WINDOW HERE! "
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 171: GO(1) WINDOW(14)
@@ -1416,25 +1415,25 @@ Comment: " MAKE WEB "
 Conditions: AT(4) 13 PRESENT(3) 43 PRESENT(3) 42
  PRINTMESS(128) 57 "Partial success only!"
  DESTROY(59) 42
- SETCNT(99) 25 1
+ SETTOA(99) 25 1
 
 
 Action 185: MIX(13) CHEM#3(40)
 Comment: "MIX CALCIUM WITH ACID "
 Extra words: 130 (WITH) 42 (CHEM#2)
 No conditions
- UNKNOWN(120)
- UNK97(97) 49 53
- FAILED?(121)
+ GETWORDS(120)
+ SWAPNCT(97) 49 53
+ SETWORDS(121)
 
 
 Action 186: MIX(13) CHEM#2(42)
 Comment: "ADD WITH ACID "
 No conditions
- UNKNOWN(120)
- SETCNT(99) 2 52
- SETCNT(99) 40 53
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 2 52
+ SETTOA(99) 40 53
+ SETWORDS(121)
 
 
 Action 187: MIX(13) CHEM#2(42)
@@ -1639,10 +1638,10 @@ Conditions: ISZERO(9) 15
 
 Action 214: SCORE(23) ANY(0)
 No conditions
- CLRCNT?(109) 30
- CLRCNT?(109) 13
- CLRCNT?(109) 12
- BEGIN?(112)
+ CLRCNT(109) 30
+ CLRCNT(109) 13
+ CLRCNT(109) 12
+ BEGIN(112)
 
 
 Action 215: (0)(0)
@@ -1659,9 +1658,9 @@ Conditions: OBJFLAG(30) 230 4
 
 Action 217: (0)(0)
 Comment: "NEXT "
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 218: (0)(0)
@@ -1669,14 +1668,14 @@ No conditions
  PRINTMESS(128) 144 "I've stored"
  PRNCNT(102) 12
  PRINTMESS(128) 145 "gems, on a scale of 0 to 100 that rates a:"
- SETCNT(99) 100 14
+ SETTOA(99) 100 14
  MULTIPLY?(65) 14 12
 
 
 Action 219: (0)(0)
 Comment: "OUTPUT SCORE "
 No conditions
- DIVIDE?(91) 13 12 14
+ DIVMOD(91) 13 12 14
  PRNCNT(102) 12
 
 
@@ -1709,8 +1708,8 @@ Conditions: HERE(2) 22
  MESSAGE 1 "OK"
  MESSAGE 23 "I exert my Spider strength!"
  SWAP(72) 23 22
- BEGIN?(112)
- SETCNT(99) 1 15
+ BEGIN(112)
+ SETTOA(99) 1 15
  LOADFILE?(110) 3 0
 
 
@@ -1730,7 +1729,7 @@ Action 226: (0)(0)
 Comment: "LOAD SPECIAL PICS 1-5 INTO ANIMATE BUFFER "
 Conditions: NOT(31) 3  NOTEQUAL(20) 15 5
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 227: (0)(0)
@@ -1744,8 +1743,8 @@ Conditions: NODESTROYED(13) 0
 Action 228: (0)(0)
 Comment: "START ANIMATE & SAY SANDMAN NOT LOADED "
 No conditions
- BEGIN?(112)
- CLRCNT?(109) 15
+ BEGIN(112)
+ CLRCNT(109) 15
  CLEAR(60) 9
  LOADFILE?(110) 6 0
 
@@ -1759,14 +1758,14 @@ No conditions
 Action 230: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 15 4
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 231: (0)(0)
 Comment: "DRAW OPEN SHAFT LAST "
 No conditions
  LOADFILE?(110) 6 0
- SETCNT(99) 23 15
+ SETTOA(99) 23 15
  LOADFILE?(110) 7 15
  CLEAR(60) 34
 
@@ -1797,8 +1796,8 @@ Action 235: GO(1) SHAFT(19)
 Comment: " FROM WAITING,ALSO PUT IN NEW EXIT "
 Conditions: HERE(2) 23
  MESSAGE 1 "OK"
- SETCNT(99) 2 19
- SETCNT(99) 6 20
+ SETTOA(99) 2 19
+ SETTOA(99) 6 20
  SETEXIT(95) 32 19 20
  GOTO(54) 6
  LOOK(76)
@@ -1870,7 +1869,7 @@ Comment: "LOOK NICHE "
 Extra words: 136 (FROM) 22 (NICHE)
 No conditions
  MEANS(55) 11 22
- UNK116(116)
+ DONE2?(116)
 
 
 Action 245: LOOK(11) NICHE(22)
@@ -2047,34 +2046,34 @@ Action 265: DROP(5) WEB(37)
 Comment: "CAST WEB "
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 8 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 8 48
+ SETWORDS(121)
 
 
 Action 266: CAST(8) ANY(0)
 Comment: "CAST WEB AT ITEM "
 Extra words: 130 (WITH) 37 (WEB)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 3 52
- SWAPCNT(98) 49 53
- SETCNT(99) 37 49
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 3 52
+ SETTOC(98) 49 53
+ SETTOA(99) 37 49
+ SETWORDS(121)
 
 
 Action 267: CAST(8) WEB(37)
 Comment: "CAST WEB ANIMATION "
 Extra words: 128 (ANY) 0 (ANY)
 Conditions: GTEQ(21) 1 1
- SETCNT(99) 14 15
+ SETTOA(99) 14 15
  CONTINUE(73)
 
 
 Action 268: (0)(0)
 Comment: "NO GRAPHICS "
 Conditions: ISZERO(9) 35
- UNK116(116)
+ DONE2?(116)
 
 
 Action 269: (0)(0)
@@ -2087,7 +2086,7 @@ Action 270: (0)(0)
 Comment: "CLEAR GRAPHICS. FOR LOOP. "
 Conditions: ISZERO(9) 10
  LOADFILE?(110) 3 0
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 271: (0)(0)
@@ -2100,16 +2099,16 @@ Action 272: (0)(0)
 Comment: "NEXT "
 Conditions: ISZERO(9) 10 NOT(31) 3  NOTEQUAL(20) 15 18
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 273: (0)(0)
 Comment: "START ANIMATE. SAY SANDMAN NOT IN. "
 No conditions
- CLRCNT?(109) 15
+ CLRCNT(109) 15
  SET(58) 10
  CLEAR(60) 9
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 274: (0)(0)
@@ -2122,13 +2121,13 @@ Action 275: (0)(0)
 Comment: "NEXT "
 Conditions: NOT(31) 3  NOTEQUAL(20) 15 4
  ADDCNT(100) 1 15
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 276: (0)(0)
 Comment: "CLEAN OFF WEB "
 No conditions
- CLRCNT?(109) 15
+ CLRCNT(109) 15
  LOADFILE?(110) 4 15
 
 
@@ -2143,7 +2142,7 @@ Comment: "CONTINUE "
 No conditions
  LOADFILE?(110) 6 0
  REDRAW?(89)
- UNK116(116)
+ DONE2?(116)
 
 
 Action 279: CAST(8) WEB(37)
@@ -3049,7 +3048,7 @@ Conditions: NODESTROYED(13) 69 DESTROYED(14) 72
 Action 391: (0)(0)
 Comment: "MADE A NEWSPAPER & ALREADY GOT GEM "
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 392: GO(1) PRESS(66)
@@ -3160,8 +3159,8 @@ Action 405: GET(3) ANY(0)
 Comment: "flag 20=1 then item was takeable, flag 0=1 then item was got "
 Extra words: 130 (WITH) 7 (ME) 129 (NONE) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 20
 
@@ -3190,9 +3189,9 @@ Conditions: NOTZERO(8) 0
 
 
 Action 409: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 410: (0)(0)
@@ -3212,8 +3211,8 @@ Conditions: ISZERO(9) 0
 Action 412: DROP(5) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 21
 
@@ -3240,9 +3239,9 @@ Conditions: NOTZERO(8) 21
 
 
 Action 416: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 417: (0)(0)
@@ -3273,8 +3272,8 @@ Action 421: GO(1) ANY(0)
 Comment: "GO TO AN ITEM IN ROOM "
 Extra words: 195 (AT) 193 (NONE)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 422: (0)(0)
@@ -3288,9 +3287,9 @@ Conditions: HERE(2) 230 DICTWORD(29) 230 230
 
 
 Action 423: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 424: (0)(0)
@@ -3328,7 +3327,7 @@ No conditions
 Action 428: LOOK(11) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- UNKNOWN(120)
+ GETWORDS(120)
  CONTINUE(73)
 
 

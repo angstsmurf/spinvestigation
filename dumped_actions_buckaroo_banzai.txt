@@ -32,8 +32,8 @@ Conditions: ISZERO(9) 35
 Action 5: (0)(0)
 Comment: "CLEAR BUFFER "
 Conditions: ISZERO(9) 7
- BEGIN?(112)
- SETCNT(99) 3 4
+ BEGIN(112)
+ SETTOA(99) 3 4
  LOADFILE?(110) 3 0
 
 
@@ -47,13 +47,13 @@ Action 7: (0)(0)
 Comment: "LOOP FOR ALL FRAMES "
 Conditions: ISZERO(9) 7 NOT(31) 3  NOTEQUAL(20) 4 9
  ADDCNT(100) 1 4
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 8: (0)(0)
 Comment: "REMOVE REPEAT "
 Conditions: ISZERO(9) 7
- RMVLOOP?(114)
+ BREAK(114)
 
 
 Action 9: (0)(0)
@@ -71,8 +71,8 @@ Conditions: ISZERO(9) 7
 Action 11: (0)(0)
 Comment: "REPEAT SEQUENCE 3 TIMES "
 No conditions
- CLRCNT?(109) 5
- BEGIN?(112)
+ CLRCNT(109) 5
+ BEGIN(112)
 
 
 Action 12: (0)(0)
@@ -80,8 +80,8 @@ Comment: "SET SEQ LOADED FLAG "
 No conditions
  ADDCNT(100) 1 5
  SET(58) 7
- BEGIN?(112)
- CLRCNT?(109) 4
+ BEGIN(112)
+ CLRCNT(109) 4
 
 
 Action 13: (0)(0)
@@ -94,25 +94,25 @@ Action 14: (0)(0)
 Comment: "REPEAT FOR ALL FRAMES "
 Conditions: NOT(31) 3  NOTEQUAL(20) 4 6
  ADDCNT(100) 1 4
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 15: (0)(0)
 Comment: "REMOVE REPEAT "
 No conditions
- RMVLOOP?(114)
+ BREAK(114)
 
 
 Action 16: (0)(0)
 Comment: "STRIKE GROUND W AX 3 TIMES "
 Conditions: NOT(31) 3  NOTEQUAL(20) 5 3
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 17: (0)(0)
 Comment: "REMOVE REPEAT "
 No conditions
- RMVLOOP?(114)
+ BREAK(114)
 
 
 Action 18: (0)(0)
@@ -195,8 +195,8 @@ Conditions: ISZERO(9) 2
  REDRAW?(89)
  SETCUR(79) 130
  UNKNOWN(238)
- CLRCNT?(109) 7
- UNK97(97) 7 35
+ CLRCNT(109) 7
+ SWAPNCT(97) 7 35
  SET(58) 4
  SWAPCUR(81) 1
  CONTINUE(73)
@@ -210,14 +210,13 @@ No conditions
  PRINTMESS(128) 83 "Buckaroo Banzai"
  PRINTMESS(128) 84 "adventure by Phillip Case and Scott Adams."
  PRINTMESS(128) 154 "Graphics by Kem McNair."
- UNK119(119) 128
- UNKNOWN(159)
+ SETPROMPT(119) 128 159
 
 
 Action 31: (0)(0)
 Comment: "SET LIGHT COUNTER (3) TO MAX (35) TURNS "
 No conditions
- SETCNT(99) 35 3
+ SETTOA(99) 35 3
 
 
 Action 32: (0)(0)
@@ -226,7 +225,7 @@ No conditions
  PRINTMESS(128) 149 "Dedicated to: Christopher James Case."
  SET(58) 2
  SET(58) 37 ; Verbose flag
- UNK97(97) 7 35
+ SWAPNCT(97) 7 35
 
 
 Action 33: (0)(0)
@@ -361,7 +360,7 @@ Action 53: LOOK(2) TABLE(20)
 Extra words: 200 (UNDER)
 Conditions: HERE(2) 17
  SHOWIMG(90) 1
- UNK116(116)
+ DONE2?(116)
 
 
 Action 54: LOOK(2) TABLE(20)
@@ -390,26 +389,26 @@ Action 57: EXIT(4) ANY(0)
 Comment: "THIS EXIT ANY HANDLES (EXIT DIRECTION) ONLY!!! "
 No conditions
  CONTINUE(73)
- UNKNOWN(120)
+ GETWORDS(120)
 
 
 Action 58: (0)(0)
 Comment: "REPLACE EXIT WITH GO "
 Conditions: GTEQ(21) 49 1 NOT(31) 3  LT(21) 49 7
- SETCNT(99) 1 48
- FAILED?(121)
+ SETTOA(99) 1 48
+ SETWORDS(121)
 
 
 Action 59: (0)(0)
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 60: EXIT(4) ANY(0)
 Comment: "THIS IS THE GP EXIT ROUTINE "
 No conditions
- BEGIN?(112)
- CLRCNT?(109) 19
+ BEGIN(112)
+ CLRCNT(109) 19
  CLEAR0FLAG(68)
 
 
@@ -422,7 +421,7 @@ No conditions
 Action 62: (0)(0)
 Comment: "ENTER A ROOM "
 Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
- SWAPCNT(98) 20 32
+ SETTOC(98) 20 32
  SET(58) 34
  MESSAGE 1 "OK"
  UNKNOWN(115)
@@ -432,7 +431,7 @@ Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
 Action 63: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 19 5
  ADDCNT(100) 1 19
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 64: (0)(0)
@@ -735,9 +734,9 @@ Conditions: HERE(2) 14
 Action 104: THROW(31) SWITCH(17)
 Comment: "THROW SWITCH=PUSH SWITCH "
 No conditions
- UNKNOWN(120)
- SETCNT(99) 32 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 32 48
+ SETWORDS(121)
 
 
 Action 105: PUSH(32) SWITCH(17)
@@ -1220,9 +1219,9 @@ Action 165: UNCONNECT(25) HOSE(45)
 Comment: "CHANGE UNCONNECT TO GET "
 Extra words: 132 (FROM) 32 (CAR) 129 (NONE) 0 (ANY)
 No conditions
- UNKNOWN(120)
- SETCNT(99) 3 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 3 48
+ SETWORDS(121)
 
 
 Action 166: GET(3) HOSE(45)
@@ -1467,8 +1466,8 @@ Conditions: ISZERO(9) 35
 Action 198: (0)(0)
 No conditions
  CLEAR(60) 7
- BEGIN?(112)
- SETCNT(99) 10 4
+ BEGIN(112)
+ SETTOA(99) 10 4
  LOADFILE?(110) 3 0
 
 
@@ -1481,15 +1480,15 @@ Action 200: (0)(0)
 Comment: "LOOP "
 Conditions: 0 NOT(31) 3  NOTEQUAL(20) 4 17
  ADDCNT(100) 1 4
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 201: (0)(0)
 No conditions
- RMVLOOP?(114)
+ BREAK(114)
  LOADFILE?(110) 6 0
- BEGIN?(112)
- CLRCNT?(109) 4
+ BEGIN(112)
+ CLRCNT(109) 4
 
 
 Action 202: (0)(0)
@@ -1500,12 +1499,12 @@ No conditions
 Action 203: (0)(0)
 Conditions: 0 NOT(31) 3  NOTEQUAL(20) 4 7
  ADDCNT(100) 1 4
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 204: (0)(0)
 No conditions
- RMVLOOP?(114)
+ BREAK(114)
  PRINTMESS(128) 81 "I drive inside the mountain."
  LIGHTSOUT(56)
  REDRAW?(89)
@@ -1987,9 +1986,9 @@ Conditions: NOTZERO(8) 0
 Action 268: EMPTY(45) ANY(0)
 Extra words: 134 (IN) 21 (BATTERY)
 Conditions: OR(31) 1  NOUNIS(28) 230 56 NOUNIS(28) 230 57 NOUNIS(28) 230 79 NOUNIS(28) 230 54
- SETCNT(99) 21 48
- SETCNT(99) 21 49
- SETCNT(99) 4 52
+ SETTOA(99) 21 48
+ SETTOA(99) 21 49
+ SETTOA(99) 4 52
  SET0FLAG(67)
  CONTINUE(73)
 
@@ -1998,10 +1997,10 @@ Action 269: (0)(0)
 Comment: "CHANGE VOCAB TO MATCH ON NEXT COMMAND "
 Conditions: NOTZERO(8) 0
  CLEAR0FLAG(68)
- SETCNT(99) 56 53
- CLRCNT?(109) 50
- CLRCNT?(109) 51
- FAILED?(121)
+ SETTOA(99) 56 53
+ CLRCNT(109) 50
+ CLRCNT(109) 51
+ SETWORDS(121)
 
 
 Action 270: FILL(21) BATTERY(21)
@@ -2141,9 +2140,9 @@ Conditions: CARRIED(1) 40 HERE(2) 27
 Action 287: REPLACE(43) ANY(0)
 Comment: "REPLACE ANY=DROP ANY "
 No conditions
- UNKNOWN(120)
- SETCNT(99) 6 48
- FAILED?(121)
+ GETWORDS(120)
+ SETTOA(99) 6 48
+ SETWORDS(121)
 
 
 Action 288: CONNECT(17) ANY(0)
@@ -2286,8 +2285,8 @@ Action 308: GET(3) ANY(0)
 Comment: " GET ALL "
 Extra words: 197 (ALL) 131 (AT) 0 (ANY) 132 (FROM) 0 (ANY) 129 (NONE) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 19
  CLEAR(60) 60
@@ -2308,11 +2307,11 @@ Conditions: NOTZERO(8) 60 ISZERO(9) 19 HERE(2) 230 OBJFLAG(30) 230 1
 
 
 Action 311: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 19
  CLEAR(60) 60
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 312: (0)(0)
@@ -2325,8 +2324,8 @@ Action 313: DROP(6) ANY(0)
 Comment: "        DROP ALL "
 Extra words: 197 (ALL)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 60
  CLEAR(60) 61
@@ -2353,11 +2352,11 @@ Conditions: NOTZERO(8) 61
 
 
 Action 317: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 60
  CLEAR(60) 61
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 318: (0)(0)
@@ -2370,8 +2369,8 @@ Action 319: GET(3) ANY(0)
 Comment: "                GET ANY "
 Extra words: 130 (WITH) 73 (ME) 129 (NONE) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 60
 
@@ -2397,9 +2396,9 @@ Conditions: NOTZERO(8) 0
 
 
 Action 323: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 324: (0)(0)
@@ -2419,8 +2418,8 @@ Action 326: DROP(6) ANY(0)
 Comment: "                     DROP ANY "
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 61
 
@@ -2442,9 +2441,9 @@ Conditions: NOTZERO(8) 61
 
 
 Action 329: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 330: (0)(0)
@@ -2456,15 +2455,14 @@ Conditions: ISZERO(9) 0
 Action 331: GO(1) ANY(0)
 Comment: "NOUN IN 5, CHAIN ON "
 No conditions
- UNKNOWN(64)
- SETCNTNOUN?(131) 230 5
+ SETCNT(64) 131 230 5
  CONTINUE(73)
 
 
 Action 332: (0)(0)
 Comment: "NOT A DIR "
 Conditions: MOD(31) 8  NOT(31) 3  LT(21) 5 1 MOD(31) 6  GTEQ(21) 5 7 OR(31) 1  MOD(31) 7
- UNK116(116)
+ DONE2?(116)
  DONE(69)
 
 
@@ -2480,7 +2478,7 @@ Comment: "NOT AVAIL EXIT "
 Conditions: EQ(20) 6 0
  ECHONOUN(84)
  PRINTMESS(128) 93 "is not a visible exit."
- UNK116(116)
+ DONE2?(116)
  UNKNOWN(92)
  UNKNOWN(117)
  DONE(69)
@@ -2488,7 +2486,7 @@ Conditions: EQ(20) 6 0
 
 Action 335: (0)(0)
 No conditions
- SWAPCNT(98) 6 32
+ SETTOC(98) 6 32
  SET(58) 34
  SET(58) 38
  MESSAGE 1 "OK"
@@ -2501,8 +2499,8 @@ Action 336: GO(1) ANY(0)
 Comment: "GO TO OBJECT IN ROOM "
 Extra words: 195 (AT) 193 (NONE)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 337: (0)(0)
@@ -2515,9 +2513,9 @@ Conditions: HERE(2) 230 DICTWORD(29) 230 230
 
 
 Action 338: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 339: (0)(0)

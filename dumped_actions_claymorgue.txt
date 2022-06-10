@@ -10,9 +10,9 @@ Conditions: ISZERO(9) 1
 Action 1: (0)(0)
 No conditions
  SWAPCUR(81) 4
- UNK97(97) 32 36
+ SWAPNCT(97) 32 36
  GOTO(54) 1
- UNK119(119) 1
+ SETPROMPT(119) 1
 
 
 Action 2: (0)(0)
@@ -35,7 +35,7 @@ No conditions
 Action 4: (0)(0)
 No conditions
  GOTO(54) 22
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  GOTO(54) 1
 
 
@@ -183,8 +183,8 @@ Conditions: NOTZERO(8) 15 CARRIED(1) 9
 Action 28: (0)(100)
 Comment: "DRAGON FOOD"
 Conditions: HERE(2) 58 ISZERO(9) 3
- PAUSE?(88)
- PAUSE?(88)
+ PAUSE(88)
+ PAUSE(88)
  MESSAGE 49 "Great! I'm dragon fodder!"
  DEATH(61)
 
@@ -296,9 +296,9 @@ Conditions: AT(4) 17 ISZERO(9) 13
 Action 44: (0)(100)
 Comment: "HAVE BOX"
 Conditions: AT(4) 23 CARRIED(1) 48
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  DROP(53) 48
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  LOOK(76)
 
 
@@ -348,16 +348,16 @@ Conditions: NOTZERO(8) 28
 
 Action 51: (0)(0)
 No conditions
- SETCNT(99) 1 19
- SETCNT(99) 2 20
- SETCNT(99) 2 12
+ SETTOA(99) 1 19
+ SETTOA(99) 2 20
+ SETTOA(99) 2 12
  SETEXIT(95) 19 12 20
 
 
 Action 52: (0)(0)
 No conditions
- SETCNT(99) 28 19
- SETCNT(99) 3 12
+ SETTOA(99) 28 19
+ SETTOA(99) 3 12
  SETEXIT(95) 19 12 20
 
 
@@ -368,19 +368,19 @@ Conditions: ISZERO(9) 35
 
 Action 54: (0)(0)
 Conditions: HERE(2) 4
- SETCNT(99) 1 19
+ SETTOA(99) 1 19
 
 
 Action 55: (0)(0)
 Conditions: HERE(2) 56
- SETCNT(99) 5 19
+ SETTOA(99) 5 19
 
 
 Action 56: (0)(0)
 No conditions
  LOADFILE?(110) 3 0
- SETCNT(99) 3 20
- BEGIN?(112)
+ SETTOA(99) 3 20
+ BEGIN(112)
 
 
 Action 57: (0)(0)
@@ -392,13 +392,13 @@ Action 58: (0)(0)
 Conditions: NOT(31) 3  UNK22(22) 20
  ADDCNT(100) 1 19
  DECCNT(101) 1 20
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 59: (0)(0)
 No conditions
- CLRCNT?(109) 20
- BEGIN?(112)
+ CLRCNT(109) 20
+ BEGIN(112)
 
 
 Action 60: (0)(0)
@@ -409,7 +409,7 @@ No conditions
 Action 61: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 20 3
  ADDCNT(100) 1 20
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 62: (0)(0)
@@ -426,16 +426,16 @@ Conditions: NOTZERO(8) 27
 
 Action 64: (0)(0)
 No conditions
- SETCNT(99) 1 19
- SETCNT(99) 2 12
- CLRCNT?(109) 20
+ SETTOA(99) 1 19
+ SETTOA(99) 2 12
+ CLRCNT(109) 20
  SETEXIT(95) 19 12 20
 
 
 Action 65: (0)(0)
 No conditions
- SETCNT(99) 28 19
- SETCNT(99) 3 12
+ SETTOA(99) 28 19
+ SETTOA(99) 3 12
  SETEXIT(95) 19 12 20
 
 
@@ -446,10 +446,10 @@ Conditions: ISZERO(9) 35
 
 Action 67: (0)(0)
 No conditions
- SETCNT(99) 8 19
+ SETTOA(99) 8 19
  LOADFILE?(110) 3 0
- SETCNT(99) 3 20
- BEGIN?(112)
+ SETTOA(99) 3 20
+ BEGIN(112)
 
 
 Action 68: (0)(0)
@@ -461,13 +461,13 @@ Action 69: (0)(0)
 Conditions: NOT(31) 3  UNK22(22) 20
  DECCNT(101) 1 20
  DECCNT(101) 1 19
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 70: (0)(0)
 No conditions
- CLRCNT?(109) 20
- BEGIN?(112)
+ CLRCNT(109) 20
+ BEGIN(112)
 
 
 Action 71: (0)(0)
@@ -478,7 +478,7 @@ No conditions
 Action 72: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 20 3
  ADDCNT(100) 1 20
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 73: (0)(0)
@@ -533,8 +533,8 @@ No conditions
 
 Action 81: (0)(100)
 Conditions: AT(4) 5
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
 
 
@@ -544,15 +544,15 @@ Conditions: HERE(2) 230 NOT(31) 3  OBJFLAG(30) 230 8
 
 
 Action 83: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 84: (0)(100)
 Conditions: OR(31) 1  AT(4) 17 AT(4) 16
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
 
 
@@ -572,9 +572,9 @@ Conditions: HERE(2) 39 OBJIN(26) 230 34
 
 
 Action 88: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 89: (0)(100)
@@ -611,23 +611,23 @@ Conditions: NOT(31) 3  NOTEQUAL(20) 11 0
 Action 94: (0)(100)
 Conditions: NOTZERO(8) 34
  CLEAR(60) 34
- SWAPCNT(98) 32 20
+ SETTOC(98) 32 20
  CLEAR(60) 29
  CONTINUE(73)
 
 
 Action 95: (0)(0)
 Conditions: NOTZERO(8) 15
- CLRCNT?(109) 20
+ CLRCNT(109) 20
  SET(58) 29
  LIGHTSON(57)
 
 
 Action 96: (0)(0)
 No conditions
- UNK97(97) 20 32
+ SWAPNCT(97) 20 32
  REDRAW?(89)
- UNK97(97) 20 32
+ SWAPNCT(97) 20 32
 
 
 Action 97: (0)(0)
@@ -643,22 +643,22 @@ No conditions
 Action 99: GET(4) ROOM(27)
 Extra words: 202 (ALL)
 No conditions
- CLRCNT?(109) 49
- FAILED?(121)
+ CLRCNT(109) 49
+ SETWORDS(121)
 
 
 Action 100: DROP(5) SELF(71)
 Extra words: 202 (ALL)
 No conditions
- CLRCNT?(109) 49
- FAILED?(121)
+ CLRCNT(109) 49
+ SETWORDS(121)
 
 
 Action 101: GET(4) ANY(0)
 Extra words: 202 (ALL)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 30
  CLEAR(60) 31
@@ -686,10 +686,10 @@ Conditions: NOTZERO(8) 31
 
 
 Action 105: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 106: (0)(0)
@@ -701,8 +701,8 @@ Conditions: ISZERO(9) 0
 Action 107: DROP(5) ANY(0)
 Extra words: 202 (ALL)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 30
  CLEAR(60) 31
@@ -730,11 +730,11 @@ Conditions: NOTZERO(8) 31 EQ(20) 30 20 NOT(31) 3  NOTEQUAL(20) 51 2
 
 
 Action 111: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
  CLEAR(60) 30
  CLEAR(60) 31
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 112: (0)(0)
@@ -753,8 +753,8 @@ Conditions: HERE(2) 27
 Action 114: GET(4) ANY(0)
 Extra words: 201 (OFF) 206 (DOWN) 136 (FROM) 0 (ANY) 129 (NONE) 0 (ANY)
 No conditions
- SETCNT(99) 28 48
- FAILED?(121)
+ SETTOA(99) 28 48
+ SETWORDS(121)
 
 
 Action 115: GET(4) DUST(62)
@@ -777,8 +777,8 @@ No conditions
 Action 118: GET(4) ANY(0)
 Extra words: 193 (NONE) 130 (WITH) 71 (SELF) 129 (NONE) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
  CLEAR(60) 30
  CLEAR(60) 31
@@ -812,9 +812,9 @@ Conditions: NOTZERO(8) 31
 
 
 Action 123: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 124: (0)(0)
@@ -854,8 +854,8 @@ Conditions: CARRIED(1) 20
 Action 129: DROP(5) ANY(0)
 Extra words: 193 (NONE) 128 (ANY) 0 (ANY)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
  CLEAR0FLAG(68)
 
 
@@ -870,9 +870,9 @@ Conditions: DICTWORD(29) 230 230 CARRIED(1) 230 OBJFLAG(30) 230 1
 
 
 Action 131: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 132: (0)(0)
@@ -910,9 +910,9 @@ Conditions: AT(4) 14 NOT(31) 3  NOTHERE(2) 75
 Action 137: GO(1) ANY(0)
 Extra words: 200 (FROM)
 No conditions
- SETCNT(99) 28 48
- CLRCNT?(109) 50
- FAILED?(121)
+ SETTOA(99) 28 48
+ CLRCNT(109) 50
+ SETWORDS(121)
 
 
 Action 138: LEAVE(35) ANY(0)
@@ -923,20 +923,20 @@ No conditions
 
 Action 139: (0)(0)
 Conditions: OR(31) 1  EQ(20) 49 8 EQ(20) 49 7 EQ(20) 49 15 EQ(20) 49 20 EQ(20) 49 27 EQ(20) 49 39
- SETCNT(99) 28 48
- FAILED?(121)
+ SETTOA(99) 28 48
+ SETWORDS(121)
 
 
 Action 140: (0)(0)
 Conditions: GTEQ(21) 49 7
- SETCNT(99) 5 48
- FAILED?(121)
+ SETTOA(99) 5 48
+ SETWORDS(121)
 
 
 Action 141: (0)(0)
 No conditions
- SETCNT(99) 28 48
- FAILED?(121)
+ SETTOA(99) 28 48
+ SETWORDS(121)
 
 
 Action 142: EXIT(28) ANY(0)
@@ -963,7 +963,7 @@ Conditions: AT(4) 8 HERE(2) 37
 Action 145: EXIT(28) ANY(0)
 Conditions: AT(4) 22
  MESSAGE 1 "O.K."
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  SET(58) 34
 
 
@@ -982,8 +982,8 @@ Conditions: HERE(2) 47
 Action 148: EXIT(28) ANY(0)
 Extra words: 203 (IN)
 No conditions
- SETCNT(99) 1 48
- FAILED?(121)
+ SETTOA(99) 1 48
+ SETWORDS(121)
 
 
 Action 149: EXIT(28) ANY(0)
@@ -993,13 +993,13 @@ No conditions
 
 Action 150: (0)(0)
 Conditions: GTEQ(21) 49 1 NOT(31) 3  LT(21) 49 7
- SETCNT(99) 1 48
- FAILED?(121)
+ SETTOA(99) 1 48
+ SETWORDS(121)
 
 
 Action 151: (0)(0)
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 152: EXIT(28) ANY(0)
@@ -1009,8 +1009,8 @@ No conditions
 
 Action 153: DROP(5) ROOM(27)
 No conditions
- BEGIN?(112)
- CLRCNT?(109) 19
+ BEGIN(112)
+ CLRCNT(109) 19
  CLEAR0FLAG(68)
 
 
@@ -1021,7 +1021,7 @@ No conditions
 
 Action 155: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
- SWAPCNT(98) 20 32
+ SETTOC(98) 20 32
  SET(58) 34
  MESSAGE 1 "O.K."
  UNKNOWN(115)
@@ -1031,7 +1031,7 @@ Conditions: NOT(31) 3  NOTEQUAL(20) 20 0
 Action 156: (0)(0)
 Conditions: NOT(31) 3  NOTEQUAL(20) 19 5
  ADDCNT(100) 1 19
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 157: (0)(0)
@@ -1054,14 +1054,13 @@ Conditions: NOUNIS(28) 230 0
 
 Action 160: GO(1) ANY(0)
 No conditions
- UNKNOWN(64)
- SETCNTNOUN?(131) 230 8
+ SETCNT(64) 131 230 8
  CONTINUE(73)
 
 
 Action 161: (0)(0)
 Conditions: OR(31) 1  UNK22(22) 8 GTEQ(21) 8 7
- UNK116(116)
+ DONE2?(116)
 
 
 Action 162: (0)(0)
@@ -1080,7 +1079,7 @@ Conditions: UNK22(22) 9
 
 Action 164: (0)(0)
 No conditions
- SWAPCNT(98) 9 32
+ SETTOC(98) 9 32
  SET(58) 34
  MESSAGE 1 "O.K."
  PRINTMESS(128) 136 "I go"
@@ -1113,8 +1112,8 @@ Conditions: HERE(2) 18
 Action 168: GO(1) FOUNTAIN(8)
 Extra words: 205 (UP)
 No conditions
- SETCNT(99) 9 49
- FAILED?(121)
+ SETTOA(99) 9 49
+ SETWORDS(121)
 
 
 Action 169: GO(1) CENTER(9)
@@ -1246,7 +1245,7 @@ Action 187: GO(1) CRATE(39)
 Extra words: 198 (ON) 205 (UP) 193 (NONE)
 Conditions: HERE(2) 48 NOT(31) 3  NOTAT(4) 17
  MESSAGE 1 "O.K."
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  GOTO(54) 22
 
 
@@ -1317,8 +1316,8 @@ No conditions
 Action 198: GO(1) ANY(0)
 Extra words: 195 (AT) 196 (BY) 193 (NONE)
 No conditions
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 199: (0)(0)
@@ -1331,20 +1330,20 @@ Conditions: HERE(2) 230 DICTWORD(29) 230 230
 
 
 Action 200: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 201: (0)(0)
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 202: GO(1) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
- UNK116(116)
+ DONE2?(116)
  UNKNOWN(117)
 
 
@@ -1383,13 +1382,13 @@ Conditions: AT(4) 15 NOTZERO(8) 4
 Action 208: JUMP(19) ANY(0)
 Conditions: AT(4) 22
  MESSAGE 1 "O.K."
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
 
 
 Action 209: JUMP(19) ANY(0)
 No conditions
- SETCNT(99) 1 48
- FAILED?(121)
+ SETTOA(99) 1 48
+ SETWORDS(121)
  UNKNOWN(111)
 
 
@@ -1397,7 +1396,7 @@ Action 210: DIVE(33) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 Conditions: OR(31) 1  AT(4) 2 AT(4) 1
  GOTO(54) 17
- SETCNT(99) 2 6
+ SETTOA(99) 2 6
  DESTROY(59) 39
  MESSAGE 1 "O.K."
  PRINTMESS(128) 78 "Splash!"
@@ -1405,9 +1404,9 @@ Conditions: OR(31) 1  AT(4) 2 AT(4) 1
 
 Action 211: DIVE(33) ANY(0)
 No conditions
- SETCNT(99) 24 48
- SETCNT(99) 6 50
- FAILED?(121)
+ SETTOA(99) 24 48
+ SETTOA(99) 6 50
+ SETWORDS(121)
 
 
 Action 212: SWIM(24) WEST(4)
@@ -1448,7 +1447,7 @@ Action 216: SWIM(24) ANY(0)
 Extra words: 206 (DOWN)
 Conditions: AT(4) 16 ISZERO(9) 4
  GOTO(54) 17
- SETCNT(99) 1 6
+ SETTOA(99) 1 6
  DESTROY(59) 39
  MESSAGE 1 "O.K."
 
@@ -1525,7 +1524,7 @@ Conditions: AT(4) 16 ISZERO(9) 4
  PRINTMESS(128) 78 "Splash!"
  PRINTMESS(128) 57 "I'm dragged under!"
  GOTO(54) 17
- SETCNT(99) 1 6
+ SETTOA(99) 1 6
  DESTROY(59) 39
 
 
@@ -1538,7 +1537,7 @@ Action 229: LOOK(11) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 No conditions
  SET(58) 63
- UNK116(116)
+ DONE2?(116)
 
 
 Action 230: LOOK(11) SELF(71)
@@ -1836,8 +1835,8 @@ No conditions
 Action 273: CAST(15) ANY(0)
 Extra words: 134 (ON) 0 (ANY)
 No conditions
- SETCNT(99) 3 52
- FAILED?(121)
+ SETTOA(99) 3 52
+ SETWORDS(121)
 
 
 Action 274: CAST(15) ANY(0)
@@ -1850,8 +1849,8 @@ No conditions
 Action 275: CAST(15) ANY(0)
 Extra words: 128 (ANY) 0 (ANY)
 Conditions: MOD(31) 9  DICTWORD(29) 24 230
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 276: (0)(0)
@@ -1859,18 +1858,18 @@ Conditions: DICTWORD(29) 230 230
  PRINTMESS(128) 141 "I am now invoking"
  PRNOBJART(122) 131 230
  MESSAGE 41 "\."
- UNK116(116)
+ DONE2?(116)
 
 
 Action 277: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 278: (0)(0)
 No conditions
- UNK116(116)
+ DONE2?(116)
 
 
 Action 279: CAST(15) SPELL#4(28)
@@ -2047,7 +2046,7 @@ Conditions: AT(4) 23
 
 Action 301: (0)(0)
 Conditions: NODESTROYED(13) 40 PRESENT(3) 48
- UNK97(97) 32 37
+ SWAPNCT(97) 32 37
  GOTO(54) 23
  MESSAGE 37 "Spell works!"
  DESTROY(59) 40
@@ -2098,7 +2097,7 @@ Action 308: CAST(15) SPELL#11(67)
 Extra words: 128 (ANY) 0 (ANY)
 Conditions: CARRIED(1) 45 NOTZERO(8) 6
  MESSAGE 37 "Spell works!"
- UNK97(97) 32 36
+ SWAPNCT(97) 32 36
  DESTROY(59) 45
  SET(58) 34
 
@@ -2123,7 +2122,7 @@ Conditions: AT(4) 23
 
 Action 312: (0)(0)
 No conditions
- UNK97(97) 32 36
+ SWAPNCT(97) 32 36
  SET(58) 34
 
 
@@ -2140,7 +2139,7 @@ Extra words: 131 (AT) 0 (ANY)
 Conditions: PRESENT(3) 24
  DESTROY(59) 24
  MESSAGE 1 "O.K."
- UNK116(116)
+ DONE2?(116)
 
 
 Action 315: CAST(15) SPELL#1(11)
@@ -2211,7 +2210,7 @@ Conditions: NOTZERO(8) 15 HERE(2) 42
 
 Action 323: (0)(0)
 Conditions: DESTROYED(14) 42
- SETCNT(99) 50 19
+ SETTOA(99) 50 19
  UNKNOWN(93)
  MESSAGE 19 "Chandelier fell with a crash"
  LIGHTSOUT(56)
@@ -2289,11 +2288,11 @@ Conditions: CARRIED(1) 34
 
 Action 332: SCORE(23) ANY(0)
 No conditions
- CLRCNT?(109) 30
- CLRCNT?(109) 13
- CLRCNT?(109) 12
+ CLRCNT(109) 30
+ CLRCNT(109) 13
+ CLRCNT(109) 12
  SET(58) 63
- BEGIN?(112)
+ BEGIN(112)
 
 
 Action 333: (0)(0)
@@ -2307,9 +2306,9 @@ Conditions: OBJFLAG(30) 230 4
 
 
 Action 335: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 336: (0)(0)
@@ -2317,13 +2316,13 @@ No conditions
  PRINTMESS(128) 126 "I've stored"
  PRNCNT(102) 12
  PRINTMESS(128) 127 "stars. On a scale of 0 to 100 that is a"
- SETCNT(99) 100 14
+ SETTOA(99) 100 14
  MULTIPLY?(65) 14 12
 
 
 Action 337: (0)(0)
 No conditions
- DIVIDE?(91) 13 12 14
+ DIVMOD(91) 13 12 14
  PRNCNT(102) 12
  MESSAGE 41 "\."
 
@@ -2419,10 +2418,10 @@ Conditions: ISZERO(9) 35
 
 Action 352: (0)(0)
 No conditions
- SETCNT(99) 33 20
- CLRCNT?(109) 30
- UNK97(97) 20 32
- BEGIN?(112)
+ SETTOA(99) 33 20
+ CLRCNT(109) 30
+ SWAPNCT(97) 20 32
+ BEGIN(112)
 
 
 Action 353: (0)(0)
@@ -2431,16 +2430,16 @@ Conditions: CARRIED(1) 230
 
 
 Action 354: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 355: (0)(0)
 No conditions
  REDRAW?(89)
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 356: (0)(0)
@@ -2449,14 +2448,14 @@ Conditions: HERE(2) 230
 
 
 Action 357: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 358: (0)(0)
 No conditions
- UNK97(97) 20 32
+ SWAPNCT(97) 20 32
  INVENTORY(66)
  LOADFILE?(110) 6 0
  REDRAW?(89)
@@ -2774,8 +2773,8 @@ Conditions: PRESENT(3) 42
 Action 402: THROW(6) SPELL#1(11)
 Extra words: 131 (AT) 0 (ANY)
 No conditions
- SETCNT(99) 15 48
- FAILED?(121)
+ SETTOA(99) 15 48
+ SETWORDS(121)
  UNKNOWN(111)
 
 
@@ -2898,19 +2897,19 @@ No conditions
 Action 420: PUSH(8) NICHE(75)
 Extra words: 134 (ON) 0 (ANY)
 No conditions
- SWAPCNT(98) 53 49
- CLRCNT?(109) 52
- CLRCNT?(109) 53
- FAILED?(121)
+ SETTOC(98) 53 49
+ CLRCNT(109) 52
+ CLRCNT(109) 53
+ SETWORDS(121)
 
 
 Action 421: PULL(9) NICHE(75)
 Extra words: 134 (ON) 0 (ANY)
 No conditions
- SWAPCNT(98) 53 49
- CLRCNT?(109) 52
- CLRCNT?(109) 53
- FAILED?(121)
+ SETTOC(98) 53 49
+ CLRCNT(109) 52
+ CLRCNT(109) 53
+ SETWORDS(121)
 
 
 Action 422: PULL(9) WEST(4)
@@ -2992,8 +2991,8 @@ Conditions: AT(4) 10
 Action 432: PUSH(8) FLOOR(36)
 Conditions: AT(4) 10
  MESSAGE 30 "I fall!"
- CLRCNT?(109) 30
- BEGIN?(112)
+ CLRCNT(109) 30
+ BEGIN(112)
 
 
 Action 433: (0)(0)
@@ -3002,14 +3001,14 @@ Conditions: HERE(2) 230
 
 
 Action 434: (0)(0)
-Conditions: LE(18) 43 30
+Conditions: LT(18) 43 30
  ADDCNT(100) 1 30
- LOOP?(113)
+ LOOPBACK(113)
 
 
 Action 435: (0)(0)
 No conditions
- SETCNT(99) 16 19
+ SETTOA(99) 16 19
  UNKNOWN(93)
  MESSAGE 19 "Chandelier fell with a crash"
  GOTO(54) 29
@@ -3073,30 +3072,30 @@ No conditions
 Action 443: WAIT(2) ANY(0)
 No conditions
  CONTINUE(73)
- CLRCNT?(109) 11
+ CLRCNT(109) 11
 
 
 Action 444: (0)(0)
 Conditions: NOUNIS(28) 230 48
- SETCNT(99) 9 11
+ SETTOA(99) 9 11
  MESSAGE 1 "O.K."
 
 
 Action 445: (0)(0)
 Conditions: NOUNIS(28) 230 44
- SETCNT(99) 4 11
+ SETTOA(99) 4 11
  MESSAGE 1 "O.K."
 
 
 Action 446: (0)(0)
 Conditions: NOUNIS(28) 230 45
- SETCNT(99) 14 11
+ SETTOA(99) 14 11
  MESSAGE 1 "O.K."
 
 
 Action 447: (0)(0)
 Conditions: NOUNIS(28) 230 46
- SETCNT(99) 49 11
+ SETTOA(99) 49 11
  MESSAGE 1 "O.K."
 
 
