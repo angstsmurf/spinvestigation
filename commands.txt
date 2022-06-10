@@ -17,8 +17,8 @@ Saga Plus Commands
 61		Death. Dark flag cleared, player moved to last room.
 62		Item <arg2> is put in room <arg2>.
 63		Game over.
-64		Set counter <arg2> to <arg1>. Will use a third argument if <arg2> has
-		bit 7 set.
+64		Set counter <arg2> to <arg1>. If <arg2> has
+		bit 7 set, set counter <arg3> to <arg1> instead.
 65		Multiply: Counter <arg2> = Counter <arg1> * Counter <arg2>
 66		Inventory.
 67		BitFlag 0 is set.
@@ -48,8 +48,11 @@ Saga Plus Commands
 90		Draw close-up image <arg> ( + "Press any key" + wait for keypress )
 91		Divide + modulo? Counter <arg3> = counter <arg2> % counter <arg1>, and
 		at the same time counter <arg2> = counter <arg2> / counter <arg1>.
+92		Unknown.
+93		Unknown.
 94		Counter <arg1> = Exit number counter <arg3> of room <Counter <arg2> >.
 95		Exit number counter <arg2> of room number counter <arg1> is set to <arg3>.
+96		Unknown.
 97		Swap counter <arg1> and counter <arg2>.
 98		Counter <arg2> = counter <arg1>.
 99		Counter <arg2> is set to <arg>. If <arg2> is greater than 63,
@@ -64,6 +67,8 @@ Saga Plus Commands
 113		Loop back to action set with 112.
 114		Cancel loop?
 116		Done? (Stop reading actions)
+117		Unknown.
+118		Unknown.
 119		Set the initial part of prompt to message <arg>. ("Message <arg>, I want you to ")
 		if <arg> is 128, use <arg2> - 76.
 120		Copy input words to counters: Counter 48 is set to verb, 49 to noun,
@@ -71,6 +76,8 @@ Saga Plus Commands
 121		Copy counters to input words, reverse of 120.
 122		Print name of object <arg> with indefinite article.
 123		counter <arg2> = counter <arg1> + counter <arg2>?.
-124		Unknown
+124		Unknown.
 125		Unknown, 2 arguments. Swap value of bitflags <arg1> and <arg2>?
+126		Unknown.
+127		Unknown.
 128		Print message <arg - 76>.
